@@ -1,0 +1,32 @@
+/* Warna Yang Penting Panggil Class Nya  */
+.warna-hijau {
+    color:#224038;
+}
+
+.warna-putih {
+    color: #ffffff;
+}
+
+.warna-abu {
+    color: #E3E3E3 ;
+}
+
+.warna-abu-hitam {
+    color: #666666;
+}
+
+.bg-hijau {
+    background-color: #224038;
+}
+
+.bg-putih {
+    background-color: #ffffff;
+}
+
+.bg-abu {
+    background-color: #E3E3E3 ;
+} 
+
+.bg-abu-hitam {
+    background-color: #666666;
+}
