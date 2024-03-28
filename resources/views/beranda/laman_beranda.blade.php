@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Beranda Agropupuk</title>
-    <link rel="stylesheet" href="{{ asset('css/beranda.css') }}" />
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -17,6 +16,14 @@
     <link
         href="https://fonts.googleapis.com/css?family=Poppins"
         rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('css/beranda.css') }}"/>
+
+    <style>
+        .kotak-konten {
+            background-image: url('{{ asset('storage/image/wave.png') }}');
+        }
+    </style>
+
 </head>
 <body class="bg-abu">
 
@@ -25,7 +32,7 @@
         class="w-100 px-5 ps-5 bg-hijau py-4 d-flex justify-content-between align-items-center">
         <a class="d-block w-25" href="">
             <!--Iamge Unruk logo di nav-->
-            <img class="logoagro"src="./img/webpupuk.png"width="220"height="28"alt=""/>
+            <img class="logoagro" src="{{ asset('storage/image/logoweb.png') }}" width="220"height="28"alt=""/>
         </a>
         <!--Text Nav-->
         <div class="w-50 px-0 text-center d-flex justify-content-around" id="navbarNavAltMarkup">
@@ -51,13 +58,13 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
             <div class="carousel-inner">
             <div class="carousel-item active position-relative w-100 h-100">
-                <img src="./img/image 1.png"class="d-block w-100 object-fit-cover"alt="gambar1"/>
+                <img src="{{ asset('storage/image/coro1.png') }}" class="d-block w-100 object-fit-cover"alt="gambar1"/>
             </div>
             <div class="carousel-item">
-                <img src="./img/image 3.png" class="d-block w-100" alt="gabar2" />
+                <img src="{{ asset('storage/image/coro2.png') }}" class="d-block w-100" alt="gabar2" />
             </div>
             <div class="carousel-item">
-                <img src="./img/IMG 3.png" class="d-block w-100" alt="gamabar3" />
+                <img src="{{ asset('storage/image/coro3.png') }}" class="d-block w-100" alt="gamabar3" />
             </div>
             </div>
             <!--Ini konten diatas corousel-->
@@ -125,7 +132,7 @@
 
         <!--Benner AgroPupuk-->
         <div class="bg-agro d-flex">
-            <img src="./img/webpupuk.png" class=" my-lg-auto ps-5 " width="350" height="70" alt="agropupuk">
+            <img src="{{ asset('storage/image/logoweb.png') }}" class=" my-lg-auto ps-5 " width="350" height="70" alt="agropupuk">
             <p class="sinergi my-lg-auto"> haha haha haha haha haha </p>
             
         </div>
