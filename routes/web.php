@@ -2,22 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/list_produk', function () {
     return view('list-produk');
 });
 
-Route::get('/petronitrat.blade.php', function () {
+Route::get('/petronitrat', function () {
     return view('petronitrat');
 });
 
-Route::get('/phonska.blade.php', function () {
+Route::get('/phonska', function () {
     return view('phonska');
 });
 
-Route::get('/urea.blade.php', function () {
+Route::get('/urea', function () {
     return view('urea');
 });
 
-Route::get('/za.blade.php', function () {
+Route::get('/za', function () {
     return view('za');
 });
