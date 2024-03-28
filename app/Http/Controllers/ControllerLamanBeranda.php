@@ -9,6 +9,8 @@ class ControllerLamanBeranda extends Controller
 {
     //
 public function index() {
-    return view("beranda.laman_beranda");
+
+    return view("beranda.layout_navbar");
+    
 }
 }

@@ -94,9 +94,9 @@ h1 {
     padding-top: 100px;
     background-size: cover;
     position: relative;
-    margin-top: -100px;
+    margin-top: -300px;
     width: 100%;
-    height: 500px;
+    height: 550px;
 }
 /* gading */
 @media only screen and (max-width: 860px) {
@@ -148,3 +148,10 @@ h1 {
     height: 300px;
     background-color: #224038;
 }
+.our-grub {
+    width: 100%;
+    height: 90px;
+    background-color: #224038;
+    margin-bottom: 2%;
+}
+

@@ -42,7 +42,9 @@
 
 <body style="background-color: #E3E3E3">
 
-  @yield("content_berita")
+    @yield("navbar")
+
+    @yield("content_berita")
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
