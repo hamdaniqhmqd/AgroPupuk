@@ -1,7 +1,7 @@
 @extends('layouts.laman_beranda')
 
 
-@section('content_navbar')
+@section('navbar')
     
     <!-- Ini Navbar -->
     <nav class="w-100 px-5 ps-5 bg-hijau py-4 align-items-center">
