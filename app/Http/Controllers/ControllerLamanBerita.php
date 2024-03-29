@@ -19,6 +19,6 @@ class ControllerLamanBerita extends Controller
             $berita = Berita::whereAny(['title'], 'LIKE', "%$search%")->paginate(6);
         }
 
-      return view('berita.laman_berita', compact('berita', 'request', 'beritaSide', 'title'));
+      return view('berita.berita_laman_berita', compact('berita', 'request', 'beritaSide', 'title'));
   }
 }
