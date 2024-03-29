@@ -1,0 +1,127 @@
+
+    .sidebar {
+    height: 100%;
+    width: 170px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #224038;
+    padding-top: 20px;
+
+}
+
+.nav{
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    border-bottom: solid white 1px;
+}
+
+.content {
+    margin-right: 250px;
+    padding: 20px;
+}
+
+.main-content-container {
+    margin-left: 170px; /* Sesuaikan dengan lebar sidebar */
+    display: flex;
+    justify-content: left; /* Tempatkan konten di tengah horizontal */
+    align-items: left; /* Tempatkan konten di tengah vertikal */
+    height: 96vh; /* Gunakan tinggi layar penuh */
+    
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 800px; /* Atur lebar maksimum konten */
+}
+
+.main {
+  height: max-content;
+  overflow-y: auto;
+  list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    width: 1000px;
+}
+  
+  .btn {
+    background-color: white;
+    color: black;
+    padding: 16px 20px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  /* Gaya untuk pop-up form */
+  
+
+  .form-container {
+    width: 600px;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    
+}
+
+.btn:hover {
+    background-color: #ff24;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Atur lebar kolom */
+  gap: 20px; /* Jarak antara kolom */
+}
+
+.grid-item {
+  border: 1px solid #ddd; /* Garis pembatas antara kolom */
+  padding: 20px;
+  text-align: center;
+}
+
+.sub-main {
+  border: 1px solid black;
+}
