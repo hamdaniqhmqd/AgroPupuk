@@ -41,7 +41,7 @@
    <!-- Kotak-kotak start Area -->
    <div class="kotak-kotak">
     <!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
-    <div class="kotak-luar" id="npk" data-url="/petronitrat.blade.php">
+    <div class="kotak-luar" id="npk" data-url="{{ route('redirect.to.page', ['page' => 'petronitrat']) }}">
         <div class="kotak-dalam">
             <img src="gambar\1petro-nitratfix.png" alt="Gambar">
         </div>
@@ -51,7 +51,7 @@
         <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
     </div> <!-- Kotak luar end -->
 
-    <div class="kotak-luar" id="phonska" data-url="/phonska.blade.php">
+    <div class="kotak-luar" id="phonska" data-url="{{ route('redirect.to.page', ['page' => 'phonska']) }}">
         <div class="kotak-dalam">
             <img src="gambar\2phonskafix.png" alt="Gambar">
         </div>
@@ -61,7 +61,7 @@
         <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
     </div> <!-- Kotak luar end -->
 
-    <div class="kotak-luar" id="urea" data-url="/urea.blade.php">
+    <div class="kotak-luar" id="urea" data-url="{{ route('redirect.to.page', ['page' => 'urea']) }}">
         <div class="kotak-dalam">
             <img src="gambar\3ppkurea.png" alt="Gambar">
         </div>
@@ -71,7 +71,7 @@
         <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
     </div> <!-- Kotak luar end -->
 
-    <div class="kotak-luar" id="za" data-url="/za.blade.php">
+    <div class="kotak-luar" id="za" data-url="{{ route('redirect.to.page', ['page' => 'za']) }}">
         <div class="kotak-dalam">
             <img src="gambar\4zafix.png" alt="Gambar">
         </div>
@@ -81,129 +81,145 @@
         <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
     </div> <br><br><br> 
     <!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
-   <!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
-   <div class="kotak-luar" id="npk" data-url="/petronitrat.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\1petro-nitratfix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
+    <!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
+    <div class="kotak-luar" id="npk" data-url="{{ route('redirect.to.page', ['page' => 'petronitrat']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\1petro-nitratfix.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <!-- Kotak luar end -->
 
-<div class="kotak-luar" id="phonska" data-url="/phonska.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\2phonskafix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
+    <div class="kotak-luar" id="phonska" data-url="{{ route('redirect.to.page', ['page' => 'phonska']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\2phonskafix.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <!-- Kotak luar end -->
 
-<div class="kotak-luar" id="urea" data-url="/urea.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\3ppkurea.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
+    <div class="kotak-luar" id="urea" data-url="{{ route('redirect.to.page', ['page' => 'urea']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\3ppkurea.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <!-- Kotak luar end -->
 
-<div class="kotak-luar" id="za" data-url="/za.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\4zafix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <br><br><br> 
-<!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
-<!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
-<div class="kotak-luar" id="npk" data-url="/petronitrat.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\1petro-nitratfix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
+    <div class="kotak-luar" id="za" data-url="{{ route('redirect.to.page', ['page' => 'za']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\4zafix.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <br><br><br> 
+    <!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+        <!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
+        <div class="kotak-luar" id="npk" data-url="{{ route('redirect.to.page', ['page' => 'petronitrat']) }}">
+            <div class="kotak-dalam">
+                <img src="gambar\1petro-nitratfix.png" alt="Gambar">
+            </div>
+            <div class="kotak-hijau">
+                <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+            </div> <!-- Kotak berwarna hijau -->
+            <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
+        </div> <!-- Kotak luar end -->
+    
+        <div class="kotak-luar" id="phonska" data-url="{{ route('redirect.to.page', ['page' => 'phonska']) }}">
+            <div class="kotak-dalam">
+                <img src="gambar\2phonskafix.png" alt="Gambar">
+            </div>
+            <div class="kotak-hijau">
+                <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+            </div> <!-- Kotak berwarna hijau -->
+            <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
+        </div> <!-- Kotak luar end -->
+    
+        <div class="kotak-luar" id="urea" data-url="{{ route('redirect.to.page', ['page' => 'urea']) }}">
+            <div class="kotak-dalam">
+                <img src="gambar\3ppkurea.png" alt="Gambar">
+            </div>
+            <div class="kotak-hijau">
+                <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+            </div> <!-- Kotak berwarna hijau -->
+            <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
+        </div> <!-- Kotak luar end -->
+    
+        <div class="kotak-luar" id="za" data-url="{{ route('redirect.to.page', ['page' => 'za']) }}">
+            <div class="kotak-dalam">
+                <img src="gambar\4zafix.png" alt="Gambar">
+            </div>
+            <div class="kotak-hijau">
+                <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+            </div> <!-- Kotak berwarna hijau -->
+            <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
+        </div> <br><br><br> 
+        <!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+            <!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
+    <div class="kotak-luar" id="npk" data-url="{{ route('redirect.to.page', ['page' => 'petronitrat']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\1petro-nitratfix.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <!-- Kotak luar end -->
 
-<div class="kotak-luar" id="phonska" data-url="/phonska.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\2phonskafix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
+    <div class="kotak-luar" id="phonska" data-url="{{ route('redirect.to.page', ['page' => 'phonska']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\2phonskafix.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <!-- Kotak luar end -->
 
-<div class="kotak-luar" id="urea" data-url="/urea.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\3ppkurea.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
+    <div class="kotak-luar" id="urea" data-url="{{ route('redirect.to.page', ['page' => 'urea']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\3ppkurea.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <!-- Kotak luar end -->
 
-<div class="kotak-luar" id="za" data-url="/za.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\4zafix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <br><br><br> 
-<!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
-<!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
-<div class="kotak-luar" id="npk" data-url="/petronitrat.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\1petro-nitratfix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Petrokimia NPK</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
-
-<div class="kotak-luar" id="phonska" data-url="/phonska.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\2phonskafix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Phonska</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
-
-<div class="kotak-luar" id="urea" data-url="/urea.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\3ppkurea.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Pusri Urea</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <!-- Kotak luar end -->
-
-<div class="kotak-luar" id="za" data-url="/za.blade.php">
-    <div class="kotak-dalam">
-        <img src="gambar\4zafix.png" alt="Gambar">
-    </div>
-    <div class="kotak-hijau">
-        <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
-    </div> <!-- Kotak berwarna hijau -->
-    <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
-</div> <br><br><br> 
-<!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+    <div class="kotak-luar" id="za" data-url="{{ route('redirect.to.page', ['page' => 'za']) }}">
+        <div class="kotak-dalam">
+            <img src="gambar\4zafix.png" alt="Gambar">
+        </div>
+        <div class="kotak-hijau">
+            <button type="button" class="btn btn-success custom-disabled">Beli Produk </button>
+        </div> <!-- Kotak berwarna hijau -->
+        <h4>Petrokimia ZA+</h4> <!-- Tulisan di bawah kotak dalam -->
+    </div> <br><br><br> 
+    <!-- Kotak luar end break line rowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+   
+    <!--direct halaman info pupuk start-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const kotakLuarDivs = document.querySelectorAll('.kotak-luar');
+    
+            kotakLuarDivs.forEach(function(div) {
+                div.addEventListener('click', function() {
+                    const url = div.dataset.url;
+                    window.location.href = url;
+                });
+            });
+        });
+    </script>
+    <!--direct halaman info pupuk start-->
+    
 </div>
 <!--Kotak-kotak end-->
 <script src="{{ asset("js\sort.js") }}"></script>

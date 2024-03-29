@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/list-produk', function () {
     return view('list-produk');
 });
 
@@ -21,3 +25,5 @@ Route::get('/urea.blade.php', function () {
 Route::get('/za.blade.php', function () {
     return view('za');
 });
+
+Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
