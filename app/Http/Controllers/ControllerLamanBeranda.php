@@ -15,14 +15,6 @@ class ControllerLamanBeranda extends Controller
     }
     
 
-    // public function navbar() {
-    //     return view("component.navbar");
-    // }
-    
-    // public function footer() {
-    //     return view("component.footer");
-    // }
-    
 
 
 }

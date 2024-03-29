@@ -29,8 +29,6 @@
 </head>
 
 
-
-
 <body class="bg-abu">
 
     <!--Navbar -->
