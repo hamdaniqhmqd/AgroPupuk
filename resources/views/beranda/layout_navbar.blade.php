@@ -1,6 +1,4 @@
 @extends('layouts.laman_beranda')
-
-
 @section('content_navbar')
     
     <!-- Ini Navbar -->

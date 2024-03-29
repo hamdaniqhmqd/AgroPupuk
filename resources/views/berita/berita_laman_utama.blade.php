@@ -1,5 +1,5 @@
 @extends('layouts.laman_utama')
-@extends('layouts.laman_beranda')
+{{-- @extends('layouts.laman_beranda') --}}
 @section('content_laman_utama')
     <div class="container mt-5">
         <div class="row">

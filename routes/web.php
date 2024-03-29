@@ -6,8 +6,9 @@ use App\Http\Controllers\ControllerLamanUtama;
 use App\Http\Controllers\ControllerLamanBeranda;
 use Illuminate\Support\Facades\Route;
 
+// khusus laman beranda
 Route::get('/', function () {
-    return view('welcome');
+    return view('beranda.index');
 });
 
 
