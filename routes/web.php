@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-});
-
 Route::get('/list_produk', function () {
     return view('list-produk');
 });
