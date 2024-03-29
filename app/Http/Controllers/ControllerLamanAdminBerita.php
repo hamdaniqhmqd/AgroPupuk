@@ -33,12 +33,18 @@ class ControllerLamanAdminBerita extends Controller
     ]);
 
     //upload image
+    // $image = $request->file('image');
+    // $image->storeAs('public/gambar berita', $image->hashName());
     $image = $request->file('image');
-    $image->storeAs('public/gambar berita', $image->hashName());
+    $namaFile = $request->input('name'); // Mengambil nilai dari input 'nama' pada formulir
+
+    // Menyimpan file gambar dengan nama berdasarkan data nama dari formulir
+    $image->storeAs('public/gambar berita', $namaFile . '.' . $image->getClientOriginalExtension());
+    $nama_image = $image;
 
     //create product
     Berita::create([
-      'image'      => $image->hashName(),
+      'image'      => $nama_image,
       'name'       => $request->name,
       'description' => $request->description,
       'link'       => $request->link,
@@ -49,13 +55,22 @@ class ControllerLamanAdminBerita extends Controller
   }
 
   public function destroy($id): RedirectResponse
-    {
-        $berita = Berita::findOrFail($id);
+  {
+    $berita = Berita::findOrFail($id);
 
-        Storage::delete('public/gambar berita/'. $berita->image);
+    Storage::delete('public/gambar berita/' . $berita->image);
 
-        $berita->delete();
+    $berita->delete();
 
-        return redirect()->route('admin_berita.index')->with(['success' => 'Data Berhasil Dihapus!']);
-    }
+    return redirect()->route('admin_berita.index')->with(['success' => 'Data Berhasil Dihapus!']);
+  }
+
+  public function show(string $id): View
+  {
+    //mendapatkan data berita sesuai dengan id
+    $berita = Berita::findOrFail($id);
+
+    //menampilkan view dari detail berita
+    return view('admin_berita.show', compact('berita'));
+  }
 }

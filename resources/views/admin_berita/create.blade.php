@@ -1,4 +1,4 @@
-@extends('layouts.laman_admin')
+@extends('layouts.laman_admin_berita')
 @section('tambah_berita')
     <div class="container mt-5 mb-5">
         <div class="row">

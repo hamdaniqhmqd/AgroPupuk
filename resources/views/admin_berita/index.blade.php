@@ -1,4 +1,4 @@
-@extends('layouts.laman_admin')
+@extends('layouts.laman_admin_berita')
 @section('admin.berita')
     <div class="container-fluid mt-5">
         <div class="row">
@@ -6,16 +6,16 @@
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
                         <a href="{{ route('admin_berita.create') }}" class="btn btn-md btn-success mb-3">Tambah Berita</a>
-                        <table class="table table-borderless">
+                        <table class="table table-borderless table-responsive">
                             <thead class="table-success">
                                 <tr>
-                                    <th scope="col" class="text-center">NO.</th>
+                                    <th scope="col" class="text-center p-1" style="width: 3%;">NO.</th>
                                     <th scope="col" class="text-center">IMAGE</th>
-                                    <th scope="col" class="text-center">ID</th>
-                                    <th scope="col" class="text-center">JUDUL BERITA</th>
-                                    <th scope="col" class="text-center">DESKRIPSI</th>
-                                    <th scope="col" class="text-center">SUMBER LINK</th>
-                                    <th scope="col" class="text-center">ACTIONS</th>
+                                    <th scope="col" class="text-center p-1" style="width: 10%;">ID</th>
+                                    <th scope="col" class="text-center p-1" style="width: 10%;">JUDUL BERITA</th>
+                                    <th scope="col" class="text-center p-1" style="width: 30%;">DESKRIPSI</th>
+                                    <th scope="col" class="text-center p-1" style="width: 15%;">SUMBER LINK</th>
+                                    <th scope="col" class="text-center p-1" style="width: 17%;">AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -23,13 +23,14 @@
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td class="text-center">
-                                            <img src="{{ asset('/storage/gambar berita/'. $data->image) }}" class="rounded"
+                                            <img src="{{ asset('/storage/gambar berita/' . $data->image) }}" class="rounded"
                                                 style="width: 150px">
                                         </td>
-                                        <td>{{ $data->id }}</td>
-                                        <td>{{ $data->name }}</td>
-                                        <td>{{ $data->description }}</td>
-                                        <td>{{ $data->link }}</td>
+                                        <td class="">
+                                            {{ $data->id }}</td>
+                                        <td class="">{{ $data->name }}</td>
+                                        <td class="text-break">{{ $data->description }}</td>
+                                        <td class="">{{ $data->link }}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                 action="{{ route('admin_berita.destroy', $data->id) }}" method="POST">

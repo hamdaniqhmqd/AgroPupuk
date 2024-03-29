@@ -13,6 +13,6 @@ class ControllerLamanUtama extends Controller
       $berita = Berita::take(4)->get();
       $title = 'Home';
 
-      return view('berita.laman_utama', compact('berita', 'title'));
+      return view('beranda.index', compact('berita', 'title'));
   }
 }
