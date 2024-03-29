@@ -6,7 +6,13 @@ use App\Http\Controllers\ControllerLamanUtama;
 use App\Http\Controllers\ControllerLamanBeranda;
 use Illuminate\Support\Facades\Route;
 
+ tampilan_dashboard
+//bagian java
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FormController;
+
 // khusus laman beranda
+ main
 Route::get('/', function () {
     return view('beranda.index');
 });
@@ -41,3 +47,13 @@ Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.inde
 
 Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
 
+ tampilan_dashboard
+//bagian java
+Route::get('utility/form', [FormController::class, 'showForm'])->name('formprod');
+
+Route::get('/profile', [DashboardController::class, 'showProfile'])->name('profil');
+Route::get('/products', [DashboardController::class, 'showProducts'])->name('produk');
+Route::get('/posts', [DashboardController::class, 'showPosts'])->name('postingan');
+Route::get('/halaman}', [DashboardController::class, 'showPage'])->name('halaman');
+
+ main
