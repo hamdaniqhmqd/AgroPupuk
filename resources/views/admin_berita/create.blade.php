@@ -21,7 +21,7 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Nama Berita</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" placeholder="Masukkan Judul Product">
+                                    name="name" value="{{ old('name') }}" placeholder="Masukkan Judul Berita">
                                 @error('name')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
@@ -32,7 +32,7 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Sumber Link</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                    name="link" value="{{ old('link') }}" placeholder="Masukkan Judul Product">
+                                    name="link" value="{{ old('link') }}" placeholder="Masukkan Sumberr Link">
                                 @error('link')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
@@ -43,7 +43,7 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Deskripsi</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5"
-                                    placeholder="Masukkan Description Product">{{ old('description') }}</textarea>
+                                    placeholder="Masukkan Deskrpsi Berita">{{ old('description') }}</textarea>
 
                                 <!-- error message untuk description -->
                                 @error('description')
@@ -53,8 +53,8 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-md btn-primary me-3">SAVE</button>
-                            <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                            <button type="submit" class="btn btn-md btn-primary me-3">Simpan</button>
+                            <button type="reset" class="btn btn-md btn-warning">Hapus</button>
 
                         </form>
                     </div>

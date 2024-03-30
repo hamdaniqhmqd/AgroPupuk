@@ -5,8 +5,23 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('admin_berita.create') }}" class="btn btn-md btn-success mb-3">Tambah Berita</a>
-                        <table class="table table-borderless table-responsive">
+                        <div class="row mb-2 mt-2">
+                            <div class="col-md-6 d-flex">
+                                <h2 class="fw-bold">Berita</h2>
+                                <a href="{{ route('admin_berita.create') }}" class="btn btn-success ms-4">Tambah Berita</a>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <div class="flex-fill">
+                                    <form action="{{ route('admin_berita.index') }}" class="" method="GET">
+                                        <input class="form-control me-2" type="text"
+                                            placeholder="Ketik berita yang di cari" name="search"
+                                            value="{{ $request->get('search') }}">
+                                    </form>
+                                </div>
+                            </div>
+                            <hr style="border: 2px solid #224038;" class="mt-5">
+                        </div>
+                        <table class="table table-borderless table-responsive table-hover table-striped">
                             <thead class="table-success">
                                 <tr>
                                     <th scope="col" class="text-center p-1" style="width: 3%;">NO.</th>

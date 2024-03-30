@@ -20,7 +20,7 @@
                 <div class="d-flex flex-wrap justify-content-start">
                     @forelse ($berita as $data)
                         <div class="card m-2 border-0 hover" style="width: 250px;height: 300px;">
-                            <img src="/storage/Berita/zee.jpg" class="card-img-top object-fit-cover rounded" alt="card"
+                            <img src="{{ asset('/storage/gambar berita/' . $data->image) }}" class="card-img-top object-fit-cover rounded" alt="card"
                                 style="height: 150px;">
                             <div class="card-body m-1 p-2">
                                 <h5 class="card-title fw-medium">{{ $data->name }}</h5>
@@ -42,7 +42,7 @@
                     @forelse ($beritaSide as $data)
                         <div class="card m-2 border-0 hover" style="width: 250px; height: 110px;">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $data->title }}</h5>
+                                <h5 class="card-title">{{ $data->name }}</h5>
                                 <a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ $data->link }}">
                                     Lihat selengkapnya
                                 </a>
