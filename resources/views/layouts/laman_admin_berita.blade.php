@@ -20,7 +20,7 @@
 </script>
 
 <script>
-    //message with sweetalert
+    // untuk tampilan alert atau pemberitahuan
     @if (session('success'))
         Swal.fire({
             icon: "success",

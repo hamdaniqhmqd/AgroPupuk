@@ -8,11 +8,13 @@ use Illuminate\View\View;
 
 class ControllerLamanUtama extends Controller
 {
-  public function index() : View
+  public function index(): View
   {
-      $berita = Berita::take(4)->get();
-      $title = 'Home';
+    // untuk mengambil data berita maksimal 4
+    $berita = Berita::take(4)->get();
+    $title = 'Home';
 
-      return view('beranda.index', compact('berita', 'title'));
+    // mengarahkan ke laman utama
+    return view('beranda.index', compact('berita', 'title'));
   }
 }

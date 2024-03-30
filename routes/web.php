@@ -1,24 +1,30 @@
 <?php
 
+// untuk route ini penting tau
+use Illuminate\Support\Facades\Route;
+
+// punya hamdani 
 use App\Http\Controllers\ControllerLamanAdminBerita;
 use App\Http\Controllers\ControllerLamanBerita;
 use App\Http\Controllers\ControllerLamanUtama;
-use App\Http\Controllers\ControllerLamanBeranda;
-use Illuminate\Support\Facades\Route;
 
- tampilan_dashboard
+
+use App\Http\Controllers\ControllerLamanBeranda;
+
 //bagian java
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 
-// khusus laman beranda
- main
+// route default
 Route::get('/', function () {
-    return view('beranda.index');
+    return view('welcome');
 });
 
+// route buat laman beranda
+// Route::resource('/', ControllerLamanUtama::class);
+
 Route::get('/list-produk', function () {
-    return view('list-produk');
+  return view('list-produk');
 });
 
 Route::get('/petronitrat.blade.php', function () {
@@ -39,16 +45,18 @@ Route::get('/za.blade.php', function () {
 
 Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
 
-Route::resource('/home', ControllerLamanUtama::class);
 
 Route::resource('/beranda', ControllerLamanBeranda::class);
 
-Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.index');
 
+// bagian hamdani
+// route test untuk laman utama
+Route::resource('/home', ControllerLamanUtama::class);
+// route buat laman berita
+Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.index');
 // laman berita untuk admin
 Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
 
- tampilan_dashboard
 //bagian java
 Route::get('utility/form', [FormController::class, 'showForm'])->name('formprod');
 
@@ -57,4 +65,3 @@ Route::get('/products', [DashboardController::class, 'showProducts'])->name('pro
 Route::get('/posts', [DashboardController::class, 'showPosts'])->name('postingan');
 Route::get('/halaman}', [DashboardController::class, 'showPage'])->name('halaman');
 
- main
