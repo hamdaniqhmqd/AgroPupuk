@@ -10,11 +10,22 @@ use Illuminate\View\View;
 
 class ControllerLamanAdminBerita extends Controller
 {
-  public function index(): View
+  public function index(Request $request): View
   {
     $berita = Berita::paginate(10);
+    $title = 'Berita';
 
-    return view('admin_berita.index', compact('berita'));
+    $search = $request->get('search');
+    if ($search) {
+      $berita = Berita::whereAny([
+        'id',
+        'name',
+        'description',
+        'link',
+      ], 'LIKE', "%$search%")->paginate(10);
+    }
+
+    return view('admin_berita.index', compact('berita', 'title', 'request'));
   }
 
   public function create(): View
@@ -35,12 +46,6 @@ class ControllerLamanAdminBerita extends Controller
     //upload image
     $image = $request->file('image');
     $image->storeAs('public/gambar berita', $image->hashName());
-    // $image = $request->file('image');
-    // $namaFile = $request->input('name'); // Mengambil nilai dari input 'nama' pada formulir
-
-    // // Menyimpan file gambar dengan nama berdasarkan data nama dari formulir
-    // $image->storeAs('public/gambar berita', $namaFile . '.' . $image->getClientOriginalExtension());
-    // $nama_image = $image;
 
     //create product
     Berita::create([

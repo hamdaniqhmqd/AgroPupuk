@@ -18,4 +18,5 @@ Route::resource('/beranda', ControllerLamanBeranda::class);
 
 Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.index');
 
+// laman berita untuk admin
 Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
