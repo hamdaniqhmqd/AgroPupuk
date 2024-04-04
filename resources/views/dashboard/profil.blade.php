@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- Masukkan link CSS Anda di sini -->
-    <link rel="stylesheet" href="{{ ('css/dashboard.css') }}">
+    {{-- <link rel="stylesheet" href="{{ ('css/dashboard.css') }}"> --}}
     
 </head>
 
