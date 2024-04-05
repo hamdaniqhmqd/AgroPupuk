@@ -9,11 +9,14 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         {{-- <link rel="stylesheet" href="{{ asset('css/beranda.css') }}" /> --}}
     <style>
+
     </style>
 </head>
-@yield('admin.berita')
-@yield('tambah_berita')
-@yield('edit_berita')
+
+            @yield('admin.berita')
+            @yield('tambah_berita')
+            @yield('edit_berita')
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
