@@ -25,10 +25,10 @@
                             <thead class="table-success">
                                 <tr>
                                     <th scope="col" class="text-center p-1" style="width: 3%;">NO.</th>
-                                    <th scope="col" class="text-center">IMAGE</th>
+                                    <th scope="col" class="text-center" style="width: 160px;">IMAGE</th>
                                     <th scope="col" class="text-center p-1" style="width: 10%;">ID</th>
                                     <th scope="col" class="text-center p-1" style="width: 10%;">JUDUL BERITA</th>
-                                    <th scope="col" class="text-center p-1" style="width: 30%;">DESKRIPSI</th>
+                                    <th scope="col" class="text-center p-1" style="width: 27%;">DESKRIPSI</th>
                                     <th scope="col" class="text-center p-1" style="width: 15%;">SUMBER LINK</th>
                                     <th scope="col" class="text-center p-1" style="width: 17%;">AKSI</th>
                                 </tr>
@@ -38,7 +38,7 @@
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td class="text-center">
-                                            <img src="{{ asset('/storage/gambar berita/' . $data->image) }}" class="rounded"
+                                            <img src="{{ asset('storage/gambar berita/' . $data->image) }}" class="rounded"
                                                 style="width: 150px">
                                         </td>
                                         <td class="">
@@ -47,8 +47,8 @@
                                         <td class="text-break">{{ $data->description }}</td>
                                         <td class="">{{ $data->link }}</td>
                                         <td class="text-center">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                action="{{ route('admin_berita.destroy', $data->id) }}" method="POST">
+                                            <form action="{{ route('admin_berita.destroy', $data->id) }}" method="POST"
+                                                id="formHapusData" onsubmit="return hapusData()">
                                                 <a href="{{ route('admin_berita.show', $data->id) }}"
                                                     class="btn btn-sm btn-dark">SHOW</a>
                                                 <a href="{{ route('admin_berita.edit', $data->id) }}"
@@ -66,7 +66,19 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $berita->links() }}
+                        <ul class="pagination d-flex justify-content-start">
+                            <li class="page-item {{ $berita->previousPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $berita->previousPageUrl() }}">Sebelumnya</a>
+                            </li>
+                            @for ($i = 1; $i <= $berita->lastPage(); $i++)
+                                <li class="page-item {{ $berita->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $berita->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                            <li class="page-item {{ $berita->nextPageUrl() ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $berita->nextPageUrl() }}">Selanjutnya</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

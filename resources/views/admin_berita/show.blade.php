@@ -10,54 +10,59 @@
 </head>
 
 <body style="background: lightgray">
-
-    <div class="container mt-5 mb-2">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded">
-                    <div class="card-body">
+    <div class="container mt-5 mb-5">
+        <div class="row mb-3">
+            <div class="d-flex gap-3 justify-content-center">
+                <div class="col-md-5">
+                    <div class="border-0 shadow-sm rounded d-flex">
                         <img src="{{ asset('/storage/gambar berita/' . $berita->image) }}" class="rounded"
-                            style="width: 100%">
+                            style="width: 100%;">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card border-0 shadow-sm rounded">
-                    <div class="card-body">
-                        <h3>Nama berita : {{ $berita->name }}</h3>
-                        <hr />
-                        <p>Id dari berita : {{ $berita->id }}</p>
-                        <hr />
-                        <p>Deskripsi berita : {{ $berita->description }}</p>
-                        <hr />
-                        <p>Sumber link : <a href="{{ $berita->link }}" target="_blank">{{ $berita->link }}</a></p>
+                <div class="col-md-5">
+                    <div class="card border-0 shadow-sm rounded" style="height: 359.1px;">
+                        <div class="card-body">
+                            <div class="p-1 m-0"><strong>Id dari berita : </strong><br>{{ $berita->id }}</div>
+                            <div class="p-1 m-0"><strong>Nama berita :</strong><br>{{ $berita->name }}</div>
+                            <div class="p-1 m-0"><strong>Sumber link : </strong><br>
+                                <a href="{{ $berita->link }}" target="_blank">{{ $berita->link }}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container mb-5">
         <div class="row">
-            <div class="col-md-4 border-0 shadow-sm rounded">
-                <div class="card border-0 shadow-sm rounded">
-                    <div class="card-body">
-                        <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                            action="{{ route('admin_berita.destroy', $berita->id) }}" method="POST">
-                            <a href="{{ route('admin_berita.index') }}" class="btn btn-sm btn-dark">Kembali</a>
-                            <a href="{{ route('admin_berita.edit', $berita->id) }}"
-                                class="btn btn-sm btn-primary">Edit</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                        </form>
+            <div class=" d-flex justify-content-center">
+                <div class="col-md-10">
+                    <div class="card border-0 shadow-sm rounded">
+                        <div class="card-body">
+                            <div class="p-1 m-0"><strong>Deskripsi berita :</strong><br>{{ $berita->description }}</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class=" d-flex gap-3 justify-content-center mt-3">
+                <div class="col-md-5">
+                    <form action="{{ route('admin_berita.destroy', $berita->id) }}" method="POST" id="formHapusData"
+                        onsubmit="return hapusData()" class="d-flex gap-3">
+                        <a href="{{ route('admin_berita.edit', $berita->id) }}" class="btn btn-lg btn-primary">Edit</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-lg btn-danger">Hapus</button>
+                    </form>
+                </div>
+                <div class="col-md-5 d-flex justify-content-end">
+                    <a href="{{ route('admin_berita.index') }}" class="btn btn-lg btn-dark">Kembali</a>
+                </div>
+            </div>
+        </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

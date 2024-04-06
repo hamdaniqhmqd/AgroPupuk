@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -52,20 +53,29 @@ class ControllerLamanAdminBerita extends Controller
     // untuk mendapatkan file image dan merubah nama 
     // beserta menyimpannya ke local storage
     $image = $request->file('image');
-    $image->storeAs('public/gambar berita', $image->hashName());
+    // digunakan untuk mengubah nama gambar menjadi inputan name
+    $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('name') . '.' . $image->getClientOriginalExtension();
+    // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
+    $image->storeAs('public/gambar berita', $nameImage);
+
+    // untuk mengatur id pada setiap data sesuai dengan
+    // tanggal, waktu saat d tambahkan
+    $id = Carbon::now()->format('YmdHis');
 
     // untuk membuat berita baru
     Berita::create([
-      'image'      => $image->hashName(),
-      'name'       => $request->name,
+      'id'          => $id,
+      'image'       => $nameImage,
+      'name'        => $request->name,
       'description' => $request->description,
-      'link'       => $request->link,
+      'link'        => $request->link,
     ]);
 
     // untuk mengarahkan ke laman admin berita
     return redirect()->route('admin_berita.index')->with(['success' => 'Data Berhasil Disimpan!']);
   }
 
+  // untuk menghapus data sesuai dengan id
   public function destroy($id): RedirectResponse
   {
     // untuk mencari dara berita sesuai dengan id nya
@@ -119,25 +129,30 @@ class ControllerLamanAdminBerita extends Controller
 
       // untuk mengirim atau mengupload data image baru
       $image = $request->file('image');
-      $image->storeAs('public/gambar berita', $image->hashName());
+
+      // digunakan untuk mengubah nama gambar menjadi inputan name
+      $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('name') . '.' . $image->getClientOriginalExtension();
+
+      // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
+      $image->storeAs('public/gambar berita', $nameImage);
 
       // untuk menghapus image lama
       Storage::delete('public/gambar berita/' . $berita->image);
 
       // untuk update data sesuai data yang masuk
       $berita->update([
-        'image'      => $image->hashName(),
-        'name'       => $request->name,
-        'description' => $request->description,
-        'link'       => $request->link,
+        'image'         => $nameImage,
+        'name'          => $request->name,
+        'description'   => $request->description,
+        'link'          => $request->link,
       ]);
     } else {
 
       // jika data image tidak di masukkan maka data image tidak akan di perbarui
       $berita->update([
-        'name'       => $request->name,
-        'description' => $request->description,
-        'link'       => $request->link,
+        'name'          => $request->name,
+        'description'   => $request->description,
+        'link'          => $request->link,
       ]);
     }
 

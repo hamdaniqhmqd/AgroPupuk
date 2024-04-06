@@ -32,7 +32,7 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Sumber Link</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                    name="link" value="{{ old('link') }}" placeholder="Masukkan Sumberr Link">
+                                    name="link" value="{{ old('link') }}" placeholder="Masukkan Sumber Link">
                                 @error('link')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
@@ -43,8 +43,7 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Deskripsi</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5"
-                                    placeholder="Masukkan Deskrpsi Berita">{{ old('description') }}</textarea>
-
+                                    placeholder="Masukkan Deskripsi Berita">{{ old('description') }}</textarea>
                                 <!-- error message untuk description -->
                                 @error('description')
                                     <div class="alert alert-danger mt-2">
@@ -53,9 +52,13 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-md btn-primary me-3">Simpan</button>
-                            <button type="reset" class="btn btn-md btn-warning">Hapus</button>
-
+                            <div class="form-group mb-3 d-flex justify-content-between">
+                                <div class="">
+                                    <button type="submit" class="btn btn-md btn-primary me-3">Simpan</button>
+                                    <button type="reset" class="btn btn-md btn-warning">Hapus</button>
+                                </div>
+                                <a href="{{ route('admin_berita.index') }}" class="btn btn-md btn-dark me-3">Kembali</a>
+                            </div>
                         </form>
                     </div>
                 </div>
