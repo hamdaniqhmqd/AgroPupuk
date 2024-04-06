@@ -24,8 +24,7 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">IMAGE</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                    name="image">
-
+                                    name="image" placeholder="Masukkan Gambar Berita">
                                 <!-- error message untuk image -->
                                 @error('image')
                                     <div class="alert alert-danger mt-2">
@@ -37,11 +36,9 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Nama</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror"
-                                    name="name" value="{{ old('name', $berita->name) }}"
-                                    placeholder="Masukkan Judul Product">
-
+                                    name="name" placeholder="Masukkan Judul Berita" value="{{ old('name', $berita->name) }}">
                                 <!-- error message untuk title -->
-                                @error('title')
+                                @error('name')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -49,11 +46,10 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label class="font-weight-bold">Nama</label>
+                                <label class="font-weight-bold">Sumber Link</label>
                                 <input type="text" class="form-control @error('link') is-invalid @enderror"
                                     name="link" value="{{ old('link', $berita->link) }}"
-                                    placeholder="Masukkan Judul Product">
-
+                                    placeholder="Masukkan Sumber Link Berita">
                                 <!-- error message untuk name -->
                                 @error('link')
                                     <div class="alert alert-danger mt-2">
@@ -63,18 +59,18 @@
                             </div>
 
                             <div class="form-group mb-3">
-                              <label class="font-weight-bold">Deskripsi</label>
-                              <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5"
-                                  placeholder="Masukkan Description Product">{{ old('description', $berita->description) }}</textarea>
+                                <label class="font-weight-bold">Deskripsi</label>
+                                <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5"
+                                    placeholder="Masukkan Deskripsi Berita">{{ old('description', $berita->description) }}</textarea>
+                                <!-- error message untuk description -->
+                                @error('description')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
 
-                              <!-- error message untuk description -->
-                              @error('description')
-                                  <div class="alert alert-danger mt-2">
-                                      {{ $message }}
-                                  </div>
-                              @enderror
-                          </div>
-
+                            <a href="{{ route('admin_berita.index') }}" class="btn btn-md btn-dark me-3">Kembali</a>
                             <button type="submit" class="btn btn-md btn-primary me-3">UPDATE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
 
