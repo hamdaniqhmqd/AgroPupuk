@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
 </head>
 <body >
-        @include('beranda.nav')
+        @include('component.nav')
 
         <div class="container">
         

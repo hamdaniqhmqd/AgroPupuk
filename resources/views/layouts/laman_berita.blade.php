@@ -42,7 +42,7 @@
 
 <body style="background-color: #E3E3E3">
 
-    @yield("navbar")
+    @include('component.nav')
 
     @yield("content_berita")
 
