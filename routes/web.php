@@ -8,8 +8,11 @@ use App\Http\Controllers\ControllerLamanAdminBerita;
 use App\Http\Controllers\ControllerLamanBerita;
 use App\Http\Controllers\ControllerLamanUtama;
 
-
+// Ferry
 use App\Http\Controllers\ControllerLamanBeranda;
+
+// haqi
+use App\Http\Controllers\ControllerLamanProduk;
 
 //bagian java
 use App\Http\Controllers\DashboardController;
@@ -21,32 +24,34 @@ Route::get('/', function () {
 });
 
 // route buat laman beranda
-// Route::resource('/', ControllerLamanUtama::class);
+Route::resource('/beranda', ControllerLamanBeranda::class);
 
-Route::get('/list-produk', function () {
-  return view('list-produk');
+// route buat laman produk
+Route::resource('/produk', ControllerLamanProduk::class);
+
+Route::get('/test', function () {
+    return view('component.testproduk');
 });
 
-Route::get('/petronitrat.blade.php', function () {
-    return view('petronitrat');
-});
+// Route::get('/petronitrat.blade.php', function () {
+//     return view('petronitrat');
+// });
 
-Route::get('/phonska.blade.php', function () {
-    return view('phonska');
-});
+// Route::get('/phonska.blade.php', function () {
+//     return view('phonska');
+// });
 
-Route::get('/urea.blade.php', function () {
-    return view('urea');
-});
+// Route::get('/urea.blade.php', function () {
+//     return view('urea');
+// });
 
-Route::get('/za.blade.php', function () {
-    return view('za');
-});
+// Route::get('/za.blade.php', function () {
+//     return view('za');
+// });
 
 Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
 
 
-Route::resource('/beranda', ControllerLamanBeranda::class);
 
 
 // bagian hamdani

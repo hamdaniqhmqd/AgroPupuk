@@ -1,3 +1,6 @@
+    <!--CSSNya-->
+    <link rel="stylesheet" href="{{ asset('css/beranda.css') }}" />
+    <!--code nav-->
 <nav class="w-100 px-5 ps-5 bg-hijau py-4 align-items-center">
   <div class="container d-flex justify-content-between ">
       <a class="d-block w-25" href="">
