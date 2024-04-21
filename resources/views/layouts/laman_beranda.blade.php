@@ -56,7 +56,8 @@
             <div class="konten ">
                 <div class="container kontendalam ">
                     <div class="">
-                        <h1 class="fw-bolder fs-1 -ml-6S warna-hijau mt-5 ">Tentang Kami</h1>
+                        {{-- <h1 class="fw-bolder fs-1 -ml-6S warna-hijau mt-5 ">Tentang Kami</h1> --}}
+                        <h1 class="ttg-kami" data-text="Tentang Kami">Tentang Kami</h1>
                         <p class="warna-abu-hitam fs-5 fw-bold  my-3 ">
                             AgroPupuk adalah salah satu website yang membatu para <br />
                             petani agar mudah mencari informasi tentang berbagai <br />
@@ -116,7 +117,37 @@
             <h1 class="text-white fs-1 fw-bold ">Our Groups</h1>
         </div>
 
-
+                <!-- logo corp -->
+                <div class="container">
+                    <div class="row row-cols-5 row-cols-md-5 row-cols-sm-5  g-4">
+                        <div class="col">
+                            <div class="logo-corp justify-center align-content-center">
+                                <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="logo-corp justify-center align-content-center">
+                                <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="logo-corp justify-center align-content-center">
+                                <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="logo-corp justify-center align-content-center">
+                                <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="logo-corp justify-center align-content-center">
+                                <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end our groups -->
 
 
         <!--end our groups -->

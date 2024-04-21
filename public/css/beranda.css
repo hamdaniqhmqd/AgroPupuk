@@ -105,7 +105,7 @@ h1 {
     }
 }
 
-@media only screen and (max-width:620px){
+@media only screen and (max-width:688px){
     #navbarNavAltMarkup {
         display: none !important;
     }
@@ -155,3 +155,39 @@ h1 {
     margin-bottom: 2%;
 }
 
+.logo-corp {
+    width: 230px;
+    height: 85px;
+    background-color: #ffffff;
+}
+
+
+/* animasi tentang kami */
+.ttg-kami {
+    position: relative;
+    font-weight: bolder;
+    font-size: 45px;
+    color: #ffffff;
+    -webkit-text-stroke: 0.3px #224038;
+}
+
+.ttg-kami::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    color: #224038;
+    -webkit-text-stroke: 0px #ffffff;
+    border-right: 1.2px solid #224038;
+    overflow: hidden;
+    animation: animate 2.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        width: 0%;
+    }
+    35%, 65% {
+        width: 28%;
+    }
+}

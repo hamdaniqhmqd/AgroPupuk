@@ -75,20 +75,20 @@
                     <!-- Section: Social -->
                     <section class="text-center mb-5">
                         <a href="" class="text-white me-5">
-                            <i class="fab fa-facebook-f fs-4  text-decoration-none"></i>
+                            <i class="fab fa-facebook-f fs-4  text-decoration-none" style="text-decoration: none;"></i>
+                        </a>
+                        {{-- <a href="" class="text-white me-5">
+                            <i class="fab fa-twitter fs-4   text-decoration-none" style="text-decoration: none;"></i>
+                        </a> --}}
+                        <a href="" class="text-white me-5">
+                            <i class="fab fa-google fs-4  text-decoration-none" style="text-decoration: none;"></i>
                         </a>
                         <a href="" class="text-white me-5">
-                            <i class="fab fa-twitter fs-4   text-decoration-none"></i>
+                            <i class="fab fa-instagram fs-4  text-decoration-none" style="text-decoration: none;"></i>
                         </a>
-                        <a href="" class="text-white me-5">
-                            <i class="fab fa-google fs-4  text-decoration-none"></i>
-                        </a>
-                        <a href="" class="text-white me-5">
-                            <i class="fab fa-instagram fs-4  text-decoration-none"></i>
-                        </a>
-                        <a href="" class="text-white me-5">
-                            <i class="fab fa-linkedin fs-4  text-decoration-none"></i>
-                        </a>
+                        {{-- <a href="" class="text-white me-5">
+                            <i class="fab fa-linkedin fs-4  text-decoration-none" style="text-decoration: none;"></i>
+                        </a> --}}
                         <a href="" class="text-white me-5">
                             <i class="fab fa-github fs-4 text-decoration-none"></i>
                         </a>
