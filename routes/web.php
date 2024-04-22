@@ -20,8 +20,12 @@ use App\Http\Controllers\FormController;
 
 
 //default route
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return redirect('/beranda');
+    return redirect('beranda');
 });
 
 // route buat laman beranda
