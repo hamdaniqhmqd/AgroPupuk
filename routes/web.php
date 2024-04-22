@@ -18,9 +18,14 @@ use App\Http\Controllers\ControllerLamanProduk;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 
-// route default
+
+//default route
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('beranda');
 });
 
 // route buat laman beranda
