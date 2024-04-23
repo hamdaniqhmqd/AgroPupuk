@@ -10,18 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <style>
-
-        th,
-        td {
-            padding: 5px;
-            word-wrap: break-word;
-            text-align: center;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #224038;
-            /* untuk menambahkan garis di bawah setiap data */
-        }
     </style>
 </head>
 
@@ -29,11 +17,13 @@
     @yield('admin.berita')
     @yield('tambah_berita')
     @yield('edit_berita')
+    @yield('detail_berita')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <script>
         // untuk tampilan alert atau pemberitahuan
@@ -54,34 +44,7 @@
                 timer: 2000
             });
         @endif
-
-        function hapusData() {
-            Swal.fire({
-                title: 'Apakah Anda yakin?',
-                text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Ya, hapus!',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Jika pengguna mengonfirmasi dengan click ya, 
-                    // form akan disubmit
-                    document.getElementById('formHapusData').submit();
-                } else {
-                    // Jika pengguna memilih "Tidak", 
-                    // form tidak akan disubmit
-                    return false;
-                }
-            });
-
-            // Jangan disubmit secara otomatis sebelum mendapatkan konfirmasi
-            return false;
-        }
     </script>
-
-
 </body>
+
 </html>

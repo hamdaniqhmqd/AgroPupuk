@@ -1,41 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Show Products - SantriKoding.com</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body style="background: lightgray">
+@extends('layouts.laman_admin_berita') {{-- digunakan untuk memanggil file --}}
+{{-- digunakan untuk meengidentifikasi nama dari section --}}
+@section('detail_berita')
     <div class="container mt-5 mb-5">
         <div class="row mb-3">
-            <div class="d-flex gap-3 justify-content-center">
-                <div class="col-md-5">
-                    <div class="border-0 shadow-sm rounded d-flex">
-                        <img src="{{ asset('/storage/gambar berita/' . $berita->image) }}" class="rounded"
-                            style="width: 100%;">
+            <div class="col-12">
+                <div class="d-flex flex-wrap gap-3 justify-content-start">
+                    {{-- card, untuk menampilkan gambar dan nama gambar berita sesuai dengan id --}}
+                    <div class="card border-0 rounded">
+                        <img src="{{ asset('/storage/gambar berita/' . $berita->image) }}" class="card-img-top rounded"
+                            style="width: 320px">
+                        <div class="card border-0 rounded p-2 mt-auto" style="background-color: #E3E3E3;">
+                            <div class="card-text"><strong>Nama Gambar berita : </strong>
+                                <br>{{ $berita->image }}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="card border-0 shadow-sm rounded" style="height: 359.1px;">
+                    {{-- card, untuk menampilkan data id, nama, sumber link,nama admin,
+                        kapan data dibuat dan kapan data di ubah sesuai dengan id --}}
+                    <div class="card border-0 shadow-sm rounded flex-fill" style="height: 100%; background-color: #E3E3E3">
                         <div class="card-body">
-                            <div class="p-1 m-0"><strong>Id dari berita : </strong><br>{{ $berita->id }}</div>
-                            <div class="p-1 m-0"><strong>Nama berita :</strong><br>{{ $berita->name }}</div>
-                            <div class="p-1 m-0"><strong>Sumber link : </strong><br>
+                            <div class="p-1 m-1"><strong>Id Berita : </strong><br>{{ $berita->id }}</div>
+                            <div class="p-1 m-1"><strong>Nama Berita :</strong><br>{{ $berita->name }}</div>
+                            <div class="p-1 m-1"><strong>Sumber Link Berita : </strong><br>
                                 <a href="{{ $berita->link }}" target="_blank">{{ $berita->link }}</a>
                             </div>
+                            <div class="p-1 m-1"><strong>Nama Admin :</strong><br>Nama Admin</div>
+                            <div class="p-1 m-1"><strong>Dibuat pada :</strong><br>{{ $berita->created_at }}</div>
+                            <div class="p-1 m-1"><strong>Diubah pada :</strong><br>{{ $berita->updated_at }}</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class=" d-flex justify-content-center">
-                <div class="col-md-10">
-                    <div class="card border-0 shadow-sm rounded">
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                    {{-- card, untuk menampilkan deskripsi dari data berita sesuar dengan id --}}
+                    <div class="card border-0 shadow-sm rounded flex-fill" style="background-color: #E3E3E3">
                         <div class="card-body">
                             <div class="p-1 m-0"><strong>Deskripsi berita :</strong><br>{{ $berita->description }}</div>
                         </div>
@@ -44,25 +45,48 @@
             </div>
         </div>
         <div class="row">
-            <div class=" d-flex gap-3 justify-content-center mt-3">
-                <div class="col-md-5">
-                    <form action="{{ route('admin_berita.destroy', $berita->id) }}" method="POST" id="formHapusData"
-                        onsubmit="return hapusData()" class="d-flex gap-3">
-                        <a href="{{ route('admin_berita.edit', $berita->id) }}" class="btn btn-lg btn-primary">Edit</a>
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-lg btn-danger">Hapus</button>
-                    </form>
-                </div>
-                <div class="col-md-5 d-flex justify-content-end">
-                    <a href="{{ route('admin_berita.index') }}" class="btn btn-lg btn-dark">Kembali</a>
-                </div>
+            <div class=" d-flex gap-3 justify-content-between flex-fill">
+                {{-- sekelompok tombol pada setiap data kolom tabel beritas sesuai dengan id --}}
+                {{-- form, untuk melakukan eksekusi proses hapus data --}}
+                <form action="{{ route('admin_berita.hapus_data', $berita->id) }}" method="POST"
+                    id="formHapusData_{{ $berita->id }}" onsubmit="return hapusData({{ $berita->id }})"
+                    class="d-flex gap-3">
+                    {{-- dugunakan untuk mengarah ke tampilan edit data sesuai dengan id --}}
+                    <a href="{{ route('admin_berita.edit_data', $berita->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                </form>
+                {{-- dugunakan untuk mengarah ke tampilan laman admin berita --}}
+                <a href="{{ route('admin_berita.index') }}" class="btn btn-sm btn-dark">Kembali</a>
             </div>
         </div>
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    </div>
+    <script>
+        // sebuah fungsi untuk menampilkan validasi hapus data
+        function hapusData(id) {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika pengguna mengonfirmasi dengan click ya,
+                    // form akan disubmit
+                    document.getElementById('formHapusData_' + id).submit();
+                } else {
+                    // Jika pengguna memilih "Tidak",
+                    // form tidak akan disubmit
+                    return false;
+                }
+            });
+            // Jangan disubmit secara otomatis sebelum mendapatkan konfirmasi
+            return false;
+        }
+    </script>
+@endsection
