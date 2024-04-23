@@ -10,6 +10,7 @@ use App\Http\Controllers\ControllerLamanUtama;
 
 // Ferry
 use App\Http\Controllers\ControllerLamanBeranda;
+use App\Http\Controllers\ControllerLamanTentangKami;
 
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
@@ -30,6 +31,8 @@ Route::get('/', function () {
 
 // route buat laman beranda
 Route::resource('/beranda', ControllerLamanBeranda::class);
+// route buat laman beranda
+Route::resource('/tentangkami', ControllerLamanTentangKami::class);
 
 // route buat laman produk
 Route::resource('/produk', ControllerLamanProduk::class);

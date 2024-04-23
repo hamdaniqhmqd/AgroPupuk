@@ -1,0 +1,162 @@
+/* Warna Yang Penting Panggil Class Nya  */
+.warna-hijau {
+    color:#224038;
+}
+
+.warna-putih {
+    color: #ffffff;
+}
+
+.warna-abu {
+    color: #E3E3E3 ;
+}
+
+.warna-abu-hitam {
+    color: #666666;
+}
+
+.bg-hijau {
+    background-color: #224038;
+}
+
+.bg-putih {
+    background-color: #ffffff;
+}
+
+.bg-abu {
+    background-color: #E3E3E3 ;
+} 
+
+.bg-abu-hitam {
+    background-color: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.cover-gambar {
+    width: 85%;
+    height: 500px;
+    margin: auto;
+}
+.gambar-kami {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(40%);
+}
+
+.konten-kami {
+    width: 75%;
+    margin: auto;
+    height: auto;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    top: -150px;
+    position: relative;
+}
+
+.cover-text {
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+}
+
+.cover-visimisi {
+    margin-top: 120px;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+}
+
+.visi-misi {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.gambar-vm {
+    width: 35%;
+    height: 100%;
+    justify-content: flex-start;
+    
+}
+
+.gambar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+}
+
+.teks-vm {
+    width: 65%;
+    height: 100%;
+    border-radius: 0 20px 20px 0; 
+    background-color: #f5f5f5;
+    justify-content: flex-end;
+}
+
+
+.cover-card {
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.size-card {
+    height: 550px;
+}
+
+.circle-shape1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('../storage/image/img-hamdani.jpeg');
+    background-size: cover;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.circle-shape2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('../storage/image/img-ferry.jpeg');
+    background-size: cover;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.circle-shape3 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('../storage/image/img-sam.jpeg');
+    background-size: cover;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.circle-shape4 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url('../storage/image/img-java.jpeg');
+    background-size: cover;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
