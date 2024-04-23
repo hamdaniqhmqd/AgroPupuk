@@ -10,6 +10,7 @@ use App\Http\Controllers\ControllerLamanUtama;
 
 // Ferry
 use App\Http\Controllers\ControllerLamanBeranda;
+use App\Http\Controllers\ControllerLamanTentangKami;
 
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
@@ -29,7 +30,13 @@ use App\Http\Controllers\FormController;
 // });
 
 // route buat laman beranda
-Route::resource('/', ControllerLamanBeranda::class);
+Route::resource('/beranda', ControllerLamanBeranda::class);
+
+// route buat laman tentang kami
+Route::get('/tentangkami', function () {
+    return view('layouts.laman_tentangkami');
+})->name('tentangkami');
+
 
 // route buat laman produk
 Route::resource('/produk', ControllerLamanProduk::class);
