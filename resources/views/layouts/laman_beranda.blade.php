@@ -17,6 +17,15 @@
     <!--font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+
+        .card-hover {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .card-hover:hover {
+            background-color: white;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+        }
         .kotak-konten {
             background-image: url('{{ asset('storage/image/wave.png') }}');
         }
@@ -82,33 +91,6 @@
         <!-- end Benner AgroPupuk-->
 
         <!-- Start Berita AgroPupuk-->
-        {{-- <div class="container mt-5 mb-5 ">
-            <div class="row row-cols-4  row-cols-md-4 row-cols-sm-4  g-4">
-                <div class="col">
-                    <div class="produk-card">
-
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="produk-card">
-
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="produk-card">
-
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="produk-card">
-
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         @include('component.berita')
         <!-- end Berita AgroPupuk-->
 
