@@ -3,7 +3,7 @@
 // untuk route ini penting tau
 use Illuminate\Support\Facades\Route;
 
-// punya hamdani 
+// punya hamdani
 use App\Http\Controllers\ControllerLamanAdminBerita;
 use App\Http\Controllers\ControllerLamanBerita;
 use App\Http\Controllers\ControllerLamanUtama;
@@ -24,12 +24,12 @@ use App\Http\Controllers\FormController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return redirect('beranda');
-});
+// Route::get('/', function () {
+//     return redirect('beranda');
+// });
 
 // route buat laman beranda
-Route::resource('/beranda', ControllerLamanBeranda::class);
+Route::resource('/', ControllerLamanBeranda::class);
 
 // route buat laman produk
 Route::resource('/produk', ControllerLamanProduk::class);
@@ -64,8 +64,22 @@ Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirect
 Route::resource('/home', ControllerLamanUtama::class);
 // route buat laman berita
 Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.index');
-// laman berita untuk admin
-Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
+// laman berita untuk admin berita yang digunakan untuk mengatur data dari tabel beritas
+// mulai dari menambah, mengubah, menampilkan, dan menghapus data
+// Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
+
+Route::get('/admin_berita', [ControllerLamanAdminBerita::class,'index'])->name('admin_berita.index');
+
+Route::get('/admin_berita/buat_data',[ControllerLamanAdminBerita::class, 'buat_data'])->name('admin_berita.buat_data');
+
+Route::post('/admin_berita/proses_buat_data',[ControllerLamanAdminBerita::class, 'proses_buat_data'])->name('admin_berita.proses_buat_data');
+
+Route::get('/admin_berita/detail_data/{id}',[ControllerLamanAdminBerita::class, 'detail_data'])->name('admin_berita.detail_data');
+
+Route::get('/admin_berita/edit_data/{id}',[ControllerLamanAdminBerita::class, 'edit_data'])->name('admin_berita.edit_data');
+Route::put('/admin_berita/proses_edit_data/{id}',[ControllerLamanAdminBerita::class, 'proses_edit_data'])->name('admin_berita.proses_edit_data');
+
+Route::delete('/admin_berita/hapus_data/{id}',[ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
 
 //bagian java
 Route::get('utility/form', [FormController::class, 'showForm'])->name('formprod');
