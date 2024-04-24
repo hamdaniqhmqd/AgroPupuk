@@ -53,7 +53,7 @@ class ControllerLamanAdminBerita extends Controller
         // untuk mendapatkan file image dan merubah nama
         $image = $request->file('image');
         // digunakan untuk mengubah nama gambar menjadi inputan name
-        // beserta menyimpannya ke local storage
+        // dan tanggal saat itu beserta menyimpannya ke local storage
         $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
         $request->input('name') . '.' . $image->getClientOriginalExtension();
         // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage

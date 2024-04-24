@@ -18,6 +18,10 @@
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
         }
 
+        .gelombang {
+            background-image: url({{ asset('storage/image/gelombang.png') }});
+        }
+
         .pagination {
             display: flex;
             justify-content: center;
@@ -43,8 +47,25 @@
 <body style="background-color: #E3E3E3">
 
     @include('component.nav')
+    <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <img src="{{ asset('storage/image/coro1.png') }}" style="width: 100%; height: 700px; object-fit: cover;"  class="d-block object-fit-cover" alt="gambar1" />
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('storage/image/coro2.png') }}" style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover" alt="gambar2" />
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('storage/image/coro3.png') }}" style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover" alt="gambar3" />
+            </div>
+        </div>
+        <!--Ini konten diatas corousel-->
+    </div>
 
-    @yield("content_berita")
+
+    @yield('content_berita')
+
+    @include('component.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

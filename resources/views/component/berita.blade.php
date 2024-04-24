@@ -21,8 +21,8 @@
                                 <img src="{{ asset('/storage/gambar berita/' . $data->image) }}"
                                     class="card-img-top object-fit-cover rounded" alt="card" style="height: 150px;">
                                 <div class="card-body m-1 p-2">
-                                    <h5 class="card-title" style="overflow: hidden">{{ $data->name }}</h5>
-                                    <p class="card-text" style="height: 50px; overflow: hidden">{{ $data->description }}
+                                    <h5 class="card-title" style="height: 48px; overflow: hidden">{{ $data->name }}</h5>
+                                    <p class="card-text" style="height: 48px; overflow: hidden">{{ $data->description }}
                                     </p>
                                     <a class="link-offset-2 link-underline link-underline-opacity-0"
                                         href="{{ $data->link }}" target="_blank">

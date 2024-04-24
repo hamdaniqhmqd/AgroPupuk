@@ -4,12 +4,12 @@
     <div class="container mt-5 mb-5">
         <div class="row mb-3">
             <div class="col-12">
-                <div class="d-flex flex-wrap gap-3 justify-content-start">
+                <div class="d-flex flex-wrap justify-content-start">
                     {{-- card, untuk menampilkan gambar dan nama gambar berita sesuai dengan id --}}
-                    <div class="card border-0 rounded">
-                        <img src="{{ asset('/storage/gambar berita/' . $berita->image) }}" class="card-img-top rounded"
-                            style="width: 320px">
-                        <div class="card border-0 rounded p-2 mt-auto" style="background-color: #E3E3E3;">
+                    <div class="card border-0 rounded d-flex flex-fill justify-content-center">
+                        <img src="{{ asset('/storage/gambar berita/' . $berita->image) }}" style="width: 50%"
+                            class="card-img-top rounded mb-3 align-self-center">
+                        <div class="card border-0 rounded p-2 mb-3 flex-fill" style="background-color: #E3E3E3;">
                             <div class="card-text"><strong>Nama Gambar berita : </strong>
                                 <br>{{ $berita->image }}
                             </div>
@@ -17,7 +17,7 @@
                     </div>
                     {{-- card, untuk menampilkan data id, nama, sumber link,nama admin,
                         kapan data dibuat dan kapan data di ubah sesuai dengan id --}}
-                    <div class="card border-0 shadow-sm rounded flex-fill" style="height: 100%; background-color: #E3E3E3">
+                    <div class="card border-0 shadow-sm rounded flex-fill" style="height: 100%; background-color: #E3E3E3;">
                         <div class="card-body">
                             <div class="p-1 m-1"><strong>Id Berita : </strong><br>{{ $berita->id }}</div>
                             <div class="p-1 m-1"><strong>Nama Berita :</strong><br>{{ $berita->name }}</div>
