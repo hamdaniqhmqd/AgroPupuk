@@ -45,9 +45,16 @@ Route::get('/test', function () {
     return view('component.testproduk');
 });
 
-// Route::get('/petronitrat.blade.php', function () {
-//     return view('petronitrat');
-// });
+// hq
+
+Route::get('/listpro/list-produk', function () {
+    return view('/listpro/list-produk');
+});
+
+
+Route::get('/petronitrat.blade.php', function () {
+     return view('petronitrat');
+ });
 
 // Route::get('/phonska.blade.php', function () {
 //     return view('phonska');
@@ -60,6 +67,7 @@ Route::get('/test', function () {
 // Route::get('/za.blade.php', function () {
 //     return view('za');
 // });
+
 
 Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
 
