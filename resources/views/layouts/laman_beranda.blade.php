@@ -17,15 +17,16 @@
     <!--font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-
         .card-hover {
             background-color: transparent;
             transition: background-color 0.3s ease;
         }
+
         .card-hover:hover {
             background-color: white;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
         }
+
         .kotak-konten {
             background-image: url('{{ asset('storage/image/wave.png') }}');
         }
@@ -45,15 +46,20 @@
     <div class="container-full">
         <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
             <div class="carousel-inner">
-                <div class="carousel-item active position-relative w-100 h-100">
+                <div class="carousel-item active position-relative">
                     <img src="{{ asset('storage/image/coro1.png') }}"
-                        class="d-block w-100 object-fit-cover"alt="gambar1" />
+                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                        alt="gambar1" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('storage/image/coro2.png') }}" class="d-block w-100" alt="gabar2" />
+                    <img src="{{ asset('storage/image/coro2.png') }}"
+                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                        alt="gambar2" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('storage/image/coro3.png') }}" class="d-block w-100" alt="gamabar3" />
+                    <img src="{{ asset('storage/image/coro3.png') }}"
+                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                        alt="gambar3" />
                 </div>
             </div>
             <!--Ini konten diatas corousel-->
@@ -99,37 +105,37 @@
             <h1 class="text-white fs-1 fw-bold ">Our Groups</h1>
         </div>
 
-                <!-- logo corp -->
-                <div class="container">
-                    <div class="row row-cols-5 row-cols-md-5 row-cols-sm-5  g-4">
-                        <div class="col">
-                            <div class="logo-corp justify-center align-content-center">
-                                <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45" >
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="logo-corp justify-center align-content-center">
-                                <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="logo-corp justify-center align-content-center">
-                                <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43" >
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="logo-corp justify-center align-content-center">
-                                <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="logo-corp justify-center align-content-center">
-                                <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43" >
-                            </div>
-                        </div>
+        <!-- logo corp -->
+        <div class="container">
+            <div class="row row-cols-5 row-cols-md-5 row-cols-sm-5  g-4">
+                <div class="col">
+                    <div class="logo-corp justify-center align-content-center">
+                        <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45">
                     </div>
                 </div>
-                <!--end our groups -->
+                <div class="col">
+                    <div class="logo-corp justify-center align-content-center">
+                        <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-corp justify-center align-content-center">
+                        <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-corp justify-center align-content-center">
+                        <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-corp justify-center align-content-center">
+                        <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end our groups -->
 
 
         <!--end our groups -->

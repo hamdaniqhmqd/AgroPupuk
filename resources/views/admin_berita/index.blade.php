@@ -32,12 +32,12 @@
                                 <tr>
                                     <th scope="col" class="text-center p-1" style="width: 3%;">NO.</th>
                                     <th scope="col" class="text-center p-1">IMAGE</th>
-                                    <th scope="col" class="text-center p-1" style="width: ;">ID</th>
+                                    {{-- <th scope="col" class="text-center p-1" style="width: ;">ID</th> --}}
                                     <th scope="col" class="text-center p-1" style="width: ;">JUDUL BERITA</th>
                                     {{-- <th scope="col" class="text-center p-1" style="width: 25%;">DESKRIPSI</th> --}}
-                                    <th scope="col" class="text-center p-1" style="width: ;">SUMBER LINK</th>
-                                    <th scope="col" class="text-center p-1" style="width: ;">NAMA ADMIN</th>
-                                    <th scope="col" class="text-center p-1" style="width: 15%;">AKSI</th>
+                                    <th scope="col" class="text-center p-1" style="width: 20%;">SUMBER LINK</th>
+                                    <th scope="col" class="text-center p-1" style="width: 10%;">NAMA ADMIN</th>
+                                    <th scope="col" class="text-center p-1" style="width: 20%;">AKSI</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,9 +48,9 @@
                                         <td class="text-center">{{ $loop->index + 1 }}</td>
                                         <td class="text-center" style="width: 140px;">
                                             <img src="{{ asset('storage/gambar berita/' . $data->image) }}" class="rounded"
-                                                style="width: 120px">
+                                                style="width: 140px">
                                         </td>
-                                        <td class="text-center">{{ $data->id }}</td>
+                                        {{-- <td class="text-center">{{ $data->id }}</td> --}}
                                         <td class="text-center">{{ $data->name }}</td>
                                         {{-- <td class="text-break">{{ $data->description }}</td> --}}
                                         <td class="text-center"><a href="{{ $data->link }}">{{ $data->link }}</a></td>

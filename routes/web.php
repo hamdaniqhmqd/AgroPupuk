@@ -30,7 +30,7 @@ use App\Http\Controllers\FormController;
 // });
 
 // route buat laman beranda
-Route::resource('/', ControllerLamanBeranda::class);
+Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
 
 // route buat laman tentang kami
 Route::get('/tentangkami', function () {
@@ -39,7 +39,7 @@ Route::get('/tentangkami', function () {
 
 
 // route buat laman produk
-Route::resource('/produk', ControllerLamanProduk::class);
+Route::get('/produk', [ControllerLamanProduk::class, 'index'])->name('produk.index');
 
 Route::get('/test', function () {
     return view('component.testproduk');
@@ -82,6 +82,10 @@ Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.inde
 // laman berita untuk admin berita yang digunakan untuk mengatur data dari tabel beritas
 // mulai dari menambah, mengubah, menampilkan, dan menghapus data
 // Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
+
+Route::get('/sidebar', function () {
+    return view('component.sidebar');
+});
 
 // route get index, untuk menampilkan data berita di laman admin berita
 Route::get('/admin_berita', [ControllerLamanAdminBerita::class,'index'])->name('admin_berita.index');
