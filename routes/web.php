@@ -30,7 +30,7 @@ use App\Http\Controllers\FormController;
 // });
 
 // route buat laman beranda
-Route::resource('/beranda', ControllerLamanBeranda::class);
+Route::resource('/', ControllerLamanBeranda::class);
 
 // route buat laman tentang kami
 Route::get('/tentangkami', function () {
