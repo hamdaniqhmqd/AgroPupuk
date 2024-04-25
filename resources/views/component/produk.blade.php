@@ -1,8 +1,10 @@
 <!-- Info Prodduk -->
 <div class="content-produk bg-abu  ">
     <!-- Ini Text Info Produk-->
-    <h1 class="fs-1 z-2 pt-5 fw-bold warna-hijau text-center  ">Informasi Produk</h1>
-    <p class="z-2 warna-abu-hitam fs-6 text-center">
+    <h1 class="fs-1 z-2 pt-5 fw-bold warna-hijau text-center" data-aos="fade-up" data-aos-delay="100"
+    data-aos-duration="1500">Informasi Produk</h1>
+    <p class="z-2 warna-abu-hitam fs-6 text-center" data-aos="fade-up" data-aos-delay="200"
+    data-aos-duration="2000" >
         Produk yang kita tampilkan merupakan produk <br>
         terbaru yang tersedia.</p>
 </div>
@@ -11,7 +13,8 @@
     <!-- Kotak-kotak start Area -->
         <!-- Mulai Perulangan untuk Membuat Card -->
         <div class="container">
-            <div class="kotak-kotak">
+            <div class="kotak-kotak" data-aos="fade-up" data-aos-delay="300"
+            data-aos-duration="2000"  >
                 <?php for ($i = 1; $i <= 4; $i++) { ?>
                 <div class="kotak-luar" >
                     <div class="kotak-dalam">
@@ -39,6 +42,13 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+<!-- Repo Animasi AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- Script Buat Animasi AUOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
 <style>
         /* Card Start */
