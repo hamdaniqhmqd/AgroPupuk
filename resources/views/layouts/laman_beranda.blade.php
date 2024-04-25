@@ -73,7 +73,9 @@
             <div class="container kontendalam ">
                 <div class="bungkus-teks" data-aos="fade-right" data-aos-delay="50"
                 data-aos-duration="2000" > <!--Animasi Aos -->
-                    <h1 class="ttg-kami" data-text="Tentang Kami" data-aos-delay="100" >Tentang Kami</h1>
+                    <div class="bungkus-animasi">
+                        <h1 class="ttg-kami" data-text="Tentang Kami" data-aos-delay="100" >Tentang Kami</h1>
+                    </div>
                     <p class="warna-abu-hitam fw-bold  my-3 " data-aos-delay="200">
                         AgroPupuk adalah salah satu website yang membatu para <br />
                         petani agar mudah mencari informasi tentang berbagai <br />
