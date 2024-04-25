@@ -41,7 +41,7 @@
 <body class="bg-abu">
 
     <!--Navbar -->
-    @include('component.nav')
+    @include('component.navbaru')
     <!-- End Navbar -->
 
     <!-- Ini Corousel -->
@@ -79,7 +79,7 @@
                         petani agar mudah mencari informasi tentang berbagai <br />
                         hal yang berkaitan dengan pupuk.</p>
                     <div class="btn-selengkapnya">
-                    <a class="text-decoration-none text-white btn-hijau mt-4 " 
+                    <a class="text-decoration-none text-white btn-hijau mt-4 btn-selengkapnyaa" 
                     type="button" href="{{ route('tentangkami') }}" data-aos-delay="300">Selengkapnya</a>
                     </div>
                 </div>
