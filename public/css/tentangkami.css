@@ -37,12 +37,13 @@
 }
 .cover-gambar {
     width: 85%;
-    height: 500px;
+    height: 450px;
     margin: auto;
 }
 .gambar-kami {
     width: 100%;
     height: 100%;
+    margin-top: 80px;
     object-fit: cover;
     border-radius: 20px;
     filter: brightness(40%);
@@ -60,16 +61,25 @@
     position: relative;
 }
 
+/* .cover-logo {
+    width: 40%;
+    height: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
 .cover-text {
-    width: 80%;
+    width: 75%;
     margin: auto;
     text-align: justify;
 }
 
 .cover-visimisi {
-    margin-top: 120px;
-    width: 80%;
-    height: 600px;
+    /* margin-top: 120px; */
+    width: 75%;
+    height: 450px;
     margin: auto;
 }
 
@@ -106,54 +116,63 @@
 
 .cover-card {
     width: 80%;
-    height: 600px;
+    height: 500px;
     margin: auto;
     margin-top: 150px;
 }
 
+h3.card-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.card-text {
+    font-size: 11px;
+}
+
 .size-card {
-    height: 550px;
+    height: 430px;
 }
 
 .circle-shape1 {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 50%;
     background-image: url('../storage/image/img-hamdani.jpeg');
     background-size: cover;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
 }
 .circle-shape2 {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
+    margin-top: 15px;
+    margin-bottom: 20px;
     border-radius: 50%;
     background-image: url('../storage/image/img-ferry.jpeg');
     background-size: cover;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
 }
 .circle-shape3 {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
+    margin-top: 15px;
+    margin-bottom: 20px;
     border-radius: 50%;
     background-image: url('../storage/image/img-sam.jpeg');
     background-size: cover;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
 }
 .circle-shape4 {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
+    margin-top: 25px;
+    margin-bottom: 30px;
     border-radius: 50%;
     background-image: url('../storage/image/img-java.jpeg');
     background-size: cover;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
 }
 
 

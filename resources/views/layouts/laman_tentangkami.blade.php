@@ -30,11 +30,11 @@
         <div class="konten-kami">
             <h1 class="text-center warna-hijau fw-bold" style="font-size: 50px; padding-top:50px;">Tentang Kami</h1>
             <div class="cover-logo d-flex justify-content-center ">
-                <img class="logo-kami align-content-center mt-4 shadow" src="{{ asset('storage/image/logo-kami.png') }}" alt="logo-kami">
+                <img class="logo-kami align-content-center mt-4 shadow" width="500" height="110"  src="{{ asset('storage/image/logo-kami.png') }}" alt="logo-kami">
             </div>
             <div class="cover-text mt-5 pb-5 mb-5 ">
-                <p class="fs-5 warna-hijau">    
-                    Logo <span class="fw-bold fs-4 ">AgroPupuk</span> adalah lebih dari sekadar simbol. Ia mencerminkan identitas dan tujuan dari platform ini.
+                <p class=" warna-hijau">    
+                    Logo <span class="fw-bold fs-5 ">AgroPupuk</span> adalah lebih dari sekadar simbol. Ia mencerminkan identitas dan tujuan dari platform ini.
                     Dari bagian dalamnya, kita bisa melihat betapa cermatnya perancangan yang menggabungkan kata-kata 
                     "Agro" dan "Pupuk". Kata <span class="fw-bold fs-5 ">"Agro"</span> diambil dari <span class="fw-bold fs-5 ">"Pertanian"</span>, sementara <span class="fw-bold fs-5 ">"Pupuk"</span> merujuk pada sistem pembahasan
                     utama situs ini, yakni pupuk. <br></br>
@@ -48,7 +48,7 @@
                     Sebagai sebuah logo, ia berhasil menggambarkan esensi situs dengan sederhana namun kuat. Dan melalui logo ini, 
                     kita bisa memahami lebih dalam tentang fokus dan tujuan dari situs AgroPupuk. <br></br>
                     
-                    <span class="fw-bold fs-4 "> AgroPupuk: Melangkah Maju dalam Dunia Pupuk </span><br></br>
+                    <span class="fw-bold fs-5 "> AgroPupuk: Melangkah Maju dalam Dunia Pupuk </span><br></br>
                     
                     AgroPupuk bukanlah sekadar situs informasi biasa. Ia adalah rumah bagi sumber-sumber terkini tentang tren dalam
                     dunia pupuk. Dari berita terbaru mengenai inovasi pupuk hingga rekomendasi harga pasar, AgroPupuk memiliki 
@@ -80,14 +80,14 @@
                 </div>
                 <div class="teks-vm text-center align-content-center">
                     <div style="width:80%; margin:auto;">
-                        <h1 class="text-center warna-hijau fw-bold" style="font-size: 50px;">VISI</h1>
-                        <p class="fs-5 warna-hijau">
+                        <h1 class="text-center warna-hijau fw-bold" style="font-size: 35px;">VISI</h1>
+                        <p class=" warna-hijau">
                             Menjadi sumber informasi dan pengetahuan yang berguna bagi petani 
                             sampai masyarakat awam yang berguna untuk perkembangan industri pertanian
                             diindonesia.
                         </p>
-                        <h1 class="text-center warna-hijau fw-bold" style="font-size: 50px; padding-top:50px;">MISI</h1>
-                        <p class="fs-5 warna-hijau">
+                        <h1 class="text-center warna-hijau fw-bold" style="font-size: 35px; padding-top:40px;">MISI</h1>
+                        <p class=" warna-hijau">
                                 Menyediakan berita dan informasi mengenai pupuk.
                                 Memberikan Informasi harga pupuk secara akurat.
                                 Menyediakan tentang berbagai jenis pupuk serta
@@ -101,50 +101,50 @@
             <div class="list-card row gap-4">
                 <div class="card col size-card mb-5">
                     <div class="card-body warna-hijau text-center">
-                        <div class="circle-shape1"></div>
-                        <h3 class="card-title">Ahmad Hamdani</h3>
+                        <div class="circle-shape1 mt-3"></div>
+                        <h3 class="card-title mt-4">Ahmad Hamdani</h3>
                         <p class="card-text">
                             <strong>Nomor HP:</strong> 08123456789<br>
                             <strong>Email:</strong> ahmadhamdani@example.com<br>
                             <strong>Spesialisasi:</strong> Ahli Pupuk Organik
                         </p>
-                        <h4 style="margin-top: 20px; font-weight: bold;">POLITEKNIK NEGERI MADIUN</h4>
+                        <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
                 <div class="card col size-card mt-5">
                     <div class="card-body text-center">
-                        <div class="circle-shape2"></div>
-                        <h3 class="card-title">Ferry Fernando</h3>
+                        <div class="circle-shape2 mt-3"></div>
+                        <h3 class="card-title mt-4">Ferry Fernando</h3>
                         <p class="card-text">
                             <strong>Nomor HP:</strong> 08234567890<br>
                             <strong>Email:</strong> feryfernando@example.com<br>
                             <strong>Spesialisasi:</strong> Peneliti Pertanian
                         </p>
-                        <h4 style="margin-top: 20px; font-weight: bold;">POLITEKNIK NEGERI MADIUN</h4>
+                        <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
                 <div class="card col size-card mb-5">
                     <div class="card-body text-center">
-                        <div class="circle-shape3"></div>
-                        <h3 class="card-title">Samodera Haqqi</h3>
+                        <div class="circle-shape3 mt-3"></div>
+                        <h3 class="card-title mt-4">Samodera Haqqi</h3>
                         <p class="card-text">
                             <strong>Nomor HP:</strong> 08345678901<br>
                             <strong>Email:</strong> samoderahaqqi@example.com<br>
                             <strong>Spesialisasi:</strong> Pengembang Pupuk Anorganik
                         </p>
-                        <h4 style="margin-top: 20px; font-weight: bold;">POLITEKNIK NEGERI MADIUN</h4>
+                        <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
                 <div class="card col size-card mt-5">
                     <div class="card-body text-center">
-                        <div class="circle-shape4"></div>
-                        <h3 class="card-title">Kress Satoe Java</h3>
+                        <div class="circle-shape4 mt-3"></div>
+                        <h3 class="card-title mt-4">Kress Satoe Java</h3>
                         <p class="card-text">
                             <strong>Nomor HP:</strong> 08456789012<br>
                             <strong>Email:</strong> kresssatoe@example.com<br>
                             <strong>Spesialisasi:</strong> Aktivis Lingkungan
                         </p>
-                        <h4 style="margin-top: 20px; font-weight: bold;">POLITEKNIK NEGERI MADIUN</h4>
+                        <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
             </div>

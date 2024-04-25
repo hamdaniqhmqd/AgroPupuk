@@ -43,49 +43,51 @@
     <!-- End Navbar -->
 
     <!-- Ini Corousel -->
-    <div class="container-full">
-        <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
-            <div class="carousel-inner">
-                <div class="carousel-item active position-relative">
-                    <img src="{{ asset('storage/image/coro1.png') }}"
-                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
-                        alt="gambar1" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('storage/image/coro2.png') }}"
-                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
-                        alt="gambar2" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('storage/image/coro3.png') }}"
-                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
-                        alt="gambar3" />
-                </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <img src="{{ asset('storage/image/gambar-kami.jpg') }}"
+                    style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                    alt="gambar1" />
             </div>
-            <!--Ini konten diatas corousel-->
+            <div class="carousel-item">
+                <img src="{{ asset('storage/image/coro2.png') }}"
+                    style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                    alt="gambar2" />
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('storage/image/coro3.png') }}"
+                    style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                    alt="gambar3" />
+            </div>
         </div>
-        <div class="kotak-konten shadow-lg ">
-            <div class="svgku">
-                <!--ini wave-->
-            </div>
-            <div class="konten ">
-                <div class="container kontendalam ">
-                    <div class="">
-                        {{-- <h1 class="fw-bolder fs-1 -ml-6S warna-hijau mt-5 ">Tentang Kami</h1> --}}
-                        <h1 class="ttg-kami" data-text="Tentang Kami">Tentang Kami</h1>
-                        <p class="warna-abu-hitam fs-5 fw-bold  my-3 ">
-                            AgroPupuk adalah salah satu website yang membatu para <br />
-                            petani agar mudah mencari informasi tentang berbagai <br />
-                            hal yang berkaitan dengan pupuk.</p>
-                        <div class="btn-selengkapnya">
-                            <a class="text-decoration-none text-white btn-hijau mt-4 " type="button"
-                                href="#">Selengkapnya</a>
-                        </div>
+        <!--Ini konten diatas corousel-->
+    </div>
+    <div class="kotak-konten shadow-lg ">
+        <div class="svgku">
+            <!--ini wave-->
+        </div>
+        <div class="konten ">
+            <div class="container kontendalam ">
+                <div class="">
+                    {{-- <h1 class="fw-bolder fs-1 -ml-6S warna-hijau mt-5 ">Tentang Kami</h1> --}}
+                    <h1 class="ttg-kami" data-text="Tentang Kami">Tentang Kami</h1>
+                    <p class="warna-abu-hitam fw-bold  my-3 ">
+                        AgroPupuk adalah salah satu website yang membatu para <br />
+                        petani agar mudah mencari informasi tentang berbagai <br />
+                        hal yang berkaitan dengan pupuk.</p>
+                    <div class="btn-selengkapnya">
+                    <a class="text-decoration-none text-white btn-hijau mt-4 " 
+                    type="button" href="{{ route('tentangkami') }}">Selengkapnya</a>
                     </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
+
+
+    <div class="container-full">
 
 
         <!-- Info Prodduk -->
