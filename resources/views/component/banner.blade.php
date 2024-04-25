@@ -1,3 +1,11 @@
+<style>
+    @media only screen and (max-width: 600px) {
+        .jarak-text {
+            display: none;
+        }
+    }
+</style>
+
 <div class="bg-agro d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="d-lg-flex justify-content-between align-items-center">

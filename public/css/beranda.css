@@ -31,9 +31,6 @@
     background-color: #666666;
 }
 
-
-
-
 /* Ini Beranda */
 .btn-hijau {
     background-color: #224038;
@@ -45,7 +42,15 @@
     padding-bottom: 8px;
 }
 
+.btn-selengkapnyaa {
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* animasi smooth */
+}
 
+.btn-selengkapnyaa:hover {
+    background: linear-gradient(to right, #134525,#224038df, #175232);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 .navbar-custom {
     width: 100vw;
     display: flex;
@@ -87,18 +92,16 @@ h1 {
     display : none;
 }
 
-
-
-/* Gading */
 .kotak-konten{
-    padding-top: 100px;
+    padding-top: 60px;
     background-size: cover;
     position: relative;
-    margin-top: -300px;
+    margin-top: -200px;
     width: 100%;
-    height: 550px;
+    height: 450px;
 }
-/* gading */
+
+
 @media only screen and (max-width: 860px) {
     #navbarNavAltMarkup {
         font-size: 0.7em;
@@ -114,23 +117,50 @@ h1 {
     }
     .hamburgermenu {
         display: block;
-            width: 34px;
-            height: 34px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
+        width: 34px;
+        height: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 2px;
+        overflow: hidden;
     }
+}
 
+
+/* Animasi hamburger menu */
 .strip {
     display: block;
     width: 100%;
     height: 20%;
-    background-color:#ffffff ;
+    background-color: #ffffff;
+    transition: transform 0.3s;
 }
+
+.strip:nth-child(1) {
+    transform-origin: top left;
+}
+
+.strip:nth-child(2) {
+    opacity: 1;
+}
+
+.strip:nth-child(3) {
+    transform-origin: bottom left;
+}
+
+.hamburgermenu.active .strip:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburgermenu.active .strip:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgermenu.active .strip:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
 
 .atascoro{
     top: 400px;
@@ -148,6 +178,7 @@ h1 {
     height: 300px;
     background-color: #224038;
 }
+
 .our-grub {
     width: 100%;
     height: 90px;
@@ -161,12 +192,11 @@ h1 {
     background-color: #ffffff;
 }
 
-
 /* animasi tentang kami */
 .ttg-kami {
     position: relative;
     font-weight: bolder;
-    font-size: 45px;
+    font-size: 40px;
     color: #ffffff;
     -webkit-text-stroke: 0.3px #224038;
 }
@@ -191,3 +221,57 @@ h1 {
         width: 28%;
     }
 }
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+    .btn-hijau {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .navbar-custom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburgermenu {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .strip {
+        height: 15%;
+    }
+
+    .produk-card {
+        width: 200px;
+        height: 250px;
+    }
+
+    .bg-agro {
+        height: 200px;
+    }
+
+    .our-grub {
+        height: 70px;
+    }
+
+    .logo-corp {
+        width: 180px;
+        height: 70px;
+    }
+
+    .ttg-kami {
+        font-size: 30px;
+    }
+
+    .ttg-kami::before {
+        border-right: 1px solid #224038;
+    }
+
+}
+
