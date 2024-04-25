@@ -195,6 +195,7 @@ h1 {
 /* animasi tentang kami */
 .ttg-kami {
     position: relative;
+    width: 100%;
     font-weight: bolder;
     font-size: 40px;
     color: #ffffff;
@@ -213,12 +214,16 @@ h1 {
     animation: animate 2.5s ease-in-out infinite;
 }
 
+.bungkus-animasi {
+    width: 30%;
+}
+
 @keyframes animate {
     0%, 100% {
         width: 0%;
     }
-    35%, 65% {
-        width: 28%;
+    50% {
+        width: 100%;
     }
 }
 

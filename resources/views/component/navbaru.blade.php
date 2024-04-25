@@ -35,6 +35,11 @@
     </nav>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -45,7 +50,7 @@
             margin: 0;
         }
         .cover-nav{
-            width: 1280px;
+            width: 85%;
             margin: auto;
             z-index: 1;
         }
@@ -92,6 +97,47 @@
             display: flex;
             justify-content: flex-end;
         }
+
+        @media only screen and (max-width: 1130px) {
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+                padding: 10px 20px;
+                margin-top: 10px;
+            }
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+                font-size: 13px;
+                line-height: 16px;
+            }
+        }
+        @media only screen and (max-width: 900px) {
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+                display: none;
+            }
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+                display: none;
+            }
+        }
+        
+        @media only screen and (max-width: 905px) {
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+                padding: 5px 10px;
+                margin-top: 5px;
+            }
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+                font-size: 4px;
+                line-height: 3px;
+            }
+        }
+        @media only screen and (max-width: 1080px) {
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+                padding: 5px 10px;
+                margin-top: 8px;
+            }
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+                font-size: 6px;
+                line-height: 5px;
+            }
+        }
+
         .main-head .main-menu .nav-menu .nav-list .nav-list-item{
             padding: 15px 30px;
             list-style: none;
