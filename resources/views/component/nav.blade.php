@@ -9,9 +9,9 @@
       </a>
       <!--Text Nav-->
       <div class="w-50 px-0 text-center d-flex justify-content-around" id="navbarNavAltMarkup">
-          <a class="nav-link active text-white" aria-current="page" href="#">Beranda</a>
-          <a class="nav-link text-white" href="#">Produk</a>
-          <a class="nav-link text-white" href="#">Berita</a>
+          <a class="nav-link active text-white" aria-current="page" href="{{ route('beranda') }}">Beranda</a>
+          <a class="nav-link text-white" href="{{ route('produk.index') }}">Produk</a>
+          <a class="nav-link text-white" href="{{ route('berita.index') }}">Berita</a>
           <a class="nav-link text-white" href="#">SiPupuk</a>
           <a class="nav-link text-white" href="#">Tentang Kami</a>
       </div>

@@ -9,11 +9,13 @@ class Berita extends Model
 {
     use HasFactory;
 
+    // isi dari tabel beritas yang akan di kelola melalui
+    // controller laman admin berita
     protected $fillable = [
-      'id',
-      'image',
-      'name',
-      'description',
-      'link',
+        'id',
+        'image',
+        'name',
+        'description',
+        'link',
     ];
 }

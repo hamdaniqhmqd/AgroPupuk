@@ -8,32 +8,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}" />
     <style>
-
-        th,
-        td {
-            padding: 5px;
-            word-wrap: break-word;
-            text-align: center;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #224038;
-            /* untuk menambahkan garis di bawah setiap data */
-        }
     </style>
 </head>
 
 <body style="color: #E3E3E3">
+
     @yield('admin.berita')
     @yield('tambah_berita')
     @yield('edit_berita')
+    @yield('detail_berita')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <script>
         // untuk tampilan alert atau pemberitahuan
@@ -54,34 +50,7 @@
                 timer: 2000
             });
         @endif
-
-        function hapusData() {
-            Swal.fire({
-                title: 'Apakah Anda yakin?',
-                text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Ya, hapus!',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Jika pengguna mengonfirmasi dengan click ya, 
-                    // form akan disubmit
-                    document.getElementById('formHapusData').submit();
-                } else {
-                    // Jika pengguna memilih "Tidak", 
-                    // form tidak akan disubmit
-                    return false;
-                }
-            });
-
-            // Jangan disubmit secara otomatis sebelum mendapatkan konfirmasi
-            return false;
-        }
     </script>
-
-
 </body>
+
 </html>
