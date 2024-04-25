@@ -48,7 +48,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
         <div class="carousel-inner">
             <div class="carousel-item active position-relative">
-                <img src="{{ asset('storage/image/gambar-kami.jpg') }}"
+                <img src="{{ asset('storage/image/coro1.png') }}"
                     style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
                     alt="gambar1" />
             </div>
