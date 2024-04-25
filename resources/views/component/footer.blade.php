@@ -1,4 +1,6 @@
-<!--end our groups -->
+
+    <div data-aos="fade-up" data-aos-duration="500">
+
         <!--foooter-->
         <!-- Remove the container if you want to extend the Footer to full width. -->
         <div class="container-full mt-5">
@@ -107,3 +109,13 @@
         </div>
         <!-- End of .container -->
         <!--end footer-->
+
+    </div>
+
+        <!-- Repo Animasi AOS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- Script Buat Animasi AUOS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/tentangkami.css') }}" />
     <!--font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Repo Animasi AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
@@ -28,12 +30,13 @@
             <img class="gambar-kami" src="{{ asset('storage/image/gambar-kami.jpg') }}" alt="gambar-kami">
         </div>
         <div class="konten-kami">
-            <h1 class="text-center warna-hijau fw-bold" style="font-size: 50px; padding-top:50px;">Tentang Kami</h1>
-            <div class="cover-logo d-flex justify-content-center ">
+            <h1 class="text-center warna-hijau fw-bold" style="font-size: 50px; padding-top:50px;" data-aos="fade-up"
+            data-aos-delay="100" data-aos-duration="1000">Tentang Kami</h1>
+            <div class="cover-logo d-flex justify-content-center " data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">
                 <img class="logo-kami align-content-center mt-4 shadow" width="500" height="110"  src="{{ asset('storage/image/logo-kami.png') }}" alt="logo-kami">
             </div>
             <div class="cover-text mt-5 pb-5 mb-5 ">
-                <p class=" warna-hijau">    
+                <p class=" warna-hijau" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">    
                     Logo <span class="fw-bold fs-5 ">AgroPupuk</span> adalah lebih dari sekadar simbol. Ia mencerminkan identitas dan tujuan dari platform ini.
                     Dari bagian dalamnya, kita bisa melihat betapa cermatnya perancangan yang menggabungkan kata-kata 
                     "Agro" dan "Pupuk". Kata <span class="fw-bold fs-5 ">"Agro"</span> diambil dari <span class="fw-bold fs-5 ">"Pertanian"</span>, sementara <span class="fw-bold fs-5 ">"Pupuk"</span> merujuk pada sistem pembahasan
@@ -73,7 +76,7 @@
     
 
     <div class="container-fluid bg-abu" style="padding-top: 140px;">
-        <div class="cover-visimisi pt-4">
+        <div class="cover-visimisi pt-4" data-aos="flip-left"  data-aos-duration="1200">
             <div class="visi-misi">
                 <div class="gambar-vm">
                     <img class="gambar" src="{{ asset('storage/image/gambar-visi-misi.jpg') }}"  alt="image visi-misi">
@@ -99,7 +102,7 @@
             </div>
         </div><div class="cover-card">
             <div class="list-card row gap-4">
-                <div class="card col size-card mb-5">
+                <div class="card col size-card mb-5" data-aos="fade-up"  data-aos-delay="100" data-aos-duration="1100">
                     <div class="card-body warna-hijau text-center">
                         <div class="circle-shape1 mt-3"></div>
                         <h3 class="card-title mt-4">Ahmad Hamdani</h3>
@@ -111,7 +114,7 @@
                         <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
-                <div class="card col size-card mt-5">
+                <div class="card col size-card mt-5"  data-aos="fade-down"  data-aos-delay="200" data-aos-duration="1600">
                     <div class="card-body text-center">
                         <div class="circle-shape2 mt-3"></div>
                         <h3 class="card-title mt-4">Ferry Fernando</h3>
@@ -123,8 +126,8 @@
                         <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
-                <div class="card col size-card mb-5">
-                    <div class="card-body text-center">
+                <div class="card col size-card mb-5" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="2100">
+                    <div class="card-body text-center" >
                         <div class="circle-shape3 mt-3"></div>
                         <h3 class="card-title mt-4">Samodera Haqqi</h3>
                         <p class="card-text">
@@ -135,7 +138,7 @@
                         <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
-                <div class="card col size-card mt-5">
+                <div class="card col size-card mt-5"  data-aos="fade-down"  data-aos-delay="400" data-aos-duration="2600">
                     <div class="card-body text-center">
                         <div class="circle-shape4 mt-3"></div>
                         <h3 class="card-title mt-4">Kress Satoe Java</h3>
@@ -154,6 +157,11 @@
     </div>
 
     @include('component.footer')
-
+    
+    <!-- Script Buat Animasi AUOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

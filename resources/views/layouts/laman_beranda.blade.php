@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/beranda.css') }}" />
     <!--font awsome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Repo Animasi AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         .card-hover {
             background-color: transparent;
@@ -69,16 +71,16 @@
         </div>
         <div class="konten ">
             <div class="container kontendalam ">
-                <div class="">
-                    {{-- <h1 class="fw-bolder fs-1 -ml-6S warna-hijau mt-5 ">Tentang Kami</h1> --}}
-                    <h1 class="ttg-kami" data-text="Tentang Kami">Tentang Kami</h1>
-                    <p class="warna-abu-hitam fw-bold  my-3 ">
+                <div class="bungkus-teks" data-aos="fade-right" data-aos-delay="50"
+                data-aos-duration="2000" > <!--Animasi Aos -->
+                    <h1 class="ttg-kami" data-text="Tentang Kami" data-aos-delay="100" >Tentang Kami</h1>
+                    <p class="warna-abu-hitam fw-bold  my-3 " data-aos-delay="200">
                         AgroPupuk adalah salah satu website yang membatu para <br />
                         petani agar mudah mencari informasi tentang berbagai <br />
                         hal yang berkaitan dengan pupuk.</p>
                     <div class="btn-selengkapnya">
                     <a class="text-decoration-none text-white btn-hijau mt-4 " 
-                    type="button" href="{{ route('tentangkami') }}">Selengkapnya</a>
+                    type="button" href="{{ route('tentangkami') }}" data-aos-delay="300">Selengkapnya</a>
                     </div>
                 </div>
 
@@ -111,27 +113,34 @@
         <div class="container">
             <div class="row row-cols-5 row-cols-md-5 row-cols-sm-5  g-4">
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center">
+                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    data-aos-duration="1500">
                         <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center">
+                    <div class="logo-corp justify-center align-content-center"data-aos="zoom-in" 
+                    data-aos-delay="100" data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center">
+                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    data-aos-delay="200" data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center">
+                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    data-aos-delay="300"
+                    data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center">
+                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    data-aos-delay="400"
+                    data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43">
                     </div>
                 </div>
@@ -150,7 +159,11 @@
 
     </div> <!--Container Content-->
 
-
+    <!-- Script Buat Animasi AUOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
