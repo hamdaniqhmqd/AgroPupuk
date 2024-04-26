@@ -1,8 +1,8 @@
 @extends('layouts.laman_berita')
 @section('content_berita')
-<style>
+    <style>
 
-</style>
+    </style>
     <div class="container pt-5">
         <div class="row m-2 mb-5 mt-2">
             <div class="col-md-6">
@@ -28,14 +28,15 @@
                         jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
                     @forelse ($berita as $data)
                         <div class="card m-2 border-0 hover" style="width: 250px;height: 300px;">
-                            <img src="{{ asset('/storage/gambar berita/' . $data->image) }}"
-                                class="card-img-top object-fit-cover rounded" alt="{{ $data->image }}"
+                            <img src="{{ asset('/storage/gambar berita/' . $data->gambar_berita) }}"
+                                class="card-img-top object-fit-cover rounded" alt="{{ $data->gambar_berita }}"
                                 style="height: 145px;">
                             <div class="card-body m-1 p-2">
-                                <h5 class="card-title" style="height: 48px; overflow: hidden;">{{ $data->name }}</h5>
-                                <p class="card-text" style="height: 48px; overflow: hidden">{{ $data->description }}</p>
-                                <a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ $data->link }}"
-                                    target="_blank">
+                                <h5 class="card-title" style="height: 48px; overflow: hidden;">{{ $data->nama_berita }}</h5>
+                                <p class="card-text" style="height: 48px; overflow: hidden">{{ $data->deskripsi_berita }}
+                                </p>
+                                <a class="link-offset-2 link-underline link-underline-opacity-0"
+                                    href="{{ route('admin_berita.pengunjung', ['id' => $data->id]) }}" target="_blank">
                                     Lihat selengkapnya
                                 </a>
                             </div>
@@ -61,8 +62,9 @@
                     @forelse ($beritaSide as $data)
                         <div class="card m-2 border-0 hover" style="width: 250px; height: 110px;">
                             <div class="card-body">
-                                <h5 class="card-title"  style="height: 48px; overflow: hidden;">{{ $data->name }}</h5>
-                                <a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ $data->link }}">
+                                <h5 class="card-title" style="height: 48px; overflow: hidden;">{{ $data->nama_berita }}</h5>
+                                <a class="link-offset-2 link-underline link-underline-opacity-0"
+                                    href="{{ route('admin_berita.pengunjung', ['id' => $data->id]) }}" target="_blank">
                                     Lihat selengkapnya
                                 </a>
                             </div>

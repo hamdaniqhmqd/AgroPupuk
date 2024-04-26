@@ -18,14 +18,14 @@
                         <div class="card m-2 border-0 hover"
                             style="width: 250px; height: 300px; background-color: transparent; transition: background-color 0.3s ease;">
                             <div class="card-hover rounded">
-                                <img src="{{ asset('/storage/gambar berita/' . $data->image) }}"
+                                <img src="{{ asset('/storage/gambar berita/' . $data->gambar_berita) }}"
                                     class="card-img-top object-fit-cover rounded" alt="card" style="height: 150px;">
                                 <div class="card-body m-1 p-2">
-                                    <h5 class="card-title" style="height: 48px; overflow: hidden">{{ $data->name }}</h5>
-                                    <p class="card-text" style="height: 48px; overflow: hidden">{{ $data->description }}
+                                    <h5 class="card-title" style="height: 48px; overflow: hidden">{{ $data->nama_berita }}</h5>
+                                    <p class="card-text" style="height: 48px; overflow: hidden">{{ $data->deskripsi_berita }}
                                     </p>
                                     <a class="link-offset-2 link-underline link-underline-opacity-0"
-                                        href="{{ $data->link }}" target="_blank">
+                                        href="{{ route('admin_berita.pengunjung', ['id' => $data->id]) }}" target="_blank">
                                         Lihat selengkapnya
                                     </a>
                                 </div>

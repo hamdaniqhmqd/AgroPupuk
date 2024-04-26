@@ -19,8 +19,8 @@
                                         dengan mengirim nilai sesuai dengan atribut value --}}
                                     <form action="{{ route('admin_berita.index') }}" class="" method="GET">
                                         <input class="form-control me-2" type="text"
-                                            placeholder="Ketik berita yang di cari" name="search"
-                                            value="{{ $request->get('search') }}">
+                                            placeholder="Ketik berita yang di cari" name="pencarian"
+                                            value="{{ $request->get('pencarian') }}">
                                     </form>
                                 </div>
                             </div>
@@ -31,11 +31,11 @@
                             <thead class="table-success">
                                 <tr>
                                     <th scope="col" class="text-center p-1" style="width: 3%;">NO.</th>
-                                    <th scope="col" class="text-center p-1">IMAGE</th>
-                                    {{-- <th scope="col" class="text-center p-1" style="width: ;">ID</th> --}}
-                                    <th scope="col" class="text-center p-1" style="width: ;">JUDUL BERITA</th>
+                                    <th scope="col" class="text-center p-1" style="width: 160px;">IMAGE</th>
+                                    <th scope="col" class="text-center p-1" style="width: ;">ID</th>
+                                    <th scope="col" class="text-center p-1" style="width: 15%;">JUDUL BERITA</th>
                                     {{-- <th scope="col" class="text-center p-1" style="width: 25%;">DESKRIPSI</th> --}}
-                                    <th scope="col" class="text-center p-1" style="width: 20%;">SUMBER LINK</th>
+                                    <th scope="col" class="text-center p-1" style="width: 10%;">SUMBER LINK</th>
                                     <th scope="col" class="text-center p-1" style="width: 10%;">NAMA ADMIN</th>
                                     <th scope="col" class="text-center p-1" style="width: 20%;">AKSI</th>
                                 </tr>
@@ -44,17 +44,20 @@
                                 {{-- sebuah perulangan dengan mengambil data dari variabel $berita dan di masukan ke variabel $data
                                     jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
                                 @forelse ($berita as $data)
-                                    <tr>
+                                    <tr style="height: 100px;">
                                         <td class="text-center">{{ $loop->index + 1 }}</td>
                                         <td class="text-center" style="width: 140px;">
-                                            <img src="{{ asset('storage/gambar berita/' . $data->image) }}" class="rounded"
-                                                style="width: 140px">
+                                            <img src="{{ asset('storage/gambar berita/' . $data->gambar_berita) }}"
+                                                class="rounded" style="width: 140px">
                                         </td>
-                                        {{-- <td class="text-center">{{ $data->id }}</td> --}}
-                                        <td class="text-center">{{ $data->name }}</td>
+                                        <td class="text-center">{{ $data->id }}</td>
+                                        <td class="text-center">{{ $data->nama_berita }}</td>
                                         {{-- <td class="text-break">{{ $data->description }}</td> --}}
-                                        <td class="text-center"><a href="{{ $data->link }}">{{ $data->link }}</a></td>
-                                        <td class="text-center">NAMA ADMIN</td>
+                                        <td class="text-center"  style="width: 200px;">
+                                            <a href="{{ route('admin_berita.pengunjung', ['id' => $data->id]) }}"
+                                                target="_blank">{{ $data->link_berita }}</a>
+                                        </td>
+                                        <td class="text-center">nama admin</td>
                                         <td class="text-center">
                                             {{-- sekelompok tombol pada setiap data kolom tabel beritas sesuai dengan id --}}
                                             <form action="{{ route('admin_berita.hapus_data', $data->id) }}" method="POST"
@@ -76,7 +79,15 @@
                                     </tr>
                                 @empty {{-- digunakan untuk menampilkan pesan jika data di dalam beritas kosong --}}
                                     <tr class="">
-                                        <td class="text-center" colspan="7">Data berita belum ditambahkan.</td>
+                                        <td class="text-center" colspan="7">
+                                            {{-- jika terdapat nilai dari variabel $request yang mengambil data dari nilai pencarian --}}
+                                            @if ($request->get('pencarian'))
+                                                Data {{ $request->get('pencarian') }} tidak ditemukan.
+                                            @else
+                                                {{-- jika tidak terdapat nilai dari variabel $request maka akan menampilakan pesan dibawah --}}
+                                                Data berita belum ditambahkan.
+                                            @endif
+                                        </td>
                                     </tr>
                                 @endforelse
                             </tbody>
