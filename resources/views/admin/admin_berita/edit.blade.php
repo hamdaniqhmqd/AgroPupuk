@@ -14,10 +14,10 @@
                             @method('PUT') {{-- untuk memperbarui atau mengedit data berita yang ada.  --}}
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Gambar Berita : </label>
-                                <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                    name="image" placeholder="Masukkan Gambar Berita">
-                                <!-- error message untuk image -->
-                                @error('image')
+                                <input type="file" accept="image/jpeg, image/png" class="form-control @error('gambar_berita') is-invalid @enderror"
+                                    name="gambar_berita" placeholder="Masukkan Gambar Berita">
+                                <!-- error message untuk gambar_berita -->
+                                @error('gambar_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -26,11 +26,11 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Nama Berita :</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" placeholder="Masukkan Judul Berita"
-                                    value="{{ old('name', $berita->name) }}">
-                                <!-- error message untuk name -->
-                                @error('name')
+                                <input type="text" class="form-control @error('nama_berita') is-invalid @enderror"
+                                    name="nama_berita" placeholder="Masukkan Judul Berita"
+                                    value="{{ old('nama_berita', $berita->nama_berita) }}">
+                                <!-- error message untuk nama_berita -->
+                                @error('nama_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -39,11 +39,11 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Sumber Link Berita :</label>
-                                <input type="text" class="form-control @error('link') is-invalid @enderror"
-                                    name="link" value="{{ old('link', $berita->link) }}"
-                                    placeholder="Masukkan Sumber Link Berita">
-                                <!-- error message untuk link -->
-                                @error('link')
+                                <input type="text" class="form-control @error('link_berita') is-invalid @enderror"
+                                    name="link_berita" value="{{ old('link_berita', $berita->link_berita) }}"
+                                    placeholder="Masukkan Sumber link_berita Berita">
+                                <!-- error message untuk link_berita -->
+                                @error('link_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -52,10 +52,10 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Deskripsi Berita :</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5"
-                                    placeholder="Masukkan Deskripsi Berita">{{ old('description', $berita->description) }}</textarea>
+                                <textarea class="form-control @error('deskripsi_berita') is-invalid @enderror" name="deskripsi_berita" rows="5"
+                                    placeholder="Masukkan Deskripsi Berita">{{ old('deskripsi_berita', $berita->deskripsi_berita) }}</textarea>
                                 <!-- error message untuk description -->
-                                @error('description')
+                                @error('deskripsi_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

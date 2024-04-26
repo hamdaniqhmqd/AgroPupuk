@@ -11,10 +11,10 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Gambar Berita :</label>
-                                <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                    name="image">
-                                <!-- error message untuk image -->
-                                @error('image')
+                                <input type="file" accept="image/jpeg, image/png" class="form-control @error('gambar_berita') is-invalid @enderror"
+                                    name="gambar_berita">
+                                <!-- error message untuk gambar_berita -->
+                                @error('gambar_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -23,10 +23,10 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Nama Berita</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" placeholder="Masukkan Judul Berita">
-                                <!-- error message untuk name -->
-                                @error('name')
+                                <input type="text" class="form-control @error('nama_berita') is-invalid @enderror"
+                                    name="nama_berita" value="{{ old('nama_berita') }}" placeholder="Masukkan Judul Berita">
+                                <!-- error message untuk nama_berita -->
+                                @error('nama_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -35,10 +35,10 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Sumber Link Berita :</label>
-                                <input type="text" class="form-control @error('link') is-invalid @enderror"
-                                    name="link" value="{{ old('link') }}" placeholder="Masukkan Sumber Link">
-                                <!-- error message untuk link -->
-                                @error('link')
+                                <input type="text" class="form-control @error('link_berita') is-invalid @enderror"
+                                    name="link_berita" value="{{ old('link_berita') }}" placeholder="Masukkan Sumber Link">
+                                <!-- error message untuk link_berita -->
+                                @error('link_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -47,10 +47,10 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Deskripsi Berita :</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5"
-                                    placeholder="Masukkan Deskripsi Berita">{{ old('description') }}</textarea>
-                                <!-- error message untuk description -->
-                                @error('description')
+                                <textarea class="form-control @error('deskripsi_berita') is-invalid @enderror" name="deskripsi_berita" rows="5"
+                                    placeholder="Masukkan Deskripsi Berita">{{ old('deskripsi_berita') }}</textarea>
+                                <!-- error message untuk deskripsi_berita -->
+                                @error('deskripsi_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

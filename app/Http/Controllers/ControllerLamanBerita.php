@@ -24,9 +24,9 @@ class ControllerLamanBerita extends Controller
         // jika tidak ada data dari variabel $search maka mengeluarkan data ke variabel $berita
 		if ($search) {
 			$berita = Berita::whereAny([ // pencarian berdasarkan id name description link pada data tabel beritas
-				'name',
-				'description',
-				'link',
+				'nama_berita',
+				'deskripsi_berita',
+				'link_berita',
 			], 'LIKE', "%$search%")->paginate(6); // jika ada data yang sesuai maka akan di tampilkan sebanyak 6 per tab
 		}
 
