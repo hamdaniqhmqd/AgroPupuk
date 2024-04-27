@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sipupuk extends Model
 {
-    use HasFactory;
-}
+    protected $table = 'sipupuks';
+
+    protected $fillable = [
+        'image',
+        'title',
+        'content',
+        'author'
+    ];
+
+    }

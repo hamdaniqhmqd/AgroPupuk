@@ -18,7 +18,7 @@
                             <a href="{{ route('berita.index') }}" class="nav-link">Berita</a>
                         </li>
                         <li class="nav-list-item">
-                            <a href="#" class="nav-link">Si Pupuk</a>
+                            <a href="{{ route('sipupuk.index') }}" class="nav-link">Si Pupuk</a>
                         </li>
                         <li class="nav-list-item">
                             <a href="{{ route('tentangkami') }}" class="nav-link">Tentang Kami</a>
