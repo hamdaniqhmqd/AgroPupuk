@@ -11,6 +11,8 @@ use App\Http\Controllers\ControllerLamanUtama;
 // Ferry
 use App\Http\Controllers\ControllerLamanBeranda;
 use App\Http\Controllers\ControllerLamanTentangKami;
+use App\Http\Controllers\ControllerAdminSipupuk;
+use App\Http\Controllers\ControllerLamanSipupuk;
 
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
@@ -36,6 +38,16 @@ Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
 Route::get('/tentangkami', function () {
     return view('layouts.laman_tentangkami');
 })->name('tentangkami');
+
+// Route::resource('/adminpupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
+Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
+Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupuks.store');
+
+Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
+// routes/web.php
+
+// routes/web.php
+Route::get('/search', [ControllerLamanSipupuk::class, 'search'])->name('search');
 
 
 // route buat laman produk
