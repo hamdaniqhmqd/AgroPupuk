@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->foreign('id_admin')->references('id')->on('users');
 
-            $table->primary('id_berita');
+            $table->primary('id');
         });
     }
 
