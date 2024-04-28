@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-custom {
+    width: 100%;
+    height: auto;
+}
+
+.container-artikel {
+    width: 70%; 
+    margin: auto;
+    /* overflow: hidden; Menyembunyikan konten yang melebihi container */
+    white-space: wrap; /* Mencegah teks untuk wrap (membentuk baris baru) */
+    text-overflow: ellipsis; /* Menampilkan titik-titik jika teks melebihi container */
+}
+.header-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.warna-hijau {
+color:#224038;
+}
+
+.btn-hijau {
+    background-color:#224038;
+    height: 38px;
+    border: none;
+}
+
+.fs-kecil {
+    font-size: 9px;
+}
+.fs-small {
+    font-size: 7px;
+}
+.fs-besar {
+    font-size: 25px;
+}
+
+.text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.837); /* Ubah nilai blur, warna, dan opacity sesuai keinginan */
+}

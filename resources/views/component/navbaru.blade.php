@@ -27,7 +27,7 @@
                 </div>
                 <div class="toggle-btn">
                     <button class="btn">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa-solid text-white fa-bars"></i>
                     </button>
                 </div>
             </div>
@@ -65,6 +65,7 @@
         }
         .main-head.slidedown{
             position: fixed;
+            /* background: #198754; */
             background: #224038;
             animation: slidedown .3s forwards;
             color: white;
@@ -98,17 +99,41 @@
             justify-content: flex-end;
         }
 
+        
+
         @media only screen and (max-width: 1130px) {
             .main-head .main-menu .nav-menu .nav-list .nav-list-item {
                 padding: 10px 20px;
                 margin-top: 10px;
             }
-            .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
-                font-size: 13px;
-                line-height: 16px;
+            .main-head .main-menu .nav-menu .nav-list .nav-list-item a.nav-link {
+                font-size: 10px;
+                line-height: 10px;
             }
         }
+
+        .main-head .main-menu .toggle-btn{
+            display: none;
+        }
+
+
         @media only screen and (max-width: 900px) {
+            .main-head .main-menu .toggle-btn{
+                display: block;
+            }
+            .main-head .main-menu .toggle-btn button i :active{
+                color: gray;
+            }
+                /* Memberi warna abu-abu pada ikon ketika tombol toggle ditekan */
+            .main-head .main-menu .toggle-btn button i:active {
+                color: gray;
+            }
+
+            /* Mengubah warna ikon menjadi merah ketika dihover */
+            .main-head .main-menu .toggle-btn button i:hover {
+                cursor: pointer;
+                color: rgb(255, 0, 0);
+            }
             .main-head .main-menu .nav-menu .nav-list .nav-list-item {
                 display: none;
             }
@@ -117,24 +142,24 @@
             }
         }
         
-        @media only screen and (max-width: 905px) {
+        @media only screen and (max-width: 935px) {
             .main-head .main-menu .nav-menu .nav-list .nav-list-item {
                 padding: 5px 10px;
                 margin-top: 5px;
             }
             .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
-                font-size: 4px;
-                line-height: 3px;
+                font-size: 8px;
             }
         }
+
         @media only screen and (max-width: 1080px) {
             .main-head .main-menu .nav-menu .nav-list .nav-list-item {
                 padding: 5px 10px;
                 margin-top: 8px;
             }
             .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
-                font-size: 6px;
-                line-height: 5px;
+                font-size: 9px;
+                line-height: 9px;
             }
         }
 
@@ -163,9 +188,6 @@
             color: #000000;
         }
 
-        .main-head .main-menu .toggle-btn{
-            display: none;
-        }
     </style>
 
     <script>

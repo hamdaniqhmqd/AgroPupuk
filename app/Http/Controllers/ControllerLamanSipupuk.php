@@ -16,6 +16,8 @@ class ControllerLamanSipupuk extends Controller
         //mengambil semua produk
         $sipupuks = Sipupuk::latest()->paginate(6);
 
+        
+
         //menampilkan view dengan produk
         return view('layouts.laman_sipupuk', compact('sipupuks'));
 
@@ -24,6 +26,9 @@ class ControllerLamanSipupuk extends Controller
     public function search(Request $request) : View
     {
         $query = $request->get('search');
+
+        // Ambil nilai pencarian dari input
+        $query = $request->input('search');
 
         if ($query) {
             // Jika terdapat query pencarian

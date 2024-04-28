@@ -9,9 +9,9 @@
                 <!-- Grid container -->
                 <div class="container">
                     <!-- Section: Links -->
-                    <section class="mt-5">
+                    <section class="mt-4">
                         <!-- Grid row-->
-                        <div class="row text-center d-flex justify-content-center  pt-5">
+                        <div class="row text-center d-flex justify-content-center  pt-4">
                             <!-- Grid column -->
                             <div class="col-md-2">
                                 <h6 class="text-uppercase font-weight-bold">
@@ -55,19 +55,16 @@
                         <!-- Grid row-->
                     </section>
                     <!-- Section: Links -->
-
                     <hr class="my-3" />
                     <!-- Section: Text -->
-                    <section class="mb-5">
+                    <section class="mb-3">
                         <div class="row d-flex justify-content-center">
                             <div class="col-lg-8">
-                                <img src="{{ asset('storage/image/logobn.png') }}" class="my-5" width="400"
-                                        height="49" alt="agropupuk" style="image-rendering: -moz-crisp-edges; image-rendering: pixelated;">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                                    distinctio earum repellat quaerat voluptatibus placeat nam,
-                                    commodi optio pariatur est quia magnam eum harum corrupti
-                                    dicta, aliquam sequi voluptate quas.
+                                <img src="{{ asset('storage/image/logobn.png') }}" class="my-4" width="260"
+                                        height="32" alt="agropupuk" style="image-rendering: -moz-crisp-edges; image-rendering: pixelated;">
+                                <p style="font-size: 15px">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                                    Sunt distinctio earum repellat quaerat voluptatibus
                                 </p>
                             </div>
                         </div>
@@ -75,33 +72,29 @@
                     <!-- Section: Text -->
 
                     <!-- Section: Social -->
-                    <section class="text-center mb-5">
+                    <section class="text-center mb-3">
                         <a href="" class="text-white me-5">
-                            <i class="fab fa-facebook-f fs-4  text-decoration-none" style="text-decoration: none;"></i>
-                        </a>
-                        {{-- <a href="" class="text-white me-5">
-                            <i class="fab fa-twitter fs-4   text-decoration-none" style="text-decoration: none;"></i>
-                        </a> --}}
-                        <a href="" class="text-white me-5">
-                            <i class="fab fa-google fs-4  text-decoration-none" style="text-decoration: none;"></i>
+                            <i class="fab fa-facebook-f fs-5  text-decoration-none" style="text-decoration: none;"></i>
                         </a>
                         <a href="" class="text-white me-5">
-                            <i class="fab fa-instagram fs-4  text-decoration-none" style="text-decoration: none;"></i>
+                            <i class="fab fa-google fs-5  text-decoration-none" style="text-decoration: none;"></i>
                         </a>
-                        {{-- <a href="" class="text-white me-5">
-                            <i class="fab fa-linkedin fs-4  text-decoration-none" style="text-decoration: none;"></i>
-                        </a> --}}
                         <a href="" class="text-white me-5">
-                            <i class="fab fa-github fs-4 text-decoration-none"></i>
+                            <i class="fab fa-instagram fs-5  text-decoration-none" style="text-decoration: none;"></i>
+                        </a>
+                        <a href="" class="text-white me-5">
+                            <i class="fab fa-github fs-5 text-decoration-none"></i>
                         </a>
                     </section>
                     <!-- Section: Social -->
                 </div>
                 <!-- Grid container -->
-
                 <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)"> © 2024 Copyright:
-                    <a class="text-white text-decoration-none" href="#">Agropupuk.com</a>
+                <div class="text-center p-3 " style=" font-size:13px; background-color: rgba(0, 0, 0, 0.2)">
+                            © 2024 Copyright :
+                    <a class="text-white text-decoration-none" href="#">
+                            agropupuk.infitechd.my.id
+                    </a>
                 </div>
                 <!-- Copyright -->
             </footer>
@@ -114,6 +107,7 @@
 
     <style>
         .bg-hijau {
+            /* background-color: #198754; */
             background-color: #224038;
         }
         .container-full {
