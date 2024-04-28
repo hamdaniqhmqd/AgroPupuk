@@ -19,6 +19,14 @@
     background-color: #224038;
 }
 
+.bg-hijau-muda {
+    background-color: #198754;
+}
+
+.hijau-muda {
+    color: #198754;
+}
+
 .bg-putih {
     background-color: #ffffff;
 }
@@ -48,7 +56,8 @@
 }
 
 .btn-selengkapnyaa:hover {
-    background: linear-gradient(to right, #134525,#224038df, #175232);
+    background: linear-gradient(to right, #198754,#115938, #198734);
+    /* background: linear-gradient(to right, #134525,#224038df, #175232); */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .navbar-custom {
@@ -67,7 +76,8 @@
 
 body {
     display: relative;
-    background-color: #E3E3E3;
+    background-color: #ffffff;
+    /* background-color: #E3E3E3; */
 }
 
 .container-full {
@@ -173,17 +183,13 @@ h1 {
     background-color: white;
 }
 
-.bg-agro {
-    width: 100%;
-    height: 300px;
-    background-color: #224038;
-}
 
 .our-grub {
     width: 100%;
-    height: 90px;
+    height: 55px;
+    /* background-color: #198754; */
     background-color: #224038;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
 }
 
 .logo-corp {
@@ -199,7 +205,8 @@ h1 {
     font-weight: bolder;
     font-size: 40px;
     color: #ffffff;
-    -webkit-text-stroke: 0.3px #224038;
+    -webkit-text-stroke: 0.3px #198754;
+    /* -webkit-text-stroke: 0.3px #224038; */
 }
 
 .ttg-kami::before {
@@ -209,7 +216,8 @@ h1 {
     height: 100%;
     color: #224038;
     -webkit-text-stroke: 0px #ffffff;
-    border-right: 1.2px solid #224038;
+    border-right: 1.2px solid #198754;
+    /* border-right: 1.2px solid #224038; */
     overflow: hidden;
     animation: animate 2.5s ease-in-out infinite;
 }
@@ -222,8 +230,52 @@ h1 {
     0%, 100% {
         width: 0%;
     }
-    50% {
+    30%,50%,70%,85% {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .ttg-kami h1 {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    
+
+    .ttg-kami::before {
+        border-right: 1px solid #198754;
+        /* border-right: 1px solid #224038; */
+    }
+    .bungkus-teks {
+        margin-left: 30px;
+        width: 100%;
+    }
+
+    .bungkus-teks p {
+        font-size: 13px;
+    }
+
+    @keyframes animate {
+        0%, 100% {
+            width: 0%;
+        }
+        30%,50%,70%,85% {
+            width: 100%;
+        }
+    }
+
+    .btn-selengkapnya {
+        border-radius: 3px;
+    }
+    .btn-selengkapnya .btn-selengkapnyaa {
+        font-size: 10px;
+        margin-top: -20px;
+    }
+    
+    .gambar-coro {
+        width: 100%;
+        height: 300px;
     }
 }
 
@@ -256,27 +308,18 @@ h1 {
         width: 200px;
         height: 250px;
     }
-
-    .bg-agro {
-        height: 200px;
-    }
-
-    .our-grub {
-        height: 70px;
-    }
-
-    .logo-corp {
-        width: 180px;
-        height: 70px;
-    }
-
     .ttg-kami {
         font-size: 30px;
     }
 
     .ttg-kami::before {
-        border-right: 1px solid #224038;
+        border-right: 1px solid #198754;
+        /* border-right: 1px solid #224038; */
     }
 
+    .gambar-coro {
+        width: 100%;
+        height: 200px;
+    }
 }
 

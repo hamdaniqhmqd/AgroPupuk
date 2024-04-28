@@ -46,19 +46,11 @@ class ControllerAdminSipupuk extends Controller
             'author'        => 'required|min:5'
         ]);
 
-        //     //unggah gambar
-        // $image = $request->file('image');
-        // $tanggal_upload = now()->format('Y-m-d_H-i-s'); // Mengambil waktu unggah saat ini
-        // $nama_image = $tanggal_upload . '_' . $image->getClientOriginalName(); // Gabungkan tanggal unggah dengan nama asli file
-
-        // // $image->storeAs('public/storage/sipupuk', $nama_image);
-
-        // // Simpan gambar ke storage
-        // Storage::putFileAs('public/sipupuk', $image, $nama_image);
 
         //upload image
         $image = $request->file('image');
-        $image->storeAs('public/sipupuks', $image->hashName());
+        // $image->storeAs('/sipupuks', $image->hashName());
+        $image->storeAs('sipupuks', $image->hashName());
 
         //buat produk
         Sipupuk::create([
@@ -120,22 +112,12 @@ class ControllerAdminSipupuk extends Controller
         //check if image is uploaded
         if ($request->hasFile('image')) {
 
-            // $image = $request->file('image');
-            // $tanggal_upload = now()->format('Y-m-d_H-i-s'); // Mengambil waktu unggah saat ini
-            // $nama_image = $tanggal_upload . '_' . $image->getClientOriginalName(); // Gabungkan tanggal unggah dengan nama asli file
-
-            // // Simpan gambar ke storage
-            // Storage::putFileAs('public/sipupuk', $image, $nama_image);
-
-            // // Hapus gambar lama
-            // Storage::delete('public/sipupuk' . $sipupuks->image);
-
             //upload new image
             $image = $request->file('image');
-            $image->storeAs('public/sipupuks', $image->hashName());
+            $image->storeAs('sipupuks', $image->hashName());
 
             //delete old image
-            Storage::delete('public/sipupuks/'.$sipupuks->image);
+            Storage::delete('public/'.$sipupuks->image);
 
             //update product with new image
             $sipupuks->update([
@@ -174,7 +156,7 @@ class ControllerAdminSipupuk extends Controller
         // Hapus gambar terkait jika ada
         if ($sipupuks->image) {
             // Hapus file dari penyimpanan
-            Storage::delete('public/sipupuk/' . $sipupuks->image);
+            Storage::delete('public/' . $sipupuks->image);
         }
 
         //delete product

@@ -38,7 +38,7 @@
 
 
 
-<body class="bg-abu">
+<body>
 
     <!--Navbar -->
     @include('component.navbaru')
@@ -49,23 +49,23 @@
         <div class="carousel-inner">
             <div class="carousel-item active position-relative">
                 <img src="{{ asset('storage/image/coro1.png') }}"
-                    style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                    style="width: 100%; height: 700px; object-fit: cover;" class="gambar-coro  d-block object-fit-cover"
                     alt="gambar1" />
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('storage/image/coro2.png') }}"
-                    style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                    style="width: 100%; height: 700px; object-fit: cover;" class="gambar-coro d-block object-fit-cover"
                     alt="gambar2" />
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('storage/image/coro3.png') }}"
-                    style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                    style="width: 100%; height: 700px; object-fit: cover;" class="gambar-coro d-block object-fit-cover"
                     alt="gambar3" />
             </div>
         </div>
         <!--Ini konten diatas corousel-->
     </div>
-    <div class="kotak-konten shadow-lg ">
+    <div class="kotak-konten shadow ">
         <div class="svgku">
             <!--ini wave-->
         </div>
@@ -108,39 +108,39 @@
 
         <!--Our Grub -->
         <div class="our-grub d-flex justify-content-center align-items-center">
-            <h1 class="text-white fs-1 fw-bold ">Our Groups</h1>
+            <h1 class="text-white fs-4 fw-bold ">Our Groups</h1>
         </div>
 
         <!-- logo corp -->
         <div class="container">
-            <div class="row row-cols-5 row-cols-md-5 row-cols-sm-5  g-4">
+            <div class="row row-cols-5 row-cols-md-5 row-cols-sm-2 g-lg-4 g-md-1 g-sm-2 ">
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
                     data-aos-duration="1500">
                         <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center"data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow"data-aos="zoom-in" 
                     data-aos-delay="100" data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
                     data-aos-delay="200" data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
                     data-aos-delay="300"
                     data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
                     data-aos-delay="400"
                     data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43">
