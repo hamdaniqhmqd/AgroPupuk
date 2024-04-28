@@ -113,7 +113,7 @@ Route::get('/admin_berita/edit_data/{id_berita}',[ControllerLamanAdminBerita::cl
 Route::put('/admin_berita/proses_edit_data/{id_berita}',[ControllerLamanAdminBerita::class, 'proses_edit_data'])->name('admin_berita.proses_edit_data');
 // route delete hapus_data, untuk melakukan eksekusi proses hapus data sesuai dengan id
 Route::delete('/admin_berita/hapus_data/{id_berita}',[ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
-
+// route get pengunjung, untuk menambahkan jumlah pengunjung dan di arahkan link yang dituju
 Route::get('/pengunjung/{id}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('admin_berita.pengunjung');
 
 //bagian java

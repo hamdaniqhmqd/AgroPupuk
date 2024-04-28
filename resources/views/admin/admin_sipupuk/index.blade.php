@@ -35,7 +35,7 @@
                                 @forelse ($sipupuks as $sipupuk)
                                     <tr>
                                         <td class="text-center">
-                                            <img src="{{ asset('/storage/sipupuks/'.$sipupuk->image) }}" class="rounded" width="150" height="70">
+                                            <img src="{{ asset('storage/sipupuks/'.$sipupuk->image) }}" class="rounded" width="150" height="70">
                                             {{-- <img src="{{ asset('/storage/sipupuks/'.$sipupuk->image) }}" class="rounded" width="150" height="70"> --}}
                                         </td>
                                         <td style="width: 200px;">{{ $sipupuk->title }}</td>
@@ -86,8 +86,8 @@
                         <a class="page-link" href="{{ $sipupuks->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">Previous</a>
                     </li>
                 @endif
-    
-    
+
+
                 @if ($sipupuks->hasMorePages())
                     <li class="page-item">
                         <a class="page-link" href="{{ $sipupuks->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">Next</a>
