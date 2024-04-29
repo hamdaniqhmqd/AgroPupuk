@@ -7,11 +7,11 @@
                 <div class="d-flex flex-wrap justify-content-start">
                     {{-- card, untuk menampilkan gambar dan nama gambar berita sesuai dengan id --}}
                     <div class="card border-0 rounded d-flex flex-fill justify-content-center">
-                        <img src="{{ asset('/storage/gambar berita/' . $berita->image) }}" style="width: 50%"
+                        <img src="{{ asset('/storage/gambar berita/' . $berita->gambar_berita) }}" style="max-width: 300px;  min-width: 100px;"
                             class="card-img-top rounded mb-3 align-self-center">
                         <div class="card border-0 rounded p-2 mb-3 flex-fill" style="background-color: #E3E3E3;">
                             <div class="card-text"><strong>Nama Gambar berita : </strong>
-                                <br>{{ $berita->image }}
+                                <br>{{ $berita->gambar_berita }}
                             </div>
                         </div>
                     </div>
@@ -20,11 +20,12 @@
                     <div class="card border-0 shadow-sm rounded flex-fill" style="height: 100%; background-color: #E3E3E3;">
                         <div class="card-body">
                             <div class="p-1 m-1"><strong>Id Berita : </strong><br>{{ $berita->id }}</div>
-                            <div class="p-1 m-1"><strong>Nama Berita :</strong><br>{{ $berita->name }}</div>
+                            <div class="p-1 m-1"><strong>Nama Berita :</strong><br>{{ $berita->nama_berita }}</div>
                             <div class="p-1 m-1"><strong>Sumber Link Berita : </strong><br>
-                                <a href="{{ $berita->link }}" target="_blank">{{ $berita->link }}</a>
+                                <a href="{{ $berita->link_berita }}" target="_blank">{{ $berita->link_berita }}</a>
                             </div>
                             <div class="p-1 m-1"><strong>Nama Admin :</strong><br>Nama Admin</div>
+                            <div class="p-1 m-1"><strong>Pengunjung :</strong><br>{{ $berita->pengunjung_berita }}</div>
                             <div class="p-1 m-1"><strong>Dibuat pada :</strong><br>{{ $berita->created_at }}</div>
                             <div class="p-1 m-1"><strong>Diubah pada :</strong><br>{{ $berita->updated_at }}</div>
                         </div>
@@ -38,7 +39,7 @@
                     {{-- card, untuk menampilkan deskripsi dari data berita sesuar dengan id --}}
                     <div class="card border-0 shadow-sm rounded flex-fill" style="background-color: #E3E3E3">
                         <div class="card-body">
-                            <div class="p-1 m-0"><strong>Deskripsi berita :</strong><br>{{ $berita->description }}</div>
+                            <div class="p-1 m-0"><strong>Deskripsi berita :</strong><br>{{ $berita->deskripsi_berita }}</div>
                         </div>
                     </div>
                 </div>

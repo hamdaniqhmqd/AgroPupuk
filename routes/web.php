@@ -13,6 +13,7 @@ use App\Http\Controllers\ControllerLamanBeranda;
 use App\Http\Controllers\ControllerLamanTentangKami;
 use App\Http\Controllers\ControllerAdminSipupuk;
 use App\Http\Controllers\ControllerLamanSipupuk;
+use App\Http\Controllers\LoginController;
 
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
@@ -27,17 +28,15 @@ use App\Http\Controllers\FormController;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return redirect('beranda');
-// });
 
 // route buat laman beranda
 Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
 
 // route buat laman tentang kami
-Route::get('/tentangkami', function () {
-    return view('layouts.laman_tentangkami');
-})->name('tentangkami');
+// Route::get('/tentangkami', function () {
+//     return view('layouts.laman_tentangkami');
+// })->name('tentangkami');
+Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('tentangkami');
 
 // Route::resource('/adminpupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
 Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
@@ -49,6 +48,9 @@ Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class)
 // routes/web.php
 Route::get('/search', [ControllerLamanSipupuk::class, 'search'])->name('search');
 
+// routes\web.php Login
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 // route buat laman produk
 Route::get('/produk', [ControllerLamanProduk::class, 'index'])->name('produk.index');
@@ -65,20 +67,9 @@ Route::get('/listpro/list-produk', function () {
 
 
 Route::get('/petronitrat.blade.php', function () {
-     return view('petronitrat');
- });
+    return view('petronitrat');
+});
 
-// Route::get('/phonska.blade.php', function () {
-//     return view('phonska');
-// });
-
-// Route::get('/urea.blade.php', function () {
-//     return view('urea');
-// });
-
-// Route::get('/za.blade.php', function () {
-//     return view('za');
-// });
 
 
 Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
@@ -106,17 +97,20 @@ Route::get('/admin_berita/buat_data',[ControllerLamanAdminBerita::class, 'buat_d
 // route post proses_buat_data, untuk melakukan eksekusi proses tambah data
 Route::post('/admin_berita/proses_buat_data',[ControllerLamanAdminBerita::class, 'proses_buat_data'])->name('admin_berita.proses_buat_data');
 // route get detail_data, untuk menampilkan ke laman detail data sesuai dengan id
-Route::get('/admin_berita/detail_data/{id}',[ControllerLamanAdminBerita::class, 'detail_data'])->name('admin_berita.detail_data');
+Route::get('/admin_berita/detail_data/{id_berita}',[ControllerLamanAdminBerita::class, 'detail_data'])->name('admin_berita.detail_data');
 // route get edit_data, untuk menampilkan ke laman edit data sesuai dengan id
-Route::get('/admin_berita/edit_data/{id}',[ControllerLamanAdminBerita::class, 'edit_data'])->name('admin_berita.edit_data');
+Route::get('/admin_berita/edit_data/{id_berita}',[ControllerLamanAdminBerita::class, 'edit_data'])->name('admin_berita.edit_data');
 // route put proses_edit_data, untuk melakukan eksekusi proses edit data sesuai dengan id
-Route::put('/admin_berita/proses_edit_data/{id}',[ControllerLamanAdminBerita::class, 'proses_edit_data'])->name('admin_berita.proses_edit_data');
+Route::put('/admin_berita/proses_edit_data/{id_berita}',[ControllerLamanAdminBerita::class, 'proses_edit_data'])->name('admin_berita.proses_edit_data');
 // route delete hapus_data, untuk melakukan eksekusi proses hapus data sesuai dengan id
-Route::delete('/admin_berita/hapus_data/{id}',[ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
+Route::delete('/admin_berita/hapus_data/{id_berita}',[ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
+// route get pengunjung, untuk menambahkan jumlah pengunjung dan di arahkan link yang dituju
+Route::get('/pengunjung/{id}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('admin_berita.pengunjung');
 
 //bagian java
 Route::get('utility/form', [FormController::class, 'showForm'])->name('formprod');
 
+Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard');
 Route::get('/profile', [DashboardController::class, 'showProfile'])->name('profil');
 Route::get('/products', [DashboardController::class, 'showProducts'])->name('produk');
 Route::get('/posts', [DashboardController::class, 'showPosts'])->name('postingan');

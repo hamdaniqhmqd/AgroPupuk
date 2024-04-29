@@ -26,9 +26,36 @@
                     </ul>
                 </div>
                 <div class="toggle-btn">
-                    <button class="btn">
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid text-white fa-bars"></i>
                     </button>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header" style="background-color: #1b342d" >
+                        <img src="{{ asset('storage/image/logoweb.png') }}" alt="Logo Web" width="180" height="25" 
+                        class="offcanvas-title right-2" id="offcanvasRightLabel" >
+                        {{-- <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5> --}}
+                        <button type="button" class="btn-close bg-white " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body" style="background-color: #224038;">
+                        <ul class="side-list">
+                            <li class="side-list-item py-3" >
+                                <a href="{{ route('beranda') }}" class="side-link" >Beranda</a>
+                            </li>
+                            <li class="side-list-item py-3">
+                                <a href="{{ route('produk.index') }}" class="side-link" >Produk</a>
+                            </li>
+                            <li class="side-list-item py-3">
+                                <a href="{{ route('berita.index') }}" class="side-link" >Berita</a>
+                            </li>
+                            <li class="side-list-item py-3">
+                                <a href="{{ route('sipupuk.index') }}" class="side-link" >Si Pupuk</a>
+                            </li>
+                            <li class="side-list-item py-3">
+                                <a href="{{ route('tentangkami') }}" class="side-link" >Tentang Kami</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,6 +214,24 @@
         .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link:hover{
             color: #000000;
         }
+
+        .side-list {
+            margin-top: 30px;
+            list-style: none;
+        }
+        .side-list .side-list-item .side-link {
+            color: #fff;
+            font-size: 15px;
+            margin: 15px;
+            padding: 15px;
+            text-decoration: none; 
+        }
+        .side-list .side-list-item .side-link:hover {
+            cursor: pointer;
+            color: #ffc800;
+        }
+
+
 
     </style>
 

@@ -50,7 +50,7 @@ class ControllerAdminSipupuk extends Controller
         //upload image
         $image = $request->file('image');
         // $image->storeAs('/sipupuks', $image->hashName());
-        $image->storeAs('sipupuks', $image->hashName());
+        $image->storeAs('public/sipupuks', $image->hashName());
 
         //buat produk
         Sipupuk::create([
@@ -88,7 +88,7 @@ class ControllerAdminSipupuk extends Controller
         //render view with product
         return view('admin.admin_sipupuk.edit', compact('sipupuks'));
     }
-        
+
     /**
      * update
      *
@@ -114,10 +114,10 @@ class ControllerAdminSipupuk extends Controller
 
             //upload new image
             $image = $request->file('image');
-            $image->storeAs('sipupuks', $image->hashName());
+            $image->storeAs('public/sipupuks', $image->hashName());
 
             //delete old image
-            Storage::delete('public/'.$sipupuks->image);
+            Storage::delete('public/sipupuks'.$sipupuks->image);
 
             //update product with new image
             $sipupuks->update([
@@ -141,7 +141,7 @@ class ControllerAdminSipupuk extends Controller
         //redirect to index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
     /**
      * destroy
      *
@@ -156,7 +156,7 @@ class ControllerAdminSipupuk extends Controller
         // Hapus gambar terkait jika ada
         if ($sipupuks->image) {
             // Hapus file dari penyimpanan
-            Storage::delete('public/' . $sipupuks->image);
+            Storage::delete('public/sipupuks' . $sipupuks->image);
         }
 
         //delete product

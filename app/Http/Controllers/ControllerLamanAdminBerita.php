@@ -19,43 +19,43 @@ class ControllerLamanAdminBerita extends Controller
         $title = 'Admin Berita';
 
         // variabel untuk melakukan pencarian
-        $search = $request->get('search');
+        $search = $request->get('pencarian');
         // if jika ada data dari variabel $search maka mengeluarkan data pencarian
         if ($search) {
             $berita = Berita::whereAny([ // pencarian berdasarkan data dibawah
-                // 'id',
-                'name',
-                // 'description',
-                'link',
+                // 'id_berita',
+                'nama_berita',
+                // 'deskripsi_berita',
+                'link_berita',
             ], 'LIKE', "%$search%")->paginate(10); // untuk menampilkan 10 data per tab
         }
 
         // untuk mengarahkan ke laman admin berita
-        return view('admin_berita.index', compact('berita', 'title', 'request'));
+        return view('admin.admin_berita.index', compact('berita', 'title', 'request'));
     }
 
     public function buat_data(): View
     {
         // untuk mengarahkan ke laman tambah berita
-        return view('admin_berita.create');
+        return view('admin.admin_berita.create');
     }
 
     public function proses_buat_data(Request $request): RedirectResponse
     {
         // untuk validasi data yang masuk sesuai data tidak
         $request->validate([
-            'image'       => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'name'        => 'required',
-            'description' => 'required',
-            'link'        => 'required',
+            'gambar_berita'       => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'nama_berita'        => 'required',
+            'deskripsi_berita' => 'required',
+            'link_berita'        => 'required',
         ]);
 
         // untuk mendapatkan file image dan merubah nama
-        $image = $request->file('image');
+        $image = $request->file('gambar_berita');
         // digunakan untuk mengubah nama gambar menjadi inputan name
         // dan tanggal saat itu beserta menyimpannya ke local storage
         $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
-        $request->input('name') . '.' . $image->getClientOriginalExtension();
+            $request->input('nama_berita') . '.' . $image->getClientOriginalExtension();
         // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
         $image->storeAs('public/gambar berita', $nameImage);
 
@@ -65,11 +65,13 @@ class ControllerLamanAdminBerita extends Controller
 
         // untuk membuat berita baru
         Berita::create([
-            'id'          => $id,
-            'image'       => $nameImage,
-            'name'        => $request->name,
-            'description' => $request->description,
-            'link'        => $request->link,
+            'id'                    => $id,
+            'gambar_berita'          => $nameImage,
+            'nama_berita'           => $request->nama_berita,
+            'deskripsi_berita'      => $request->deskripsi_berita,
+            'link_berita'           => $request->link_berita,
+            // 'id_admin',
+            // 'pengunjung_berita',
         ]);
 
         // untuk mengarahkan ke laman admin berita
@@ -92,13 +94,13 @@ class ControllerLamanAdminBerita extends Controller
         return redirect()->route('admin_berita.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 
-    public function detail_data(string $id): View
+    public function detail_data(string $id_berita): View
     {
         // untuk mendapatkan data berita sesuai dengan id
-        $berita = Berita::findOrFail($id);
+        $berita = Berita::findOrFail($id_berita);
 
         // untuk mengarahkan ke laman edit seusai dengan id
-        return view('admin_berita.show', compact('berita'));
+        return view('admin.admin_berita.show', compact('berita'));
     }
 
     public function edit_data(string $id): View
@@ -107,7 +109,7 @@ class ControllerLamanAdminBerita extends Controller
         $berita = Berita::findOrFail($id);
 
         // untuk mengarahkan ke laman edit seusai dengan id
-        return view('admin_berita.edit', compact('berita'));
+        return view('admin.admin_berita.edit', compact('berita'));
     }
 
     public function proses_edit_data(Request $request, $id): RedirectResponse
@@ -115,10 +117,10 @@ class ControllerLamanAdminBerita extends Controller
         // untuk validasi data yang masuk apakah sesuai atau tidak
         // nullable boleh kosong // required wajib di isi
         $request->validate([
-            'image'       => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
-            'name'        => 'required',
-            'description' => 'required',
-            'link'        => 'required',
+            'gambar_berita'      => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+            'nama_berita'        => 'required',
+            'deskripsi_berita'   => 'required',
+            'link_berita'        => 'required',
         ]);
 
         // untuk mendapatkan data berita sesuai dengan id
@@ -126,39 +128,49 @@ class ControllerLamanAdminBerita extends Controller
 
         // perulangan if
         // untuk mengecek apakah ada data image yang masuk, jika iya data akan di eksekusi
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('gambar_berita')) {
 
             // untuk mengirim atau mengupload data image baru
-            $image = $request->file('image');
+            $image = $request->file('gambar_berita');
 
             // digunakan untuk mengubah nama gambar menjadi inputan name
-            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('name') .
-            '.' . $image->getClientOriginalExtension();
+            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('nama_berita') .
+                '.' . $image->getClientOriginalExtension();
 
             // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
             $image->storeAs('public/gambar berita', $nameImage);
 
             // untuk menghapus image lama
-            Storage::delete('public/gambar berita/' . $berita->image);
+            Storage::delete('public/gambar berita/' . $berita-> image);
 
             // untuk update data sesuai data yang masuk
             $berita->update([
-                'image'         => $nameImage,
-                'name'          => $request->name,
-                'description'   => $request->description,
-                'link'          => $request->link,
+                'gambar_berita'         => $nameImage,
+                'nama_berita'           => $request->nama_berita,
+                'deskripsi_berita'      => $request->deskripsi_berita,
+                'link_berita'           => $request->link_berita,
             ]);
         } else {
 
             // jika data image tidak di masukkan maka data image tidak akan di perbarui
             $berita->update([
-                'name'          => $request->name,
-                'description'   => $request->description,
-                'link'          => $request->link,
+                'nama_berita'           => $request->nama_berita,
+                'deskripsi_berita'      => $request->deskripsi_berita,
+                'link_berita'           => $request->link_berita,
             ]);
         }
 
         // mengarahkan ke laman admin berita dan memberikan sebuah pesan
         return redirect()->route('admin_berita.index')->with(['success' => 'Data Berhasil Diubah!']);
+    }
+
+    public function pengunjung($id)
+    {
+        // untuk mengambil data sesuai id dari data berita
+        $page = Berita::findOrFail($id);
+        // menambahkan 1 data ke kolom pengunjung berita
+        $page->increment('pengunjung_berita');
+        // jika berita di klik akan diarahkan ke link
+        return redirect($page->link_berita);
     }
 }

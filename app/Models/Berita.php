@@ -13,9 +13,11 @@ class Berita extends Model
     // controller laman admin berita
     protected $fillable = [
         'id',
-        'image',
-        'name',
-        'description',
-        'link',
+        'gambar_berita',
+        'nama_berita',
+        'deskripsi_berita',
+        'link_berita',
+        'id_admin',
+        'pengunjung_berita',
     ];
 }
