@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    //public function showDashboard()
-    //{
+    public function showDashboard()
+    {
         // Anda dapat menambahkan logika lain di sini jika diperlukan sebelum menampilkan dashboard
 
-        //return view('app');
-    //}
+        return view('admin.dashboard');
+    }
+    // public function showDashboard() {
+    //     // Logic to display the dashboard view
+    //     return view('admin.dashboard');
+    // }
 
     public function showProfile()
     {
