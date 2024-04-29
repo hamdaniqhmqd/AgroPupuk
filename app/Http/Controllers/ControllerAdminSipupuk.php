@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sipupuk;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 //import return type redirectResponse
@@ -49,13 +50,15 @@ class ControllerAdminSipupuk extends Controller
 
         //upload image
         $image = $request->file('image');
+        $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
+            $request->input('title') . '.' . $image->getClientOriginalExtension();
         // $image->storeAs('/sipupuks', $image->hashName());
-        $image->storeAs('public/sipupuks', $image->hashName());
+        $image->storeAs('public/sipupuks', $nameImage);
 
         //buat produk
         Sipupuk::create([
             // 'image'         => $image->hashName(),
-            'image'         => $image->hashName(),
+            'image'         => $nameImage,
             'title'         => $request->title,
             'content'       => $request->content,
             'author'        => $request->author// Sesuaikan dengan author yang sesuai
