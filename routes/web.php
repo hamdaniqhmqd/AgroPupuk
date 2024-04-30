@@ -13,6 +13,7 @@ use App\Http\Controllers\ControllerLamanBeranda;
 use App\Http\Controllers\ControllerLamanTentangKami;
 use App\Http\Controllers\ControllerAdminSipupuk;
 use App\Http\Controllers\ControllerLamanSipupuk;
+use App\Http\Controllers\LoginController;
 
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
@@ -27,17 +28,15 @@ use App\Http\Controllers\FormController;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return redirect('beranda');
-// });
 
 // route buat laman beranda
 Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
 
 // route buat laman tentang kami
-Route::get('/tentangkami', function () {
-    return view('layouts.laman_tentangkami');
-})->name('tentangkami');
+// Route::get('/tentangkami', function () {
+//     return view('layouts.laman_tentangkami');
+// })->name('tentangkami');
+Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('tentangkami');
 
 // Route::resource('/adminpupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
 Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
@@ -49,6 +48,9 @@ Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class)
 // routes/web.php
 Route::get('/search', [ControllerLamanSipupuk::class, 'search'])->name('search');
 
+// routes\web.php Login
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 // route buat laman produk
 Route::get('/produk', [ControllerLamanProduk::class, 'index'])->name('produk.index');
@@ -65,20 +67,9 @@ Route::get('/listpro/list-produk', function () {
 
 
 Route::get('/petronitrat.blade.php', function () {
-     return view('petronitrat');
- });
+    return view('petronitrat');
+});
 
-// Route::get('/phonska.blade.php', function () {
-//     return view('phonska');
-// });
-
-// Route::get('/urea.blade.php', function () {
-//     return view('urea');
-// });
-
-// Route::get('/za.blade.php', function () {
-//     return view('za');
-// });
 
 
 Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
@@ -119,6 +110,7 @@ Route::get('/pengunjung/{id}', [ControllerLamanAdminBerita::class, 'pengunjung']
 //bagian java
 Route::get('utility/form', [FormController::class, 'showForm'])->name('formprod');
 
+Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard');
 Route::get('/profile', [DashboardController::class, 'showProfile'])->name('profil');
 Route::get('/products', [DashboardController::class, 'showProducts'])->name('produk');
 Route::get('/posts', [DashboardController::class, 'showPosts'])->name('postingan');

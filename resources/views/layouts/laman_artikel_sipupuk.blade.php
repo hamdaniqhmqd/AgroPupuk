@@ -35,7 +35,7 @@
                         <div class="text-muted mb-2">Posted on {{ $sipupuks->created_at->format('d F Y') }} by {{ $sipupuks->author }}</div>
                     </header>
                     <!-- Preview image figure-->
-                    <img src="{{ asset('public/storage/sipupuk/'.$sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
+                    <img src="{{ asset('storage/sipupuks/'.$sipupuk->image) }}" class="img-fluid" alt="Gambar Artikel">
                     <!-- Post content-->
                     <section class="mb-5">
                         

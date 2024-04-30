@@ -39,8 +39,8 @@
                     @forelse ($sipupuks as $sipupuk)
                         <div class="col-lg-4">
                             <div class="card mb-4 shadow" style="height: 350px;">
-                                <a href="#!"> <img class="card-img-top" src="{{ asset('storage/image/bg-sipupuk.jpg') }}" alt="..." style="width: 100%; height: 150px;"/> </a>
-                                {{-- <a href="#!"> <img class="card-img-top" src="{{ asset('storage/sipupuk/'.$sipupuk->image) }}" alt="..." style="width: 100%; height: 100%;"/> </a> --}}
+                            
+                                <a href="#!"> <img class="card-img-top" src="{{ asset('storage/sipupuks/'.$sipupuk->image) }}" alt="..." style="width: 100%; height: 100%;"/> </a>
                                 <div class="card-body" style="width: 90%; margin:auto;"  >
                                     <div class=" fs-kecil text-muted m-0">Di Upload {{ $sipupuk->created_at->format('d F Y') }}</div>
                                     <h2 class=" warna-hijau fw-bold  fs-besar my-1">{{ $sipupuk->title }}</h2>
