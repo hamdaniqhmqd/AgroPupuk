@@ -79,17 +79,12 @@ Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirect
 
 // bagian hamdani
 // route test untuk laman utama
-Route::resource('/home', ControllerLamanUtama::class);
+// Route::resource('/home', ControllerLamanUtama::class);
 // route buat laman berita
 Route::get('/berita', [ControllerLamanBerita::class,'index'])->name('berita.index');
 // laman berita untuk admin berita yang digunakan untuk mengatur data dari tabel beritas
 // mulai dari menambah, mengubah, menampilkan, dan menghapus data
 // Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
-
-Route::get('/sidebar', function () {
-    return view('component.sidebar');
-});
-
 // route get index, untuk menampilkan data berita di laman admin berita
 Route::get('/admin_berita', [ControllerLamanAdminBerita::class,'index'])->name('admin_berita.index');
 // route get buat_data, untuk menampilkan ke laman tambah berita
@@ -97,13 +92,13 @@ Route::get('/admin_berita/buat_data',[ControllerLamanAdminBerita::class, 'buat_d
 // route post proses_buat_data, untuk melakukan eksekusi proses tambah data
 Route::post('/admin_berita/proses_buat_data',[ControllerLamanAdminBerita::class, 'proses_buat_data'])->name('admin_berita.proses_buat_data');
 // route get detail_data, untuk menampilkan ke laman detail data sesuai dengan id
-Route::get('/admin_berita/detail_data/{id_berita}',[ControllerLamanAdminBerita::class, 'detail_data'])->name('admin_berita.detail_data');
+Route::get('/admin_berita/detail_data/{id}',[ControllerLamanAdminBerita::class, 'detail_data'])->name('admin_berita.detail_data');
 // route get edit_data, untuk menampilkan ke laman edit data sesuai dengan id
-Route::get('/admin_berita/edit_data/{id_berita}',[ControllerLamanAdminBerita::class, 'edit_data'])->name('admin_berita.edit_data');
+Route::get('/admin_berita/edit_data/{id}',[ControllerLamanAdminBerita::class, 'edit_data'])->name('admin_berita.edit_data');
 // route put proses_edit_data, untuk melakukan eksekusi proses edit data sesuai dengan id
-Route::put('/admin_berita/proses_edit_data/{id_berita}',[ControllerLamanAdminBerita::class, 'proses_edit_data'])->name('admin_berita.proses_edit_data');
+Route::put('/admin_berita/proses_edit_data/{id}',[ControllerLamanAdminBerita::class, 'proses_edit_data'])->name('admin_berita.proses_edit_data');
 // route delete hapus_data, untuk melakukan eksekusi proses hapus data sesuai dengan id
-Route::delete('/admin_berita/hapus_data/{id_berita}',[ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
+Route::delete('/admin_berita/hapus_data/{id}',[ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
 // route get pengunjung, untuk menambahkan jumlah pengunjung dan di arahkan link yang dituju
 Route::get('/pengunjung/{id}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('admin_berita.pengunjung');
 
