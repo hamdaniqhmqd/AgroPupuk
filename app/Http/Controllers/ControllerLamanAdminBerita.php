@@ -23,9 +23,9 @@ class ControllerLamanAdminBerita extends Controller
         // if jika ada data dari variabel $search maka mengeluarkan data pencarian
         if ($search) {
             $berita = Berita::whereAny([ // pencarian berdasarkan data dibawah
-                // 'id_berita',
+                // 'id',
                 'nama_berita',
-                // 'deskripsi_berita',
+                'deskripsi_berita',
                 'link_berita',
             ], 'LIKE', "%$search%")->paginate(10); // untuk menampilkan 10 data per tab
         }
@@ -44,10 +44,10 @@ class ControllerLamanAdminBerita extends Controller
     {
         // untuk validasi data yang masuk sesuai data tidak
         $request->validate([
-            'gambar_berita'       => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'nama_berita'        => 'required',
-            'deskripsi_berita' => 'required',
-            'link_berita'        => 'required',
+            'gambar_berita'     => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'nama_berita'       => 'required',
+            'deskripsi_berita'  => 'required',
+            'link_berita'       => 'required',
         ]);
 
         // untuk mendapatkan file image dan merubah nama
@@ -66,7 +66,7 @@ class ControllerLamanAdminBerita extends Controller
         // untuk membuat berita baru
         Berita::create([
             'id'                    => $id,
-            'gambar_berita'          => $nameImage,
+            'gambar_berita'         => $nameImage,
             'nama_berita'           => $request->nama_berita,
             'deskripsi_berita'      => $request->deskripsi_berita,
             'link_berita'           => $request->link_berita,
@@ -94,10 +94,10 @@ class ControllerLamanAdminBerita extends Controller
         return redirect()->route('admin_berita.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 
-    public function detail_data(string $id_berita): View
+    public function detail_data(string $id): View
     {
         // untuk mendapatkan data berita sesuai dengan id
-        $berita = Berita::findOrFail($id_berita);
+        $berita = Berita::findOrFail($id);
 
         // untuk mengarahkan ke laman edit seusai dengan id
         return view('admin.admin_berita.show', compact('berita'));
