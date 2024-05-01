@@ -25,7 +25,7 @@
 
     @include('component.nav')
 
-    <div class="container-fluid mt-5 bg-abu relative">
+    <div class="container-fluid mt-5 relative">
         <div class="cover-gambar">
             <img class="gambar-kami" src="{{ asset('storage/image/gambar-kami.jpg') }}" alt="gambar-kami">
         </div>
@@ -75,7 +75,7 @@
         @include('component.banner')
     
 
-    <div class="container-fluid bg-abu" style="padding-top: 140px;">
+    <div class="container-fluid " style="padding-top: 140px;">
         <div class="cover-visimisi pt-4" data-aos="flip-left"  data-aos-duration="1200">
             <div class="visi-misi">
                 <div class="gambar-vm">
@@ -102,7 +102,7 @@
             </div>
         </div><div class="cover-card">
             <div class="list-card row gap-4">
-                <div class="card col size-card mb-5" data-aos="fade-up"  data-aos-delay="100" data-aos-duration="1100">
+                <div class="card col size-card mb-5 shadow-lg" data-aos="fade-up"  data-aos-delay="100" data-aos-duration="1100">
                     <div class="card-body warna-hijau text-center">
                         <div class="circle-shape1 mt-3"></div>
                         <h3 class="card-title mt-4">Ahmad Hamdani</h3>
@@ -114,7 +114,7 @@
                         <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
-                <div class="card col size-card mt-5"  data-aos="fade-down"  data-aos-delay="200" data-aos-duration="1600">
+                <div class="card col size-card mt-5 shadow-lg"  data-aos="fade-down"  data-aos-delay="200" data-aos-duration="1600">
                     <div class="card-body text-center">
                         <div class="circle-shape2 mt-3"></div>
                         <h3 class="card-title mt-4">Ferry Fernando</h3>
@@ -126,7 +126,7 @@
                         <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
-                <div class="card col size-card mb-5" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="2100">
+                <div class="card col size-card mb-5 shadow-lg" data-aos="fade-up"  data-aos-delay="300" data-aos-duration="2100">
                     <div class="card-body text-center" >
                         <div class="circle-shape3 mt-3"></div>
                         <h3 class="card-title mt-4">Samodera Haqqi</h3>
@@ -138,7 +138,7 @@
                         <h4 style="margin-top: 20px; font-weight: bold; font-size: 20px;">POLITEKNIK NEGERI MADIUN</h4>
                     </div>
                 </div>
-                <div class="card col size-card mt-5"  data-aos="fade-down"  data-aos-delay="400" data-aos-duration="2600">
+                <div class="card col size-card mt-5 shadow-lg"  data-aos="fade-down"  data-aos-delay="400" data-aos-duration="2600">
                     <div class="card-body text-center">
                         <div class="circle-shape4 mt-3"></div>
                         <h3 class="card-title mt-4">Kress Satoe Java</h3>
