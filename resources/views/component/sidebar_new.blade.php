@@ -45,6 +45,6 @@
     </div>
 </nav>
 
-{{-- <section>
-    jika ingin menggunakan sidebar awali dan akhiri mengguanakan tag section
-</section> --}}
+{{-- <main>
+    jika ingin menggunakan sidebar awali dan akhiri mengguanakan tag main
+</main> --}}
