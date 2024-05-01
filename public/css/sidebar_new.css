@@ -1,9 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 :root {
     --icon-color: #fff;
     --sidebar-color: #224038;
     --text-hover-color: #e5e5e5;
+
+    --hijau: #224038;
+    --putih: #ffffff;
+    --abu-abu: #E3E3E3;
+    --abu-hitam: #666666;
+
+    --primary: #12372A;
+    --secondary: #436850;
+    --white-smoth: #ADBC9F;
+    --white: #FBFADA;
+
+    --blue: #0071FF;
+    --light-blue: #B6DBF6;
+    --dark-blue: #005DD1;
+    --grey: #d4d2d2;
 
     --tran-05: all 0.5s ease;
     --tran-10: all 1s ease;
@@ -29,7 +44,7 @@ nav {
     height: 100%;
     z-index: 100;
     padding: 9px 6px;
-    background-color: var(--sidebar-color);
+    background-color: var(--primary);
     transition: var(--tran-05);
 }
 
@@ -47,7 +62,7 @@ nav .atas {
     min-width: 40px;
     height: 100%;
     cursor: pointer;
-    color: var(--icon-color);
+    color: var(--white);
 }
 
 .atas img {
@@ -75,16 +90,16 @@ nav .daftar_menu {
 }
 
 li.active {
-    background-color: var(--icon-color);
-    color: var(--sidebar-color);
+    background-color: var(--white);
+    color: var(--primary);
 }
 
 .daftar_menu li.active i {
-    color: var(--sidebar-color);
+    color: var(--primary);
 }
 
 li.active span.nama_nav {
-    color: var(--sidebar-color);
+    color: var(--primary);
 }
 
 .daftar_menu li a i {
@@ -121,11 +136,11 @@ nav.close .daftar_menu li .nama_nav {
 }
 
 .daftar_menu li:hover i {
-    color: var(--sidebar-color);
+    color: var(--primary);
 }
 
 .daftar_menu li:hover .nama_nav {
-    color: var(--sidebar-color);
+    color: var(--primary);
 }
 
 .daftar_menu .menu_atas {
@@ -163,181 +178,4 @@ main {
 nav.close~main {
     left: 62px;
     width: calc(100% - 62px);
-}
-
-main header {
-    padding: 2px;
-    border-bottom: #224038 2px solid;
-}
-
-header .list_page {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-header .profile {
-    gap: 10px;
-}
-
-header .nama_admin {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-header img {
-    width: 30px;
-    height: 30px;
-}
-
-section .judul i {
-    position: relative;
-    height: 35px;
-    width: 35px;
-    background-color: blue;
-    border-radius: 6px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-}
-
-section .judul .teks {
-    font-size: 24px;
-    font-weight: 500;
-    color: #224038;
-    margin: 0 10px;
-}
-
-section .kotak {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
-}
-
-section .kotak .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 12px;
-    height: 170px;
-    width: calc(100% / 3 - 10px);
-    padding: 15px 20px;
-    color: whitesmoke;
-    background-color: salmon;
-    transition: var(--tran-05);
-}
-
-.kotak .card i {
-    font-size: 35px;
-    color: saddlebrown;
-}
-
-.kotak .card .teks {
-    white-space: nowrap;
-    font-size: 18px;
-    font-weight: 500;
-    color: aquamarine;
-}
-
-.kotak .card .nomor {
-    font-size: 40px;
-    font-weight: 500;
-    color: bisque;
-}
-
-@media (max-width: 780px) {
-    section .kotak .card {
-        width: calc(100% / 2 - 10px);
-    }
-}
-
-@media (max-width: 580px) {
-    section .kotak .card {
-        width: 100%;
-    }
-}
-
-table {
-    width: 100%;
-}
-
-table thead {
-    background-color: red;
-}
-
-thead tr {
-    padding: 5px;
-}
-
-thead th.atas {
-    font-size: 14px;
-    font-weight: 500;
-    border: none;
-    padding: 0;
-    color: white;
-}
-
-thead th.nomor {
-    width: 5%;
-}
-
-thead th.aksi {
-    width: 25%;
-}
-
-thead th.gambar {
-    width: 120px;
-}
-
-/* thead th.judul {
-    width: 30%;
-} */
-
-thead th.admin {
-    width: 140px
-}
-
-table tbody {
-    font-size: 14px;
-}
-
-table tbody tr {
-    height: 120px;
-    align-self: center;
-    border-bottom: #224038 1px solid;
-}
-
-table tbody .data-judul .judul {
-    height: 108px;
-    display: block;
-    border: none;
-}
-
-table tbody .data-admin .nama_admin {
-    background-color: sandybrown;
-    padding: 4px 8px;
-    color: whitesmoke;
-    display: inline-block;
-    border: none;
-}
-
-table tbody img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
-
-table tbody .data-aksi {
-    display: inline-block;
-    width: 100%;
-    height: 124px;
-    border: none;
-}
-
-tbody td.data-aksi a {
-    width: 82px;
 }

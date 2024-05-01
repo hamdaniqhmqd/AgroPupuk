@@ -2,9 +2,160 @@
 {{-- digunakan untuk memanggil file --}}
 {{-- digunakan untuk meengidentifikasi nama dari section --}}
 @section('admin_berita')
+    <style>
+        section .judul i {
+            position: relative;
+            height: 35px;
+            font-size: 26px;
+            width: 35px;
+            color: var(--primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section .judul .teks {
+            font-size: 24px;
+            font-weight: 500;
+            color: #224038;
+            margin: 0 10px;
+        }
+
+        section .kotak {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+        }
+
+        section .kotak .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+            height: 170px;
+            width: calc(100% / 3 - 10px);
+            padding: 15px 20px;
+            color: whitesmoke;
+            background-color: salmon;
+            transition: var(--tran-05);
+        }
+
+        .kotak .card i {
+            font-size: 35px;
+            color: saddlebrown;
+        }
+
+        .kotak .card .teks {
+            white-space: nowrap;
+            font-size: 18px;
+            font-weight: 500;
+            color: aquamarine;
+        }
+
+        .kotak .card .nomor {
+            font-size: 40px;
+            font-weight: 500;
+            color: bisque;
+        }
+
+        @media (max-width: 780px) {
+            section .kotak .card {
+                width: calc(100% / 2 - 10px);
+            }
+        }
+
+        @media (max-width: 580px) {
+            section .kotak .card {
+                width: 100%;
+            }
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table thead {
+            background-color: var(--primary);
+            height: 32px;
+        }
+
+        thead tr {
+            padding: 5px;
+        }
+
+        thead th.atas {
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            padding: 0;
+            color: white;
+        }
+
+        thead th.nomor {
+            width: 5%;
+        }
+
+        thead th.aksi {
+            width: 25%;
+        }
+
+        thead th.gambar {
+            width: 120px;
+        }
+
+        thead th.admin {
+            width: 140px
+        }
+
+        table tbody {
+            font-size: 14px;
+        }
+
+        table tbody tr {
+            height: 120px;
+            align-self: center;
+            border-bottom: #224038 1px solid;
+        }
+
+        table tbody .data-judul .judul {
+            height: 108px;
+            display: block;
+            border: none;
+        }
+
+        table tbody .data-admin .nama_admin {
+            background-color: sandybrown;
+            padding: 4px 8px;
+            color: whitesmoke;
+            display: inline-block;
+            border: none;
+        }
+
+        table tbody img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        table tbody .data-aksi {
+            display: inline-block;
+            width: 100%;
+            height: 124px;
+            border: none;
+        }
+
+        tbody td.data-aksi a {
+            width: 82px;
+        }
+    </style>
+
     <div class="informasi">
         <div class="judul d-flex align-items-center mt-3 mb-3">
-            <i class="bi bi-info-square"></i>
+            <i class='bx bxs-dashboard'></i>
             <span class="teks">Data Berita</span>
         </div>
 
@@ -29,7 +180,7 @@
     <div class="data">
         <div class="d-flex align-items-center justify-content-between">
             <div class="judul d-flex align-items-center justify-content-between mt-3 mb-3">
-                <i class="bi bi-info-square"></i>
+                <i class='bx bx-table' ></i>
                 <span class="teks">Tabel</span>
                 {{-- tombol untuk mengarah ke tampilan tambah data berita --}}
                 <a href="{{ route('admin_berita.buat_data') }}" class="btn btn-sm btn-success">Tambah Berita</a>
@@ -45,11 +196,11 @@
         <table class="table table-hover">
             <thead>
                 <tr class="">
-                    <th scope="col" class="atas nomor text-center">No</th>
-                    <th scope="col" class="atas gambar text-center" style="width: 120px;">Gambar</th>
-                    <th scope="col" class="atas judul text-center">Judul</th>
-                    <th scope="col" class="atas admin text-center">Admin</th>
-                    <th scope="col" class="atas aksi text-center">Aksi</th>
+                    <th scope="col" class="atas nomor align-middle text-center">No</th>
+                    <th scope="col" class="atas gambar align-middle text-center" style="width: 120px;">Gambar</th>
+                    <th scope="col" class="atas judul align-middle text-center">Judul</th>
+                    <th scope="col" class="atas admin align-middle text-center">Admin</th>
+                    <th scope="col" class="atas aksi align-middle text-center">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,7 +211,7 @@
                         <td class="isi-data text-center" scope="row">{{ $loop->index + 1 }}</td>
                         <td class="isi-data text-center" style="width: 120px;">
                             <img class="rounded" src="{{ asset('storage/gambar berita/' . $data->gambar_berita) }}"
-                                alt="{{ $data->gambar_berita }}" />
+                                alt="{{ $data->gambar_berita }}" loading="lazy"/>
                         </td>
                         <td class="isi-data data-judul">
                             <span class="judul text-start overflow-hidden">
