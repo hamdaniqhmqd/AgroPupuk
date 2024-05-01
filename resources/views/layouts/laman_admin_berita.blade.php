@@ -14,9 +14,35 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('css/sidebar_new.css') }}">
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
     <style>
+        main header {
+            padding: 2px 2px 10px 2px;
+            border-bottom: #224038 2px solid;
+        }
+
+        header .list_page {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        header .profile {
+            gap: 10px;
+        }
+
+        header .nama_admin {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        header img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 
@@ -30,10 +56,11 @@
 
             <div class="profile d-flex align-items-center">
                 <span class="nama_admin">nama admin</span>
-                <img class="object-fit-fill rounded" src="../../assets/adel.jpg" alt="profile" />
+                <img class="object-fit-fill rounded" src="{{ asset('storage/image/coro1.png') }}" alt="profile"
+                    loading="lazy" />
             </div>
         </header>
-        <section class="mt-3">
+        <section class="mt-2">
             @yield('admin_berita')
             @yield('tambah_berita')
             @yield('edit_berita')
