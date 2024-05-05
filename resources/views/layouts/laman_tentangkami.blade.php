@@ -21,16 +21,14 @@
 
 </head>
 
-<body class="">
+<body>
 
-    @include('component.nav')
+    @include('component.navbaru')
 
-    <div class="container-fluid mt-5 relative">
-        <div class="cover-gambar">
+    <div class="container-full relative">
             <img class="gambar-kami" src="{{ asset('storage/image/gambar-kami.jpg') }}" alt="gambar-kami">
-        </div>
         <div class="konten-kami">
-            <h1 class="text-center warna-hijau fw-bold" style="font-size: 50px; padding-top:50px;" data-aos="fade-up"
+            <h1 class="text-center text-tkmi warna-hijau fw-bold" data-aos="fade-up"
             data-aos-delay="100" data-aos-duration="1000">Tentang Kami</h1>
             <div class="cover-logo d-flex justify-content-center " data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500">
                 <img class="logo-kami align-content-center mt-4 shadow" width="500" height="110"  src="{{ asset('storage/image/logo-kami.png') }}" alt="logo-kami">
@@ -76,7 +74,7 @@
     
 
     <div class="container-fluid " style="padding-top: 140px;">
-        <div class="cover-visimisi pt-4" data-aos="flip-left"  data-aos-duration="1200">
+        <div class="cover-visimisi pt-4" data-aos="fade-up"  data-aos-duration="1000">
             <div class="visi-misi">
                 <div class="gambar-vm">
                     <img class="gambar" src="{{ asset('storage/image/gambar-visi-misi.jpg') }}"  alt="image visi-misi">

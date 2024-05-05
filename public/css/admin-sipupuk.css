@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+
+.w-60 {
+    width: 60%;
+    font-size: 39px;
+    font-weight: bold !important;
+    color: #224038;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.search-custom {
+    margin-left: 10px;
+    height: 42px;
+    font-size: 15px;
+    background-color: white;
+    color: #224038;
+    border-radius: 10px;
+}
+.btn-custom {
+    color: #224038;
+}
+
+.btn-custom {
+    width: 170px;
+    height: 42px;
+    background-color: white;
+    padding: 10px 5px;
+    border-radius: 8px; /* Sudut bulat tombol */
+    text-decoration: none; /* Menghapus dekorasi tautan */
+    transition: background-color 0.3s; /* Transisi hover */
+}
+
+.btn-custom:hover {
+    background-color: #e2e2e28d; /* Warna latar belakang tombol saat hover */
+}
+
+.text-hijau {
+    color: #224038;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+
+.btn-simpan {
+    background-color: #224038;
+    color: #f7f7f7;
+}
+
+.btn-simpan:hover {
+    background-color: #56ab8f;
+    color: #ffffff;
+}
+
+.btn-hapus {
+    background-color: #ad0707;
+    color: #f7f7f7;
+}
+
+.btn-hapus:hover {
+    background-color: #ff9797;
+    color: #ffffff;
+}

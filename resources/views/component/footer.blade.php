@@ -1,5 +1,5 @@
 
-    <div data-aos="fade-up" data-aos-duration="100">
+    <div data-aos="" data-aos-duration="100">
 
         <!--foooter-->
         <!-- Remove the container if you want to extend the Footer to full width. -->

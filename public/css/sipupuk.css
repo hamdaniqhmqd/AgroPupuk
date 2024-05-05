@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
 .container-custom {
@@ -11,11 +12,11 @@
 }
 
 .container-artikel {
-    width: 70%; 
+    width: 65%; 
     margin: auto;
-    /* overflow: hidden; Menyembunyikan konten yang melebihi container */
-    white-space: wrap; /* Mencegah teks untuk wrap (membentuk baris baru) */
-    text-overflow: ellipsis; /* Menampilkan titik-titik jika teks melebihi container */
+    font-family: Inter , sans-serif;
+    white-space: wrap; 
+    text-align: justify;
 }
 .header-image {
     width: 100%;
