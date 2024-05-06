@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -13,9 +15,13 @@ class ControllerLamanAdminBerita extends Controller
 {
     public function index(Request $request): View
     {
+
+
         // variabel untuk mengambil data dari tabel beritas
         // sebanyak 10 data per tab
-        $berita = Berita::latest()->paginate(10);
+        $berita = Berita::with('user')->latest()->paginate(10);
+
+        $data['admin'] = User::find(Auth::User()->id);
         $title = 'Admin Berita';
 
         // variabel untuk melakukan pencarian
@@ -31,7 +37,7 @@ class ControllerLamanAdminBerita extends Controller
         }
 
         // untuk mengarahkan ke laman admin berita
-        return view('admin.admin_berita.index', compact('berita', 'title', 'request'));
+        return view('admin.admin_berita.index', compact('berita', 'title', 'request'), $data);
     }
 
     public function buat_data(): View
