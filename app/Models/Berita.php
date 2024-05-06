@@ -13,14 +13,16 @@ class Berita extends Model
     // isi dari tabel beritas yang akan di kelola melalui
     // controller laman admin berita
     protected $fillable = [
-        'id',
+        'id_berita',
         'gambar_berita',
-        'nama_berita',
+        'judul_berita',
         'deskripsi_berita',
         'link_berita',
         'id_admin',
         'pengunjung_berita',
     ];
+
+    protected $primaryKey = 'id_berita';
 
     // Relasi dengan model User
     public function user()
