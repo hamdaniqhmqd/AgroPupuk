@@ -9,27 +9,18 @@
     <!-- Link Google Fonts untuk font Popins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
 
-    <style>
-        * {
-            margin: 0;
-            height: 0;
-            box-sizing: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            width: 100%;
-            height: 100dvh;
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body>
+    <div class="container-full">
+        @include('component.sidebar_baru')
+        
+            <div class="container-content">
+                
+                <h1>Contoh Halaman Web dengan Bootstrap</h1>
+                <p>Ini adalah contoh penggunaan Bootstrap dalam halaman web.</p>
+            </div>
 
-    @include('component.sidebar')
-        <div class="container">
-            <h1>Contoh Halaman Web dengan Bootstrap</h1>
-            <p>Ini adalah contoh penggunaan Bootstrap dalam halaman web.</p>
-        </div>
+    </div>
 
 <!-- Bootstrap JS via CDN (Optional, jika diperlukan) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>

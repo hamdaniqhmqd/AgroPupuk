@@ -21,25 +21,33 @@
 </head>
 
 <body style="color: #E3E3E3">
-    @include('component.sidebar_new')
-    <main class="position-relative">
-        <header class="position-relative d-flex align-items-center justify-content-between">
-            <div class="page">
-                <span class="list_page">Dashoard</span>
+    <div class="container-full">
+        
+        @include('component.sidebar_baru')
+
+        <div class="container-content">
+            <main class="w-100">
+                <header class="w-100 d-flex align-items-center justify-content-between">
+                    <div class="page">
+                        <span class="list_page">Dashoard</span>
+                    </div>
+        
+                    <div class="profile d-flex align-items-center">
+                        <span class="nama_admin">nama admin</span>
+                        <img class="object-fit-fill rounded" src="../../assets/adel.jpg" alt="profile" />
+                    </div>
+                </header>
+                <section class="mt-3">
+                    @yield('admin_berita')
+                    @yield('tambah_berita')
+                    @yield('edit_berita')
+                    @yield('detail_berita')
+                </section>
+            </main>
+
             </div>
 
-            <div class="profile d-flex align-items-center">
-                <span class="nama_admin">nama admin</span>
-                <img class="object-fit-fill rounded" src="../../assets/adel.jpg" alt="profile" />
-            </div>
-        </header>
-        <section class="mt-3">
-            @yield('admin_berita')
-            @yield('tambah_berita')
-            @yield('edit_berita')
-            @yield('detail_berita')
-        </section>
-    </main>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

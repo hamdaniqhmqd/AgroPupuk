@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded p-4" style="background: #f8f9fa;">
-                    <h2 class="text-center mb-4">Form Edit Artikel Baru</h2>
+                    <h2 class="text-center mb-4">Edit Artikel</h2>
                     <form action="{{ route('adminsipupuk.update', $sipupuks->id) }}" method="POST" enctype="multipart/form-data">
                     
                         @csrf
@@ -83,7 +83,6 @@
                                 </button>
                             </div>
                         </div>
-    button>
                         </div>
 
                     </form> 
