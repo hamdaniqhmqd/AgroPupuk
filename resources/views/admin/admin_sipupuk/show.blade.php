@@ -17,6 +17,10 @@
             padding: 0;
             box-sizing: 0;
         }
+
+        .bg-hijau {
+            background-color: #224038;
+        }
     </style>
     <body class="bg-secondary ">
 
@@ -31,9 +35,9 @@
 
         <div class="container bg-light "> <!--Body Pembungkus -->
             <!-- Responsive navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-hijau">
                 <div class="container">
-                    <a class="navbar-brand text-light" href="#!">Start Bootstrap</a>
+                    <a class="navbar-brand text-light" href="#!">NavBar</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -46,7 +50,8 @@
                 </div>
             </nav>
 
-            <div class="container-custom mt-5" style="width: 70%; margin: auto;">
+            <div class="container-custom mt-5" style="width: 65%; margin: auto; font-family: Inter , sans-serif;
+            white-space: wrap; text-align: justify;">
                 <!-- Post content-->
                 <article>
                     <!-- Post header-->
@@ -62,7 +67,7 @@
                         src="{{ asset('public/storage/sipupuk'.$sipupuks->image) }}"/>
     
                     </figure> --}}
-                    <img src="{{ asset('public/storage/sipupuk/'.$sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
+                    <img src="{{ asset('storage/sipupuks/'.$sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
                     <!-- Post content-->
                     <section class="mb-5">
                         
@@ -73,7 +78,7 @@
                 </article>
             </div>
             <!-- Footer-->
-            <footer class="py-5 bg-dark">
+            <footer class="py-3 bg-hijau">
                 <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
             </footer>
 

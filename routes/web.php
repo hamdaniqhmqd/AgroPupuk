@@ -47,8 +47,10 @@ Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupu
 Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
 // routes/web.php
 
-// routes/web.php
+// Search laman Sipupuk
 Route::get('/search', [ControllerLamanSipupuk::class, 'search'])->name('search');
+// Search Admin Sipupuk
+Route::get('/search', [ControllerAdminSipupuk::class, 'search'])->name('search');
 
 // routes\web.php Login
 

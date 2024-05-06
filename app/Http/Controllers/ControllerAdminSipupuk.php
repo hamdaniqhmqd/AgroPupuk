@@ -103,44 +103,46 @@ class ControllerAdminSipupuk extends Controller
     {
         //validate form
         $request->validate([
-            'image'         => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'image'         => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
             'title'         => 'required|min:5',
             'content'       => 'required|min:1000',
             'author'        => 'required|min:5'
         ]);
-
+    
         //get product by ID
         $sipupuks = Sipupuk::findOrFail($id);
-
+    
         //check if image is uploaded
         if ($request->hasFile('image')) {
-
+    
             //upload new image
             $image = $request->file('image');
-            $image->storeAs('public/sipupuks', $image->hashName());
-
+    
+            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
+                $request->input('title') . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/sipupuks', $nameImage);
+    
             //delete old image
-            Storage::delete('public/sipupuks'.$sipupuks->image);
-
+            Storage::delete('public/sipupuks/' . $sipupuks->image);
+    
             //update product with new image
             $sipupuks->update([
-                // 'image'         => $image->hashName(),
-                'image'         => $image->hashName(),
+                'image'         => $nameImage,
                 'title'         => $request->title,
                 'content'       => $request->content,
-                'author'        => $request->author// Sesuaikan dengan author yang sesuai
+                'author'        => $request->author // Sesuaikan dengan author yang sesuai
             ]);
-
+    
         } else {
-
+    
             //update product without image
             $sipupuks->update([
                 'title'         => $request->title,
                 'content'       => $request->content,
-                'author'        => $request->author// Sesuaikan dengan author yang sesuai
+                'author'        => $request->author // Sesuaikan dengan author yang sesuai
             ]);
         }
-
+    
         //redirect to index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
@@ -167,6 +169,24 @@ class ControllerAdminSipupuk extends Controller
 
         //redirect to index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
+
+    public function search(Request $request) : View
+    {
+        $query = $request->get('search');
+
+        // Ambil nilai pencarian dari input
+        $query = $request->input('search');
+
+        if ($query) {
+            // Jika terdapat query pencarian
+            $sipupuks = Sipupuk::where('title', 'like', '%' . $query . '%')->latest()->paginate(6);
+        } else {
+            // Jika tidak ada query pencarian
+            $sipupuks = Sipupuk::latest()->paginate(10);
+        }
+
+        return view('admin.admin_sipupuk.index',['kunci' => $query], compact('sipupuks' ,'query'));
     }
 
 };

@@ -18,7 +18,7 @@
                 <?php for ($i = 1; $i <= 4; $i++) { ?>
                 <div class="kotak-luar" >
                     <div class="kotak-dalam">
-                        <img src="gambar-<?php echo $i; ?>.png" alt="Gambar <?php echo $i; ?>">
+                        <img  src="{{ asset('gambar/1petro-nitratfix.png') }}" alt="Gambar <?php echo $i; ?>">
                     </div>
                     <div class="kotak-hijau">
                         <button type="button" class="btn btn-success custom-disabled">Beli Produk</button>
