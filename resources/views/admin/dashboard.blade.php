@@ -40,15 +40,15 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="card w-100 border-2 bg-light rounded shadow">
+                                        <button class="col-md-6">
+                                            <a class="card border-1 w-100  bg-light rounded shadow">
                                                 <div class="d-flex w-75 m-auto justify-content-between">
                                                 <h1 class="py-4 mb-0 fs-2 fw-bold warna-hijau">CONTENT<br>
                                                     <span class="fs-2 fw-normal warna-hijau-muda">MANAGEMENT</span></h1>
                                                     <img class="py-2 my-2" src="{{ asset('storage/image/dashboard_content.png') }}" style="width: 90px; height:105px;" alt="content dashboard">
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </a>
+                                        </button>
                                         <div class="col-md-6">
                                             <div class="card w-100 border-2 bg-li rounded shadow">
                                                 <div class="d-flex w-75 m-auto justify-content-between">
