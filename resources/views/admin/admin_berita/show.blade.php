@@ -12,6 +12,9 @@
     {{-- dugunakan untuk mengarah ke tampilan laman admin berita --}}
 
     <style>
+        :root {
+            --text-color: #001b0c;
+        }
         .card {
             padding: 16px 24px;
         }
@@ -28,13 +31,18 @@
 
         .gambar .data-gambar {
             position: relative;
-            font-size: 18px;
+            font-size: 16px;
             width: 400px;
             height: 100%;
         }
 
+        .gambar .data-gambar h5 {
+            color: var(--text-color);
+        }
+
         .gambar .data-gambar .isi-data {
             text-align: justify;
+            color: var(--text-color);
         }
 
         .side-gambar {
@@ -44,24 +52,27 @@
         .side-gambar .data-side {
             height: 100%;
             width: 100%;
+            color: var(--text-color);
         }
 
         .side-gambar .data-side .isi-data {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             height: 100%;
             text-align: justify;
+            color: var(--text-color);
         }
 
         .main .data-main .isi-main {
+            color: var(--text-color);
             height: 100%;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
             text-align: justify;
         }
 
-        .footer a {
-            width: 100px;
+        main h5 {
+            color: var(--text-color);
         }
     </style>
 
@@ -78,11 +89,11 @@
             <div class="side-gambar me-0 card d-flex flex-column justify-content-between flex-fill">
                 <div class="data-side">
                     <h5 class="p-0 fw-semibold">Id Berita</h5>
-                    <div class="isi-data text-break">{{ $berita->id }}</div>
+                    <div class="isi-data text-break">{{ $berita->id_berita }}</div>
                 </div>
                 <div class="data-side mb-2">
                     <h5 class="p-0 fw-semibold">Data Berita Dibuat Oleh </h5>
-                    <div class="isi-data text-break">Hamdani</div>
+                    <div class="isi-data text-break">{{ $berita->user->nama }}</div>
                 </div>
                 <div class="data-side mb-2">
                     <h5 class="p-0 fw-semibold">Data Berita Dibuat Pada</h5>
@@ -101,7 +112,7 @@
         <div class="main card">
             <div class="data-main mb-2">
                 <h5 class="p-0 fw-semibold">Judul Berita</h5>
-                <div class="isi-main text-break">{{ $berita->nama_berita }}</div>
+                <div class="isi-main text-break">{{ $berita->judul_berita }}</div>
             </div>
             <div class="data-main mb-2">
                 <h5 class="p-0 fw-semibold">Sumber Link</h5>
@@ -116,11 +127,11 @@
         <div class="footer d-flex justify-content-between align-items-center">
             {{-- sekelompok tombol pada setiap data kolom tabel beritas sesuai dengan id --}}
             {{-- form, untuk melakukan eksekusi proses hapus data --}}
-            <form action="{{ route('admin_berita.hapus_data', $berita->id) }}" method="POST"
-                id="formHapusData_{{ $berita->id }}" onsubmit="return hapusData({{ $berita->id }})"
+            <form action="{{ route('admin_berita.hapus_data', $berita->id_berita) }}" method="POST"
+                id="formHapusData_{{ $berita->id_berita }}" onsubmit="return hapusData({{ $berita->id_berita }})"
                 class="d-flex gap-3">
                 {{-- dugunakan untuk mengarah ke tampilan edit data sesuai dengan id --}}
-                <a href="{{ route('admin_berita.edit_data', $berita->id) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ route('admin_berita.edit_data', $berita->id_berita) }}" class="btn btn-primary">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Hapus</button>

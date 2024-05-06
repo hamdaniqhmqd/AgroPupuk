@@ -9,10 +9,7 @@
             font-size: 26px;
             width: 35px;
             color: var(--primary);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+
         }
 
         section .judul .teks {
@@ -23,52 +20,37 @@
         }
 
         section .kotak {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
             padding: 0;
         }
 
         section .kotak .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 12px;
+            color: var(--primary);
             height: 170px;
-            width: calc(100% / 3 - 10px);
+            width: calc(100% / 2 - 15px);
             padding: 15px 20px;
-            color: whitesmoke;
-            background-color: salmon;
+            border-color: var(--primary);
+            background-color: var(--white);
             transition: var(--tran-05);
         }
 
         .kotak .card i {
-            font-size: 35px;
-            color: saddlebrown;
+            color: var(--primary);
+            font-size: 72px;
         }
 
         .kotak .card .teks {
-            white-space: nowrap;
-            font-size: 18px;
+            font-size: 24px;
             font-weight: 500;
-            color: aquamarine;
+            color: var(--primary);
         }
 
         .kotak .card .nomor {
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 500;
-            color: bisque;
+            color: var(--primary);
         }
 
-        @media (max-width: 780px) {
-            section .kotak .card {
-                width: calc(100% / 2 - 10px);
-            }
-        }
-
-        @media (max-width: 580px) {
+        @media (max-width: 870px) {
             section .kotak .card {
                 width: 100%;
             }
@@ -123,7 +105,9 @@
 
         table tbody .data-judul .judul {
             height: 108px;
-            display: block;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
             border: none;
         }
 
@@ -158,42 +142,38 @@
         </div>
 
         <div class="profile d-flex align-items-center">
-            <span class="nama_admin">{{ $admin->username }}</span>
+            <span class="nama_admin">{{ $admin->nama }}</span>
             <img class="object-fit-fill rounded" src="{{ asset('storage/image/coro1.png') }}" alt="profile" loading="lazy" />
         </div>
     </header>
     <section class="mt-2">
         <div class="informasi">
-            <div class="judul d-flex align-items-center mt-3 mb-3">
-                <i class='bx bxs-dashboard'></i>
+            <div class="judul d-flex align-items-center my-3">
+                <i class='bx bxs-dashboard d-flex rounded-2 align-items-center justify-content-center'></i>
                 <span class="teks">Data Berita</span>
             </div>
-
-            <div class="kotak">
-                <div class="card">
-                    <i class="bi bi-info-square"></i>
-                    <span class="teks">Total Pengunjung</span>
-                    <span class="nomor">50,120</span>
+            <div class="kotak d-flex flex-wrap align-items-center justify-content-between gap-2">
+                <div class="card rounded-3">
+                    <span class="teks align-text-top text-end mb-2">Total Data Berita</span>
+                    <div class="d-flex align-items-end justify-content-between">
+                        <i class='bx bx-news'></i>
+                        <span class="nomor text-end align-bottom">500</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="bi bi-info-square"></i>
-                    <span class="teks">Total Berita</span>
-                    <span class="nomor">20,120</span>
-                </div>
-                <div class="card">
-                    <i class="bi bi-info-square"></i>
-                    <span class="teks">Total</span>
-                    <span class="nomor">10,120</span>
+                <div class="card rounded-3">
+                    <span class="teks align-text-top text-end mb-2">Total Data Berita</span>
+                    <div class="d-flex align-items-end justify-content-between">
+                        <i class='bx bx-group'></i>
+                        <span class="nomor text-end align-bottom">500</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="data">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="judul d-flex align-items-center justify-content-between mt-3 mb-3">
-                    <i class='bx bx-table'></i>
+            <div class="d-flex align-items-center justify-content-between  my-2">
+                <div class="judul d-flex align-items-center justify-content-between">
+                    <i class='bx bx-table d-flex rounded-2 align-items-center justify-content-center'></i>
                     <span class="teks">Tabel</span>
-                    {{-- tombol untuk mengarah ke tampilan tambah data berita --}}
-                    <a href="{{ route('admin_berita.buat_data') }}" class="btn btn-sm btn-success">Tambah Berita</a>
                 </div>
                 {{-- sebuah form yang berisi kolom inputan yang digunakan untuk melakukan pencarian dengan mengirim nilai sesuai dengan atribut value --}}
                 <form action="{{ route('admin_berita.index') }}" style="width: calc(50% - 150px);" class=""
@@ -201,6 +181,10 @@
                     <input class="form-control" type="text" placeholder="Ketik berita yang di cari" name="pencarian"
                         value="{{ $request->get('pencarian') }}">
                 </form>
+            </div>
+            <div class="mb-3">
+                {{-- tombol untuk mengarah ke tampilan tambah data berita --}}
+                <a href="{{ route('admin_berita.buat_data') }}" class="btn btn-sm btn-success">Tambah Berita</a>
             </div>
             {{-- tabel yang digunakan untuk menampilkan data dari tabel beritas --}}
             <table class="table table-hover">
@@ -225,23 +209,23 @@
                             </td>
                             <td class="isi-data data-judul">
                                 <span class="judul text-start overflow-hidden">
-                                    {{ $data->nama_berita }}
+                                    {{ $data->judul_berita }}
                                 </span>
                             </td>
                             <td class="isi-data data-admin ">
                                 <span class="nama_admin text-start rounded px-3 py-1">
-                                    hamdani
+                                    {{ $data->user->nama }}
                                 </span>
                             </td>
 
                             <td class="isi-data data-aksi">
                                 {{-- sekelompok tombol pada setiap data kolom tabel beritas sesuai dengan id --}}
-                                <form action="{{ route('admin_berita.hapus_data', $data->id) }}" method="POST"
-                                    id="formHapusData_{{ $data->id }}"
-                                    onsubmit="return hapusData({{ $data->id }})"
+                                <form action="{{ route('admin_berita.hapus_data', $data->id_berita) }}" method="POST"
+                                    id="formHapusData_{{ $data->id_berita }}"
+                                    onsubmit="return hapusData({{ $data->id_berita }})"
                                     class="tombol d-flex justify-content-around align-items-center flex-wrap gap-1 text-center">
                                     {{-- digunakan untuk mengarah ke tampilan detail data sesuai dengan id --}}
-                                    <a href="{{ route('admin_berita.detail_data', $data->id) }}"
+                                    <a href="{{ route('admin_berita.detail_data', $data->id_berita) }}"
                                         class="btn btn-sm btn-success">
                                         <span class="teks">
                                             <i class="bi bi-info-square"></i>
@@ -249,7 +233,7 @@
                                         </span>
                                     </a>
                                     {{-- digunakan untuk mengarah ke tampilan edit data sesuai dengan id --}}
-                                    <a href="{{ route('admin_berita.edit_data', $data->id) }}"
+                                    <a href="{{ route('admin_berita.edit_data', $data->id_berita) }}"
                                         class="btn btn-sm btn-primary">
                                         <span class="teks">
                                             <i class="bi bi-info-square"></i>
@@ -314,7 +298,7 @@
 
     <script>
         // sebuah fungsi untuk menampilkan validasi hapus data
-        function hapusData(id) {
+        function hapusData(id_berita) {
             Swal.fire({
                 title: 'Apakah Anda yakin?',
                 text: "Anda tidak dapat mengembalikan data yang telah dihapus!",
@@ -328,7 +312,7 @@
                 if (result.isConfirmed) {
                     // Jika pengguna mengonfirmasi dengan click ya,
                     // form akan disubmit
-                    document.getElementById('formHapusData_' + id).submit();
+                    document.getElementById('formHapusData_' + id_berita).submit();
                 } else {
                     // Jika pengguna memilih "Tidak",
                     // form tidak akan disubmit

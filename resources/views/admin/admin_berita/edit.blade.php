@@ -8,7 +8,7 @@
                     <div class="card-body">
                         {{-- form untuk melakukan edit data beriita dengan method post,
                             yang mengarah ke proses_edit_data, dengan mengirimkan data sesuai dengan id--}}
-                        <form action="{{ route('admin_berita.proses_edit_data', $berita->id) }}" method="POST"
+                        <form action="{{ route('admin_berita.proses_edit_data', $berita->id_berita) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT') {{-- untuk memperbarui atau mengedit data berita yang ada.  --}}
@@ -26,11 +26,11 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Nama Berita :</label>
-                                <input type="text" class="form-control @error('nama_berita') is-invalid @enderror"
-                                    name="nama_berita" placeholder="Masukkan Judul Berita"
-                                    value="{{ old('nama_berita', $berita->nama_berita) }}">
-                                <!-- error message untuk nama_berita -->
-                                @error('nama_berita')
+                                <input type="text" class="form-control @error('judul_berita') is-invalid @enderror"
+                                    name="judul_berita" placeholder="Masukkan Judul Berita"
+                                    value="{{ old('judul_berita', $berita->judul_berita) }}">
+                                <!-- error message untuk judul_berita -->
+                                @error('judul_berita')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>

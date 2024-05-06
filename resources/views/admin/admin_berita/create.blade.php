@@ -7,7 +7,7 @@
         </div>
 
         <div class="profile d-flex align-items-center">
-            <span class="nama_admin">{{ $admin->name }}</span>
+            <span class="nama_admin">{{ $admin->nama }}</span>
             <img class="object-fit-fill rounded" src="{{ asset('storage/image/coro1.png') }}" alt="profile" loading="lazy" />
         </div>
     </header>
@@ -22,7 +22,7 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group mb-3">
-                                    <label class="font-weight-bold">Gambar Berita :</label>
+                                    <label class="font-weight-bold text-black">Gambar Berita :</label>
                                     <input type="file" accept="image/jpeg, image/png"
                                         class="form-control @error('gambar_berita') is-invalid @enderror"
                                         name="gambar_berita">
@@ -36,11 +36,11 @@
 
                                 <div class="form-group mb-3">
                                     <label class="font-weight-bold">Nama Berita</label>
-                                    <input type="text" class="form-control @error('nama_berita') is-invalid @enderror"
-                                        name="nama_berita" value="{{ old('nama_berita') }}"
+                                    <input type="text" class="form-control @error('judul_berita') is-invalid @enderror"
+                                        name="judul_berita" value="{{ old('judul_berita') }}"
                                         placeholder="Masukkan Judul Berita">
-                                    <!-- error message untuk nama_berita -->
-                                    @error('nama_berita')
+                                    <!-- error message untuk judul_berita -->
+                                    @error('judul_berita')
                                         <div class="alert alert-danger mt-2">
                                             {{ $message }}
                                         </div>

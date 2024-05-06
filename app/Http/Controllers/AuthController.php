@@ -69,8 +69,8 @@ class AuthController extends Controller
 		return view('admin.auth.forgot.pilih_forget');
 	}
 
-    // public function logout(): RedirectResponse{
-    //     Auth::logout();
-    //     return redirect('/')->with(['success' => 'Logout successfully']);
-    // }
+    public function logout(): RedirectResponse{
+        Auth::logout();
+        return redirect('/login')->with(['success' => 'Logout Berhasil']);
+    }
 }

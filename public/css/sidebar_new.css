@@ -13,7 +13,7 @@
     --primary: #12372A;
     --secondary: #436850;
     --white-smoth: #ADBC9F;
-    --white: #FBFADA;
+    --white: #f5f5f5;
 
     --blue: #0071FF;
     --light-blue: #B6DBF6;
@@ -168,7 +168,7 @@ nav.close .daftar_menu li .nama_nav {
 /* awal edit main */
 main {
     left: 242px;
-    background-color: whitesmoke;
+    background-color: var(--white);
     min-height: 100vh;
     width: calc(100% - 242px);
     padding: 10px 14px;
