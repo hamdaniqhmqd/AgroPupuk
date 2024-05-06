@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --error-icon: #ff0000;
+  --abu: #a6a6a6;
+  --putih: #fff;
+  --hijau: #224038;
+  --bg-body: url(bg-agro.png);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--hijau);
+}
+
+.card-login {
+  width: 100%;
+  padding: 35px 40px;
+  max-width: 480px;
+  min-width: 300px;
+  background: var(--putih);
+}
+
+.card-login .title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--hijau);
+  cursor: default;
+}
+
+.card-login .desc {
+  padding: 6px 0 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--hijau);
+  cursor: default;
+}
+
+/* awal input */
+.card-login .input-box {
+  position: relative;
+  height: 60px;
+  margin-top: 25px;
+}
+.input-box input {
+  height: 100%;
+  width: 100%;
+  background: var(--putih);
+  color: var(--hijau);
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+  border-radius: 6px;
+  padding: 0 40px 0 16px;
+  border: 2px solid var(--abu);
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-color: var(--hijau);
+}
+
+.input-box label,
+.input-box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--abu);
+  transition: all 0.2s ease;
+}
+
+.input-box label {
+  left: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0 5px;
+  cursor: not-allowed;
+  background: var(--putih);
+}
+
+.input-box #labelpass {
+  cursor: text;
+}
+
+.input-box #labelconf.active {
+  cursor: text;
+}
+/* akhir input */
+
+/* awal untuk animasi pada label input */
+.input-box input:focus ~ label {
+  top: 0;
+  color: var(--hijau);
+  font-size: 15px;
+} 
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: 0;
+  font-size: 15px;
+  color: var(--hijau);
+}
+
+.input-box input:focus ~ i {
+  color: var(--hijau);
+} 
+
+.input-box input:focus ~ i,
+.input-box input:valid ~ i {
+  color: var(--hijau);
+}
+
+.input-box input.active {
+  cursor: not-allowed;
+}
+
+.input-box i {
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* akhir untuk animasi pada label input */
+
+/* awal alert */
+.peringatan .error_icon {
+  color: var(--error-icon);
+  font-size: 18px;
+  display: none;
+}
+
+.peringatan .pesan {
+  color: var(--abu);
+  font-size: 16px;
+  font-weight: 400;
+}
+/* akhir alert */
+
+/* awal button */
+.input-box.button a {
+  color: var(--hijau);
+  background-color: var(--putih);
+  border-color: var(--hijau);
+}
+
+.input-box.button a:hover {
+  color: var(--putih);
+  background-color: var(--hijau);
+  border-color: var(--hijau);
+}
+
+.input-box.button #button {
+  background-color: var(--abu);
+  color: var(--hijau);
+  letter-spacing: 1px;
+  cursor: not-allowed;
+  border-color: var(--hijau);
+}
+
+.input-box.button #button.active {
+  background-color: var(--hijau);
+  color: var(--putih);
+}
+
+.input-box.button #button.active:hover {
+  background-color: var(--putih);
+  color: var(--hijau);
+  border-color: var(--hijau);
+  cursor: pointer;
+}
+/* akhir button */
