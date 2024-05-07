@@ -23,6 +23,7 @@ use App\Http\Controllers\ControllerLamanProduk;
 //bagian java
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ControllerProfilAdmin;
 
 
 //default route
@@ -129,6 +130,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::delete('/admin/berita/hapus_data/{id_berita}', [ControllerLamanAdminBerita::class, 'hapus_data'])->name('admin_berita.hapus_data');
 
     // dibawah ini kumpulan route laman admin ...
+    Route::get('/admin/profile/edit', [ControllerProfilAdmin::class, 'edit'])->name('admin.profile.edit');
+    Route::put('/admin/profile/update', [ControllerProfilAdmin::class, 'update'])->name('admin.profile.update');
+
 });
 
 //bagian java
