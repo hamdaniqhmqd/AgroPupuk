@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ControllerProfilAdmin extends Controller
 {
     public function edit()
     {
-        return view('admin.profile.edit');
+        $data['admin'] = User::find(Auth::User()->id);
+        $title = 'Edit Profile';
+
+        return view('admin.profile.edit', compact('title'), $data);
     }
 
     public function update(Request $request)

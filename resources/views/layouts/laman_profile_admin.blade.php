@@ -47,7 +47,7 @@
     @include('component.sidebar_new')
     <main class="position-relative">
 
-        @yield('edit_profil')
+        @yield('admin_profile_edit')
 
     </main>
 
