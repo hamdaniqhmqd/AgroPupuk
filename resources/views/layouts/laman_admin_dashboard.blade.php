@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ isset($title) ? $title . '' : '' }}</title>
+    <!-- Link Google Fonts untuk font Popins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     {{-- link alert dari sweetalert2 --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     {{-- link icon dari boxincons --}}
@@ -45,16 +47,11 @@
     @include('component.sidebar_new')
     <main class="position-relative">
 
-        @yield('admin_berita')
-        @yield('tambah_berita')
-        @yield('edit_berita')
-        @yield('detail_berita')
+        @yield('admin_dashboard')
 
     </main>
 
-    {{-- link alert js dari sweetalert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    {{-- link js --}}
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/sidebar_news.js') }}"></script>
 

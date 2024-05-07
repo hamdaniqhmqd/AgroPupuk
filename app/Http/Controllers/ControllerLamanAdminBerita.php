@@ -15,14 +15,12 @@ class ControllerLamanAdminBerita extends Controller
 {
     public function index(Request $request): View
     {
-
-
         // variabel untuk mengambil data dari tabel beritas
         // sebanyak 10 data per tab
         $berita = Berita::with('user')->latest()->paginate(10);
 
         $data['admin'] = User::find(Auth::User()->id);
-        $title = 'Admin Berita';
+        $title = 'Berita';
 
         // variabel untuk melakukan pencarian
         $search = $request->get('pencarian');

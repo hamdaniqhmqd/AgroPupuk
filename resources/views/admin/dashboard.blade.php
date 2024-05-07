@@ -15,7 +15,7 @@
 <body>
     <div class="container-full">
         @include('component.sidebar_baru')
-        
+
             <div class="container-content">
                 <div style="width: 90%; margin: auto">
                         <h3 class="mt-5 py-2 fs-3 warna-hijau">Welcome, <span class="fw-bold">Admin</span></h3>

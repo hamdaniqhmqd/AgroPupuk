@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
+    public function admin_dashboard()
+    {
+        $data['admin'] = User::find(Auth::User()->id);
+        $title = 'Dashboard';
+
+        return view('admin.dashboard_baru', compact('title'), $data);
+    }
     public function showDashboard()
     {
         // Anda dapat menambahkan logika lain di sini jika diperlukan sebelum menampilkan dashboard
@@ -36,13 +44,10 @@ class DashboardController extends Controller
         return view('dashboard/postingan');
     }
 
-    
+
     public function showPage()
     {
         // Misalnya, jika Anda memiliki halaman dengan slug 'about', Anda bisa mengaksesnya dengan '/page/about'
         return view('dashboard/halaman');
     }
-
 }
-
-?>
