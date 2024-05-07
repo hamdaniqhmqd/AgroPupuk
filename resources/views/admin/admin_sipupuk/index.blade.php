@@ -33,7 +33,7 @@
                                             <span class="teks"><i class="bi bi-plus-square"></i> Add Article</span>
                                         </a>
                                         <form class="input-group search-custom " action="{{ route('search') }}" method="GET">
-                                            <input class="form-control" type="search" placeholder="Masukkan kata kunci..." aria-label="Masukkan kata kunci..." 
+                                            <input class="form-control" type="search" placeholder="Masukkan kata kunci..." aria-label="Masukkan kata kunci..."
                                                 aria-describedby="button-search" name="search" value="{{ old('search') }}" type="submit" />
                                         </form>
                                     </div>

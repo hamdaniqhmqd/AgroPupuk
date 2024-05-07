@@ -132,13 +132,13 @@
             border: none;
         }
 
-        tbody td.data-aksi a {
-            width: 82px;
+        tbody td.data-aksi a i {
+            font-size: 20px;
         }
     </style>
     <header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
-            <span class="list_page">Dashoard</span>
+            <span class="list_page">{{ $title }}</span>
         </div>
 
         <div class="profile d-flex align-items-center">
@@ -199,7 +199,7 @@
                 </thead>
                 <tbody>
                     {{-- sebuah perulangan dengan mengambil data dari variabel $berita dan di masukan ke variabel $data
-				jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
+				        jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
                     @forelse ($berita as $data)
                         <tr class="data-row">
                             <td class="isi-data text-center" scope="row">{{ $loop->index + 1 }}</td>
@@ -223,20 +223,20 @@
                                 <form action="{{ route('admin_berita.hapus_data', $data->id_berita) }}" method="POST"
                                     id="formHapusData_{{ $data->id_berita }}"
                                     onsubmit="return hapusData({{ $data->id_berita }})"
-                                    class="tombol d-flex justify-content-around align-items-center flex-wrap gap-1 text-center">
+                                    class="tombol d-flex justify-content-evenly align-items-center flex-wrap gap-1 text-center">
                                     {{-- digunakan untuk mengarah ke tampilan detail data sesuai dengan id --}}
                                     <a href="{{ route('admin_berita.detail_data', $data->id_berita) }}"
                                         class="btn btn-sm btn-success">
-                                        <span class="teks">
-                                            <i class="bi bi-info-square"></i>
+                                        <span class="teks d-flex align-items-center gap-2">
+                                            <i class='bx bx-detail' ></i>
                                             Detail
                                         </span>
                                     </a>
                                     {{-- digunakan untuk mengarah ke tampilan edit data sesuai dengan id --}}
                                     <a href="{{ route('admin_berita.edit_data', $data->id_berita) }}"
                                         class="btn btn-sm btn-primary">
-                                        <span class="teks">
-                                            <i class="bi bi-info-square"></i>
+                                        <span class="teks d-flex align-items-center gap-2">
+                                            <i class='bx bxs-edit'></i>
                                             Ubah
                                         </span>
                                     </a>
@@ -245,8 +245,8 @@
                                     {{--  digunakan untuk mengirimkan form yang akan menghapus data sesuai dengan id dan
 								menampilkan validasi dengan bantuan dari alert --}}
                                     <button type="submit" class="btn btn-sm btn-danger">
-                                        <span class="teks">
-                                            <i class="bi bi-info-square"></i>
+                                        <span class="teks d-flex align-items-center gap-2">
+                                            <i class='bx bx-trash-alt' ></i>
                                             Hapus
                                         </span>
                                     </button>

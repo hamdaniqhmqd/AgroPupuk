@@ -44,14 +44,10 @@
 <body style="color: #E3E3E3">
     @include('component.sidebar_new')
     <main class="position-relative">
-
-        @yield('admin_berita')
-        @yield('tambah_berita')
-        @yield('edit_berita')
-        @yield('detail_berita')
+        {{-- yield untuk sipupuk --}}
+        @yield('')
 
     </main>
-
     {{-- link alert js dari sweetalert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- link js --}}

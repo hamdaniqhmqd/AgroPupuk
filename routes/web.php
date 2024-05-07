@@ -54,7 +54,7 @@ Route::get('/search', [ControllerAdminSipupuk::class, 'search'])->name('search')
 
 // routes\web.php Login
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+// Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 // route buat laman produk
 Route::get('/produk', [ControllerLamanProduk::class, 'index'])->name('produk.index');
@@ -105,6 +105,10 @@ Route::get('/forget', [AuthController::class, 'forget']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::group(['middleware' => 'admin'], function () {
+    // dibawah ini kumpulan route laman admin dashboard
+    Route::get('admin/dashboard', [DashboardController::class, 'admin_dashboard'])->name('admin.dashboard');
+
+
     // dibawah ini kumpulan route laman admin ...
 
 

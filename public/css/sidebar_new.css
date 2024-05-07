@@ -163,6 +163,12 @@ nav.close .daftar_menu li .nama_nav {
     gap: 12px;
 }
 
+.menu_bawah img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
 /* akhir edit sidebar */
 
 /* awal edit main */
