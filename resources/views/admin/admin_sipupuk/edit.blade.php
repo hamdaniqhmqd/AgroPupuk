@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tambah Produk Baru - SantriKoding.com</title>
+    <title>Edit Artikel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin-sipupuk.css') }}" />
 
@@ -37,7 +37,7 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="font-weight-bold">GAMBAR</label>
-                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control @error('image') is-invalid @enderror" name="image">
+                            <input type="file"accept="image/jpeg, image/png , image/jpg" class="form-control @error('image') is-invalid @enderror" name="image">
                         
                             <!-- pesan error untuk gambar -->
                             @error('image')

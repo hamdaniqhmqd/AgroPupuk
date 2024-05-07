@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog Post - Start Bootstrap Template</title>
+        <title>Preview Artikel</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -67,7 +67,7 @@
                         src="{{ asset('public/storage/sipupuk'.$sipupuks->image) }}"/>
     
                     </figure> --}}
-                    <img src="{{ asset('storage/sipupuks/'.$sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
+                    <img src="{{ asset('storage/gambar_sipupuk/'.$sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
                     <!-- Post content-->
                     <section class="mb-5">
                         

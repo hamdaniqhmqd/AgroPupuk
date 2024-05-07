@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 
 
+
 </head>
 @php
     use Illuminate\Support\Str;
@@ -18,10 +19,13 @@
 <style>
 </style>
 <body style="background: lightgray">
+    
+    @include('component.sidebar_new')
+
+<main class="position-relative">
 
     <div class="container-full">
 
-        @include('component.sidebar_baru')
 
             <div class="container mt-5 ">
                 <div class="row">
@@ -32,9 +36,9 @@
                                         <a href="{{ route('adminsipupuk.create') }}" class=" btn-custom border-0 text-center justify-content-center align-items-center">
                                             <span class="teks"><i class="bi bi-plus-square"></i> Add Article</span>
                                         </a>
-                                        <form class="input-group search-custom " action="{{ route('search') }}" method="GET">
+                                        <form class="input-group search-custom " action="{{ route('cari') }}" method="GET">
                                             <input class="form-control" type="search" placeholder="Masukkan kata kunci..." aria-label="Masukkan kata kunci..."
-                                                aria-describedby="button-search" name="search" value="{{ old('search') }}" type="submit" />
+                                                aria-describedby="button-search" name="search" value="{{ old('cari') }}" type="submit" />
                                         </form>
                                     </div>
                                 </div>
@@ -53,7 +57,7 @@
                                         @forelse ($sipupuks as $sipupuk)
                                         <tr>
                                             <td class="text-center" style="max-width: 150px; height: 100px;">
-                                                <img src="{{ asset('storage/sipupuks/'.$sipupuk->image) }}" class="rounded" width="150" height="70">
+                                                <img src="{{ asset('storage/gambar_sipupuk/'.$sipupuk->image) }}" class="rounded" width="150" height="70">
                                             </td>
                                             <td style="max-width: 170px; height: 100px; overflow: hidden;   text-overflow: ellipsis">{{ $sipupuk->title }}</td>
                                             <td style="max-width: 330px; height: 100px; overflow: hidden;  text-overflow: ellipsis; font-size: 12px;" >{!! html_entity_decode(Str::limit($sipupuk->content, 100)) !!}</td>
@@ -118,6 +122,7 @@
             </div>
             <!--End Pagi-->
         </div>
+</main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

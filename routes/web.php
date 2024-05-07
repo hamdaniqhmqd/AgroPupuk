@@ -50,7 +50,7 @@ Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class)
 // Search laman Sipupuk
 Route::get('/search', [ControllerLamanSipupuk::class, 'search'])->name('search');
 // Search Admin Sipupuk
-Route::get('/search', [ControllerAdminSipupuk::class, 'search'])->name('search');
+Route::get('/cari', [ControllerAdminSipupuk::class, 'cari'])->name('cari');
 
 // routes\web.php Login
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sipupuk;
+use App\Models\User;
+
+use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,15 +22,25 @@ class ControllerAdminSipupuk extends Controller
     //
     public function index() : View
     {
-        //mengambil semua produk
-        $sipupuks = Sipupuk::latest()->paginate(10);
-
-        //menampilkan view dengan produk
-        return view('admin.admin_sipupuk.index', compact('sipupuks'));
+        // Memeriksa apakah pengguna terautentikasi
+        if(Auth::check()) {
+            // Mengambil data admin terautentikasi
+            $admin = User::find(Auth::id());
+    
+            // Mengambil semua produk
+            $sipupuks = Sipupuk::latest()->paginate(10);
+    
+            // Menampilkan view dengan produk dan data admin
+            return view('admin.admin_sipupuk.index', compact('sipupuks', 'admin'));
+        } else {
+            // Jika tidak terautentikasi, redirect ke halaman login
+            return view('admin.auth.login');
+        }
     }
 
     public function create(): View
     {
+        $data['admin'] = User::find(Auth::User()->id);
         return view('admin.admin_sipupuk.create');
     }
 
@@ -39,6 +52,8 @@ class ControllerAdminSipupuk extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+    
+        $data = new Sipupuk();
         //validasi form
         $request->validate([
             'image'         => 'required|image|mimes:jpeg,jpg,png|max:2048',
@@ -46,32 +61,32 @@ class ControllerAdminSipupuk extends Controller
             'content'       => 'required|min:1000',
             'author'        => 'required|min:5'
         ]);
-
-
+    
+    
         //upload image
         $image = $request->file('image');
-        $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
-            $request->input('title') . '.' . $image->getClientOriginalExtension();
-        // $image->storeAs('/sipupuks', $image->hashName());
-        $image->storeAs('public/sipupuks', $nameImage);
-
+        $nameImage =     Carbon::now()->format('Y-m-d_H-i-s_') .
+                $request->input('title') . '.' . $image->getClientOriginalExtension();
+        $image->storeAs('public/gambar_sipupuk', $nameImage); // Pastikan direktori penyimpanan yang benar
+        $data['image'] = $nameImage;
+    
         //buat produk
-        Sipupuk::create([
-            // 'image'         => $image->hashName(),
+        $data->create([
             'image'         => $nameImage,
             'title'         => $request->title,
             'content'       => $request->content,
-            'author'        => $request->author// Sesuaikan dengan author yang sesuai
+            'author'        => $request->author // Sesuaikan dengan author yang sesuai
         ]);
-
+    
         //redirect ke index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
-
+    
     public function show(string $id): View
     {
         //mengambil produk berdasarkan ID
         $sipupuks = Sipupuk::findOrFail($id);
+        $data['admin'] = User::find(Auth::User()->id);
 
         //menampilkan view dengan produk
         return view('admin.admin_sipupuk.show', compact('sipupuks'));
@@ -101,6 +116,7 @@ class ControllerAdminSipupuk extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
+        $data = new Sipupuk();
         //validate form
         $request->validate([
             'image'         => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
@@ -113,17 +129,18 @@ class ControllerAdminSipupuk extends Controller
         $sipupuks = Sipupuk::findOrFail($id);
     
         //check if image is uploaded
-        if ($request->hasFile('image')) {
+        if ($request->filledile('image')) {
     
             //upload new image
             $image = $request->file('image');
     
-            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
+            $nameImage =  Carbon::now()->format('Y-m-d_H-i-s_') . 
                 $request->input('title') . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/sipupuks', $nameImage);
+
+            $image->storeAs('public/gambar_sipupuk', $nameImage);
     
             //delete old image
-            Storage::delete('public/sipupuks/' . $sipupuks->image);
+            Storage::delete('public/gambar_sipupuk/' . $sipupuks->image);
     
             //update product with new image
             $sipupuks->update([
@@ -142,6 +159,8 @@ class ControllerAdminSipupuk extends Controller
                 'author'        => $request->author // Sesuaikan dengan author yang sesuai
             ]);
         }
+
+        $data->save();
     
         //redirect to index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Diubah!']);
@@ -161,7 +180,7 @@ class ControllerAdminSipupuk extends Controller
         // Hapus gambar terkait jika ada
         if ($sipupuks->image) {
             // Hapus file dari penyimpanan
-            Storage::delete('public/sipupuks' . $sipupuks->image);
+            Storage::delete('oublic/gambar_sipupuk/' . $sipupuks->image);
         }
 
         //delete product
@@ -171,16 +190,16 @@ class ControllerAdminSipupuk extends Controller
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 
-    public function search(Request $request) : View
+    public function cari(Request $request) : View
     {
-        $query = $request->get('search');
+        $query = $request->get('cari');
 
         // Ambil nilai pencarian dari input
-        $query = $request->input('search');
+        $query = $request->input('cari');
 
         if ($query) {
             // Jika terdapat query pencarian
-            $sipupuks = Sipupuk::where('title', 'like', '%' . $query . '%')->latest()->paginate(6);
+            $sipupuks = Sipupuk::where('title', 'like', '%' . $query . '%')->latest()->paginate(10);
         } else {
             // Jika tidak ada query pencarian
             $sipupuks = Sipupuk::latest()->paginate(10);

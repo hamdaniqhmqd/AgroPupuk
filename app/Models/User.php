@@ -35,6 +35,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Berita::class);;
     }
+    public function sipupuk()
+    {
+        return $this->hasMany(Sipupuk::class);;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
