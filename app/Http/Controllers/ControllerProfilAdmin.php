@@ -18,13 +18,15 @@ class ControllerProfilAdmin extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'no_hp' => 'required|string|max:255',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000',
         ]);
 
         $user = auth()->user();
 
         $user->nama = $request->nama;
         $user->email = $request->email;
+        $user->no_hp = $request->no_hp;
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');

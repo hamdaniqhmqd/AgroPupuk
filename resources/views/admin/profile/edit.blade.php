@@ -3,35 +3,6 @@
      body {
         font-family: Arial, sans-serif;
     }
-/*
-    form {
-        width: 300px;
-        margin: 0 auto;
-    }
-
-    label {
-        display: block;
-        margin-top: 20px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="file"] {
-        width: 100%;
-        padding: 5px;
-        margin-top: 5px;
-    }
-
-    button[type="submit"] {
-        display: block;
-        margin: 20px auto;
-        padding: 10px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    } */
 
     /* Add styles to the form itself */
 form {
@@ -39,7 +10,7 @@ form {
   flex-direction: column;
   gap: 10px; /* Add spacing between labels and input fields */
   margin-left: 300px; /* Add margin to the form */
-  margin-top: 10px;
+  margin-top: 170px;
   margin-right: 50px;
 }
 
@@ -75,7 +46,7 @@ form img {
 
 </style>
 
-<link rel="stylesheet" href="{{ asset('css/bootstrap/sidebar_new.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sidebar_new.css') }}">
 
 
 @if (session('success'))
