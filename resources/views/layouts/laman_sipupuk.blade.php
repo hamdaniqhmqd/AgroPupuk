@@ -47,7 +47,7 @@
                         @forelse ($sipupuks as $sipupuk)
                             <div class="col-lg-4">
                                 <div class="card mb-4 shadow" style="height: 350px;">
-                                    <a href="#!" style="width: 100%; height: 170px; overflow :hidden;"> <img class="card-img-top" src="{{ asset('storage/sipupuks/'.$sipupuk->image) }}" alt="{{ $sipupuk->title }}" style="objet-fit: contain;"/> </a>
+                                    <a href="#!" style="width: 100%; height: 170px; overflow :hidden;"> <img class="card-img-top" src="{{ asset('/storage/gambar_sipupuk/'.$sipupuk->image) }}" alt="{{ $sipupuk->title }}" style="objet-fit: contain;"/> </a>
                                     <div class="card-body" style="width: 90%; margin:auto;"  >
                                         <div class=" fs-kecil text-muted m-0">Di Upload {{ $sipupuk->created_at->format('d F Y') }}</div>
                                         <h2 class=" warna-hijau fw-bold fs-besar my-1">{!! Str::limit($sipupuk->title, 15) !!}</h2>

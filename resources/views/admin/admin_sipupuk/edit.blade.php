@@ -37,7 +37,7 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="font-weight-bold">GAMBAR</label>
-                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control @error('image') is-invalid @enderror" name="image">
+                            <input type="file"accept="image/jpeg, image/png , image/jpg" class="form-control @error('image') is-invalid @enderror" name="image">
                         
                             <!-- pesan error untuk gambar -->
                             @error('image')
