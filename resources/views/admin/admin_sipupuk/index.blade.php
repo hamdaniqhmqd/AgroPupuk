@@ -63,23 +63,26 @@
                                             class="d-flex row">
                                             <a href="{{ route('adminsipupuk.show', $sipupuk->id) }}" class="show">
                                                 <i class="bi bi-eye-fill fs-5 text-decoration-none text-hijau"></i>
+                                                Detail
                                             </a>
                                             <a href="{{ route('adminsipupuk.edit', $sipupuk->id) }}" class="edit">
                                                 <i class="bi bi-pencil-fill fs-5 text-decoration-none   "></i>
+                                                Edit
                                             </a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="button-delete">
                                                 <span>
                                                     <i class="bi bi-trash3-fill fs-5 text-decoration-none text-danger"></i>
+                                                    Hapus
                                                 </span>
                                             </button>
                                         </form>
                                     </td>
                                 @empty
-                                    <div class="alert alert-danger">
-                                        Data Produk belum Tersedia.
-                                    </div>
+                                    <tr>
+                                        <td colspan="5" class="text-center">Data sipupuk belum ditambahkan.</td>
+                                    </tr>
                             @endforelse
                             </tr>
                         </tbody>
