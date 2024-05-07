@@ -26,12 +26,13 @@ class ControllerAdminSipupuk extends Controller
         if(Auth::check()) {
             // Mengambil data admin terautentikasi
             $admin = User::find(Auth::id());
-    
+            $title = 'Data Si Pupuk';
+
             // Mengambil semua produk
             $sipupuks = Sipupuk::latest()->paginate(10);
-    
+
             // Menampilkan view dengan produk dan data admin
-            return view('admin.admin_sipupuk.index', compact('sipupuks', 'admin'));
+            return view('admin.admin_sipupuk.index', compact('sipupuks', 'admin', 'title'));
         } else {
             // Jika tidak terautentikasi, redirect ke halaman login
             return view('admin.auth.login');
@@ -52,7 +53,7 @@ class ControllerAdminSipupuk extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-    
+
         $data = new Sipupuk();
         //validasi form
         $request->validate([
@@ -61,15 +62,15 @@ class ControllerAdminSipupuk extends Controller
             'content'       => 'required|min:1000',
             'author'        => 'required|min:5'
         ]);
-    
-    
+
+
         //upload image
         $image = $request->file('image');
         $nameImage =     Carbon::now()->format('Y-m-d_H-i-s_') .
                 $request->input('title') . '.' . $image->getClientOriginalExtension();
         $image->storeAs('public/gambar_sipupuk', $nameImage); // Pastikan direktori penyimpanan yang benar
         $data['image'] = $nameImage;
-    
+
         //buat produk
         $data->create([
             'image'         => $nameImage,
@@ -77,11 +78,11 @@ class ControllerAdminSipupuk extends Controller
             'content'       => $request->content,
             'author'        => $request->author // Sesuaikan dengan author yang sesuai
         ]);
-    
+
         //redirect ke index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
-    
+
     public function show(string $id): View
     {
         //mengambil produk berdasarkan ID
@@ -124,24 +125,24 @@ class ControllerAdminSipupuk extends Controller
             'content'       => 'required|min:1000',
             'author'        => 'required|min:5'
         ]);
-    
+
         //get product by ID
         $sipupuks = Sipupuk::findOrFail($id);
-    
+
         //check if image is uploaded
         if ($request->filledile('image')) {
-    
+
             //upload new image
             $image = $request->file('image');
-    
-            $nameImage =  Carbon::now()->format('Y-m-d_H-i-s_') . 
+
+            $nameImage =  Carbon::now()->format('Y-m-d_H-i-s_') .
                 $request->input('title') . '.' . $image->getClientOriginalExtension();
 
             $image->storeAs('public/gambar_sipupuk', $nameImage);
-    
+
             //delete old image
             Storage::delete('public/gambar_sipupuk/' . $sipupuks->image);
-    
+
             //update product with new image
             $sipupuks->update([
                 'image'         => $nameImage,
@@ -149,9 +150,9 @@ class ControllerAdminSipupuk extends Controller
                 'content'       => $request->content,
                 'author'        => $request->author // Sesuaikan dengan author yang sesuai
             ]);
-    
+
         } else {
-    
+
             //update product without image
             $sipupuks->update([
                 'title'         => $request->title,
@@ -161,7 +162,7 @@ class ControllerAdminSipupuk extends Controller
         }
 
         $data->save();
-    
+
         //redirect to index
         return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
