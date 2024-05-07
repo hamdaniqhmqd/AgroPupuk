@@ -10,6 +10,7 @@
     {{-- link icon dari boxincons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {{-- link css --}}
+    <link rel="stylesheet" href="{{ asset('css/admin-sipupuk.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/sidebar_new.css') }}">
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
     <style>
