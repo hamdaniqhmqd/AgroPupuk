@@ -45,7 +45,7 @@
     @include('component.sidebar_new')
     <main class="position-relative">
         {{-- yield untuk sipupuk --}}
-        @yield('')
+        @yield('admin_sipupuk')
 
     </main>
     {{-- link alert js dari sweetalert2 --}}
