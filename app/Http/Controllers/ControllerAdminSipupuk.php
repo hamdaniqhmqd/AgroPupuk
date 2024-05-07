@@ -22,12 +22,20 @@ class ControllerAdminSipupuk extends Controller
     //
     public function index() : View
     {
-        $data['admin'] = User::find(Auth::User()->id);
-        //mengambil semua produk
-        $sipupuks = Sipupuk::latest()->paginate(10);
-
-        //menampilkan view dengan produk
-        return view('admin.admin_sipupuk.index', compact('sipupuks'));
+        // Memeriksa apakah pengguna terautentikasi
+        if(Auth::check()) {
+            // Mengambil data admin terautentikasi
+            $admin = User::find(Auth::id());
+    
+            // Mengambil semua produk
+            $sipupuks = Sipupuk::latest()->paginate(10);
+    
+            // Menampilkan view dengan produk dan data admin
+            return view('admin.admin_sipupuk.index', compact('sipupuks', 'admin'));
+        } else {
+            // Jika tidak terautentikasi, redirect ke halaman login
+            return view('admin.auth.login');
+        }
     }
 
     public function create(): View
