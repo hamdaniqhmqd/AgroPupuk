@@ -32,7 +32,7 @@
         </ul>
         <ul class="menu_bawah ps-0 mb-0">
             <li class="">
-                <a href="#" class="menu flex-fill d-flex align-items-center justify-content-start">
+                <a href="{{ url('/admin/profile/edit') }}" class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bx-user d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Profile</span></a>
             </li>
