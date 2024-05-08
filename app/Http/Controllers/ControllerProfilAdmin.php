@@ -20,11 +20,12 @@ class ControllerProfilAdmin extends Controller
 
     public function update(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'nama' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
-            'no_hp' => 'required|string|max:255',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000',
+            'nama' => 'required|string|max:50',
+            'email' => 'required|string|email|max:70|unique:users,email,' . auth()->user()->id,
+            'no_hp' => 'required|string|max:15',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:9000',
         ]);
 
         $user = auth()->user();
@@ -35,8 +36,14 @@ class ControllerProfilAdmin extends Controller
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
+
+            // untuk menghapus image lama
+            Storage::delete('public/profile/' . $user->gambar);
+
             $gambarName = time() . '-' . $gambar->getClientOriginalName();
-            $gambar->storeAs('public/gambar', $gambarName);
+            $gambar->storeAs('public/profile/', $gambarName);
+
+            // $gambar->storeAs('storage/profile', $gambarName);
             $user->gambar = $gambarName;
         }
 

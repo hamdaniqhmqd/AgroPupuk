@@ -16,7 +16,7 @@
             /* Add spacing between labels and input fields */
             /* margin-left: 300px; */
             /* Add margin to the form */
-            /* margin-top: 170px; */
+             margin-top: 170px;
             /* margin-right: 50px; */
         }
 
@@ -29,6 +29,8 @@
         /* Style the input fields */
         input[type="text"],
         input[type="email"],
+        input[type="file"],
+        select[name="jenis_kelamin"],
         input[type="file"] {
             padding: 5px;
             /* Add padding to the input fields */
@@ -56,17 +58,20 @@
 
         form img {
             position: absolute;
-            /* Posisikan secara absolut */
-            top: 25px;
-            /* Posisikan di atas gambar kucing */
-            left: 850px;
-            /* Posisikan di kiri atas gambar kucing */
+            top: 100px;
+            left: 700px;
+        }
+
+        form label {
+          color: black;
+        }
+
+        p{
+          color:black;
         }
     </style>
 
-    @if (session('success'))
-        <p>{{ session('success') }}</p>
-    @endif
+   
     <header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
             <span class="list_page">{{ $title }}</span>
@@ -74,7 +79,7 @@
 
         <div class="profile d-flex align-items-center">
             <span class="nama_admin">{{ $admin->nama }}</span>
-            <img class="object-fit-fill rounded" src="{{ asset('storage/image/coro1.png') }}" alt="profile" loading="lazy" />
+            <img class="object-fit-cover rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile" loading="lazy" />
         </div>
     </header>
 
@@ -91,13 +96,22 @@
         <label for="email">Nomor HP:</label>
         <input type="text" name="no_hp" id="no_hp" value="{{ old('no_hp', $admin->no_hp) }}" required>
 
+        <label for="jenis_kelamin">Jenis Kelamin:</label>
+    <select name="jenis_kelamin" id="jenis_kelamin" required>
+        <option value="laki-laki" {{ $admin->jenis_kelamin === 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+        <option value="perempuan" {{ $admin->jenis_kelamin === 'perempuan' ? 'selected' : '' }}>Perempuan</option>
+    </select>
+
         <label for="gambar">Gambar:</label>
         <input type="file" name="gambar" id="gambar">
 
         @if (auth()->user()->gambar)
-            <img src="{{ Storage::url(auth()->user()->gambar) }}" alt="Gambar Profil" width="100" height="120">
+            <img src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="Gambar Profil" width="100" height="100">
         @endif
 
         <button type="submit">Simpan Perubahan</button>
     </form>
+    @if (session('success'))
+        <p>{{ session('success') }}</p>
+    @endif
 @endsection
