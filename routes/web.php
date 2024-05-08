@@ -92,7 +92,7 @@ Route::get('/berita', [ControllerLamanBerita::class, 'index'])->name('berita.ind
 // Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
 
 // route get pengunjung, untuk menambahkan jumlah pengunjung dan di arahkan link yang dituju
-Route::get('/pengunjung/{id}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('admin_berita.pengunjung');
+Route::get('/pengunjung/{id_berita}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('berita.pengunjung');
 // route get login untuk menampilkan ke laman login dan get proses_login untuk mengeksekusi proses login
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/process_login', [AuthController::class, 'process_login']);
@@ -132,7 +132,6 @@ Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin ...
     Route::get('/admin/profile/edit', [ControllerProfilAdmin::class, 'edit'])->name('admin.profile.edit');
     Route::put('/admin/profile/update', [ControllerProfilAdmin::class, 'update'])->name('admin.profile.update');
-
 });
 
 //bagian java
