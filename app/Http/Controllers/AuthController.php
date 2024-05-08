@@ -41,9 +41,18 @@ class AuthController extends Controller
 		return redirect('/login')->with(['success' => 'Register successfully']);
 	}
 
-	public function login(): View
+	public function login()
 	{
-		return view('admin.auth.login');
+        if (Auth::check()) {
+            if (Auth::User()->role == 'admin') {
+                return redirect('/admin/dashboard');
+            } else {
+                return redirect('/login');
+            }
+        } else {
+            // return view('Auth.login');
+            return view('admin.auth.login');
+        }
 	}
 
     public function process_login(Request $request): RedirectResponse
@@ -55,7 +64,7 @@ class AuthController extends Controller
 
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password], true)) {
             if (Auth::User()->role == 'admin') {
-                return redirect('/admin/berita')->with(['success' => 'Login successfully']);
+                return redirect('/admin/dashboard')->with(['success' => 'Login successfully']);
             } else {
                 return redirect('/login')->with(['error' => 'Checked your email and password']);
             }

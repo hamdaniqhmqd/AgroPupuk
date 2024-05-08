@@ -14,13 +14,13 @@
             </li>
             <li class="{{ request()->is('') ? 'active' : '' }}">
                 <a href="#" class="menu flex-fill d-flex align-items-center justify-content-start">
-                    <i class="bx bx-home d-flex align-items-center justify-content-center"></i>
-                    <span class="nama_nav">Beranda</span></a>
-            </li>
-            <li class="{{ request()->is('adminsipupuk') ? 'active' : '' }}">
-                <a href="{{ url('adminsipupuk') }}"
-                    class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bx-package d-flex align-items-center justify-content-center"></i>
+                    <span class="nama_nav">Produk</span></a>
+                </li>
+                <li class="{{ request()->is('adminsipupuk') ? 'active' : '' }}">
+                    <a href="{{ url('adminsipupuk') }}"
+                    class="menu flex-fill d-flex align-items-center justify-content-start">
+                    <i class="bx bxs-florist d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Pupuk</span></a>
             </li>
             <li class="{{ request()->is('admin/berita', 'admin/berita/*') ? 'active' : '' }}">
