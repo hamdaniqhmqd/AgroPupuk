@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('no_hp')->nullable();
             $table->string('alamat')->nullable();
             $table->text('deskripsi')->nullable();
-            $table->enum('role', ['admin', 'user'])->default('admin');
+            $table->enum('role', ['admin'])->default('admin');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
