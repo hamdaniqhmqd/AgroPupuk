@@ -28,7 +28,7 @@
             <div class="container d-flex  justify-content-between">
                 <a href="{{ route('adminsipupuk.index') }}" class="btn btn-secondary align-content-start">KEMBALI</a>
                 <h2>Preview Artikel</h2>
-                <a href="#" class="btn btn-primary">Edit Artikel</a>
+                <a  href="{{ route('adminsipupuk.edit', $sipupuks->id) }}" class="btn btn-primary">Edit Artikel</a>
             </div>
         {{-- <a href="{{ route('adminpupuk.edit', $sipupuks->id) }}" class="btn btn-primary">Edit</a> --}}
         </header>
