@@ -2,6 +2,7 @@
 {{-- digunakan untuk memanggil file --}}
 {{-- digunakan untuk meengidentifikasi nama dari section --}}
 @section('admin_sipupuk')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
             <span class="list_page">{{ $title }}</span>
@@ -17,7 +18,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex justify-content-between  mt-4">
-                    <h3 class="w-60 text-black">DASHBOARD SIPUPUK</h3>
+                    <h3 class="w-60 warna-hijau">DASHBOARD SIPUPUK</h3>
                     <div class="d-flex w-40 justify-content-between">
                         <a href="{{ route('adminsipupuk.create') }}"
                             class=" btn-custom border-0 text-center justify-content-center align-items-center">
@@ -63,18 +64,15 @@
                                             class="d-flex row">
                                             <a href="{{ route('adminsipupuk.show', $sipupuk->id) }}" class="show">
                                                 <i class="bi bi-eye-fill fs-5 text-decoration-none text-hijau"></i>
-                                                Detail
                                             </a>
                                             <a href="{{ route('adminsipupuk.edit', $sipupuk->id) }}" class="edit">
                                                 <i class="bi bi-pencil-fill fs-5 text-decoration-none   "></i>
-                                                Edit
                                             </a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="button-delete">
                                                 <span>
                                                     <i class="bi bi-trash3-fill fs-5 text-decoration-none text-danger"></i>
-                                                    Hapus
                                                 </span>
                                             </button>
                                         </form>
@@ -92,9 +90,9 @@
         </div>
 
         <!--Pagination-->
-        {{-- <div class="container d-flex justify-content-center border-top" style="width: 100%;">
+        <div class="container d-flex justify-content-center border-top" style="width: 100%;">
             <!--Pagination-->
-            <nav aria-label="Pagination">
+            <div aria-label="Pagination">
                 <ul class="pagination my-4">
                     @if ($sipupuks->onFirstPage())
                         <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
@@ -119,11 +117,56 @@
                         </li>
                     @endif
                 </ul>
-            </nav>
+            </div>
             <!--End Pagination-->
-        </div> --}}
+        </div>
         <!--End Pagi-->
     </div>
+
+    <style>
+
+
+.search-custom {
+    margin-left: 10px;
+    height: 42px;
+    font-size: 15px;
+    background-color: white;
+    color: #224038;
+    border-radius: 10px;
+    border-color: #224038;
+}
+.btn-custom {
+    color: #224038;
+}
+
+.btn-custom {
+    width: 170px;
+    height: 42px;
+    background-color: white;
+    padding: 10px 5px;
+    border-radius: 8px; /* Sudut bulat tombol */
+    text-decoration: none; /* Menghapus dekorasi tautan */
+    transition: background-color 0.3s; /* Transisi hover */
+}
+
+.btn-custom:hover {
+    background-color: #224038;
+    color: #ffffff;
+}
+
+.text-hijau {
+    color: #224038;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+th {
+    color: #224038;
+}
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
