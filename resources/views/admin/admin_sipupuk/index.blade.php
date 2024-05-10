@@ -10,7 +10,13 @@
 
         <div class="profile d-flex align-items-center">
             <span class="nama_admin">{{ $admin->nama }}</span>
-            <img class="object-fit-fill rounded" src="{{ asset('storage/image/coro1.png') }}" alt="profile" loading="lazy" />
+            @if (auth()->user()->gambar)
+                <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
+                    loading="lazy" />
+            @else
+                <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile"
+                    loading="lazy" />
+            @endif
         </div>
     </header>
 

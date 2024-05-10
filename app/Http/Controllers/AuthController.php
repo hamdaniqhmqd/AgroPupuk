@@ -16,7 +16,15 @@ class AuthController extends Controller
 {
 	public function register(): View
 	{
-		return view('admin.auth.register');
+        if (Auth::check()) {
+            if (Auth::User()->role == 'admin') {
+                return redirect('/admin/dashboard');
+            } else {
+                return redirect('/login');
+            }
+        } else {
+            return view('admin.auth.register');
+        }
 	}
 
 	public function process_register(Request $request): RedirectResponse
@@ -50,7 +58,6 @@ class AuthController extends Controller
                 return redirect('/login');
             }
         } else {
-            // return view('Auth.login');
             return view('admin.auth.login');
         }
 	}

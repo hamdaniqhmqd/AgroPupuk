@@ -18,7 +18,7 @@ class Berita extends Model
         'judul_berita',
         'deskripsi_berita',
         'link_berita',
-        'id_admin',
+        'author',
         'pengunjung_berita',
     ];
 
@@ -27,7 +27,7 @@ class Berita extends Model
     // Relasi dengan model User
     public function user()
     {
-        return $this->belongsTo(User::class, 'id_admin');
+        return $this->belongsTo(User::class, 'author');
     }
 
     // Method untuk mengisi user_id secara otomatis dengan ID pengguna yang sedang terautentikasi
@@ -37,7 +37,7 @@ class Berita extends Model
 
         static::creating(function ($post) {
             if (Auth::check()) {
-                $post->id_admin = Auth::id();
+                $post->author = Auth::id();
             }
         });
     }

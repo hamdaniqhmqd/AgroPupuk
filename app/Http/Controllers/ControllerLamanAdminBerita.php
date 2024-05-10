@@ -21,7 +21,8 @@ class ControllerLamanAdminBerita extends Controller
 
         $data['admin'] = User::find(Auth::User()->id);
         $title = 'Berita';
-
+        $totalBerita = Berita::count();
+        $totalPengunjung = Berita::sum('pengunjung_berita');
         // variabel untuk melakukan pencarian
         $search = $request->get('pencarian');
         // if jika ada data dari variabel $search maka mengeluarkan data pencarian
@@ -35,7 +36,7 @@ class ControllerLamanAdminBerita extends Controller
         }
 
         // untuk mengarahkan ke laman admin berita
-        return view('admin.admin_berita.index', compact('berita', 'title', 'request'), $data);
+        return view('admin.admin_berita.index', compact('berita', 'title', 'request', 'totalPengunjung', 'totalBerita'), $data);
     }
 
     public function buat_data(): View

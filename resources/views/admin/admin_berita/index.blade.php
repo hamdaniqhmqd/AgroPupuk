@@ -143,7 +143,14 @@
 
         <div class="profile d-flex align-items-center">
             <span class="nama_admin">{{ $admin->nama }}</span>
-            <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile" loading="lazy" />
+            @if (auth()->user()->gambar)
+                <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
+                    loading="lazy" />
+            @else
+                <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile"
+                    loading="lazy" />
+            @endif
+
         </div>
     </header>
     <section class="mt-2">
@@ -157,14 +164,14 @@
                     <span class="teks align-text-top text-end mb-2">Total Data Berita</span>
                     <div class="d-flex align-items-end justify-content-between">
                         <i class='bx bx-news'></i>
-                        <span class="nomor text-end align-bottom">500</span>
+                        <span class="nomor text-end align-bottom">{{ $totalBerita }}</span>
                     </div>
                 </div>
                 <div class="card rounded-3">
-                    <span class="teks align-text-top text-end mb-2">Total Data Berita</span>
+                    <span class="teks align-text-top text-end mb-2">Total Pengunjung Berita</span>
                     <div class="d-flex align-items-end justify-content-between">
                         <i class='bx bx-group'></i>
-                        <span class="nomor text-end align-bottom">500</span>
+                        <span class="nomor text-end align-bottom">{{ $totalPengunjung }}</span>
                     </div>
                 </div>
             </div>
@@ -228,7 +235,7 @@
                                     <a href="{{ route('admin_berita.detail_data', $data->id_berita) }}"
                                         class="btn btn-sm btn-success">
                                         <span class="teks d-flex align-items-center gap-2">
-                                            <i class='bx bx-detail' ></i>
+                                            <i class='bx bx-detail'></i>
                                             Detail
                                         </span>
                                     </a>
@@ -246,7 +253,7 @@
 								menampilkan validasi dengan bantuan dari alert --}}
                                     <button type="submit" class="btn btn-sm btn-danger">
                                         <span class="teks d-flex align-items-center gap-2">
-                                            <i class='bx bx-trash-alt' ></i>
+                                            <i class='bx bx-trash-alt'></i>
                                             Hapus
                                         </span>
                                     </button>

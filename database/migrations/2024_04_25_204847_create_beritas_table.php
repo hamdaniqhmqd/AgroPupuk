@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('judul_berita');
             $table->text('deskripsi_berita');
             $table->text('link_berita');
-            $table->unsignedBigInteger('id_admin')->nullable();
+            $table->unsignedBigInteger('author')->nullable();
             $table->unsignedBigInteger('pengunjung_berita')->default(0);
             $table->timestamps();
 
-            $table->foreign('id_admin')->references('id')->on('users')->onDelete('set null');
-            $table->index('id_admin');
+            $table->foreign('author')->references('id')->on('users')->onDelete('set null');
+            $table->index('author');
         });
     }
 
