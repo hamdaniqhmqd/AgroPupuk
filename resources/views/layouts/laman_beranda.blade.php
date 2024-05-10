@@ -81,7 +81,7 @@
                         petani agar mudah mencari informasi tentang berbagai <br />
                         hal yang berkaitan dengan pupuk.</p>
                     <div class="btn-selengkapnya">
-                    <a class="text-decoration-none text-white btn-hijau mt-4 btn-selengkapnyaa" 
+                    <a class="text-decoration-none text-white btn-hijau mt-4 btn-selengkapnyaa"
                     type="button" href="{{ route('tentangkami') }}" data-aos-delay="300">Selengkapnya</a>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
         <!-- end Benner AgroPupuk-->
 
         <!-- Start Berita AgroPupuk-->
-        @include('component.berita')
+        @include('component.berita_laman_beranda')
         <!-- end Berita AgroPupuk-->
 
         <!--Our Grub -->
@@ -115,32 +115,32 @@
         {{-- <div class="container">
             <div class="row row-cols-5 row-cols-md-5 row-cols-sm-2 g-lg-4 g-md-1 g-sm-2 ">
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                     data-aos-duration="1500">
                         <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow"data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow"data-aos="zoom-in"
                     data-aos-delay="100" data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                     data-aos-delay="200" data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                     data-aos-delay="300"
                     data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
                     </div>
                 </div>
                 <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                     data-aos-delay="400"
                     data-aos-duration="1500">
                         <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43">
@@ -154,31 +154,31 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
                     <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                         data-aos-duration="1500">
                             <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" class="img-fluid" alt="Petrokimia Gresik">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                         data-aos-delay="100" data-aos-duration="1500">
                             <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" class="img-fluid" alt="Pupuk Iskandar Muda">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                         data-aos-delay="200" data-aos-duration="1500">
                             <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" class="img-fluid" alt="Pupuk Kaltim">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                         data-aos-delay="300" data-aos-duration="1500">
                             <img src="{{ asset('storage/image/pupuk-kujang.png') }}" class="img-fluid" alt="Pupuk Kujang">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in" 
+                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
                         data-aos-delay="400" data-aos-duration="1500">
                             <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" class="img-fluid" alt="Pupuk Sriwijaya">
                         </div>

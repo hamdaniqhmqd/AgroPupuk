@@ -25,7 +25,7 @@
                                     <p class="card-text" style="height: 48px; overflow: hidden">{{ $data->deskripsi_berita }}
                                     </p>
                                     <a class="link-offset-2 link-underline link-underline-opacity-0"
-                                        href="{{ route('admin_berita.pengunjung', ['id' => $data->id]) }}" target="_blank">
+                                        href="{{ route('berita.pengunjung', ['id_berita' => $data->id_berita]) }}" target="_blank">
                                         Lihat selengkapnya
                                     </a>
                                 </div>

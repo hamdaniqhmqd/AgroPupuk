@@ -30,6 +30,6 @@ class ControllerLamanBerita extends Controller
 			], 'LIKE', "%$search%")->paginate(6); // jika ada data yang sesuai maka akan di tampilkan sebanyak 6 per tab
 		}
 
-		return view('berita.content_berita', compact('berita', 'request', 'beritaSide', 'title'));
+		return view('component.berita_laman_berita', compact('berita', 'request', 'beritaSide', 'title'));
 	}
 }
