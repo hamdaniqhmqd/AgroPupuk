@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('gambar')->nullable();
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan'])->nullable();
             $table->date('tgl_lahir')->nullable();
-            $table->int('no_hp')->length(13)->nullable();
+            $table->string('no_hp')->length(13)->nullable();
             $table->text('alamat')->nullable();
             $table->text('deskripsi')->nullable();
             $table->enum('role', ['admin'])->default('admin');

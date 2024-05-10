@@ -1,7 +1,7 @@
 <nav class="">
     <div class="atas d-flex align-items-center justify-content-start">
         <i class="sidebar_tombol bx bx-menu d-flex align-items-center justify-content-center"></i>
-        <img class="" src="{{ asset('storage/image/logoweb.png') }}" alt="" />
+        <img class="" src="{{ asset('/gambar/logo.png') }}" alt="" />
     </div>
     <div class="daftar_menu">
         <ul class="menu_atas ps-0 mb-0">
