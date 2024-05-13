@@ -47,7 +47,7 @@ Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('
 Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
 Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupuks.store');
 
-Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
+
 // routes/web.php
 
 // Search laman Sipupuk
@@ -116,8 +116,11 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard', [DashboardController::class, 'admin_dashboard'])->name('admin.dashboard');
 
 
-    // dibawah ini kumpulan route laman admin ...
+    // dibawah ini kumpulan route laman admin pupuk
+    Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
 
+    // dibawah ini kumpulan route laman admin artikel
+    Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
 
     // dibawah ini kumpulan route laman admin berita
     // route get index, untuk menampilkan data berita di laman admin berita
