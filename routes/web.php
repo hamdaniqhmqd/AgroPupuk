@@ -14,11 +14,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ControllerLamanBeranda;
 use App\Http\Controllers\ControllerLamanTentangKami;
 use App\Http\Controllers\ControllerAdminSipupuk;
+
 use App\Http\Controllers\ControllerLamanSipupuk;
 use App\Http\Controllers\LoginController;
 
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
+use App\Http\Controllers\ControllerAdminUserMutualism;
 
 //bagian java
 use App\Http\Controllers\DashboardController;
@@ -70,14 +72,18 @@ Route::get('/listpro/list-produk', function () {
     return view('/listpro/list-produk');
 });
 
-
-Route::get('/petronitrat.blade.php', function () {
-    return view('petronitrat');
-});
-
+Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
+Route::get('/listproduk', [ControllerAdminUserMutualism::class, 'userlist'])->name('listproduk');
+return view('layouts.laman_produk');
 
 
-Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
+ // Route::get('/petronitrat.blade.php', function () {
+ //   return view('petronitrat');
+// });
+
+
+
+// Route::get('/redirect/{page}', 'App\Http\Controllers\RedirectController@redirectToPage')->name('redirect.to.page');
 
 
 
