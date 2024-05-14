@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 // punya hamdani
 use App\Http\Controllers\ControllerLamanAdminBerita;
-use App\Http\Controllers\ControllerLamanBerita;
-use App\Http\Controllers\ControllerLamanUtama;
 use App\Http\Controllers\AuthController;
 
 // Ferry
@@ -21,7 +19,7 @@ use App\Http\Controllers\LoginController;
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
 use App\Http\Controllers\ControllerAdminUserMutualism;
-
+use App\Http\Controllers\ControllerLamanBerita;
 //bagian java
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
@@ -47,7 +45,7 @@ Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('
 Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
 Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupuks.store');
 
-
+Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
 // routes/web.php
 
 // Search laman Sipupuk
@@ -92,7 +90,7 @@ return view('layouts.laman_produk');
 // route test untuk laman utama
 // Route::resource('/home', ControllerLamanUtama::class);
 // route buat laman berita
-Route::get('/berita', [ControllerLamanBerita::class, 'index'])->name('berita.index');
+Route::get('/berita', [ControllerLamanBerita::class, 'index'])->name('berita');
 // laman berita untuk admin berita yang digunakan untuk mengatur data dari tabel beritas
 // mulai dari menambah, mengubah, menampilkan, dan menghapus data
 // Route::resource('/admin_berita', ControllerLamanAdminBerita::class);
@@ -117,10 +115,10 @@ Route::group(['middleware' => 'admin'], function () {
 
 
     // dibawah ini kumpulan route laman admin pupuk
-    Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
+
 
     // dibawah ini kumpulan route laman admin artikel
-    Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
+
 
     // dibawah ini kumpulan route laman admin berita
     // route get index, untuk menampilkan data berita di laman admin berita
