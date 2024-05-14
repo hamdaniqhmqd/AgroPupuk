@@ -32,7 +32,7 @@
                 </div>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header" style="background-color: #1b342d" >
-                        <img src="{{ asset('storage/image/logoweb.png') }}" alt="Logo Web" width="180" height="25" 
+                        <img src="{{ asset('storage/image/logoweb.png') }}" alt="Logo Web" width="180" height="25"
                         class="offcanvas-title right-2" id="offcanvasRightLabel" >
                         {{-- <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5> --}}
                         <button type="button" class="btn-close bg-white " data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -126,7 +126,7 @@
             justify-content: flex-end;
         }
 
-        
+
 
         @media only screen and (max-width: 1130px) {
             .main-head .main-menu .nav-menu .nav-list .nav-list-item {
@@ -168,7 +168,7 @@
                 display: none;
             }
         }
-        
+
         @media only screen and (max-width: 935px) {
             .main-head .main-menu .nav-menu .nav-list .nav-list-item {
                 padding: 5px 10px;
@@ -224,7 +224,7 @@
             font-size: 15px;
             margin: 15px;
             padding: 15px;
-            text-decoration: none; 
+            text-decoration: none;
         }
         .side-list .side-list-item .side-link:hover {
             cursor: pointer;
