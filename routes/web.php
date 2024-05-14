@@ -72,7 +72,7 @@ Route::get('/listpro/list-produk', function () {
 
 Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
 Route::get('/listproduk', [ControllerAdminUserMutualism::class, 'userlist'])->name('listproduk');
-return view('layouts.laman_produk');
+// return view('layouts.laman_produk');
 
 
  // Route::get('/petronitrat.blade.php', function () {
