@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ControllerProfilAdmin extends Controller
 {
@@ -25,6 +26,7 @@ class ControllerProfilAdmin extends Controller
             'nama' => 'required|string|max:50',
             'email' => 'required|string|email|max:70|unique:users,email,' . auth()->user()->id,
             'no_hp' => 'required|string|max:15',
+            'jenis_kelamin' => 'required|string',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:9000',
         ]);
 
@@ -33,6 +35,7 @@ class ControllerProfilAdmin extends Controller
         $user->nama = $request->nama;
         $user->email = $request->email;
         $user->no_hp = $request->no_hp;
+        $user->jenis_kelamin = $request->jenis_kelamin;
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
@@ -48,6 +51,7 @@ class ControllerProfilAdmin extends Controller
         }
 
         $user->save();
-        return redirect()->route('admin.profile.edit')->with('success', 'Profil berhasil diperbarui.');
+        return redirect()->route('admin.profile.edit')->withSuccess('Data berhasil disimpan.');
+
     }
 }
