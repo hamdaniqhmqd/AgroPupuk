@@ -214,6 +214,7 @@ img{
 
 
 <body style="background: #e3e3e3">
+    @include('component/navbaru')
 <div class="pemersatu" style="background: white; margin-right:6%; margin-left:6%; margin-bottom:20px; margin-top:2px ; border-radius: 15px;">
     <div class="container mt-5 mb-5">
         <div class="row">

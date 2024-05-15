@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li class="{{ request()->is('') ? 'active' : '' }}">
-                <a href="#" class="menu flex-fill d-flex align-items-center justify-content-start">
+                <a href="{{ url('adminproduk') }}" class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bx-package d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Produk</span></a>
                 </li>
