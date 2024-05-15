@@ -7,6 +7,7 @@
     <title>Produk Pupuk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a8b5e7e027.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         /* Kotak atas css start*/
 .kotak-spek {
@@ -198,6 +199,16 @@ img{
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Menambahkan efek shadow hanya di bagian bawah dan kanan */
 }
+
+.no-data{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* Anda bisa menyesuaikan tinggi ini sesuai kebutuhan */
+            font-size: 18px; /* Anda bisa menyesuaikan ukuran font ini sesuai kebutuhan */
+            color: grey; /* Anda bisa menyesuaikan warna teks ini sesuai kebutuhan */
+            font-family: "Inter", sans-serif;
+}
     </style>
 </head>
 
@@ -209,7 +220,7 @@ img{
             <div class="col-md-4">
                 <div class="card border-0  rounded">
                     <div class="card-body">
-                        <img src="{{ asset('/storage/gambarproduk/'.$product->image) }}" class="rounded" style="width: 100%">
+                        <img src="{{ asset('storage/gambarproduk/'.$product->image) }}" class="rounded" style="width: 100%">
                     </div>
                 </div>
             </div>
@@ -229,114 +240,73 @@ img{
 </div>
             
         
-    <div class="kontak-off">
+    <div class="kontak-off"> <!--tokopedia-->
         <img src="{{ asset('storage/image/tokpedlogo.jpeg') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
         <div class="container"></div>
-        <div class="nama-toko">Kaedahara Kazuha Store</div>
+        @forelse($product->productStores->where('marketplace', 'Tokopedia') as $store)
+        <div class="nama-toko">{{ $store->store_name }}</div>
         <div class="buton">
-            <button type="button" class="btn btn-success">Kontak</button>
+            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
         <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-        <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-    </div>
+        @empty
+        <div class="no-data">Tidak ada data di sini</div>
+        @endforelse
+        
+    </div> 
     <br>
-    <div class="kontak-off">
+    <div class="kontak-off"> <!--shopi-->
         <img src="{{ asset('storage/image/sopi.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
         <div class="container"></div>
-        <div class="nama-toko">Kaedahara Kazuha Store</div>
+        @forelse($product->productStores->where('marketplace', 'Shopee') as $store)
+        <div class="nama-toko">{{ $store->store_name }}</div>
         <div class="buton">
-            <button type="button" class="btn btn-success">Kontak</button>
+            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
         <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-        <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-    </div>
+        @empty
+        <div class="no-data">Tidak ada data di sini</div>
+    @endforelse
+</div> 
     <br>
-    <div class="kontak-off">
+    <div class="kontak-off"> <!--lazada-->
         <img src="{{ asset('storage/image/lajada.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
+        @forelse($product->productStores->where('marketplace', 'Lazada') as $store)
         <div class="container"></div>
-        <div class="nama-toko">Kaedahara Kazuha Store</div>
+        <div class="nama-toko">{{ $store->store_name }}</div>
         <div class="buton">
-            <button type="button" class="btn btn-success">Kontak</button>
+            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
         <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-        <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-    </div>
+        @empty
+        <div class="no-data">Tidak ada data di sini</div>
+    @endforelse
+</div>  
     <br>
-    <div class="kontak-off">
+    <div class="kontak-off"> <!--blibli-->
         <img src="{{ asset('storage/image/blili.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
         <div class="container"></div>
-        <div class="nama-toko">Kaedahara Kazuha Store</div>
+        @forelse($product->productStores->where('marketplace', 'BliBli') as $store)
+        <div class="nama-toko">{{ $store->store_name }}</div>
         <div class="buton">
-            <button type="button" class="btn btn-success">Kontak</button>
+            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
         <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-        <hr> <!-- batas toko-->
-        <div class="container"></div>
-        <div class="nama-toko">Moonton Store</div>
-            <div class="buton">
-                <button type="button" class="btn btn-success">Kontak</button>
-        </div>
-        <div class="harga"><strong>Rp.3.999.000</strong></div>
-    </div>
+        @empty
+        <div class="no-data">Tidak ada data di sini</div>
+    @endforelse
+</div>  
 
 
-
-
-
-
-
-
-
+{{-- 
     <div class="kontak-off-map">
         <h4 style="display: inline-block;">Alun-alun Kota Madiun</h4>
         <div class="harga"><strong>Rp.80.000</strong></div>
@@ -353,6 +323,7 @@ img{
         <br><hr>
     
     </div>
+     --}}
     <!--
     <h1>Helo { $namaorg } dari indo</h1> alhamdulillah berhasil variabel nama berisi nama haqi di kontroller.... kalo itu mau di ganti yang di ganti itu adalah di pendefinisian di $data, balik ke kontroller sekaang
     -->
