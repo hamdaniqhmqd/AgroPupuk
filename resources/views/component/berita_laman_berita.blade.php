@@ -63,7 +63,7 @@
                 <div class="align-content-end gelombang">
                     {{-- sebuah form yang berisi kolom inputan yang digunakan untuk melakukan pencarian
                         dengan mengirim nilai sesuai dengan atribut value --}}
-                    <form action="{{ route('berita.index') }}" class="d-flex" method="GET">
+                    <form action="{{ route('berita') }}" class="d-flex" method="GET">
                         <input class="form-control me-2" type="text" placeholder="Ketik berita yang di cari"
                             name="pencarian" value="{{ $request->get('pencarian') }}">
                     </form>
