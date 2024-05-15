@@ -72,7 +72,7 @@ Route::get('/listpro/list-produk', function () {
     return view('/listpro/list-produk');
 });
 
-Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
+
 Route::get('/listproduk', [ControllerAdminUserMutualism::class, 'userlist'])->name('listproduk');
 // return view('layouts.laman_produk');
 
@@ -117,7 +117,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 
     // dibawah ini kumpulan route laman admin ...
-
+    Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
 
     // dibawah ini kumpulan route laman admin berita
     // route get index, untuk menampilkan data berita di laman admin berita

@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_stores', function (Blueprint $table) {
+        Schema::create('produkmutus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('produkmutu_id')->constrained('produkmutu')->onDelete('cascade');
-            $table->string('store_name');
-            $table->string('store_link');
-            $table->enum('marketplace', ['Tokopedia', 'BliBli', 'Shopee', 'Lazada']);
-
+            $table -> string ('image');
+            $table->string ('title');
+            $table->enum('jenis', ['npk', 'phonska', 'urea', 'za']);
+            $table->text ('description');
+            $table->bigInteger ('price');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_stores');
+        Schema::dropIfExists('produkmutus');
     }
 };

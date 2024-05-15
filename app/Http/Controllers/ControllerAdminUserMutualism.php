@@ -19,6 +19,9 @@ use Illuminate\Http\RedirectResponse;
 //import Facades Storage
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 class ControllerAdminUserMutualism extends Controller
 {
     /**
@@ -31,9 +34,10 @@ class ControllerAdminUserMutualism extends Controller
         //get all products
         $products = produkmutu::latest()->paginate(10);
         
-
+        $title = 'Berita';
+        $data['admin'] = User::find(Auth::User()->id);
         //render view with products
-        return view('admin.admin_produk.index', compact('products'));
+        return view('admin.admin_produk.index', compact('products', 'title'), $data);
     }
 
     /**
