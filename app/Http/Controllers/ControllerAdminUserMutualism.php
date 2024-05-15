@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 //import model product
 use App\Models\produkmutu; 
+use App\Models\ProductStore; 
 
 //import return type View
 use Illuminate\View\View;
@@ -51,37 +52,44 @@ class ControllerAdminUserMutualism extends Controller
      * @param  mixed $request
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
-    {
-        //validate form
-        $request->validate([
-            'image'         => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'title'         => 'required|min:2 | max:10',
-            'description'   => 'required|min:10',
-            'namatok'       => 'required|min:4|max:15',
-            'link'          => 'required',
-            'price'         => 'required|numeric',
+    public function store(Request $request)
+{
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'title' => 'required|string|max:255',
+        'description' => 'required',
+        'price' => 'required|numeric',
+        'store_names.*' => 'required|string|max:255',
+        'store_links.*' => 'required|url|max:255',
+        'marketplaces.*' => 'required|in:Tokopedia,BliBli,Shopee,Lazada',
+    ]);
+
+    //upload image
+    $image = $request->file('image');
+    $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('title') . '.' . $image->getClientOriginalExtension();
+    $image->storeAs('public/gambarproduk/', $nameImage);
+
+    $produkmutu = Produkmutu::create([
+        'image' => $nameImage,
+        'title' => $request->title,
+        'description' => $request->description,
+        'price' => $request->price,
+    ]);
+
+    foreach ($request->store_names as $index => $storeName) {
+        ProductStore::create([
+            'produkmutu_id' => $produkmutu->id,
+            'store_name' => $storeName,
+            'store_link' => $request->store_links[$index],
+            'marketplace' => $request->marketplaces[$index],
         ]);
-
-        //upload image
-        $image = $request->file('image');
-        $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
-            $request->input('title') . '.' . $image->getClientOriginalExtension();
-        $image->storeAs('public/gambarproduk/', $nameImage); 
-
-        //create product
-        produkmutu::create([
-            'image'         => $nameImage,
-            'title'         => $request->title,
-            'description'   => $request->description,
-            'namatok'       => $request->namatok,
-            'link'          => $request->link,
-            'price'         => $request->price,
-        ]);
-
-        //redirect to index
-        return redirect()->route('adminproduk.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
+
+    return redirect()->route('adminproduk.index')->with('success', 'Produk berhasil ditambahkan.');
+}
+
+    
+
     
     /**
      * show
