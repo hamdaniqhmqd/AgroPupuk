@@ -15,7 +15,7 @@
                             <a href="{{ route('produk.index') }}" class="nav-link">Produk</a>
                         </li>
                         <li class="nav-list-item">
-                            <a href="{{ route('berita.index') }}" class="nav-link">Berita</a>
+                            <a href="{{ route('berita') }}" class="nav-link">Berita</a>
                         </li>
                         <li class="nav-list-item">
                             <a href="{{ route('sipupuk.index') }}" class="nav-link">Si Pupuk</a>
@@ -46,7 +46,7 @@
                                 <a href="{{ route('produk.index') }}" class="side-link" >Produk</a>
                             </li>
                             <li class="side-list-item py-3">
-                                <a href="{{ route('berita.index') }}" class="side-link" >Berita</a>
+                                <a href="{{ route('berita') }}" class="side-link" >Berita</a>
                             </li>
                             <li class="side-list-item py-3">
                                 <a href="{{ route('sipupuk.index') }}" class="side-link" >Si Pupuk</a>

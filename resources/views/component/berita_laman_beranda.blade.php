@@ -63,7 +63,7 @@
                 <div class="col-md-6 d-flex justify-content-end" data-aos="fade-left" data-aos-delay="100"
                 data-aos-duration="1500">
                     <div class="align-content-end">
-                        <a href="{{ route('berita.index') }}" class="btn" style="background-color: #224038; color: #E3E3E3">Lihat semua</a>
+                        <a href="{{ route('berita') }}" class="btn" style="background-color: #224038; color: #E3E3E3">Lihat semua</a>
                     </div>
                 </div>
             </div>
