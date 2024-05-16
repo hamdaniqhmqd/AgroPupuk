@@ -49,7 +49,7 @@
                                                     class="rounded" style="width: 140px">
                                             </td>
                                             <td>{{ $product->title }}</td>
-                                            <td>{{ $product->namatok }}</td>
+                                            <td>{{ $product->store_name }}</td>
                                             <td>{{ 'Rp ' . number_format($product->price, 2, ',', '.') }}</td>
                                             <td>{{ $product->link }}</td>
                                             <td class="text-center">

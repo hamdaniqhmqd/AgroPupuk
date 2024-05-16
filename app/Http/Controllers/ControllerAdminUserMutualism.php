@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 //import model product
-use App\Models\produkmutu; 
-use App\Models\ProductStore; 
+use App\Models\produkmutu;
+use App\Models\ProductStore;
 
 //import return type View
 use Illuminate\View\View;
@@ -33,8 +33,8 @@ class ControllerAdminUserMutualism extends Controller
     {
         //get all products
         $products = produkmutu::latest()->paginate(10);
-        
-        $title = 'Berita';
+
+        $title = 'Produk';
         $data['admin'] = User::find(Auth::User()->id);
         //render view with products
         return view('admin.admin_produk.index', compact('products', 'title'), $data);
@@ -92,9 +92,9 @@ class ControllerAdminUserMutualism extends Controller
     return redirect()->route('adminproduk.index')->with('success', 'Produk berhasil ditambahkan.');
 }
 
-    
 
-    
+
+
     /**
      * show
      *
@@ -109,7 +109,7 @@ class ControllerAdminUserMutualism extends Controller
         //render view with product
         return view('admin.admin_produk.show', compact('product'));
     }
-    
+
     /**
      * edit
      *
@@ -124,7 +124,7 @@ class ControllerAdminUserMutualism extends Controller
         //render view with product
         return view('admin.admin_produk.edit', compact('product'));
     }
-        
+
     /**
      * update
      *
@@ -154,7 +154,7 @@ class ControllerAdminUserMutualism extends Controller
             $image = $request->file('image');
             $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
                 $request->input('title') . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/gambarproduk/', $nameImage); 
+            $image->storeAs('public/gambarproduk/', $nameImage);
 
             //delete old image
             Storage::delete('public/gambarproduk/'.$product->image);
@@ -184,7 +184,7 @@ class ControllerAdminUserMutualism extends Controller
         //redirect to index
         return redirect()->route('adminproduk.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
     /**
      * destroy
      *
