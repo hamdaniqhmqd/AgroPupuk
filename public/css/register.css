@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --blue-color: #4070f4;
-    --white-color: #fff;
-    --gray-color: #a6a6a6;
-    --red-color: #d93025;
-    --red1-color: #d93025;
-    --green-color: #00c200;
+    --hijau: #224038;
+    --hijau-hover: #346155;
+    --putih: #fff;
+    --abu: #a6a6a6;
 }
 
 * {
@@ -22,14 +20,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--blue-color);
+    background: var(--hijau);
 }
+/*
+.logo {
+    display: block;
+    width: 280px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+} */
 
 .wrapper {
     width: 100%;
     padding: 35px 40px;
     max-width: 480px;
-    background: var(--white-color);
+    background: var(--putih);
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.2);
 }
@@ -38,18 +44,18 @@ body {
     padding: 6px 0 6px 0;
     font-size: 32px;
     font-weight: 700;
-    color: var(--blue-color);
+    color: var(--hijau);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: default;
-  }
+}
 
-  .wrapper .desc {
+.wrapper .desc {
     padding: 6px 0 12px 0;
     font-size: 16px;
     font-weight: 500;
-    color: var(--blue-color);
+    color: var(--hijau);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,14 +71,14 @@ body {
 .input-box input {
     height: 100%;
     width: 100%;
-    background: var(--white-color);
+    background: var(--putih);
     color: #333;
     font-size: 15px;
     font-weight: 400;
     outline: none;
     border-radius: 6px;
     padding: 0 40px 0 16px;
-    border: 2px solid var(--gray-color);
+    border: 2px solid var(--abu);
 }
 
 .input-box label,
@@ -80,18 +86,18 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--gray-color);
+    color: var(--abu);
     transition: all 0.2s ease;
 }
 
 .input-box input:focus,
 .input-box input:valid {
-    border-color: var(--blue-color);
+    border-color: var(--hijau);
 }
 
-.input-box input:focus ~ i,
-.input-box input:valid ~ i {
-    color: var(--blue-color);
+.input-box input:focus~i,
+.input-box input:valid~i {
+    color: var(--hijau);
 }
 
 .input-box label {
@@ -100,22 +106,23 @@ body {
     font-weight: 500;
     padding: 0 5px;
     cursor: text;
-    background: var(--white-color);
+    background: var(--putih);
 }
 
 /* untuk animasi pada label input */
-.input-box input:focus ~ label {
+.input-box input:focus~label {
     top: 0;
-    color: var(--blue-color);
+    color: var(--hijau);
     font-size: 15px;
 }
 
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
+.input-box input:focus~label,
+.input-box input:valid~label {
     top: 0;
     font-size: 15px;
-    color: var(--blue-color);
+    color: var(--hijau);
 }
+
 /* akhir animasi pada label input */
 
 .input-box i#user_icon {
@@ -134,53 +141,55 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-    margin: -10px 0 ;
+    margin: -10px 0;
 }
 
 .forget label,
 .forget a {
-    color: var(--gray-color);
+    color: var(--abu);
     text-decoration: none;
 }
 
 .forget label:hover,
 .forget a:hover,
 .forget input:hover {
-    color: var(--blue-color);
+    color: var(--hijau);
     text-decoration: none;
     cursor: pointer;
 }
+
 /* end tampilan remember me dan forget pass */
 
 /* untuk register */
 .wrapper .register {
-  font-size: 14.5px;
-  text-align: center;
-  margin: -5px 0 10px;
+    font-size: 14.5px;
+    text-align: center;
+    margin: -5px 0 10px;
 }
 
 .register .text,
 .register .link {
-  color: var(--gray-color);
-  text-decoration: none;
-  font-weight: 600;
+    color: var(--abu);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .register .text:hover {
-  color: var(--blue-color);
-  cursor: default;
+    color: var(--hijau);
+    cursor: default;
 }
 
 .register .link:hover {
-  color: var(--blue-color);
-  text-decoration: underline;
+    color: var(--hijau);
+    text-decoration: underline;
 }
+
 /* end register */
 
 /* start untuk button */
 .input-box.button #button {
-    background: var(--blue-color);
-    color: var(--white-color);
+    background: var(--hijau);
+    color: var(--putih);
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -189,6 +198,7 @@ body {
 }
 
 .input-box.button #button:hover {
-    background: #265df2;
+    background: var(--hijau-hover);
 }
+
 /* end untuk button */

@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo" class="logo logo position-absolute top-0 start-0 mt-4 ms-4">
     <div class="wrapper">
         <div class="title">Register</div>
         <div class="desc">Enter the correct username and password</div>
@@ -23,7 +24,7 @@
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
             <div class="input-box">
-                <input type="email" name="email" id="email" required />
+                <input type="text" name="email" id="email" required />
                 <label for="email" id="labelemail">Email</label>
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
