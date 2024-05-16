@@ -61,6 +61,7 @@ class ControllerAdminUserMutualism extends Controller
     $request->validate([
         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'title' => 'required|string|max:255',
+        'jenis' => 'required|in:npk,phonska,urea,za',
         'description' => 'required',
         'price' => 'required|numeric',
         'store_names.*' => 'required|string|max:255',
@@ -76,6 +77,7 @@ class ControllerAdminUserMutualism extends Controller
     $produkmutu = Produkmutu::create([
         'image' => $nameImage,
         'title' => $request->title,
+        'jenis' => $request->jenis,
         'description' => $request->description,
         'price' => $request->price,
     ]);

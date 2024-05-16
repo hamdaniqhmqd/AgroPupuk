@@ -34,6 +34,22 @@
                                     </div>
                                 @enderror
                             </div>
+
+                            <div class="form-group mb-3">
+                                <label class="font-weight-bold">JENIS PUPUK</label>
+                                <select class="form-control @error('jenis') is-invalid @enderror" name="jenis">
+                                    <option value="npk">NPK</option>
+                                    <option value="phonska">Phonska</option>
+                                    <option value="urea">Urea</option>
+                                    <option value="za">ZA +</option>
+                                </select>
+                                @error('jenis')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">DESCRIPTION</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Masukkan Deskripsi Product">{{ old('description') }}</textarea>
@@ -53,7 +69,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3" id="store-inputs">
-                                <label class="font-weight-bold">Tambah Toko Lainnya</label>
+                                <label class="font-weight-bold">Tambah Toko</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control store-name" name="store_names[]" placeholder="Masukkan Nama Toko">
                                     <input type="text" class="form-control store-link" name="store_links[]" placeholder="Masukkan Link Toko">

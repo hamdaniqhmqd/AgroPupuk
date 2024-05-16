@@ -46,9 +46,8 @@
                                     <tr>
                                         <th scope="col">IMAGE</th>
                                         <th scope="col">TITLE</th>
-                                        <th scope="col">NAMA TOKO</th>
+                                        <th scope="col">JENIS PUPUK</th>
                                         <th scope="col">PRICE</th>
-                                        <th scope="col" style="width: 20%">LINK</th> <!--ini tadi stok-->
                                         <th scope="col" style="width: 20%">ACTIONS</th>
                                     </tr>
                                 </thead>
@@ -60,9 +59,8 @@
                                                     class="rounded" style="width: 140px">
                                             </td>
                                             <td>{{ $product->title }}</td>
-                                            <td>{{ $product->namatok }}</td>
+                                            <td>{{ $product->jenis }}</td>
                                             <td>{{ 'Rp ' . number_format($product->price, 2, ',', '.') }}</td>
-                                            <td>{{ $product->link }}</td>
                                             <td class="text-center">
                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                     action="{{ route('adminproduk.destroy', $product->id) }}"
