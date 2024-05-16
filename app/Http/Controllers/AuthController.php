@@ -35,7 +35,7 @@ class AuthController extends Controller
 			'password' => 'required|min:8',
 		]);
         // dd($request->all());
-        $id = date('Ymd');
+        $id = date('YmdHis');
 
 		User::create([
             'id'=> $id,

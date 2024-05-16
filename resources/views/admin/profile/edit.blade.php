@@ -110,7 +110,7 @@
                         <span class="edit-icon">&#9998;</span> <!-- Ikon edit -->
                     </label>
                 </div>
-                <p class="text-black">@<span>{{ $admin->nama }}</span></p>
+                <p class="text-black"><span>{{ $admin->nama }}</span></p>
             </div>
         </div>
 
