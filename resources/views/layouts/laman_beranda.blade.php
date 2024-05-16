@@ -74,9 +74,9 @@
                 <div class="bungkus-teks" data-aos="fade-right" data-aos-delay="50"
                 data-aos-duration="2000" > <!--Animasi Aos -->
                     <div class="bungkus-animasi">
-                        <h1 class="ttg-kami" data-text="Tentang Kami" data-aos-delay="100" >Tentang Kami</h1>
+                        <h1 class="ttg-kami " data-text="Tentang Kami" data-aos-delay="100" >Tentang Kami</h1>
                     </div>
-                    <p class="warna-abu-hitam fw-bold  my-3 " data-aos-delay="200">
+                    <p class="warna-abu-hitam my-3 " data-aos-delay="200">
                         AgroPupuk adalah salah satu website yang membatu para <br />
                         petani agar mudah mencari informasi tentang berbagai <br />
                         hal yang berkaitan dengan pupuk.</p>
@@ -110,46 +110,6 @@
         <div class="our-grub d-flex justify-content-center align-items-center">
             <h1 class="text-white fs-4 fw-bold ">Our Groups</h1>
         </div>
-
-        <!-- logo corp -->
-        {{-- <div class="container">
-            <div class="row row-cols-5 row-cols-md-5 row-cols-sm-2 g-lg-4 g-md-1 g-sm-2 ">
-                <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                    data-aos-duration="1500">
-                        <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" width="230" height="45">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow"data-aos="zoom-in"
-                    data-aos-delay="100" data-aos-duration="1500">
-                        <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" width="230" height="43">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                    data-aos-delay="200" data-aos-duration="1500">
-                        <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" width="230" height="43">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                    data-aos-delay="300"
-                    data-aos-duration="1500">
-                        <img src="{{ asset('storage/image/pupuk-kujang.png') }}" width="230" height="43">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                    data-aos-delay="400"
-                    data-aos-duration="1500">
-                        <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" width="230" height="43">
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!--end our groups -->
-
         <!-- logo corp -->
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
