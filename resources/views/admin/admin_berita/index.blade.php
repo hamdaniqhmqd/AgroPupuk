@@ -111,14 +111,6 @@
             border: none;
         }
 
-        table tbody .data-admin .nama_admin {
-            background-color: dodgerblue;
-            padding: 4px 8px;
-            color: whitesmoke;
-            display: inline-block;
-            border: none;
-        }
-
         table tbody img {
             width: 100px;
             height: 100px;
@@ -220,7 +212,7 @@
                                 </span>
                             </td>
                             <td class="isi-data data-admin ">
-                                <span class="nama_admin text-start rounded px-3 py-1">
+                                <span class="nama_admin text-black fw-semibold text-start rounded px-3 py-1">
                                     {{ $data->user->nama }}
                                 </span>
                             </td>
