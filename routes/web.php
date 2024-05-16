@@ -105,6 +105,7 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/process_register', [AuthController::class, 'process_register']);
 // route get forget untuk menampilkan ke laman forget tampilan menyusul
 Route::get('/forget', [AuthController::class, 'forget']);
+Route::get('/forget_buat', [AuthController::class, 'forget_buat'])->name('proses_forget_buat');
 
 Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard

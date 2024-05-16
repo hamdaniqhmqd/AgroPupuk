@@ -14,8 +14,8 @@ use function Ramsey\Uuid\v1;
 
 class AuthController extends Controller
 {
-	public function register()
-	{
+    public function register()
+    {
         if (Auth::check()) {
             if (Auth::User()->role == 'admin') {
                 return redirect('/admin/dashboard');
@@ -25,32 +25,32 @@ class AuthController extends Controller
         } else {
             return view('admin.auth.register');
         }
-	}
+    }
 
-	public function process_register(Request $request): RedirectResponse
-	{
-		$request->validate([
-			'username' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|min:8',
-		]);
+    public function process_register(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'username' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:8',
+        ]);
         // dd($request->all());
         $id = date('YmdHis');
 
-		User::create([
-            'id'=> $id,
-			'username' => $request->username,
-			'email' => $request->email,
-			'nama' => $request->username,
-			'password' => Hash::make($request->password),
+        User::create([
+            'id' => $id,
+            'username' => $request->username,
+            'email' => $request->email,
+            'nama' => $request->username,
+            'password' => Hash::make($request->password),
             'remember_token'    => Str::random(20),
-		]);
+        ]);
 
-		return redirect('/login')->with(['success' => 'Register successfully']);
-	}
+        return redirect('/login')->with(['success' => 'Register successfully']);
+    }
 
-	public function login()
-	{
+    public function login()
+    {
         if (Auth::check()) {
             if (Auth::User()->role == 'admin') {
                 return redirect('/admin/dashboard');
@@ -60,7 +60,7 @@ class AuthController extends Controller
         } else {
             return view('admin.auth.login');
         }
-	}
+    }
 
     public function process_login(Request $request): RedirectResponse
     {
@@ -80,12 +80,26 @@ class AuthController extends Controller
         }
     }
 
-	public function forget(): View
-	{
-		return view('admin.auth.forgot.pilih_forget');
-	}
+    public function forget(): View
+    {
+        return view('admin.auth.forgot.pilih_forget');
+    }
 
-    public function logout(): RedirectResponse{
+    public function forget_buat(): View
+    {
+        return view('admin.auth.forgot.password_baru');
+    }
+
+    public function proses_forget_buat(Request $request)
+    {
+        $request->validate([
+            'pass'=> 'required',
+            'conf_pass'=> 'required|same:pass',
+        ]);
+    }
+
+    public function logout(): RedirectResponse
+    {
         Auth::logout();
         return redirect('/login')->with(['success' => 'Logout Berhasil']);
     }

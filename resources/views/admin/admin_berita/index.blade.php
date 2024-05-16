@@ -192,7 +192,7 @@
                         <th scope="col" class="atas nomor align-middle text-center">No</th>
                         <th scope="col" class="atas gambar align-middle text-center" style="width: 120px;">Gambar</th>
                         <th scope="col" class="atas judul align-middle text-center">Judul</th>
-                        <th scope="col" class="atas admin align-middle text-center">Admin</th>
+                        <th scope="col" class="atas admin align-middle text-center">Author</th>
                         <th scope="col" class="atas aksi align-middle text-center">Aksi</th>
                     </tr>
                 </thead>
