@@ -21,6 +21,7 @@
         input[type="text"],
         input[type="email"],
         input[type="file"],
+        input[type="tgl_lahir"],
         select[name="jenis_kelamin"] {
             padding: 5px;
             border: 1px solid #ccc;
@@ -123,6 +124,9 @@
         <label for="email">NOMOR HP</label>
         <input type="text" name="no_hp" id="no_hp" value="{{ old('no_hp', $admin->no_hp) }}" required pattern="[0-9]{9,13}">
         <small class="text-danger opacity-75">*Format: Minimal 9 digit, maksimal 13 digit, hanya boleh angka.</small>
+
+        <label for="tgl_lahir">Tanggal Lahir</label>
+        <input type="date" name="tgl_lahir" id="tgl_lahir" value="{{ old('tgl_lahir', $admin->tgl_lahir) }}">
 
         <label for="jenis_kelamin">JENIS KELAMIN</label>
         <select name="jenis_kelamin" id="jenis_kelamin" required>
