@@ -14,7 +14,7 @@ use function Ramsey\Uuid\v1;
 
 class AuthController extends Controller
 {
-	public function register(): View
+	public function register()
 	{
         if (Auth::check()) {
             if (Auth::User()->role == 'admin') {
@@ -87,6 +87,6 @@ class AuthController extends Controller
 
     public function logout(): RedirectResponse{
         Auth::logout();
-        return redirect('login')->with(['success' => 'Logout Berhasil']);
+        return redirect('/login')->with(['success' => 'Logout Berhasil']);
     }
 }

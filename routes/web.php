@@ -75,8 +75,8 @@ Route::get('/listproduk', [ControllerAdminUserMutualism::class, 'userlist'])->na
 // return view('layouts.laman_produk');
 
 
- // Route::get('/petronitrat.blade.php', function () {
- //   return view('petronitrat');
+// Route::get('/petronitrat.blade.php', function () {
+//   return view('petronitrat');
 // });
 
 
@@ -106,9 +106,6 @@ Route::post('/process_register', [AuthController::class, 'process_register']);
 // route get forget untuk menampilkan ke laman forget tampilan menyusul
 Route::get('/forget', [AuthController::class, 'forget']);
 
-// route get logout untuk mengeksekusi proses logout
-Route::get('/logout', [AuthController::class, 'logout']);
-
 Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard
     Route::get('admin/dashboard', [DashboardController::class, 'admin_dashboard'])->name('admin.dashboard');
@@ -135,6 +132,10 @@ Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin ...
     Route::get('/admin/profile/edit', [ControllerProfilAdmin::class, 'edit'])->name('admin.profile.edit');
     Route::put('/admin/profile/update', [ControllerProfilAdmin::class, 'update'])->name('admin.profile.update');
+
+    // dibawah ini untuk logout
+    // route get logout untuk mengeksekusi proses logout
+    Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
 
 //bagian java

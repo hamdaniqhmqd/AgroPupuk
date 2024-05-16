@@ -4,6 +4,7 @@
     --hijau: #224038;
     --putih: #fff;
     --abu: #a6a6a6;
+    --hijau-hover: #346155;
 
     /* --bg-body: url('{{ asset('storage/image/coro3.png') }}'); */
 }
@@ -154,9 +155,7 @@ body.badan {
 }
 
 .input-box.button #button:hover {
-    background-color: var(--putih);
-    color: var(--hijau);
-    border-color: var(--hijau);
+    background-color: var(--hijau-hover);
     border-width: 2px;
 }
 /* end untuk button */
