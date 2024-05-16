@@ -10,6 +10,26 @@
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <!-- Repo Animasi AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .carousel-inner::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 5;
+        }
+        .wave {
+            width: 100%;
+            object-fit: fill;
+            bottom: -10px;
+            height: 200px;
+            position: absolute;
+            z-index: 10;
+        }
+    </style>
 </head>
 
 <body style="background-color: #E3E3E3">
@@ -30,7 +50,7 @@
                     class="d-block object-fit-cover" alt="gambar3" />
             </div>
         </div>
-        <img class="wave position-absolute" src="{{ asset('storage/image/wave.png') }}" style="width: 100%; object-fit: fill; bottom: -10px; height: 200px;" alt="" srcset="">
+        <img class="wave" src="{{ asset('storage/image/wave.png') }}" alt="" srcset="">
         <!--Ini konten diatas corousel-->
     </div>
 
