@@ -14,6 +14,9 @@
     {{-- link bs --}}
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
+
+    <script src="https://kit.fontawesome.com/a8b5e7e027.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         main header {
             padding: 2px 2px 10px 2px;
@@ -48,6 +51,9 @@
     <main class="position-relative">
 
         @yield('admin_produk')
+        @yield('admin_produk_create')
+        @yield('admin_produk_edit')
+        @yield('admin_produk_show')
 
     </main>
 

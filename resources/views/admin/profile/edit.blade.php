@@ -44,7 +44,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .pembungkus img {
         width: 100%;
         height: 100%;
@@ -113,7 +113,7 @@
                 <p class="text-black">@<span>{{ $admin->nama }}</span></p>
             </div>
         </div>
-        
+
 
         <label for="nama">NAMA</label>
         <input type="text" name="nama" id="nama" value="{{ old('nama', $admin->nama) }}" required>
