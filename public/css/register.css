@@ -14,7 +14,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+body.badan {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -22,14 +22,6 @@ body {
     justify-content: center;
     background: var(--hijau);
 }
-/*
-.logo {
-    display: block;
-    width: 280px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-} */
 
 .wrapper {
     width: 100%;
