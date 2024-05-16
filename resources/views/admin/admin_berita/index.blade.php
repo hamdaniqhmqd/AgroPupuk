@@ -112,7 +112,7 @@
         }
 
         table tbody .data-admin .nama_admin {
-            background-color: sandybrown;
+            background-color: dodgerblue;
             padding: 4px 8px;
             color: whitesmoke;
             display: inline-block;
