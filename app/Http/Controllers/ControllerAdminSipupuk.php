@@ -59,8 +59,7 @@ class ControllerAdminSipupuk extends Controller
         $request->validate([
             'image'         => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'title'         => 'required|min:5',
-            'content'       => 'required|min:1000',
-            'author'        => 'required|min:5'
+            'content'       => 'required|min:1000'
         ]);
 
 
@@ -70,13 +69,16 @@ class ControllerAdminSipupuk extends Controller
                 $request->input('title') . '.' . $image->getClientOriginalExtension();
         $image->storeAs('public/gambar_sipupuk', $nameImage); // Pastikan direktori penyimpanan yang benar
         $data['image'] = $nameImage;
+        
+        // Dapatkan nama user yang sedang login
+        $nama = Auth::user()->nama;
 
         //buat produk
         $data->create([
             'image'         => $nameImage,
             'title'         => $request->title,
             'content'       => $request->content,
-            'author'        => $request->author // Sesuaikan dengan author yang sesuai
+            'author'        => $nama // Sesuaikan dengan author yang sesuai
         ]);
 
         //redirect ke index
@@ -115,57 +117,42 @@ class ControllerAdminSipupuk extends Controller
      * @param  mixed $id
      * @return RedirectResponse
      */
-    public function update(Request $request, $id): RedirectResponse
-    {
-        $data = new Sipupuk();
-        //validate form
-        $request->validate([
-            'image'         => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
-            'title'         => 'required|min:5',
-            'content'       => 'required|min:1000',
-            'author'        => 'required|min:5'
-        ]);
 
-        //get product by ID
-        $sipupuks = Sipupuk::findOrFail($id);
-
-        //check if image is uploaded
-        if ($request->filledile('image')) {
-
-            //upload new image
-            $image = $request->file('image');
-
-            $nameImage =  Carbon::now()->format('Y-m-d_H-i-s_') .
-                $request->input('title') . '.' . $image->getClientOriginalExtension();
-
-            $image->storeAs('public/gambar_sipupuk', $nameImage);
-
-            //delete old image
-            Storage::delete('public/gambar_sipupuk/' . $sipupuks->image);
-
-            //update product with new image
-            $sipupuks->update([
-                'image'         => $nameImage,
-                'title'         => $request->title,
-                'content'       => $request->content,
-                'author'        => $request->author // Sesuaikan dengan author yang sesuai
+        public function update(Request $request, $id): RedirectResponse
+        {
+            //validate form
+            $request->validate([
+                'image'   => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+                'title'   => 'required|min:5',
+                'content' => 'required|min:1000'
             ]);
+        
+            //get product by ID
+            $sipupuk = Sipupuk::findOrFail($id);
+        
+            //get authenticated user's name
+            $nama = Auth::user()->nama;
+        
+            //check if image is uploaded
+             //check if image is uploaded
+            if ($request->hasFile('image')) {
+                //upload new image
+                $image = $request->file('image');
+                $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .$request->input('title') . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/gambar_sipupuk', $nameImage);
+        
+                //delete old image
+                Storage::delete('public/gambar_sipupuk/' . $sipupuk->image);
 
-        } else {
-
-            //update product without image
-            $sipupuks->update([
-                'title'         => $request->title,
-                'content'       => $request->content,
-                'author'        => $request->author // Sesuaikan dengan author yang sesuai
-            ]);
+            } else {
+                //keep old image
+                $nameImage = $sipupuk->image;
+            }
+        
+        
+            //redirect to index
+            return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Diubah!']);
         }
-
-        $data->save();
-
-        //redirect to index
-        return redirect()->route('adminsipupuk.index')->with(['success' => 'Data Berhasil Diubah!']);
-    }
 
     /**
      * destroy

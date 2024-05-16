@@ -66,7 +66,7 @@
                                         {{ $sipupuk->author }}</td>
                                     <td class="text-center"
                                         style="max-width: 50px; height: 100px;  overflow: hidden;  text-overflow: ellipsis;">
-                                        <form action="{{ route('adminsipupuk.destroy', $sipupuk->id) }}" method="POST"
+                                        <form id="deleteForm{{ $sipupuk->id }}" action="{{ route('adminsipupuk.destroy', $sipupuk->id) }}" method="POST"
                                             class="d-flex row">
                                             <a href="{{ route('adminsipupuk.show', $sipupuk->id) }}" class="show">
                                                 <i class="bi bi-eye-fill fs-5 text-decoration-none text-hijau"></i>
@@ -76,7 +76,7 @@
                                             </a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="button-delete">
+                                            <button type="submit" onclick="deleteConfirmation({{ $sipupuk->id }})" class="button-delete">
                                                 <span>
                                                     <i class="bi bi-trash3-fill fs-5 text-decoration-none text-danger"></i>
                                                 </span>
@@ -178,25 +178,24 @@ th {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        //pesan dengan sweetalert
-        // @if (session('success'))
-        //     Swal.fire({
-        //         icon: "success",
-        //         title: "BERHASIL",
-        //         text: "{{ session('success') }}",
-        //         showConfirmButton: false,
-        //         timer: 2000
-        //     });
-        // @elseif (session('error'))
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "GAGAL!",
-        //         text: "{{ session('error') }}",
-        //         showConfirmButton: false,
-        //         timer: 2000
-        //     });
-        // @endif
 
+        function deleteConfirmation(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Anda tidak akan dapat mengembalikan ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit form when user confirms
+                document.getElementById('deleteForm'+id).submit();
+            }
+        });
+    }
         // Menampilkan SweetAlert berdasarkan pesan sukses atau pesan kesalahan
         if (successMessage) {
             Swal.fire({
