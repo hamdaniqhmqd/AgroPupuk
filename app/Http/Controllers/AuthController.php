@@ -46,7 +46,7 @@ class AuthController extends Controller
             'remember_token'    => Str::random(20),
         ]);
 
-        return redirect('/login')->with(['success' => 'Register successfully']);
+        return redirect('/login')->with(['success' => 'Register Berhasil']);
     }
 
     public function login()
@@ -71,15 +71,16 @@ class AuthController extends Controller
 
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password], true)) {
             if (Auth::User()->role == 'admin') {
-                return redirect('/admin/dashboard')->with(['success' => 'Login successfully']);
+                return redirect('/admin/dashboard')->with(['success' => 'Login berhasil']);
             } else {
-                return redirect('/login')->with(['error' => 'Checked your email and password']);
+                return redirect('/login')->with(['warning' => 'Cek username dan password apakah sudah benar']);
             }
         } else {
-            return redirect('login')->with(['error' => 'Login failed']);
+            return redirect('login')->with(['error' => 'Login gagal']);
         }
     }
 
+    // di bawah ini function yang digunakan untuk forget password
     public function forget(): View
     {
         return view('admin.auth.forgot.pilih_forget');
@@ -87,15 +88,26 @@ class AuthController extends Controller
 
     public function forget_email(): RedirectResponse
     {
-        return redirect('/forget')->with(['warning' => 'Fitur belum dibuat']);
+        return redirect()->route('forget')->with(['warning' => 'Fitur belum dibuat']);
     }
 
-    public function forget_validasi(): View
+    public function forget_validasi(Request $request): View
     {
-        return view('admin.auth.forgot.validasi');
+        return view('admin.auth.forgot.captcha', compact('request'));
+        // return view('admin.auth.forgot.validasi');
+    }
 
+    public function forget_proses_validasi(Request $request)
+    {
+        $request->validate([
+            'kode' => 'required',
+            'konfirmasi_kode' => 'required|same:kode|max:8',
+        ]);
 
-    }public function forget_captcha(): View
+        return redirect()->route('forget.buat')->with(['success' => 'Validasi kode berhasil']);
+    }
+
+    public function forget_captcha(): View
     {
         return view('admin.auth.forgot.captcha');
     }
@@ -105,12 +117,24 @@ class AuthController extends Controller
         return view('admin.auth.forgot.password_baru');
     }
 
-    public function proses_forget_buat(Request $request)
+    public function forget_proses_buat(Request $request) : RedirectResponse
     {
         $request->validate([
-            'pass'=> 'required',
-            'conf_pass'=> 'required|same:pass',
+            'username'=> 'required',
+            'pass' => 'required',
+            'conf_pass' => 'required|same:pass',
         ]);
+
+        $username = $request->input('username');
+        $user = User::where('username', $username)->first();
+        if ($user) {
+            $user->update([
+                'password' => Hash::make($request->pass),
+            ]);
+            return redirect()->route('login')->with(['success' => 'Password Berhasil diubah']);
+        } else {
+            return redirect()->route('forget.validasi')->with(['warning' => 'Username tidak ditemukan']);
+        }
     }
 
     public function logout(): RedirectResponse
