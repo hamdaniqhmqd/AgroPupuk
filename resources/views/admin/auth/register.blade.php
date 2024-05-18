@@ -8,7 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
     {{-- link bs --}}
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
 </head>
@@ -49,7 +49,7 @@
             </div>
         </form>
     </div>
-    <script src="{{ asset('js/register.js') }}"></script>
+    <script src="{{ asset('js/auth/register.js') }}"></script>
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>

@@ -4,6 +4,7 @@
   --abu: #a6a6a6;
   --putih: #fff;
   --hijau: #224038;
+  --hijau-hover: #366d5b;
 
   --bg-body: url(bg-agro.png);
 }
@@ -58,23 +59,6 @@ body {
   padding: 0 40px 0 16px;
   border: 2px solid var(--abu);
 }
-
-.input-box input#tgl {
-  height: 100%;
-  width: 100%;
-  background: var(--putih);
-  color: var(--hijau);
-  font-size: 16px;
-  font-weight: 400;
-  outline: none;
-  padding: 0 40px 0 16px;
-  border: 2px solid var(--abu);
-}
-
-.input-box input#tgl::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
 
 .input-box label,
 .input-box i {
@@ -138,7 +122,7 @@ body {
   border-color: var(--hijau);
 }
 
-.input-box.button a:hover {
+.input-box.button a:active {
   background-color: var(--hijau);
   color: var(--putih);
   border-color: var(--putih);
@@ -151,9 +135,7 @@ body {
 }
 
 .input-box.button button:hover {
-  background-color: var(--putih);
-  color: var(--hijau);
-  border-color: var(--hijau);
+  background-color: var(--hijau-hover);
 }
 /* end untuk button */
 /* end login */

@@ -1,0 +1,166 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+    --abu: #a6a6a6;
+    --putih: #fff;
+    --hijau: #224038;
+    --hijau-hover: #366d5b;
+
+    --bg-body: url(bg-agro.png);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body.badan {
+    background-color: var(--hijau);
+}
+
+.card-forget {
+    width: 100%;
+    padding: 28px 32px;
+    max-width: 480px;
+    min-width: 300px;
+    background: var(--putih);
+}
+
+header {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--hijau);
+    cursor: default;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--hijau);
+    cursor: default;
+}
+
+.input-box {
+    position: relative;
+    height: 60px;
+    margin: 15px 0;
+}
+
+/* awal button chaptcha */
+.captch_box .refresh_button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: var(--hijau);
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 4px;
+    color: var(--putih);
+    cursor: pointer;
+}
+
+.captch_box .refresh_button:active {
+    background-color: var(--hijau-hover);
+}
+
+.captch_box input,
+.button button {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+
+/* akhir button chaptcha */
+
+/* awal input chaptcha */
+.captch_box input {
+    border: 1px solid var(--abu);
+    padding: 0 16px;
+    color: var(--hijau);
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.captch_input input {
+    height: 100%;
+    width: 100%;
+    background: var(--putih);
+    color: var(--hijau);
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    padding: 0 40px 0 16px;
+    border: 2px solid var(--abu);
+}
+
+.captch_input label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--abu);
+    transition: all 0.2s ease;
+    left: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 5px;
+    cursor: text;
+    color: var(--abu);
+    background: var(--putih);
+}
+
+.captch_input input:focus,
+.captch_input input:valid {
+    border-color: var(--hijau);
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: 0;
+    font-size: 15px;
+    color: var(--hijau);
+}
+
+/* akhir input chaptcha */
+
+/* awal button */
+
+.input-box a {
+    color: var(--hijau);
+    background-color: var(--putih);
+    border-color: var(--hijau);
+}
+
+.input-box a:hover {
+    background-color: var(--hijau);
+    color: var(--putih);
+    border-color: var(--putih);
+}
+
+.input-box.button button {
+    background: var(--hijau);
+    color: var(--putih);
+    cursor: pointer;
+    user-select: none;
+}
+
+.button button:hover {
+    background-color: var(--hijau-hover);
+}
+
+.button button:active {
+    transform: scale(0.99);
+}
+
+.button.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* akhir button */

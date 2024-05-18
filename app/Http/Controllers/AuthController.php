@@ -85,6 +85,21 @@ class AuthController extends Controller
         return view('admin.auth.forgot.pilih_forget');
     }
 
+    public function forget_email(): RedirectResponse
+    {
+        return redirect('/forget')->with(['warning' => 'Fitur belum dibuat']);
+    }
+
+    public function forget_validasi(): View
+    {
+        return view('admin.auth.forgot.validasi');
+
+
+    }public function forget_captcha(): View
+    {
+        return view('admin.auth.forgot.captcha');
+    }
+
     public function forget_buat(): View
     {
         return view('admin.auth.forgot.password_baru');

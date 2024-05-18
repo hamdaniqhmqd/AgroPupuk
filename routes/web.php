@@ -104,8 +104,11 @@ Route::post('/process_login', [AuthController::class, 'process_login']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/process_register', [AuthController::class, 'process_register']);
 // route get forget untuk menampilkan ke laman forget tampilan menyusul
-Route::get('/forget', [AuthController::class, 'forget']);
-Route::get('/forget_buat', [AuthController::class, 'forget_buat'])->name('proses_forget_buat');
+Route::get('/forget', [AuthController::class, 'forget'])->name('forget');
+Route::get('/forget/email', [AuthController::class, 'forget_email'])->name('forget_email');
+Route::get('/forget/validasi', [AuthController::class, 'forget_validasi'])->name('forget_validasi');
+Route::get('/forget/captcha', [AuthController::class, 'forget_captcha'])->name('forget_captcha');
+Route::get('/forget/buat', [AuthController::class, 'forget_buat'])->name('forget_proses_buat');
 
 Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard
