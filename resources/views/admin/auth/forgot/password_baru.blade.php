@@ -5,20 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Checker</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    {{-- link bs --}}
+    <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
+    <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     {{-- link css --}}
-    <link rel="stylesheet" href="{{ asset('css/pass_baru.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth/pass_baru.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body class="d-flex align-items-center justify-content-center vh-100 w-100">
     <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo"
         class="logo position-absolute top-0 start-0 mt-4 ms-4">
-    <form action="{{ route('proses_forget_buat') }}" method="POST" class="card-login card rounded-4">
+    <form action="" method="POST" class="card-login card rounded-4">
         <div class="title pt-2 d-flex justify-content-center">Buat Password</div>
         <div class="desc text-center text-capitalize">Masukkan password dan konfirmasi password dengan benar</div>
         <div class="input-box">
