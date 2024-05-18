@@ -20,11 +20,11 @@
         <h2 class="title pt-2 text-center">Ganti Password</h2>
         <p class="desc text-center text-capitalize">pilihlah metode yang sesuai dalam mengganti password</p>
         <div class="tombol d-flex align-items-stretch flex-column gap-4">
-            <a href="{{ route('forget_email') }}" class="btn d-flex gap-3 align-items-center px-3">
+            <a href="{{ route('forget.email') }}" class="btn d-flex gap-3 align-items-center px-3">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 Email
             </a>
-            <a href="{{ route('forget_validasi') }}" class="btn d-flex gap-3 align-items-center px-3">
+            <a href="{{ route('forget.validasi') }}" class="btn d-flex gap-3 align-items-center px-3">
                 <i class="fa fa-user-shield" aria-hidden="true"></i>
                 Validasi Data
             </a>

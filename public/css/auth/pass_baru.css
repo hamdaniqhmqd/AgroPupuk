@@ -87,6 +87,10 @@ body {
     background: var(--putih);
 }
 
+.input-box #labeluser {
+    cursor: text;
+}
+
 .input-box #labelpass {
     cursor: text;
 }
@@ -131,21 +135,6 @@ body {
 }
 
 /* akhir untuk animasi pada label input */
-
-/* awal alert */
-.peringatan .error_icon {
-    color: var(--error-icon);
-    font-size: 18px;
-    display: none;
-}
-
-.peringatan .pesan {
-    color: var(--abu);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-/* akhir alert */
 
 /* awal button */
 .input-box.button a {
