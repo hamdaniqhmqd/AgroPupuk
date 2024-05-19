@@ -98,13 +98,23 @@ Route::get('/berita', [ControllerLamanBerita::class, 'index'])->name('berita');
 // route get pengunjung, untuk menambahkan jumlah pengunjung dan di arahkan link yang dituju
 Route::get('/pengunjung/{id_berita}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('berita.pengunjung');
 // route get login untuk menampilkan ke laman login dan get proses_login untuk mengeksekusi proses login
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/process_login', [AuthController::class, 'process_login']);
 // route get register untuk menampilkan ke laman register dan get proses_register untuk mengeksekusi proses register
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/process_register', [AuthController::class, 'process_register']);
 // route get forget untuk menampilkan ke laman forget tampilan menyusul
-Route::get('/forget', [AuthController::class, 'forget']);
+Route::get('/forget', [AuthController::class, 'forget'])->name('forget');
+
+Route::get('/forget/email', [AuthController::class, 'forget_email'])->name('forget.email');
+
+Route::get('/forget/validasi', [AuthController::class, 'forget_validasi'])->name('forget.validasi');
+Route::post('/forget/proses_validasi', [AuthController::class, 'forget_proses_validasi'])->name('forget.proses_validasi');
+
+// Route::get('/forget/captcha', [AuthController::class, 'forget_captcha'])->name('forget.captcha');
+
+Route::get('/forget/buat', [AuthController::class, 'forget_buat'])->name('forget.buat');
+Route::post('/forget/proses_buat', [AuthController::class, 'forget_proses_buat'])->name('forget.proses_buat');
 
 Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard
