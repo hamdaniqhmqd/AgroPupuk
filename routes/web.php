@@ -42,8 +42,20 @@ Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
 Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('tentangkami');
 
 // Route::resource('/adminpupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
-Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
+
+// Route::resource('/admin/sipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class)->name('sipupuk');
 Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupuks.store');
+
+Route::resource('admin/adminsipupuk', ControllerAdminSipupuk::class)->names([
+    'index' => 'adminsipupuk.index',
+    'create' => 'adminsipupuk.create',
+    'store' => 'adminsipupuk.store',
+    'show' => 'adminsipupuk.show',
+    'edit' => 'adminsipupuk.edit',
+    'update' => 'adminsipupuk.update',
+    'destroy' => 'adminsipupuk.destroy'
+]);
+
 
 Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
 // routes/web.php

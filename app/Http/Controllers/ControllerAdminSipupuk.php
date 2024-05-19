@@ -42,7 +42,7 @@ class ControllerAdminSipupuk extends Controller
     public function create(): View
     {
         $data['admin'] = User::find(Auth::User()->id);
-        return view('admin.admin_sipupuk.create');
+        return view('admin.admin_sipupuk.create', $data);
     }
 
     /**
