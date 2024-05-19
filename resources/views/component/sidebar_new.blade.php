@@ -17,8 +17,8 @@
                     <i class="bx bx-package d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Produk</span></a>
                 </li>
-                <li class="{{ request()->is('adminsipupuk') ? 'active' : '' }}">
-                    <a href="{{ url('adminsipupuk') }}"
+                <li class="{{ request()->is('admin/adminsipupuk') ? 'active' : '' }}">
+                    <a href="{{ url('admin/adminsipupuk') }}"
                     class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bxs-florist d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Pupuk</span></a>
