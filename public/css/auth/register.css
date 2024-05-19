@@ -128,29 +128,16 @@ body.badan {
     cursor: pointer;
 }
 
-/* untuk tampilan remember me dan forget pass */
-.wrapper .forget {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    margin: -10px 0;
-}
-
-.forget label,
-.forget a {
-    color: var(--abu);
-    text-decoration: none;
-}
-
-.forget label:hover,
-.forget a:hover,
-.forget input:hover {
-    color: var(--hijau);
-    text-decoration: none;
+.input-box i#confpass_icon {
+    display: none;
+    right: 15px;
+    font-size: 20px;
     cursor: pointer;
 }
 
-/* end tampilan remember me dan forget pass */
+.input-box #labelconfpass.active {
+    cursor: not-allowed;
+}
 
 /* untuk register */
 .wrapper .register {
