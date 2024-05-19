@@ -33,8 +33,8 @@ class AuthController extends Controller
             'username' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8',
+            'konfirmasi_password' => 'required|same:password',
         ]);
-        // dd($request->all());
         $id = date('YmdHis');
 
         User::create([

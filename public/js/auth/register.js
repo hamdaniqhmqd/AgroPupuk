@@ -1,8 +1,8 @@
 const inputPw = document.querySelector(".input-box #pass");
 const passIcon = document.querySelector("#pass_icon");
-const label = document.querySelector(".input-box #label");
-const check = document.querySelector(".forget #checkbox");
-const textCheck = document.querySelector(".forget label")
+const inputConfPw = document.querySelector(".input-box #conf_pass");
+const ConfPassIcon = document.querySelector("#confpass_icon");
+const label = document.querySelector(".input-box #labelconfpass");
 
 passIcon.addEventListener("click", () => {
     if (inputPw.type === "password") {
@@ -14,10 +14,30 @@ passIcon.addEventListener("click", () => {
     }
 });
 
-check.addEventListener('change', function() {
-  if (this.checked) {
-    textCheck.style.color = '#4070f4'; // Ubah warna teks menjadi merah
-  } else {
-    textCheck.style.color = '#a6a6a6'; // Kembalikan warna teks ke nilai default
-  }
+ConfPassIcon.addEventListener("click", () => {
+    if (inputConfPw.type === "password") {
+        inputConfPw.type = "text";
+        ConfPassIcon.classList.replace("fa-eye-slash", "fa-eye");
+    } else {
+        inputConfPw.type = "password";
+        ConfPassIcon.classList.replace("fa-eye", "fa-eye-slash");
+    }
+});
+
+inputPw.addEventListener("input", () => {
+    let inputValue = inputPw.value.trim();
+
+    if (inputValue.length >= 8) {
+        inputConfPw.removeAttribute("disabled");
+        inputConfPw.classList.remove("active");
+        label.classList.remove("active");
+        ConfPassIcon.style.display = "block";
+    } else {
+        inputConfPw.setAttribute("disabled", true);
+        inputConfPw.classList.add("active");
+        label.classList.add("active");
+        ConfPassIcon.style.display = "none";
+
+        inputConfPw.value = "";
+    }
 });

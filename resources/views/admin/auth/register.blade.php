@@ -14,7 +14,8 @@
 </head>
 
 <body class="badan">
-    <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo" class="logo position-absolute top-0 start-0 mt-4 ms-4">
+    <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo"
+        class="logo position-absolute top-0 start-0 mt-4 ms-4">
     <div class="wrapper">
         <div class="title">Register</div>
         <div class="desc">Enter the correct username and password</div>
@@ -35,11 +36,10 @@
                 <label for="pass" id="labelpass">Password</label>
                 <i class="fa fa-eye-slash" id="pass_icon"></i>
             </div>
-            <div class="forget">
-                <label>
-                    <input type="checkbox" id="checkbox" /> Remember me
-                </label>
-                <a href="{{ url('/forget') }}">Forget Password</a>
+            <div class="input-box">
+                <input type="password" name="konfirmasi_password" id="conf_pass" required disabled />
+                <label for="conf_pass" id="labelconfpass" class="active">Konfirmasi Password</label>
+                <i class="fa fa-eye-slash" id="confpass_icon"></i>
             </div>
             <div class="input-box button">
                 <input id="button" type="submit" value="Submit" class="" required />
@@ -62,7 +62,7 @@
                 timer: 2000
             });
         @elseif (session('error'))
-        Swal.fire({
+            Swal.fire({
                 icon: "error",
                 title: "PERINGATAN",
                 text: "{{ session('error') }}",
