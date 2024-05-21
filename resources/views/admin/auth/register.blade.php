@@ -45,7 +45,7 @@
                 <input id="button" type="submit" value="Submit" class="" required />
             </div>
             <div class="register">
-                <span class="text">You have a account? </span><a href="{{ url('/login') }}" class="link">Login</a>
+                <span class="text">Kamu sudah punya akun? </span><a href="{{ url('/login') }}" class="link">Login</a>
             </div>
         </form>
     </div>

@@ -80,8 +80,8 @@ body.badan {
     border-color: var(--hijau);
 }
 
-.input-box input:focus ~ i,
-.input-box input:valid ~ i {
+.input-box input:focus~i,
+.input-box input:valid~i {
     color: var(--hijau);
 }
 
@@ -95,14 +95,14 @@ body.badan {
 }
 
 /* untuk animasi pada label input */
-.input-box input:focus ~ label {
+.input-box input:focus~label {
     top: 0;
     color: var(--hijau);
     font-size: 15px;
 }
 
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
+.input-box input:focus~label,
+.input-box input:valid~label {
     top: 0;
     font-size: 15px;
     color: var(--hijau);
@@ -142,7 +142,35 @@ body.badan {
     text-decoration: none;
     cursor: pointer;
 }
+
 /* end tampilan remember me dan forget pass */
+
+
+/* untuk register */
+.card-login .register {
+    font-size: 14.5px;
+    text-align: center;
+    margin: -5px 0 10px;
+}
+
+.register .text,
+.register .link {
+    color: var(--abu);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register .text:hover {
+    cursor: default;
+    color: var(--hijau);
+}
+
+.register .link:hover {
+    color: var(--hijau);
+    text-decoration: underline;
+}
+
+/* end register */
 
 /* start untuk button */
 .input-box.button #button {
@@ -158,5 +186,6 @@ body.badan {
     background-color: var(--hijau-hover);
     border-width: 2px;
 }
+
 /* end untuk button */
 /* end login */
