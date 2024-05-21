@@ -51,14 +51,20 @@
 }
 
 .btn-selengkapnyaa {
+    color: white;
+    padding: 10px;
+    background-color: #224038;
+    border-radius: 5px;
     cursor: pointer;
-    transition: opacity 0.3s ease; /* animasi smooth */
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.2s;
 }
 
 .btn-selengkapnyaa:hover {
-    background: linear-gradient(to right, #198754,#115938, #198734);
-    /* background: linear-gradient(to right, #134525,#224038df, #175232); */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #E3E3E3;
+    color: #224038;
+    font-weight: 600;
+    border: 1px solid #224038;
+    border-radius: 5px;
 }
 .navbar-custom {
     width: 100vw;
@@ -167,6 +173,7 @@ h1 {
     opacity: 0;
 }
 
+
 .hamburgermenu.active .strip:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
 }
@@ -224,6 +231,15 @@ h1 {
 
 .bungkus-animasi {
     width: 30%;
+}
+
+.kotak-kotak{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
 }
 
 @keyframes animate {
@@ -322,4 +338,34 @@ h1 {
         height: 200px;
     }
 }
+
+.animate-card:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+}
+
+.btn-artikel-lain {
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #ffffff;
+    color: #224038;
+    border: 2px solid #224038;
+    border-radius: 10px;
+    transition:  0.5s ease-out;
+}
+
+.btn-artikel-lain:hover {
+    background-color: #224038;
+    color: white;
+}
+
+.link-dalam {
+    color: #224038;
+}
+
+.link-dalam:hover {
+    color: #ffffff;
+}
+
 

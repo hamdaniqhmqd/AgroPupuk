@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ isset($title) ? $title . '' : '' }}</title>
+    {{-- <title>{{ isset($title) ? $title . '' : '' }}</title> --}}
+    <title> Berita | AGROPUPUK </title>
     {{-- link bs --}}
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>

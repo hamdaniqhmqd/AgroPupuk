@@ -36,7 +36,7 @@
             <div style="width: 90%; margin: auto">
                 <h3 class="mt-5 py-2 fs-3 warna-hijau">Welcome, <span class="fw-bold text-uppercase">{{ $admin->nama }}</span></h3>
                 <div class="card mt-3 w-100 bg-ligth rounded-3 border-2 shadow">
-                    <div class="w-75 m-auto d-flex"">
+                    <div class="d-flex justify-content-between " style="width: 85%; margin:auto;">
                         <div class="text-start pt-5">
                             <p class="warna-hijau-muda">
                                 SELAMAT DATANG DI DASHBOARD ADMIN AGROPUPUK
