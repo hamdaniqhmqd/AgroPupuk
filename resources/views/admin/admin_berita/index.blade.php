@@ -139,8 +139,7 @@
                 <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
                     loading="lazy" />
             @else
-                <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile"
-                    loading="lazy" />
+                <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile" loading="lazy" />
             @endif
 
         </div>

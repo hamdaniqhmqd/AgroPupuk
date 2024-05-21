@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -117,10 +118,10 @@ class AuthController extends Controller
         return view('admin.auth.forgot.password_baru');
     }
 
-    public function forget_proses_buat(Request $request) : RedirectResponse
+    public function forget_proses_buat(Request $request): RedirectResponse
     {
         $request->validate([
-            'username'=> 'required',
+            'username' => 'required',
             'pass' => 'required',
             'conf_pass' => 'required|same:pass',
         ]);
@@ -141,5 +142,26 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect('/login')->with(['success' => 'Logout Berhasil']);
+    }
+
+    public function logoutOnClose(Request $request)
+    {
+        // Cek apakah ada token CSRF
+        if ($request->isMethod('post') && $request->has('_token')) {
+            // Fungsi untuk logout
+            Auth::logout(); // Menghapus informasi autentikasi pengguna
+
+            // Mereferesh status sesi
+            $request->session()->invalidate(); // Menghapus sesi pengguna yang saat ini aktif
+
+            // Menghasilkan token baru untuk menghindari serangan CSRF
+            $request->session()->regenerateToken(); // Memperbaharui token sesi pengguna
+
+            // Mengembalikan respons JSON jika berhasil
+            return response()->json(['message' => 'User logged out on tab close'], 200);
+        }
+
+        // Mengembalikan respons JSON jika token CSRF tidak valid
+        return response()->json(['message' => 'Invalid CSRF token'], 403);
     }
 }
