@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --hijau: #224038;
+    --putih: #fff;
+    --abu: #a6a6a6;
+    --hijau-hover: #346155;
+
+    /* --bg-body: url('{{ asset('storage/image/coro3.png') }}'); */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body.badan {
+    /* background-repeat: no-repeat;
+    background-image: url("{{ asset(storage/image/bg-agro.png') }}");
+    background-size: cover;
+    background-position: center;
+    object-fit: contain; */
+    background-color: var(--hijau);
+}
+
+/* login start */
+.card-login {
+    width: 100%;
+    padding: 35px 40px;
+    max-width: 480px;
+    background: var(--putih);
+}
+
+.card-login .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--hijau);
+    cursor: default;
+}
+
+.card-login .desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--hijau);
+    cursor: default;
+}
+
+.card-login .input-box {
+    position: relative;
+    height: 60px;
+    margin: 25px 0;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    background-color: var(--putih);
+    color: var(--hijau);
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+    border-radius: 6px;
+    padding: 0 40px 0 16px;
+    border: 2px solid var(--abu);
+}
+
+.input-box label,
+.input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--abu);
+    transition: all 0.2s ease;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border-color: var(--hijau);
+}
+
+.input-box input:focus ~ i,
+.input-box input:valid ~ i {
+    color: var(--hijau);
+}
+
+.input-box label {
+    left: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 5px;
+    cursor: text;
+    background-color: var(--putih);
+}
+
+/* untuk animasi pada label input */
+.input-box input:focus ~ label {
+    top: 0;
+    color: var(--hijau);
+    font-size: 15px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: 0;
+    font-size: 15px;
+    color: var(--hijau);
+}
+
+/* akhir animasi pada label input */
+
+.input-box i#user_icon {
+    right: 15px;
+    font-size: 20px;
+}
+
+.input-box i#pass_icon {
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* untuk tampilan remember me dan forget pass */
+.card-login .forget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: -10px 0;
+}
+
+.forget label,
+.forget a {
+    color: var(--abu);
+    text-decoration: none;
+}
+
+.forget label:hover,
+.forget a:hover,
+.forget input:hover {
+    color: var(--hijau);
+    text-decoration: none;
+    cursor: pointer;
+}
+/* end tampilan remember me dan forget pass */
+
+/* start untuk button */
+.input-box.button #button {
+    background: var(--hijau);
+    color: var(--putih);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.input-box.button #button:hover {
+    background-color: var(--hijau-hover);
+    border-width: 2px;
+}
+/* end untuk button */
+/* end login */

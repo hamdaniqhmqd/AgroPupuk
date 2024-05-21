@@ -17,8 +17,8 @@
                     <i class="bx bx-package d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Produk</span></a>
                 </li>
-                <li class="{{ request()->is('adminsipupuk') ? 'active' : '' }}">
-                    <a href="{{ url('adminsipupuk') }}"
+                <li class="{{ request()->is('admin/adminsipupuk') ? 'active' : '' }}">
+                    <a href="{{ url('admin/adminsipupuk') }}"
                     class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bxs-florist d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Pupuk</span></a>
@@ -38,7 +38,7 @@
                     <span class="nama_nav">Profile</span></a>
             </li>
             <li class="">
-                <a href="{{ url('/logout') }}" class="menu flex-fill d-flex align-items-center justify-content-start"
+                <a href="{{ route('admin.logout') }}" class="menu flex-fill d-flex align-items-center justify-content-start"
                     onclick="confirmLogout(event)">
                     <i class="bx bx-log-out d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Logout</span>
@@ -68,7 +68,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redirect ke halaman logout jika diklik "Ya"
-                window.location.href = event.target.href;
+                window.location.href = '{{ route('admin.logout') }}';
             } else {
                 // Tidak melakukan apa-apa jika diklik "Tidak"
             }

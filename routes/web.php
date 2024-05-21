@@ -42,8 +42,20 @@ Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
 Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('tentangkami');
 
 // Route::resource('/adminpupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
-Route::resource('/adminsipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class);
+
+// Route::resource('/admin/sipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class)->name('sipupuk');
 Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupuks.store');
+
+Route::resource('admin/adminsipupuk', ControllerAdminSipupuk::class)->names([
+    'index' => 'adminsipupuk.index',
+    'create' => 'adminsipupuk.create',
+    'store' => 'adminsipupuk.store',
+    'show' => 'adminsipupuk.show',
+    'edit' => 'adminsipupuk.edit',
+    'update' => 'adminsipupuk.update',
+    'destroy' => 'adminsipupuk.destroy'
+]);
+
 
 Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
 // routes/web.php
@@ -75,8 +87,8 @@ Route::get('/listproduk', [ControllerAdminUserMutualism::class, 'userlist'])->na
 // return view('layouts.laman_produk');
 
 
- // Route::get('/petronitrat.blade.php', function () {
- //   return view('petronitrat');
+// Route::get('/petronitrat.blade.php', function () {
+//   return view('petronitrat');
 // });
 
 
@@ -98,16 +110,23 @@ Route::get('/berita', [ControllerLamanBerita::class, 'index'])->name('berita');
 // route get pengunjung, untuk menambahkan jumlah pengunjung dan di arahkan link yang dituju
 Route::get('/pengunjung/{id_berita}', [ControllerLamanAdminBerita::class, 'pengunjung'])->name('berita.pengunjung');
 // route get login untuk menampilkan ke laman login dan get proses_login untuk mengeksekusi proses login
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/process_login', [AuthController::class, 'process_login']);
 // route get register untuk menampilkan ke laman register dan get proses_register untuk mengeksekusi proses register
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/process_register', [AuthController::class, 'process_register']);
 // route get forget untuk menampilkan ke laman forget tampilan menyusul
-Route::get('/forget', [AuthController::class, 'forget']);
+Route::get('/forget', [AuthController::class, 'forget'])->name('forget');
 
-// route get logout untuk mengeksekusi proses logout
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/forget/email', [AuthController::class, 'forget_email'])->name('forget.email');
+
+Route::get('/forget/validasi', [AuthController::class, 'forget_validasi'])->name('forget.validasi');
+Route::post('/forget/proses_validasi', [AuthController::class, 'forget_proses_validasi'])->name('forget.proses_validasi');
+
+// Route::get('/forget/captcha', [AuthController::class, 'forget_captcha'])->name('forget.captcha');
+
+Route::get('/forget/buat', [AuthController::class, 'forget_buat'])->name('forget.buat');
+Route::post('/forget/proses_buat', [AuthController::class, 'forget_proses_buat'])->name('forget.proses_buat');
 
 Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard
@@ -135,6 +154,10 @@ Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin ...
     Route::get('/admin/profile/edit', [ControllerProfilAdmin::class, 'edit'])->name('admin.profile.edit');
     Route::put('/admin/profile/update', [ControllerProfilAdmin::class, 'update'])->name('admin.profile.update');
+
+    // dibawah ini untuk logout
+    // route get logout untuk mengeksekusi proses logout
+    Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
 
 //bagian java

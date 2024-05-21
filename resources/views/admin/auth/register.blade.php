@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
+    {{-- link bs --}}
+    <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
 </head>
 
-<body>
+<body class="badan">
+    <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo"
+        class="logo position-absolute top-0 start-0 mt-4 ms-4">
     <div class="wrapper">
         <div class="title">Register</div>
         <div class="desc">Enter the correct username and password</div>
@@ -23,7 +27,7 @@
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
             <div class="input-box">
-                <input type="email" name="email" id="email" required />
+                <input type="text" name="email" id="email" required />
                 <label for="email" id="labelemail">Email</label>
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
@@ -32,11 +36,10 @@
                 <label for="pass" id="labelpass">Password</label>
                 <i class="fa fa-eye-slash" id="pass_icon"></i>
             </div>
-            <div class="forget">
-                <label>
-                    <input type="checkbox" id="checkbox" /> Remember me
-                </label>
-                <a href="{{ url('/forget') }}">Forget Password</a>
+            <div class="input-box">
+                <input type="password" name="konfirmasi_password" id="conf_pass" required disabled />
+                <label for="conf_pass" id="labelconfpass" class="active">Konfirmasi Password</label>
+                <i class="fa fa-eye-slash" id="confpass_icon"></i>
             </div>
             <div class="input-box button">
                 <input id="button" type="submit" value="Submit" class="" required />
@@ -46,7 +49,8 @@
             </div>
         </form>
     </div>
-    <script src="{{ asset('js/register.js') }}"></script>
+    <script src="{{ asset('js/auth/register.js') }}"></script>
+    <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         @if (session('success'))
@@ -58,7 +62,7 @@
                 timer: 2000
             });
         @elseif (session('error'))
-        Swal.fire({
+            Swal.fire({
                 icon: "error",
                 title: "PERINGATAN",
                 text: "{{ session('error') }}",

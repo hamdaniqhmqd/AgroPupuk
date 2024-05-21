@@ -50,7 +50,7 @@
                         <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="font-weight-bold">AUTHOR</label>
-                                    <input type="text" class="form-control @error('author') is-invalid @enderror" name="author" value="{{ old('author', $sipupuks->author) }}" placeholder="Masukkan Nama Author">
+                                    <input type="text" class="form-control @error('author') is-invalid @enderror" name="author" value="{{ old('author', $sipupuks->author) }}" disabled >
                                 
                                     <!-- pesan error untuk author -->
                                     @error('author')

@@ -106,7 +106,7 @@ h1 {
     padding-top: 60px;
     background-size: cover;
     position: relative;
-    margin-top: -200px;
+    margin-top: -230px;
     width: 100%;
     height: 450px;
 }
@@ -202,10 +202,11 @@ h1 {
 .ttg-kami {
     position: relative;
     width: 100%;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 40px;
     color: #ffffff;
     -webkit-text-stroke: 0.3px #198754;
+    margin-top: 60px;
     /* -webkit-text-stroke: 0.3px #224038; */
 }
 
@@ -217,7 +218,6 @@ h1 {
     color: #224038;
     -webkit-text-stroke: 0px #ffffff;
     border-right: 1.2px solid #198754;
-    /* border-right: 1.2px solid #224038; */
     overflow: hidden;
     animation: animate 2.5s ease-in-out infinite;
 }

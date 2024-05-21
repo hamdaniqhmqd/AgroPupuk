@@ -111,14 +111,6 @@
             border: none;
         }
 
-        table tbody .data-admin .nama_admin {
-            background-color: sandybrown;
-            padding: 4px 8px;
-            color: whitesmoke;
-            display: inline-block;
-            border: none;
-        }
-
         table tbody img {
             width: 100px;
             height: 100px;
@@ -200,7 +192,7 @@
                         <th scope="col" class="atas nomor align-middle text-center">No</th>
                         <th scope="col" class="atas gambar align-middle text-center" style="width: 120px;">Gambar</th>
                         <th scope="col" class="atas judul align-middle text-center">Judul</th>
-                        <th scope="col" class="atas admin align-middle text-center">Admin</th>
+                        <th scope="col" class="atas admin align-middle text-center">Author</th>
                         <th scope="col" class="atas aksi align-middle text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -220,7 +212,7 @@
                                 </span>
                             </td>
                             <td class="isi-data data-admin ">
-                                <span class="nama_admin text-start rounded px-3 py-1">
+                                <span class="nama_admin text-black fw-semibold text-start rounded px-3 py-1">
                                     {{ $data->user->nama }}
                                 </span>
                             </td>

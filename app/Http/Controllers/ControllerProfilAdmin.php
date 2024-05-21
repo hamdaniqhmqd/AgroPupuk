@@ -26,6 +26,7 @@ class ControllerProfilAdmin extends Controller
             'nama' => 'required|string|max:50',
             'email' => 'required|string|email|max:70|unique:users,email,' . auth()->user()->id,
             'no_hp' => 'required|string|max:15',
+            'tgl_lahir' => 'required|string',
             'jenis_kelamin' => 'required|string',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:9000',
         ]);
@@ -35,6 +36,7 @@ class ControllerProfilAdmin extends Controller
         $user->nama = $request->nama;
         $user->email = $request->email;
         $user->no_hp = $request->no_hp;
+        $user->tgl_lahir = $request->tgl_lahir;
         $user->jenis_kelamin = $request->jenis_kelamin;
 
         if ($request->hasFile('gambar')) {

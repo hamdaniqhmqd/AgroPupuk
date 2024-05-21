@@ -145,7 +145,7 @@ img{
     font-family: "Poppins";
     margin-right: 60px;
     padding-top: 40px;
-    
+
 }
 .kontak-off-map h4{
     font-size: 50px;
@@ -237,15 +237,15 @@ img{
                         <code>
                             <p>{!! $product->description !!}</p>
                         </code>
-                     
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-            
-        
+
+
     <div class="kontak-off"> <!--tokopedia-->
         <img src="{{ asset('storage/image/tokpedlogo.jpeg') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
@@ -260,8 +260,8 @@ img{
         @empty
         <div class="no-data">Tidak ada data di sini</div>
         @endforelse
-        
-    </div> 
+
+    </div>
     <br>
     <div class="kontak-off"> <!--shopi-->
         <img src="{{ asset('storage/image/sopi.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
@@ -277,7 +277,7 @@ img{
         @empty
         <div class="no-data">Tidak ada data di sini</div>
     @endforelse
-</div> 
+</div>
     <br>
     <div class="kontak-off"> <!--lazada-->
         <img src="{{ asset('storage/image/lajada.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
@@ -293,7 +293,7 @@ img{
         @empty
         <div class="no-data">Tidak ada data di sini</div>
     @endforelse
-</div>  
+</div>
     <br>
     <div class="kontak-off"> <!--blibli-->
         <img src="{{ asset('storage/image/blili.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
@@ -309,10 +309,10 @@ img{
         @empty
         <div class="no-data">Tidak ada data di sini</div>
     @endforelse
-</div>  
+</div>
 
 
-{{-- 
+{{--
     <div class="kontak-off-map">
         <h4 style="display: inline-block;">Alun-alun Kota Madiun</h4>
         <div class="harga"><strong>Rp.80.000</strong></div>
@@ -327,7 +327,7 @@ img{
             <p style="display: inline-block;">Jl. Serayu No. 84 Madiun</p>
         </div>
         <br><hr>
-    
+
     </div>
      --}}
     <!--

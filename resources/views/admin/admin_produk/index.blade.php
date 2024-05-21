@@ -1,18 +1,7 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Produk Admin </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body style="background: lightgray"> --}}
 @extends('layouts.laman_admin_produk')
 {{-- digunakan untuk memanggil file --}}
 {{-- digunakan untuk meengidentifikasi nama dari section --}}
 @section('admin_produk')
-    @include('component/sidebar_new')
     <header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
             <span class="list_page">{{ $title }}</span>
@@ -59,6 +48,7 @@
                                                     class="rounded" style="width: 140px">
                                             </td>
                                             <td>{{ $product->title }}</td>
+
                                             <td>{{ $product->jenis }}</td>
                                             <td>{{ $product->user->username ?? 'Unknown' }}</td>
                                             <td class="text-center">

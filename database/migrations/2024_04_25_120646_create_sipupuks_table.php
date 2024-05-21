@@ -18,8 +18,11 @@ return new class extends Migration
                 $table->string('image');
                 $table->string('title');
                 $table->text('content');
-                $table->string('author');
+                $table->unsignedBigInteger('author')->nullable();
                 $table->timestamps();
+
+                $table->foreign('author')->references('id')->on('users')->onDelete('set null');
+                $table->index('author');
         });
     }
 

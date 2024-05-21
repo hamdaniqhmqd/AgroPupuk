@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin: 25px 50px;
+            margin: 25px 15%;
         }
 
         label {
@@ -21,6 +21,7 @@
         input[type="text"],
         input[type="email"],
         input[type="file"],
+        input[type="tgl_lahir"],
         select[name="jenis_kelamin"] {
             padding: 5px;
             border: 1px solid #ccc;
@@ -36,14 +37,23 @@
             cursor: pointer;
         }
 
+        .btn-custom {
+            background-color: #911c1c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         .pembungkus {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
             position: relative;
         }
-        
+
         .pembungkus img {
         width: 100%;
         height: 100%;
@@ -100,38 +110,77 @@
             <div class="text-center flex-column">
                 <div class="pembungkus">
                     <input type="file" name="gambar" id="gambar" style="display: none;">
-                    <label for="gambar" style="cursor: pointer;">
+                    <label for="gambar" style="cursor: pointer; width: 150px; height: 150px">
                         @if (auth()->user()->gambar)
-                            <img src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="Gambar Profil">
+                            <img class="object-fit-cover" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="Gambar Profil">
                         @else
-                            <img src="{{ asset('/gambar/user.png') }}" alt="profile">
+                            <img class="object-fit-cover" src="{{ asset('/gambar/user.png') }}" alt="profile">
                         @endif
                         <span class="edit-icon">&#9998;</span> <!-- Ikon edit -->
                     </label>
                 </div>
-                <p class="text-black">@<span>{{ $admin->nama }}</span></p>
+                <p class="text-black"><span>{{ $admin->nama }}</span></p>
             </div>
         </div>
-        
 
-        <label for="nama">NAMA</label>
-        <input type="text" name="nama" id="nama" value="{{ old('nama', $admin->nama) }}" required>
 
-        <label for="email">EMAIL</label>
-        <input type="email" name="email" id="email" value="{{ old('email', $admin->email) }}" required>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">USERNAME</span>
+                    <input  class="form-control" type="text" name="nama" id="nama"  aria-label="Username" aria-describedby="basic-addon1" value="{{ old('nama', $admin->nama) }}" required>
+                </div>
+            </div>
 
-        <label for="email">NOMOR HP</label>
-        <input type="text" name="no_hp" id="no_hp" value="{{ old('no_hp', $admin->no_hp) }}" required pattern="[0-9]{9,13}">
-        <small class="text-danger opacity-75">*Format: Minimal 9 digit, maksimal 13 digit, hanya boleh angka.</small>
+            <div class="col-md-6">
+                <div class=" input-group ">
+                    <span class="input-group-text" id="basic-addon1"> EMAIL </span>
+                    <input class="form-control"  type="email" name="email" id="email" value="{{ old('email', $admin->email) }}" required aria-describedby="basic-addon1">
+                </div>
+            </div>
 
-        <label for="jenis_kelamin">JENIS KELAMIN</label>
-        <select name="jenis_kelamin" id="jenis_kelamin" required>
-            <option disabled >PILIH JENIS KELAMIN </option>
-            <option value="laki-laki" {{ $admin->jenis_kelamin === 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-            <option value="perempuan" {{ $admin->jenis_kelamin === 'perempuan' ? 'selected' : '' }}>Perempuan</option>
-        </select>
+            <div class="col-md-6 mb-1">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"> NOMOR HP </span>
+                    <input class="form-control" class="form-control" type="text" name="no_hp" id="no_hp" value="{{ old('no_hp', $admin->no_hp) }}" required pattern="[0-9]{9,13}" aria-describedby="basic-addon1">
+                </div>
+                <small class="text-danger opacity-75">*Format: Minimal 9 digit, maksimal 13 digit, hanya boleh angka.</small>
+            </div>
 
-        <button class="mt-3" type="submit">SIMPAN PERUBAHAN</button>
+            <div class="col-md-6 mb-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"> TANGGAL LAHIR </span>
+                    <input class="form-control"  type="date" name="tgl_lahir" id="tgl_lahir" value="{{ old('tgl_lahir', $admin->tgl_lahir) }}" aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1"> JENIS KELAMIN </span>
+                    <select class="form-select" name="jenis_kelamin" id="jenis_kelamin" required>
+                        <option disabled >PILIH JENIS KELAMIN </option>
+                        <option value="laki-laki" {{ $admin->jenis_kelamin === 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                        <option value="perempuan" {{ $admin->jenis_kelamin === 'perempuan' ? 'selected' : '' }}>Perempuan</option>
+                    </select>
+                </div>
+            </div>
+
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <button class="w-100" type="submit">SIMPAN PERUBAHAN</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <button class=" w-100 btn-custom">
+                            <a href="{{ url('/forget') }}" class="text-white text-decoration-none " >
+                                UBAH PASSWORD 
+                            </a>
+                        </button>
+                    </div>
+                </div>
+        </div>
+
     </form>
 
     @if (session('success'))
