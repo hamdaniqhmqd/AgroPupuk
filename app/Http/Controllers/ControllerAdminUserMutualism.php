@@ -219,7 +219,7 @@ class ControllerAdminUserMutualism extends Controller
 /* 
 git add .
 git commit -m "im wide awke"
-git push -u mutualisme_admin_user
+git push -u origin mutualisme_admin_user
 
 buat pull pake git pull origin main
 /*
