@@ -15,7 +15,8 @@
 </head>
 
 <body class="badan d-flex align-items-center justify-content-center vh-100 w-100">
-    <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo" class="logo position-absolute top-0 start-0 mt-4 ms-4">
+    <img src="{{ asset('storage/image/logoweb.png') }}" alt="logo"
+        class="logo position-absolute top-0 start-0 mt-4 ms-4">
     <div class="view d-flex align-items-center justify-content-center vh-100 w-100">
         <div class="card-login card rounded-4-">
             <div class="title text-center py-2">Login</div>
@@ -40,6 +41,10 @@
                 </div>
                 <div class="input-box button">
                     <input id="button" type="submit" value="Submit" class="" required />
+                </div>
+                <div class="register">
+                    <span class="text">Tidak punya akun? </span><a href="{{ url('/register') }}"
+                        class="link">Daftar Sekarang</a>
                 </div>
             </form>
         </div>
