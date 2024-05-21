@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('css/sidebar_new.css') }}">
     {{-- link bs --}}
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
-    <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <style>
         main header {
             padding: 2px 2px 10px 2px;
@@ -58,6 +57,7 @@
     {{-- link alert js dari sweetalert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- link js --}}
+    <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/sidebar_news.js') }}"></script>
     <script src="{{ asset('js/session.js') }}"></script>
     <script>
