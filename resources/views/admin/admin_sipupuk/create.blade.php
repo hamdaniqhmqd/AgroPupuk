@@ -45,7 +45,7 @@
                                 <div class="col-md-6">
                                     <div class=" form-group mb-3">
                                         <label class=" ms-1">AUTHOR</label>
-                                        <input type="text" class="form-control @error('author') is-invalid @enderror" disabled  name="author" value="{{ Auth::user()->nama }}">
+                                        <input type="text" class="form-control @error('author') is-invalid @enderror" disabled  name="author" value="{{ $admin->nama }}">
                                     
                                         <!-- pesan error untuk author -->
                                         @error('author')

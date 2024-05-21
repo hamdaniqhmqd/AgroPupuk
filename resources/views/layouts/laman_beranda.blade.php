@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Beranda Agropupuk</title>
+    <title>Beranda | AGROPUPUK </title>
     <!--CDN BOOTSTRAPE-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -14,8 +14,7 @@
     <!--font popins-->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/beranda.css') }}" />
-    <!--font awsome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Repo Animasi AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
@@ -81,7 +80,7 @@
                         petani agar mudah mencari informasi tentang berbagai <br />
                         hal yang berkaitan dengan pupuk.</p>
                     <div class="btn-selengkapnya">
-                    <a class="text-decoration-none text-white btn-hijau mt-4 btn-selengkapnyaa"
+                    <a class="text-decoration-none  mt-4 btn-selengkapnyaa"
                     type="button" href="{{ route('tentangkami') }}" data-aos-delay="300">Selengkapnya</a>
                     </div>
                 </div>
@@ -102,6 +101,18 @@
         @include('component.banner')
         <!-- end Benner AgroPupuk-->
 
+
+
+        <!-- Artike Prodduk -->
+
+        @include('component.artikel_beranda')
+    
+        <!-- end Artike Prodduk -->
+
+        <!--Benner AgroPupuk-->
+        @include('component.banner')
+        <!-- end Benner AgroPupuk-->
+
         <!-- Start Berita AgroPupuk-->
         @include('component.berita_laman_beranda')
         <!-- end Berita AgroPupuk-->
@@ -110,46 +121,11 @@
         <div class="our-grub d-flex justify-content-center align-items-center">
             <h1 class="text-white fs-4 fw-bold ">Our Groups</h1>
         </div>
-        <!-- logo corp -->
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
-                    <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                        data-aos-duration="1500">
-                            <img src="{{ asset('storage/image/petrokimia-gresik.png') }}" class="img-fluid" alt="Petrokimia Gresik">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                        data-aos-delay="100" data-aos-duration="1500">
-                            <img src="{{ asset('storage/image/pupuk-iskandar-muda.png') }}" class="img-fluid" alt="Pupuk Iskandar Muda">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                        data-aos-delay="200" data-aos-duration="1500">
-                            <img src="{{ asset('storage/image/pupuk-kaltim.png') }}" class="img-fluid" alt="Pupuk Kaltim">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                        data-aos-delay="300" data-aos-duration="1500">
-                            <img src="{{ asset('storage/image/pupuk-kujang.png') }}" class="img-fluid" alt="Pupuk Kujang">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="logo-corp justify-center align-content-center shadow" data-aos="zoom-in"
-                        data-aos-delay="400" data-aos-duration="1500">
-                            <img src="{{ asset('storage/image/pupuk-sriwijaya.png') }}" class="img-fluid" alt="Pupuk Sriwijaya">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--end our groups -->
 
-
-
+        <!-- logo corp groups -->
+        @include('component.corp_beranda')
         <!--end our groups -->
+
         <!--foooter-->
         @include('component.footer')
         <!--end footer-->

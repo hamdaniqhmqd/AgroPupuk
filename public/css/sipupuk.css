@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: 0;
+    font-family: Inter;
 }
 
 .container-custom {
@@ -23,6 +24,10 @@
     height: 400px;
     object-fit: cover;
 }
+.header-container {
+    width: 100%;
+    height: 400px;
+}
 
 .warna-hijau {
 color:#224038;
@@ -33,9 +38,35 @@ color:#224038;
     height: 38px;
     border: none;
 }
+.btn-kembali {
+    background-color:#224038;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 15px;
+    height: 50px;
+}
+
+.lh {
+    line-height: 1;
+}
+
+
+.btn-kembali:hover {
+    padding: 15px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    box-shadow: #224038 0 0 3px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 
 .fs-kecil {
-    font-size: 9px;
+    font-size: 12px;
 }
 .fs-small {
     font-size: 7px;
@@ -46,4 +77,20 @@ color:#224038;
 
 .text-glow {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.837); /* Ubah nilai blur, warna, dan opacity sesuai keinginan */
+}
+
+.img-filter {
+    transition: all 0.3s ease-in;
+}
+.img-filter:hover {
+    filter: blur(2px) brightness(80%);
+}
+
+.animate-card {
+    transition: transform 0.5s ease;
+}
+
+.animate-card:hover {
+    transform: scale(1.04);
+    cursor: pointer;
 }

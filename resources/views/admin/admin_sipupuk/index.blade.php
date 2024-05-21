@@ -52,7 +52,7 @@
                             @forelse ($sipupuks as $sipupuk)
                                 <tr>
                                     <td class="text-center" style="max-width: 150px; height: 100px;">
-                                        <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}" class="rounded"
+                                        <img src="{{ $sipupuk->image }}" class="rounded"
                                             width="150" height="70">
                                     </td>
                                     <td

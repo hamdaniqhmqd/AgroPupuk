@@ -57,18 +57,18 @@
         <div class="card-body">
             <div class="row m-2 mr-3 ml-3">
                 <div class="col-md-6" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1500">
+                data-aos-duration="1000">
                     <h2 class="">Berita Trending</h2>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end" data-aos="fade-left" data-aos-delay="100"
-                data-aos-duration="1500">
+                data-aos-duration="1000">
                     <div class="align-content-end">
                         <a href="{{ route('berita') }}" class="btn" style="background-color: #224038; color: #E3E3E3">Lihat semua</a>
                     </div>
                 </div>
             </div>
             <div class="col d-flex flex-wrap justify-content-center" data-aos="fade-up" data-aos-delay="100"
-            data-aos-duration="1500">
+            data-aos-duration="800">
                 {{-- sebuah perulangan dengan mengambil data dari variabel $berita dan di masukan ke variabel $data
                         jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
                 @forelse ($berita as $data)
@@ -88,7 +88,7 @@
                         </div>
                     </article>
                 @empty {{-- digunakan untuk menampilkan pesan jika data di dalam beritas kosong --}}
-                    <div class="alert alert-danger">
+                    <div class="alert bg-body-secondary text-dark " >
                         Data berita tidak ditemukan.
                     </div>
                 @endforelse
