@@ -158,6 +158,8 @@ Route::group(['middleware' => 'admin'], function () {
     // dibawah ini untuk logout
     // route get logout untuk mengeksekusi proses logout
     Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+    Route::post('/logout-on-close', [AuthController::class, 'logoutOnClose'])->name('logout-on-close');
 });
 
 //bagian java

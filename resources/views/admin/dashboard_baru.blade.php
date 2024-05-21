@@ -11,7 +11,7 @@
         .text-unline {
             text-decoration: none;
             list-style: none;
-    
+
         }
     </style>
     <div class="container-full">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="profile d-flex align-items-center">
-                
+
                 <span class="nama_admin">{{ $admin->nama }}</span>
                 @if (auth()->user()->gambar)
                     <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
@@ -114,4 +114,5 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/session.js') }}"></script>
 @endsection

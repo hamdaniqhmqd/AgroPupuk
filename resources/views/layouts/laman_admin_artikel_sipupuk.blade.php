@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ isset($title) ? $title . '' : '' }}</title>
     {{-- link alert dari sweetalert2 --}}
@@ -54,6 +54,7 @@
     {{-- link js --}}
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/sidebar_news.js') }}"></script>
+    <script src="{{ asset('js/session.js') }}"></script>
 
     <script>
         // untuk tampilan alert atau pemberitahuan
