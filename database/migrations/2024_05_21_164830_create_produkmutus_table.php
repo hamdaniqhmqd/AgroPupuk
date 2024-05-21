@@ -18,7 +18,10 @@ return new class extends Migration
             $table->enum('jenis', ['npk', 'phonska', 'urea', 'za']);
             $table->text ('description');
             $table->bigInteger ('price');
+            $table->unsignedBigInteger('user_id');
+            $table->string('author');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

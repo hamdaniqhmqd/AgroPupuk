@@ -70,7 +70,7 @@ Route::get('/cari', [ControllerAdminSipupuk::class, 'cari'])->name('cari');
 // Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 // route buat laman produk
-Route::get('/produk', [ControllerLamanProduk::class, 'index'])->name('produk.index');
+Route::get('/produk', [ControllerAdminUserMutualism::class, 'userlist'])->name('produk.index');
 
 Route::get('/test', function () {
     return view('component.testproduk');

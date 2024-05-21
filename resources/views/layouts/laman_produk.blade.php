@@ -15,19 +15,18 @@
 <body >
     <style>
         body{
-            background-color: #e3e3e3;
+            background-color: #e3e3e3 !important;
         }
         </style>
-        <!--include component.nav-->
 
-
-    <br><br><br><br>
+        @include('component/navbaru')
+    <br><br><br>
         <h1>PRODUK</h1>
         <div class="bton">
-            <button type="button" class="btn btn-success" data-box-id="npk">NPK</button>
-            <button type="button" class="btn btn-success" data-box-id="phonska">Phonska</button>
-            <button type="button" class="btn btn-success" data-box-id="urea">Urea</button>
-            <button type="button" class="btn btn-success" data-box-id="za">ZA+</button>
+            <button type="button" class="btn btn-success filter-btn" data-box-id="npk">NPK</button>
+            <button type="button" class="btn btn-success filter-btn" data-box-id="phonska">Phonska</button>
+            <button type="button" class="btn btn-success filter-btn" data-box-id="urea">Urea</button>
+            <button type="button" class="btn btn-success filter-btn" data-box-id="za">ZA+</button>
             <div class="circle" id="refresh">
                 <a href="http://127.0.0.1:8000/listproduk">
                     <i class="fa-solid fa-rotate fa-2x"></i>
@@ -43,12 +42,10 @@
        <br><br><br>
    <!-- Kotak-kotak start Area -->
    <div class="kotak-kotak">
-    @foreach ($data as $item)
-        
-    
+    @foreach ($data as $item)  
     <!--kotak luar startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt-->
     @csrf
-    <div class="kotak-luar" id="npk" data-url="{{ route('adminproduk.show', $item->id) }}">
+    <div class="kotak-luar" id="{{ $item->jenis }}" data-url="{{ route('adminproduk.show', $item->id) }}">
         <div class="kotak-dalam">
             <img src="{{ asset('storage/gambarproduk/'.$item->image) }}" alt="Gambar">
         </div>

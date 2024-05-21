@@ -1,21 +1,17 @@
-// Mengambil semua tombol produk
-const buttons = document.querySelectorAll('.btn-success');
+document.addEventListener("DOMContentLoaded", function() {
+    const kotakLuarDivs = document.querySelectorAll('.kotak-luar');
 
-// Loop melalui setiap tombol dan menambahkan event listener
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Mendapatkan ID kotak yang sesuai dengan tombol yang diklik
-        const boxId = button.getAttribute('data-box-id');
-
-        // Menyembunyikan semua kotak
-        const allBoxes = document.querySelectorAll('.kotak-luar');
-        allBoxes.forEach(box => {
-            // Menyembunyikan semua kotak kecuali yang memiliki ID yang sesuai
-            if (box.id === boxId) {
-                box.style.display = 'block';
-            } else {
-                box.style.display = 'none';
-            }
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const selectedJenis = button.getAttribute('data-box-id');
+            kotakLuarDivs.forEach(function(div) {
+                if (div.id === selectedJenis) {
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+            });
         });
     });
 });
