@@ -15,13 +15,12 @@
 <body >
     <style>
         body{
-            background-color: #e3e3e3;
+            background-color: #e3e3e3 !important;
         }
         </style>
-        <!--include component.nav-->
 
-
-    <br><br><br><br>
+        @include('component/navbaru')
+    <br><br><br>
         <h1>PRODUK</h1>
         <div class="bton">
             <button type="button" class="btn btn-success filter-btn" data-box-id="npk">NPK</button>

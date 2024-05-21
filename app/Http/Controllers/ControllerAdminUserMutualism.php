@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-//import model product
+
 use App\Models\produkmutu; 
 use App\Models\ProductStore; 
 
@@ -34,7 +34,7 @@ class ControllerAdminUserMutualism extends Controller
         //get all products
         $products = produkmutu::latest()->paginate(10);
         
-        $title = 'Berita';
+        $title = 'Produk Pupuk';
         $data['admin'] = User::find(Auth::User()->id);
         //render view with products
         return view('admin.admin_produk.index', compact('products', 'title'), $data);
@@ -80,6 +80,8 @@ class ControllerAdminUserMutualism extends Controller
         'jenis' => $request->jenis,
         'description' => $request->description,
         'price' => $request->price,
+        'user_id' => Auth::id(), // Set the user_id field
+        'author' => Auth::user()->username,
     ]);
 
     foreach ($request->store_names as $index => $storeName) {
@@ -213,3 +215,11 @@ class ControllerAdminUserMutualism extends Controller
         return view("layouts.laman_produk",compact('data'));
     }
 }
+
+/* 
+git add .
+git commit -m "im wide awke"
+git push -u mutualisme_admin_user
+
+buat pull pake git pull origin main
+/*

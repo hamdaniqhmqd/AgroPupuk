@@ -9,6 +9,11 @@
     <script src="https://kit.fontawesome.com/a8b5e7e027.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
+
+.main-head .logo img {
+    width: 180px !important;
+    height: 25px !important;
+ }
         /* Kotak atas css start*/
 .kotak-spek {
     height: 40vw;

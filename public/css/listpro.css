@@ -1,3 +1,9 @@
+/* biar logo tidak besar navbar*/
+.main-head .logo img {
+    width: 180px !important;
+    height: 25px !important;
+ }
+
 .search-container {
     display: flex;
     align-items: center;

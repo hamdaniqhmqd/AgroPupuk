@@ -47,7 +47,7 @@
                                         <th scope="col">IMAGE</th>
                                         <th scope="col">TITLE</th>
                                         <th scope="col">JENIS PUPUK</th>
-                                        <th scope="col">PRICE</th>
+                                        <th scope="col">AUTHOR</th>
                                         <th scope="col" style="width: 20%">ACTIONS</th>
                                     </tr>
                                 </thead>
@@ -60,7 +60,7 @@
                                             </td>
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->jenis }}</td>
-                                            <td>{{ 'Rp ' . number_format($product->price, 2, ',', '.') }}</td>
+                                            <td>{{ $product->user->username ?? 'Unknown' }}</td>
                                             <td class="text-center">
                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                     action="{{ route('adminproduk.destroy', $product->id) }}"
