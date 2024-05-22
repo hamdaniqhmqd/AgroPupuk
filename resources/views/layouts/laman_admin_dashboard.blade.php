@@ -5,7 +5,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ isset($title) ? $title . '' : '' }}</title>
+    {{-- <title>{{ isset($title) ? $title . '' : '' }}</title> --}}
+    <title> Dashboard | ADMIN </title>
     <!-- Link Google Fonts untuk font Popins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     {{-- link alert dari sweetalert2 --}}

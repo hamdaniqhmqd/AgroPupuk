@@ -26,7 +26,7 @@ class ControllerAdminSipupuk extends Controller
         if(Auth::check()) {
             // Mengambil data admin terautentikasi
             $admin = User::find(Auth::id());
-            $title = 'Data Si Pupuk';
+            $title = 'Artikel | ADMIN';
 
             // Mengambil semua produk
             $sipupuks = Sipupuk::with('user')->latest()->paginate(10);
@@ -55,6 +55,8 @@ class ControllerAdminSipupuk extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = new Sipupuk();
+        // Dapatkan nama user yang sedang login
+        $nama = Auth::user()->nama;
         //validasi form
         $request->validate([
             'image'         => 'required|image|mimes:jpeg,jpg,png|max:2048',
@@ -64,16 +66,14 @@ class ControllerAdminSipupuk extends Controller
 
         //upload image
         $image = $request->file('image');
-        $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('title') . '.' . $image->getClientOriginalExtension();
+        $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $image->getClientOriginalName() . '.' . $image->getClientOriginalExtension();
         $image->storeAs('public/gambar_sipupuk', $nameImage);
         $data['image'] = $nameImage;
         
-        // Dapatkan nama user yang sedang login
-        $nama = Auth::user()->nama;
 
         //buat produk
         $data->create([
-            'image'         => '/storage/gambar_sipupuk/'.$nameImage,
+            'image'         => $nameImage,
             'title'         => $request->title,
             'content'       => $request->content,
             'author'        => $nama // Sesuaikan dengan author yang sesuai
@@ -130,19 +130,19 @@ class ControllerAdminSipupuk extends Controller
         //get authenticated user's name
         $nama = Auth::user()->nama;
 
-        $image = $request->file('image');
         if ($request->hasFile('image')) {
 
+            $image = $request->file('image');
             //upload new image
-            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('title') . '.' . $image->getClientOriginalExtension();
+            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $image->getClientOriginalName() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('public/gambar_sipupuk', $nameImage);
 
             //delete old image
-            Storage::delete('public/gambar_sipupuk' . basename($sipupuks->image));
+            Storage::delete('public/gambar_sipupuk' . $sipupuks->image);
 
             //update product with new image
             $sipupuks->update([
-                'image'         => '/storage/gambar_sipupuk/'.$nameImage,
+                'image'         => $nameImage,
                 'title'         => $request->title,
                 'content'       => $request->content,
             ]);
@@ -174,7 +174,7 @@ class ControllerAdminSipupuk extends Controller
         // Hapus gambar terkait jika ada
         if ($sipupuks->image) {
             // Hapus file dari penyimpanan
-            Storage::delete('public/gambar_sipupuk/' . basename($sipupuks->image));
+            Storage::delete('public/gambar_sipupuk/' . $sipupuks->image);
         }
 
         //delete product

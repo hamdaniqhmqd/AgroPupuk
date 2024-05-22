@@ -67,7 +67,7 @@
                         src="{{ asset('public/storage/sipupuk'.$sipupuks->image) }}"/>
     
                     </figure> --}}
-                    <img src="{{ asset('storage/gambar_sipupuk/'.$sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
+                    <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuks->image) }}" class="img-fluid" alt="Gambar Artikel">
                     <!-- Post content-->
                     <section class="mb-5">
                         

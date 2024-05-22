@@ -5,7 +5,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ isset($title) ? $title . '' : '' }}</title>
+    {{-- <title>{{ isset($title) ? $title . '' : '' }}</title> --}}
+    <title> Produk | ADMIN </title>
     {{-- link alert dari sweetalert2 --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     {{-- link icon dari boxincons --}}
