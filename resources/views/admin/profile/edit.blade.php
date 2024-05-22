@@ -22,6 +22,7 @@
         input[type="email"],
         input[type="file"],
         input[type="tgl_lahir"],
+        input[namee="alamat"],
         select[name="jenis_kelamin"] {
             padding: 5px;
             border: 1px solid #ccc;
@@ -64,6 +65,12 @@
 
         .pembungkus:hover img {
             filter: brightness(70%); /* Meredupkan gambar saat kursor diarahkan ke dalamnya */
+        }
+
+        div .w-100,
+        div .w-100 .btn-custom{
+            margin-top: 24px;
+
         }
 
         .edit-icon {
@@ -162,6 +169,14 @@
                         <option value="laki-laki" {{ $admin->jenis_kelamin === 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                         <option value="perempuan" {{ $admin->jenis_kelamin === 'perempuan' ? 'selected' : '' }}>Perempuan</option>
                     </select>
+                </div>
+            </div>
+
+            
+            <div class="col-md-0">
+                <div class=" input-group ">
+                    <span class="input-group-text" id="basic-addon1"> ALAMAT </span>
+                    <input class="form-control" name="alamat" id="alamat" value="{{ old('alamat', $admin->alamat) }}">
                 </div>
             </div>
 
