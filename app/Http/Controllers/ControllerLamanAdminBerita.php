@@ -41,7 +41,6 @@ class ControllerLamanAdminBerita extends Controller
         $dataAuthor = Berita::select('author')->distinct()->get();
         $jumlahAuthor = $dataAuthor->count();
 
-
         // Untuk mengarahkan ke laman admin berita dengan variabel tambahan
         return view('admin.admin_berita.index', compact('berita', 'title', 'request', 'totalPengunjung', 'totalBerita', 'jumlahAuthor'), $data);
     }
@@ -71,7 +70,7 @@ class ControllerLamanAdminBerita extends Controller
         $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
             $request->input('judul_berita') . '.' . $image->getClientOriginalExtension();
         // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
-        $path = $image->storeAs('gambar berita', $nameImage, 'public');
+        $image->storeAs('gambar berita', $nameImage, 'public');
 
         // untuk mengatur id pada setiap data sesuai dengan
         // tanggal, waktu saat d tambahkan

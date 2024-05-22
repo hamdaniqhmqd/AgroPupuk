@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body style="background-color: #ffffff">
+<body style="background-color: #F4F8FA">
 
     @include('component.navbaru')
     <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
@@ -51,7 +51,7 @@
                     class="d-block object-fit-cover" alt="gambar3" />
             </div>
         </div>
-        <img class="wave" src="{{ asset('storage/image/wave.png') }}" alt="" srcset="">
+        <img class="wave" src="{{ asset('storage/image/wave_berita.png') }}" alt="" srcset="">
         <!--Ini konten diatas corousel-->
     </div>
 
