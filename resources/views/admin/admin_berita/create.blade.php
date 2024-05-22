@@ -35,7 +35,7 @@
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label class="font-weight-bold">Nama Berita</label>
+                                    <label class="font-weight-bold text-black">Nama Berita</label>
                                     <input type="text" class="form-control @error('judul_berita') is-invalid @enderror"
                                         name="judul_berita" value="{{ old('judul_berita') }}"
                                         placeholder="Masukkan Judul Berita">
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label class="font-weight-bold">Sumber Link Berita :</label>
+                                    <label class="font-weight-bold text-black">Sumber Link Berita :</label>
                                     <input type="text" class="form-control @error('link_berita') is-invalid @enderror"
                                         name="link_berita" value="{{ old('link_berita') }}"
                                         placeholder="Masukkan Sumber Link">
@@ -61,7 +61,7 @@
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <label class="font-weight-bold">Deskripsi Berita :</label>
+                                    <label class="font-weight-bold text-black">Deskripsi Berita :</label>
                                     <textarea class="form-control @error('deskripsi_berita') is-invalid @enderror" name="deskripsi_berita" rows="5"
                                         placeholder="Masukkan Deskripsi Berita">{{ old('deskripsi_berita') }}</textarea>
                                     <!-- error message untuk deskripsi_berita -->
