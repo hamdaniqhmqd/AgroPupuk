@@ -88,6 +88,7 @@ Route::get('/listpro/list-produk', function () {
 
 
 Route::get('/listproduk', [ControllerAdminUserMutualism::class, 'userlist'])->name('listproduk');
+// Route::get("/detailproduk", [ControllerAdminUserMutualism::class,'showuser'])->name('layouts.laman_detail_produk');
 // return view('layouts.laman_produk');
 
 

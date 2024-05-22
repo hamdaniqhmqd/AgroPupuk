@@ -113,6 +113,15 @@ class ControllerAdminUserMutualism extends Controller
         return view('admin.admin_produk.show', compact('product'));
     }
 
+ //   public function showuser(string $id): View
+  //  {
+        //get product by ID
+   //     $product = produkmutu::findOrFail($id);
+
+        //render view with product
+     //   return view('layouts.laman_detail_produk', compact('product'));
+    //}
+
     /**
      * edit
      *
@@ -213,4 +222,4 @@ class ControllerAdminUserMutualism extends Controller
         $data = produkmutu::all(); //buat manggil $data di class store
         return view("layouts.laman_produk",compact('data'));
     }
-};
+}
