@@ -369,3 +369,24 @@ h1 {
 }
 
 
+.w-85 {
+    width: 85%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-custom {
+    width: 85%;
+    margin: auto;
+    box-shadow: #224038 0px 0px 10px;
+}
+
+
+
+
