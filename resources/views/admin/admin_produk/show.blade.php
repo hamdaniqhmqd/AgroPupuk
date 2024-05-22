@@ -73,14 +73,16 @@ img{
 
 .kontak-off {
     height: auto;
+    justify-content: space-between;
+    align-items: center; /* Vertically aligns the elements in the center */
     width:87vw;
     background-color: #ffffff;
     margin-left: 6%;
     margin-bottom: 1%;
-    align-items: flex; /* Susun elemen-elemen di bagian atas */
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Menambahkan efek shadow hanya di bagian bawah dan kanan */
 }
+
 
 .kontak-off h4 {
     font-size: 50px;
@@ -96,7 +98,7 @@ img{
     margin-left: 20px;
     margin-top: 5px
 }
-
+/*
 .kontak-off .nama-toko {
     font-size: 25px;
     font-family: "Poppins";
@@ -105,25 +107,28 @@ img{
 }
 
 .kontak-off .harga {
-    margin-left: 100px;
-    font-size: 50px;
-    margin-top: -20px;
+    margin-left: auto;
+    font-size: 42px;
     font-family: "Poppins";
     width: 50%;
     clear: both;
-    margin-bottom: 2px;
+    justify-content: space-between;
+    margin-right: 50px;
+    text-align: right;
+    margin-bottom:40px;
 }
 
 .kontak-off .buton {
     float: right;
-    margin-right: 30px; /* Adjust margin to create space between button and text */
+    margin-right: 30px; 
 }
 
-.kontak-off .buton .btn {
+kontak-off .buton .btn {
     width: 20vw;
     height: 20%;
     background-color: #224038 !important;
 }
+*/
 
 
 .kontak-off-map{
@@ -220,42 +225,40 @@ img{
 
 <body style="background: #e3e3e3">
     @include('component/navbaru')
-<div class="pemersatu" style="background: white; margin-right:6%; margin-left:6%; margin-bottom:20px; margin-top:2px ; border-radius: 15px;">
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card border-0  rounded">
-                    <div class="card-body">
-                        <img src="{{ asset('storage/gambarproduk/'.$product->image) }}" class="rounded" style="width: 100%">
-                    </div>
+
+    <div class="container bg-white d-flex rounded-2" style="width: 90%; margin:auto; margin-top: 7%; margin-bottom: 5%; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);">
+        <div class="gambar" style="width: 40%">
+            <div class="card border-0 rounded" style="width: 90%; margin:auto;">
+                <div class="card-body">
+                    <img style="background-color: #E3E3E3" src="{{ asset('storage/gambarproduk/'.$product->image) }}" class="rounded" style="width: 100%">
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="card border-0 rounded">
-                    <div class="card-body">
-                        <h3>{{ $product->title }}</h3>
-                        <code>
-                            <p>{!! $product->description !!}</p>
-                        </code>
-
-                    </div>
+        </div>
+        <div class="desk-produk" style="width: 60%">
+            <div class="card border-0 rounded" style="width: 70%; margin:auto;">
+                <div class="card-body">
+                    <h1 style="color:#224038;">{{ $product->title }}</h1>
+                        <p>{!! $product->description !!}</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 
     <div class="kontak-off"> <!--tokopedia-->
-        <img src="{{ asset('storage/image/tokpedlogo.jpeg') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
+        <img src="{{ asset('storage/image/tokpedlogo.jpeg') }}" style="width: 20%;margin-top:10px; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        @forelse($product->productStores->where('marketplace', 'Tokopedia') as $store)
-        <div class="nama-toko">{{ $store->store_name }}</div>
-        <div class="buton">
-            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+        <div class="container">
+            <div class="d-flex row">
+                @forelse($product->productStores->where('marketplace', 'Tokopedia') as $store)
+            <div class="col-md-12">
+        <div class="nama-toko fw-normal fs-4">{{ $store->store_name }}</div>
+    </div>
+        <div class="d-flex py-2 justify-content-between">
+            <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($product->price,2,',','.') }}</h1>
+            <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success  onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
-        <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
+    </div>
+    </div>
         <hr> <!-- batas toko-->
         @empty
         <div class="no-data">Tidak ada data di sini</div>
@@ -264,52 +267,70 @@ img{
     </div>
     <br>
     <div class="kontak-off"> <!--shopi-->
-        <img src="{{ asset('storage/image/sopi.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
+        <img src="{{ asset('storage/image/sopi.png') }}" style="width: 13%;margin-top:10px; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        @forelse($product->productStores->where('marketplace', 'Shopee') as $store)
-        <div class="nama-toko">{{ $store->store_name }}</div>
-        <div class="buton">
-            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+        <div class="container">
+            <div class="d-flex row">
+                @forelse($product->productStores->where('marketplace', 'Shopee') as $store)
+            <div class="col-md-12">
+        <div class="nama-toko fw-normal fs-4">{{ $store->store_name }}</div>
+    </div>
+        <div class="d-flex py-2 justify-content-between">
+            <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($product->price,2,',','.') }}</h1>
+            <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success  onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
-        <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
+    </div>
+    </div>
         <hr> <!-- batas toko-->
         @empty
         <div class="no-data">Tidak ada data di sini</div>
-    @endforelse
-</div>
+        @endforelse
+    </div>
     <br>
     <div class="kontak-off"> <!--lazada-->
-        <img src="{{ asset('storage/image/lajada.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
+        <img src="{{ asset('storage/image/lajada.png') }}" style="width: 13%;margin-top:10px; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
-        @forelse($product->productStores->where('marketplace', 'Lazada') as $store)
-        <div class="container"></div>
-        <div class="nama-toko">{{ $store->store_name }}</div>
-        <div class="buton">
-            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+        <div class="container">
+            <div class="d-flex row">
+                @forelse($product->productStores->where('marketplace', 'Lazada') as $store)
+            <div class="col-md-12">
+        <div class="nama-toko fw-normal fs-4">{{ $store->store_name }}</div>
+    </div>
+        <div class="d-flex py-2 justify-content-between">
+            <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($product->price,2,',','.') }}</h1>
+            <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success  onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
-        <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
+    </div>
+    </div>
         <hr> <!-- batas toko-->
         @empty
         <div class="no-data">Tidak ada data di sini</div>
-    @endforelse
-</div>
+        @endforelse
+    </div>
+
+   
     <br>
+
     <div class="kontak-off"> <!--blibli-->
-        <img src="{{ asset('storage/image/blili.png') }}" style="width: 20%; margin-left:28px;"></img> <!--ganti img tokped-->
+        <img src="{{ asset('storage/image/blili.png') }}" style="width: 13%;margin-top:10px; margin-left:28px;"></img> <!--ganti img tokped-->
         <hr> <!-- batas toko-->
-        <div class="container"></div>
-        @forelse($product->productStores->where('marketplace', 'BliBli') as $store)
-        <div class="nama-toko">{{ $store->store_name }}</div>
-        <div class="buton">
-            <button type="button" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+        <div class="container">
+            <div class="d-flex row">
+                @forelse($product->productStores->where('marketplace', 'BliBli') as $store)
+            <div class="col-md-12">
+        <div class="nama-toko fw-normal fs-4">{{ $store->store_name }}</div>
+    </div>
+        <div class="d-flex py-2 justify-content-between">
+            <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($product->price,2,',','.') }}</h1>
+            <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success  onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
         </div>
-        <div class="harga"><strong>{{ "Rp " . number_format($product->price,2,',','.') }}</strong></div>
+    </div>
+    </div>
         <hr> <!-- batas toko-->
         @empty
         <div class="no-data">Tidak ada data di sini</div>
-    @endforelse
-</div>
+        @endforelse
+    </div>
 
 
 {{--
