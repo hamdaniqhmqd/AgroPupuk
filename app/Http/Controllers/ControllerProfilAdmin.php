@@ -29,6 +29,7 @@ class ControllerProfilAdmin extends Controller
             'tgl_lahir' => 'required|string',
             'jenis_kelamin' => 'required|string',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:9000',
+            'alamat' => 'required|string|max:50',
         ]);
 
         $user = auth()->user();
@@ -38,6 +39,7 @@ class ControllerProfilAdmin extends Controller
         $user->no_hp = $request->no_hp;
         $user->tgl_lahir = $request->tgl_lahir;
         $user->jenis_kelamin = $request->jenis_kelamin;
+        $user->alamat = $request->alamat;
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
