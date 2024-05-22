@@ -113,6 +113,15 @@ class ControllerAdminUserMutualism extends Controller
         return view('admin.admin_produk.show', compact('product'));
     }
 
+ //   public function showuser(string $id): View
+  //  {
+        //get product by ID
+   //     $product = produkmutu::findOrFail($id);
+
+        //render view with product
+     //   return view('layouts.laman_detail_produk', compact('product'));
+    //}
+
     /**
      * edit
      *
@@ -214,11 +223,4 @@ class ControllerAdminUserMutualism extends Controller
         return view("layouts.laman_produk",compact('data'));
     }
 }
-/* 
-git add .
-git commit -m "im wide awke"
-git push -u origin mutualisme_admin_user
-
-buat pull pake git pull origin main
-/*
 
