@@ -89,9 +89,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         CKEDITOR.replace( 'content' );
+    </script>
+
+    <script>
+          // untuk tampilan alert atau pemberitahuan
+          @if (session('success')) // jika suscces menambahkan atau mengubah data
+            Swal.fire({
+                icon: "success",
+                title: "BERHASIL",
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            @elseif (session('error')) // jika terjadi error atau nilai succes bernilai false
+            Swal.fire({
+                icon: "error",
+                title: "GAGAL!",
+                text: "{{ session('error') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            @endif
     </script>
 
 </body>

@@ -213,12 +213,4 @@ class ControllerAdminUserMutualism extends Controller
         $data = produkmutu::all(); //buat manggil $data di class store
         return view("layouts.laman_produk",compact('data'));
     }
-}
-/* 
-git add .
-git commit -m "im wide awke"
-git push -u origin mutualisme_admin_user
-
-buat pull pake git pull origin main
-/*
-
+};

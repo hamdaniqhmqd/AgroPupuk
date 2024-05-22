@@ -16,7 +16,8 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded p-4" style="background: #f8f9fa;">
                     <h2 class="text-center mb-4">Edit Artikel</h2>
-                    <form action="{{ route('adminsipupuk.update', $sipupuks->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('adminsipupuk.update', $sipupuks->id) }}" id="saveForm{{ $sipupuks->id }}"  
+                        onsubmit="return saveData({{ $sipupuks->id }})" method="POST" enctype="multipart/form-data">
                     
                         @csrf
                         @method('PUT')
@@ -37,7 +38,7 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="font-weight-bold">GAMBAR</label>
-                            <input type="file"accept="image/jpeg, image/png , image/jpg" class="form-control @error('image') is-invalid @enderror" name="image">
+                            <input type="file"accept="image/jpeg, image/png , image/jpg" class="form-control @error('image') is-invalid @enderror" value="{{ old('image', $sipupuks->image) }}" name="image">
                         
                             <!-- pesan error untuk gambar -->
                             @error('image')
@@ -95,23 +96,26 @@
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        CKEDITOR.replace( 'content' );
+    </script>
+    <script>
          // untuk menggunakan sweetalert2 pada tombol simpan
-        document.querySelector('.btn-simpan').addEventListener('click', function(){
-            Swal.fire({
-                title: 'Apakah Anda yakin ingin menyimpan perubahan?',
+        function saveData(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menyimpan perubahan?',
                 showCancelButton: true,
                 confirmButtonText: 'Simpan',
                 cancelButtonText: 'Batal'
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    document.querySelector('form').submit();
-                }  else if (result.isDenied) {
-            Swal.fire("Changes are not saved", "", "info");
-        }
-            });
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit form when user confirms
+                document.getElementById('saveForm'+id).submit();
+            }
+            else {
+                return false;
+            }
         });
-        CKEDITOR.replace( 'content' );
+        }
     </script>
 
 </body>
