@@ -40,7 +40,7 @@
                     @forelse ($sipupuks as $sipupuk)
                     <div class="col-md-3">
                         <div class="card mb-3 shadow animate-card" style="width: 20rem; height: 25rem; display: flex; flex-direction: column; justify-content: space-between;">
-                            <img src="{{ $sipupuk->image }}" class="img-animate" alt="{{ $sipupuk->title }}" style="object-fit: cover; width: 100%; height: 160px;" class="card-img-top">
+                            <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}" class="img-animate" alt="{{ $sipupuk->title }}" style="object-fit: cover; width: 100%; height: 160px;" class="card-img-top">
                             <div class="card-body" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                                 <div>
                                     <h5 class="card-title lh-sm">{{ Str::limit($sipupuk->title, 70) }}</h5>

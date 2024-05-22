@@ -52,7 +52,7 @@
                             @forelse ($sipupuks as $sipupuk)
                                 <tr>
                                     <td class="text-center" style="max-width: 150px; height: 100px;">
-                                        <img src="{{ $sipupuk->image }}" class="rounded"
+                                        <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}" class="rounded"
                                             width="150" height="70">
                                     </td>
                                     <td
@@ -66,8 +66,8 @@
                                         {{ $sipupuk->author }}</td>
                                     <td class="text-center"
                                         style="max-width: 50px; height: 100px;  overflow: hidden;  text-overflow: ellipsis;">
-                                        <form id="deleteForm{{ $sipupuk->id }}" action="{{ route('adminsipupuk.destroy', $sipupuk->id) }}" method="POST"
-                                            class="d-flex row">
+                                        <form id="deleteForm{{ $sipupuk->id }}" action="{{ route('adminsipupuk.destroy', $sipupuk->id) }}" 
+                                            onsubmit="return deleteData({{ $sipupuk->id }})" method="POST" class="d-flex row">
                                             <a href="{{ route('adminsipupuk.show', $sipupuk->id) }}" class="show">
                                                 <i class="bi bi-eye-fill fs-5 text-decoration-none text-hijau"></i>
                                             </a>
@@ -179,14 +179,15 @@ th {
     <script src="{{ asset('js/session.js') }}"></script>
     <script>
 
-        function deleteConfirmation(id) {
+        function deleteData(id) {
         Swal.fire({
             title: 'Apakah Anda yakin?',
-            text: "Anda tidak akan dapat mengembalikan ini!",
+            text: "Anda tidak akan dapat mengembalikan data yang dihapus!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
+            confirmButtonColor: '#224038',
+            cancelButtonColor: '#d33',
+            textColor: '#ffffff',
             confirmButtonText: 'Ya, hapus!',
             cancelButtonText: 'Batal'
         }).then((result) => {
@@ -194,27 +195,10 @@ th {
                 // Submit form when user confirms
                 document.getElementById('deleteForm'+id).submit();
             }
+            else {
+                return false;
+            }
         });
-    }
-        // Menampilkan SweetAlert berdasarkan pesan sukses atau pesan kesalahan
-        if (successMessage) {
-            Swal.fire({
-                icon: "success",
-                title: "BERHASIL",
-                text: successMessage,
-                showConfirmButton: false,
-                timer: 2000
-            });
-        }
-
-        if (errorMessage) {
-            Swal.fire({
-                icon: "error",
-                title: "GAGAL!",
-                text: errorMessage,
-                showConfirmButton: false,
-                timer: 2000
-            });
         }
     </script>
 @endsection

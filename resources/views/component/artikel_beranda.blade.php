@@ -13,7 +13,7 @@
                         <div class="col-12 col-md-6 col-lg-3 mb-4">
                             <div class="card h-100 shadow animate-card" style="width: 100%; display: flex; flex-direction: column; justify-content: space-between; 
                             transition: transform 0.5s ease;">
-                                <img src="{{ $sipupuk->image }}" alt="{{ $sipupuk->title }}" style="object-fit: cover; width: 100%; height: 160px;" class="card-img-top">
+                                <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}" alt="{{ $sipupuk->title }}" style="object-fit: cover; width: 100%; height: 160px;" class="card-img-top">
                                 <div class="card-body d-flex flex-column">
                                     <div class="flex-grow-1">
                                         <h5 class="card-title fw-semibold warna-hijau lh-sm">{{ Str::limit($sipupuk->title, 50) }}</h5>

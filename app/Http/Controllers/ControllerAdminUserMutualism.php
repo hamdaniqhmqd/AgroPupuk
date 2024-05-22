@@ -223,4 +223,3 @@ class ControllerAdminUserMutualism extends Controller
         return view("layouts.laman_produk",compact('data'));
     }
 }
-

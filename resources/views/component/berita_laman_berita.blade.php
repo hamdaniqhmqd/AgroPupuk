@@ -63,9 +63,12 @@
                 <div class="align-content-end gelombang">
                     {{-- sebuah form yang berisi kolom inputan yang digunakan untuk melakukan pencarian
                         dengan mengirim nilai sesuai dengan atribut value --}}
-                    <form action="{{ route('berita') }}" class="d-flex" method="GET">
+                    <form action="{{ route('berita') }}" class="d-flex g-2" method="GET">
                         <input class="form-control me-2" type="text" placeholder="Ketik berita yang di cari"
                             name="pencarian" value="{{ $request->get('pencarian') }}">
+                        <button type="submit" class="btn btn-sm btn-success fw-semibold px-4">
+                            Search
+                        </button>
                     </form>
                 </div>
             </div>
@@ -78,7 +81,8 @@
                     {{-- sebuah perulangan dengan mengambil data dari variabel $berita dan di masukan ke variabel $data
                         jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
                     @forelse ($berita as $data)
-                        <article class="utama card m-2 border-0" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+                        <article class="utama card m-2 border-0" data-aos="fade-up" data-aos-delay="50"
+                            data-aos-duration="1000">
                             <img src="{{ asset('/storage/gambar berita/' . $data->gambar_berita) }}"
                                 class="card-img-top object-fit-cover rounded" alt="{{ $data->gambar_berita }}">
                             <div class="card-body m-2 p-1">
@@ -112,7 +116,8 @@
                     {{-- sebuah perulangan dengan mengambil data dari variabel $beritaSide dan di masukan ke variabel $data
                         jika ada data dari tabel data beritas maka akan menampilkan data tersebut --}}
                     @forelse ($beritaSide as $data)
-                        <article class="side card m-1 border-0 rounded-3" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+                        <article class="side card m-1 border-0 rounded-3" data-aos="fade-up" data-aos-delay="50"
+                            data-aos-duration="1000">
                             <div class="card-body rounded-3 my-1 mx-2 p-1">
                                 <h5 class="card-title">{{ $data->judul_berita }}</h5>
                                 <a class="link-offset-2 link-underline link-underline-opacity-0"

@@ -15,7 +15,7 @@ class ControllerLamanBerita extends Controller
 		$berita = Berita::latest()->paginate(6);
         // variabel untuk mengambil data dari tabel beritas
         // sebanyak 5 data per tab menggunakan fungsi take
-		$beritaSide = Berita::take(5)->latest()->get();
+		$beritaSide = Berita::orderBy('pengunjung_berita', 'desc')->take(5)->get();
         // varabel untuk memberikan isi dari tag title
 		$title = 'Berita';
         // variabel untuk mendapatkan data request dari pencarian

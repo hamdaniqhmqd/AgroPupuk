@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('sipupuks', function (Blueprint $table) {
                 $table->id();
-                $table->string('image');
-                $table->string('title');
+                $table->string('image', 100);
+                $table->string('title' ,100);
                 $table->text('content');
                 $table->unsignedBigInteger('author')->nullable();
                 $table->timestamps();

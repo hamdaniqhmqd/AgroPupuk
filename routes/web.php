@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use App\Models\SessionLog;
+
 // untuk route ini penting tau
 
 use Illuminate\Support\Facades\Route;
@@ -46,15 +50,15 @@ Route::get('/tentangkami', [ControllerLamanTentangKami::class, 'index'])->name('
 // Route::resource('/admin/sipupuk', \App\Http\Controllers\ControllerAdminSipupuk::class)->name('sipupuk');
 Route::post('/sipupuks', [ControllerAdminSipupuk::class, 'store'])->name('sipupuks.store');
 
-Route::resource('admin/adminsipupuk', ControllerAdminSipupuk::class)->names([
-    'index' => 'adminsipupuk.index',
-    'create' => 'adminsipupuk.create',
-    'store' => 'adminsipupuk.store',
-    'show' => 'adminsipupuk.show',
-    'edit' => 'adminsipupuk.edit',
-    'update' => 'adminsipupuk.update',
-    'destroy' => 'adminsipupuk.destroy'
-]);
+// Route::resource('admin/adminsipupuk', ControllerAdminSipupuk::class)->names([
+//     'index' => 'adminsipupuk.index',
+//     'create' => 'adminsipupuk.create',
+//     'store' => 'adminsipupuk.store',
+//     'show' => 'adminsipupuk.show',
+//     'edit' => 'adminsipupuk.edit',
+//     'update' => 'adminsipupuk.update',
+//     'destroy' => 'adminsipupuk.destroy'
+// ]);
 
 
 Route::resource('/sipupuk', \App\Http\Controllers\ControllerLamanSipupuk::class);
@@ -133,8 +137,19 @@ Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard
     Route::get('admin/dashboard', [DashboardController::class, 'admin_dashboard'])->name('admin.dashboard');
 
-    // dibawah ini kumpulan route laman admin ...
+    // dibawah ini kumpulan route laman admin produk
     Route::resource('/adminproduk', \App\Http\Controllers\ControllerAdminUserMutualism::class);
+
+    // dibawah ini kumpulan route laman admin sipupuk
+    Route::resource('admin/adminsipupuk', ControllerAdminSipupuk::class)->names([
+        'index' => 'adminsipupuk.index',
+        'create' => 'adminsipupuk.create',
+        'store' => 'adminsipupuk.store',
+        'show' => 'adminsipupuk.show',
+        'edit' => 'adminsipupuk.edit',
+        'update' => 'adminsipupuk.update',
+        'destroy' => 'adminsipupuk.destroy'
+    ]);
 
     // dibawah ini kumpulan route laman admin berita
     // route get index, untuk menampilkan data berita di laman admin berita
@@ -159,8 +174,6 @@ Route::group(['middleware' => 'admin'], function () {
     // dibawah ini untuk logout
     // route get logout untuk mengeksekusi proses logout
     Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
-
-    Route::post('/logout-on-close', [AuthController::class, 'logoutOnClose'])->name('logout-on-close');
 });
 
 //bagian java

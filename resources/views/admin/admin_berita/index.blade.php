@@ -26,7 +26,7 @@
         section .kotak .card {
             color: var(--primary);
             height: 170px;
-            width: calc(100% / 2 - 15px);
+            width: calc(100% / 3 - 15px);
             padding: 15px 20px;
             border-color: var(--primary);
             background-color: var(--white);
@@ -136,7 +136,7 @@
         <div class="profile d-flex align-items-center">
             <span class="nama_admin">{{ $admin->nama }}</span>
             @if (auth()->user()->gambar)
-                <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
+                <img class="object-fit-cover  rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
                     loading="lazy" />
             @else
                 <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile" loading="lazy" />
@@ -165,6 +165,13 @@
                         <span class="nomor text-end align-bottom">{{ $totalPengunjung }}</span>
                     </div>
                 </div>
+                <div class="card rounded-3">
+                    <span class="teks align-text-top text-end mb-2">Total Author Berita</span>
+                    <div class="d-flex align-items-end justify-content-between">
+                        <i class='bx bx-id-card'></i>
+                        <span class="nomor text-end align-bottom">{{ $jumlahAuthor }}</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="data">
@@ -173,16 +180,17 @@
                     <i class='bx bx-table d-flex rounded-2 align-items-center justify-content-center'></i>
                     <span class="teks">Tabel</span>
                 </div>
+            </div>
+            <div class="mb-3 d-flex align-items-center justify-content-between">
+                {{-- tombol untuk mengarah ke tampilan tambah data berita --}}
+                <a href="{{ route('admin_berita.buat_data') }}" class="btn btn-sm btn-success">Tambah Berita</a>
                 {{-- sebuah form yang berisi kolom inputan yang digunakan untuk melakukan pencarian dengan mengirim nilai sesuai dengan atribut value --}}
-                <form action="{{ route('admin_berita.index') }}" style="width: calc(50% - 150px);" class=""
+                <form action="{{ route('admin_berita.index') }}" style="width: calc(50% - 25px);" class="d-flex gap-2"
                     method="GET">
                     <input class="form-control" type="text" placeholder="Ketik berita yang di cari" name="pencarian"
                         value="{{ $request->get('pencarian') }}">
+                    <button type="submit" class="btn btn-sm btn-success font-weight-bold px-4">Search</button>
                 </form>
-            </div>
-            <div class="mb-3">
-                {{-- tombol untuk mengarah ke tampilan tambah data berita --}}
-                <a href="{{ route('admin_berita.buat_data') }}" class="btn btn-sm btn-success">Tambah Berita</a>
             </div>
             {{-- tabel yang digunakan untuk menampilkan data dari tabel beritas --}}
             <table class="table table-hover">
