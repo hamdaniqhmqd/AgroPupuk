@@ -133,6 +133,7 @@ Route::post('/forget/proses_validasi', [AuthController::class, 'forget_proses_va
 Route::get('/forget/buat', [AuthController::class, 'forget_buat'])->name('forget.buat');
 Route::post('/forget/proses_buat', [AuthController::class, 'forget_proses_buat'])->name('forget.proses_buat');
 
+// route group admin di bawah ini untuk laman admin
 Route::group(['middleware' => 'admin'], function () {
     // dibawah ini kumpulan route laman admin dashboard
     Route::get('admin/dashboard', [DashboardController::class, 'admin_dashboard'])->name('admin.dashboard');
