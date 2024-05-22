@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body style="background-color: #E3E3E3">
+<body style="background-color: #ffffff">
 
     @include('component.navbaru')
     <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">

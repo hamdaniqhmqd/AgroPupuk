@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\SessionLog;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
@@ -15,29 +16,36 @@ class ControllerLamanAdminBerita extends Controller
 {
     public function index(Request $request): View
     {
-        // variabel untuk mengambil data dari tabel beritas
+        // Variabel untuk mengambil data dari tabel beritas
         // sebanyak 10 data per tab
         $berita = Berita::with('user')->latest()->paginate(10);
 
-        $data['admin'] = User::find(Auth::User()->id);
+        $data['admin'] = User::find(Auth::user()->id);
         $title = 'Berita';
         $totalBerita = Berita::count();
         $totalPengunjung = Berita::sum('pengunjung_berita');
-        // variabel untuk melakukan pencarian
+
+        // Variabel untuk melakukan pencarian
         $search = $request->get('pencarian');
-        // if jika ada data dari variabel $search maka mengeluarkan data pencarian
+
+        // If jika ada data dari variabel $search maka mengeluarkan data pencarian
         if ($search) {
-            $berita = Berita::whereAny([ // pencarian berdasarkan data dibawah
-                // 'id',
+            $berita = Berita::whereAny([ // Pencarian berdasarkan data dibawah
                 'judul_berita',
                 'deskripsi_berita',
                 'link_berita',
-            ], 'LIKE', "%$search%")->paginate(10); // untuk menampilkan 10 data per tab
+            ], 'LIKE', "%$search%")->paginate(10); // Untuk menampilkan 10 data per tab
         }
 
-        // untuk mengarahkan ke laman admin berita
-        return view('admin.admin_berita.index', compact('berita', 'title', 'request', 'totalPengunjung', 'totalBerita'), $data);
+        // Hitung jumlah penulis berita yang berbeda
+        $dataAuthor = Berita::select('author')->distinct()->get();
+        $jumlahAuthor = $dataAuthor->count();
+
+
+        // Untuk mengarahkan ke laman admin berita dengan variabel tambahan
+        return view('admin.admin_berita.index', compact('berita', 'title', 'request', 'totalPengunjung', 'totalBerita', 'jumlahAuthor'), $data);
     }
+
 
     public function buat_data(): View
     {
@@ -55,7 +63,7 @@ class ControllerLamanAdminBerita extends Controller
             'deskripsi_berita'  => 'required',
             'link_berita'       => 'required',
         ]);
-
+        // dd($request->all());
         // untuk mendapatkan file image dan merubah nama
         $image = $request->file('gambar_berita');
         // digunakan untuk mengubah nama gambar menjadi inputan name
@@ -63,7 +71,7 @@ class ControllerLamanAdminBerita extends Controller
         $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
             $request->input('judul_berita') . '.' . $image->getClientOriginalExtension();
         // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
-        $image->storeAs('public/gambar berita', $nameImage);
+        $path = $image->storeAs('gambar berita', $nameImage, 'public');
 
         // untuk mengatur id pada setiap data sesuai dengan
         // tanggal, waktu saat d tambahkan
@@ -96,7 +104,7 @@ class ControllerLamanAdminBerita extends Controller
         $berita = Berita::findOrFail($id_berita);
 
         // untuk menghapus gambar yang berada di penyimpanan local
-        Storage::delete('public/gambar berita/' . $berita->gambar_berita);
+        Storage::disk('public')->delete('/gambar berita/' . $berita->gambar_berita);
 
         // untuk menghapus semua data sesuai id
         $berita->delete();
@@ -153,14 +161,14 @@ class ControllerLamanAdminBerita extends Controller
             $image = $request->file('gambar_berita');
 
             // untuk menghapus image lama
-            Storage::delete('public/gambar berita/' . $berita->gambar_berita);
+            Storage::disk('public')->delete('/gambar berita/' . $berita->gambar_berita);
 
             // digunakan untuk mengubah nama gambar menjadi inputan name
             $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') . $request->input('judul_berita') .
                 '.' . $image->getClientOriginalExtension();
 
             // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
-            $image->storeAs('public/gambar berita', $nameImage);
+            $path = $image->storeAs('gambar berita', $nameImage, 'public');
 
             // untuk update data sesuai data yang masuk
             $berita = [
