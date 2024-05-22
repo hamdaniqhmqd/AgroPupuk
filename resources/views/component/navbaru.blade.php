@@ -30,7 +30,7 @@
                         <i class="fa-solid text-white fa-bars"></i>
                     </button>
                 </div>
-                {{-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header" style="background-color: #1b342d" >
                         <img src="{{ asset('storage/image/logoweb.png') }}" alt="Logo Web" width="180" height="25"
                         class="offcanvas-title right-2" id="offcanvasRightLabel" >
@@ -55,7 +55,7 @@
                             </li>
                         </ul>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </nav>

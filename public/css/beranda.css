@@ -357,7 +357,7 @@ h1 {
 
 .btn-artikel-lain:hover {
     background-color: #224038;
-    color: white;
+    color:#ffffff;
 }
 
 .link-dalam {
@@ -367,5 +367,26 @@ h1 {
 .link-dalam:hover {
     color: #ffffff;
 }
+
+
+.w-85 {
+    width: 85%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-custom {
+    width: 85%;
+    margin: auto;
+    box-shadow: #224038 0px 0px 10px;
+}
+
+
 
 
