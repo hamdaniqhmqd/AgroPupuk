@@ -1,9 +1,4 @@
 <?php
-
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\SessionLog;
-
 // untuk route ini penting tau
 
 use Illuminate\Support\Facades\Route;
@@ -11,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 // punya hamdani
 use App\Http\Controllers\ControllerLamanAdminBerita;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ControllerLamanBerita;
 
 // Ferry
 use App\Http\Controllers\ControllerLamanBeranda;
@@ -23,7 +19,6 @@ use App\Http\Controllers\LoginController;
 // haqi
 use App\Http\Controllers\ControllerLamanProduk;
 use App\Http\Controllers\ControllerAdminUserMutualism;
-use App\Http\Controllers\ControllerLamanBerita;
 //bagian java
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
