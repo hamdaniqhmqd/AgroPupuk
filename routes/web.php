@@ -37,7 +37,22 @@ use App\Http\Controllers\ControllerProfilAdmin;
 
 
 // route buat laman beranda
-Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
+//Route::get('/', [ControllerLamanBeranda::class, 'index'])->name('beranda');
+
+// dibawah ini kumpulan route laman admin sipupuk
+Route::resource('/', ControllerLamanBeranda::class)->names([
+    'index' => 'beranda',
+    'store' => 'input',
+]);
+
+// Route::get('/admin/contact', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactView');
+
+Route::get('admin/contact', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactus.index');
+
+Route::delete('/admin/contact/delete/{id}', [ControllerLamanBeranda::class, 'destroy'])->name('delete');
+
+
+
 
 // route buat laman tentang kami
 // Route::get('/tentangkami', function () {

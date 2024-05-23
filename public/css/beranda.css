@@ -328,6 +328,15 @@ h1 {
         font-size: 30px;
     }
 
+    .gambar-contact {
+        display: none;
+    }
+
+    .input-pesan {
+        width: 90%;
+        margin: auto;
+    }
+
     .ttg-kami::before {
         border-right: 1px solid #198754;
         /* border-right: 1px solid #224038; */

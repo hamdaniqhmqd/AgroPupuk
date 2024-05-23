@@ -126,34 +126,7 @@
         @include('component.corp_beranda')
         <!--end our groups -->
 
-        <!--Contact Us -->
-        <div class="w-custom rounded-2 shadow mt-5 d-flex ">
-            <div class="w-60">
-                <div class="w-85 m-auto">
-                    <h1 class="fs-3 fw-semibold mt-5 mb-3">Contact Us</h1>
-                </div>
-                <div class="w-85 m-auto mb-5">
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <label for="inputNama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="inputNama">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail">
-                        </div>
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px"></textarea>
-                            <label for="floatingTextarea2" cla>Comments</label>
-                            </div>
-                    </form>
-                </div>
-            </div>
-            <div class="w-40">
-                    <img src="{{asset ('storage/image/contactus.jpg')}}" alt="Contact Us" class="w-100 rounded ml-2">
-            </div>
-        </div>
-
+        @include('component.contactus_beranda')
         <!--foooter-->
         @include('component.footer')
         <!--end footer-->
