@@ -47,9 +47,9 @@ Route::resource('/', ControllerLamanBeranda::class)->names([
 
 // Route::get('/admin/contact', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactView');
 
-Route::get('admin/contact', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactus.index');
+Route::get('admin/adminberanda', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactus.index');
 
-Route::delete('/admin/contact/delete/{id}', [ControllerLamanBeranda::class, 'destroy'])->name('delete');
+Route::delete('/admin/adminberanda/delete/{id}', [ControllerLamanBeranda::class, 'destroy'])->name('delete');
 
 
 
