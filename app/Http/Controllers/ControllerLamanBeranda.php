@@ -52,7 +52,7 @@ class ControllerLamanBeranda extends Controller
     public function adminContactUs(Request $request) : View
     {
         
-        $contact = ContactUs::paginate(10); 
+        $contact = ContactUs::paginate(6); 
 
         $search = $request->get('search');
 		if ($search) {
@@ -60,7 +60,7 @@ class ControllerLamanBeranda extends Controller
 				'nama',
 				'email',
 				'pesan',
-			], 'LIKE', "%$search%")->paginate(10); 
+			], 'LIKE', "%$search%")->paginate(6); 
 		}
 
         return view('admin.admin_beranda.contactus', compact('contact','request','search'));

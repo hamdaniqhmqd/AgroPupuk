@@ -4,13 +4,15 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Contact | ADMIN </title>
+    <title>  Beranda | ADMIN </title>
     {{-- link alert dari sweetalert2 --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="{{ asset('css/sidebar_new.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
     <link rel="stylesheet" href="{{ asset('css/boostrap/bootstrap.min.css') }}">
     <!-- Bootstrap Icons CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
 </head>
 
     <header class="position-relative d-flex align-items-center justify-content-between">
@@ -34,7 +36,77 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex justify-content-between  mt-4">
-                    <h3 class="w-60 warna-hijau">DASHBOARD CONTACT</h3>
+                    <h4 class="w-60 warna-hijau">COROUSEL</h4>
+                </div>
+                <div class="card border-0 shadow rounded p-2 mt-3 ">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <div class="kotak rounded w-100 bg-abu" style="height: 200px;">
+                                    {{-- <img class="img-crop" style="width: 100%; height: 100%; object-fit: cover;" --}}
+                                    gambar1
+                                </div>
+                                <button class="btn mt-2 w-100" style="background-color: #224038;" data-bs-toggle="modal" data-bs-target="#surpriseModal">
+                                    <a class="text-decoration-none text-white" href="">EDIT </a>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <div class="kotak rounded w-100 bg-abu" style="height: 200px;">
+                                    {{-- <img class="img-crop" style="width: 100%; height: 100%; object-fit: cover;" --}}
+                                    gambar2
+                                </div>
+                                <button class="btn mt-2 w-100" style="background-color: #224038;" data-bs-toggle="modal" data-bs-target="#surpriseModal">
+                                    <a class="text-decoration-none text-white" href="">EDIT</a>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <div class="kotak rounded w-100 bg-abu" style="height: 200px;">
+                                    {{-- <img class="img-crop" style="width: 100%; height: 100%; object-fit: cover;" --}}
+                                    Gambar3
+                                </div>
+                                <button class="btn mt-2 w-100" style="background-color: #224038;" data-bs-toggle="modal" data-bs-target="#surpriseModal">
+                                    <a class="text-decoration-none text-white" href="">EDIT </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                            <!-- Modal -->
+                <div class="modal fade" id="surpriseModal" tabindex="-1" aria-labelledby="surpriseModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" style="margin-top: 10%;"  >
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="surpriseModalLabel"> COROUSEL EDIT </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class=" rounded w-100 bg-abu " style="height: 200px;">
+                                    {{-- <img class="img-crop" style="width: 100%; height: 100%; object-fit: cover;" --}}
+                                    PREVIEW
+                                </div>
+                                <div class="my-2">
+                                    <input class="form-control" type="file" id="formFile">
+                                </div>
+                                <div class="modal-footer justify-content-between d-flex">
+                                    <button class="btn w-25" style="background-color: #224038;">
+                                        <a class="text-decoration-none text-white" href="">SUBMIT </a>
+                                    </button>
+                                    <button type="button" class="btn btn-secondary w-25" data-bs-dismiss="modal">CANCLE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!-- CONTACT TABLE -->
+                <div class="d-flex justify-content-between  mt-4">
+                    <h4 class="w-60 warna-hijau">TABLE MESSAGE</h4>
                     <div class="d-flex w-40 ">
                         <form class="input-group search-custom justify-end " action="{{ route('contactus.index') }}" method="GET">
                             <input class="form-control" type="search" value="{{ $request->get('pencarian') }}" placeholder="Masukkan kata kunci..."
