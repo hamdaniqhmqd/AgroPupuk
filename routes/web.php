@@ -42,8 +42,6 @@ Route::resource('/', ControllerLamanBeranda::class)->names([
 
 // Route::get('/admin/contact', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactView');
 
-Route::get('admin/adminberanda', [ControllerLamanBeranda::class, 'adminContactUs'])->name('contactus.index');
-
 Route::delete('/admin/adminberanda/delete/{id}', [ControllerLamanBeranda::class, 'destroy'])->name('delete');
 
 
@@ -161,6 +159,10 @@ Route::group(['middleware' => 'admin'], function () {
         'update' => 'adminsipupuk.update',
         'destroy' => 'adminsipupuk.destroy'
     ]);
+
+    // dibawah ini kumpulan route laman admin beranda
+    Route::get('admin/adminberanda', [ControllerLamanBeranda::class, 'adminBeranda'])->name('admin_beranda.index');
+    Route::put('admin/proses_beranda/{id}', [ControllerLamanBeranda::class, 'proses_edit'])->name('admin_beranda.update');
 
     // dibawah ini kumpulan route laman admin berita
     // route get index, untuk menampilkan data berita di laman admin berita

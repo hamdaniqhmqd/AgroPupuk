@@ -167,7 +167,7 @@ class ControllerLamanAdminBerita extends Controller
                 '.' . $image->getClientOriginalExtension();
 
             // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
-            $path = $image->storeAs('gambar berita', $nameImage, 'public');
+            $image->storeAs('gambar berita', $nameImage, 'public');
 
             // untuk update data sesuai data yang masuk
             $berita = [

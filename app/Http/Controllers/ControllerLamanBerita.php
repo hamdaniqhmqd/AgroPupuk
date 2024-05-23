@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\beranda_corosel;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -29,7 +30,8 @@ class ControllerLamanBerita extends Controller
 				'link_berita',
 			], 'LIKE', "%$search%")->paginate(6); // jika ada data yang sesuai maka akan di tampilkan sebanyak 6 per tab
 		}
+        $corosel = beranda_corosel::take(3)->get();
 
-		return view('component.berita_laman_berita', compact('berita', 'request', 'beritaSide', 'title'));
+		return view('component.berita_laman_berita', compact('berita', 'request', 'beritaSide', 'title', 'corosel'));
 	}
 }

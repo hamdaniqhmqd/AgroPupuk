@@ -22,6 +22,7 @@
             background-color: rgba(0, 0, 0, 0.3);
             z-index: 5;
         }
+
         .wave {
             width: 100%;
             object-fit: fill;
@@ -36,20 +37,16 @@
 <body style="background-color: #F4F8FA">
 
     @include('component.navbaru')
+    {{-- ojo di ubah corosel ku, mergane wes tak setting --}}
     <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
         <div class="carousel-inner">
-            <div class="carousel-item active position-relative">
-                <img src="{{ asset('storage/image/coro1.png') }}" style="width: 100%; height: 700px; object-fit: cover;"
-                    class="d-block object-fit-cover" alt="gambar1" />
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('storage/image/coro2.png') }}" style="width: 100%; height: 700px; object-fit: cover;"
-                    class="d-block object-fit-cover" alt="gambar2" />
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('storage/image/coro3.png') }}" style="width: 100%; height: 700px; object-fit: cover;"
-                    class="d-block object-fit-cover" alt="gambar3" />
-            </div>
+            @foreach ($corosel as $data)
+                <div class="carousel-item active position-relative">
+                    <img src="{{ asset('storage/gambar corosel/' . $data->image) }}"
+                        style="width: 100%; height: 700px; object-fit: cover;" class="d-block object-fit-cover"
+                        alt="gambar1" />
+                </div>
+            @endforeach
         </div>
         <img class="wave" src="{{ asset('storage/image/wave_berita.png') }}" alt="" srcset="">
         <!--Ini konten diatas corousel-->
