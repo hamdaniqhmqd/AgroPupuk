@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\beranda;
+use App\Models\beranda_corosel;
 use App\Models\Berita;
 use App\Models\produkmutu;
 use Illuminate\Http\RedirectResponse;
 use App\Models\ContactUs;
 use App\Models\Sipupuk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ControllerLamanBeranda extends Controller
@@ -49,21 +50,23 @@ class ControllerLamanBeranda extends Controller
         return redirect()->route('beranda')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
-    public function adminContactUs(Request $request) : View
+    public function adminBeranda(Request $request) : View
     {
-        
-        $contact = ContactUs::paginate(6); 
+
+        $contact = ContactUs::paginate(6);
+
+        $corosel = beranda_corosel::take(3)->get();
 
         $search = $request->get('search');
 		if ($search) {
-			$contact = ContactUs::whereAny([ 
+			$contact = ContactUs::whereAny([
 				'nama',
 				'email',
 				'pesan',
-			], 'LIKE', "%$search%")->paginate(6); 
+			], 'LIKE', "%$search%")->paginate(6);
 		}
 
-        return view('admin.admin_beranda.contactus', compact('contact','request','search'));
+        return view('admin.admin_beranda.contactus', compact('contact','request','search', 'corosel'));
     }
 
     public function destroy($id): RedirectResponse
@@ -77,5 +80,25 @@ class ControllerLamanBeranda extends Controller
 
     }
 
+    public function proses_edit(Request $request,$id) : RedirectResponse
+    {
+        $request->validate([
+            'gambar' => 'image|mimes:jpeg,png,jpg|max:9000',
+        ]);
+        $gambar = $request->file('gambar');
 
+        $beranda = beranda_corosel::find($id);
+
+        Storage::disk('public')->delete('/gambar corosel/' . $beranda->gambar);
+
+        $nama_gambar = $beranda->title . '.' . $gambar->getClientOriginalExtension();
+
+        $gambar->storeAs('gambar corosel', $nama_gambar, 'public');
+
+        $beranda->update([
+            'image' => $nama_gambar
+        ]);
+        // dd($request->all());
+        return Redirect()->route('admin_beranda.index')->with(['success' => 'Data Berhasil Diupdate!']);
+    }
 }

@@ -12,13 +12,20 @@
                     <span class="nama_nav">Dashboard</span>
                 </a>
             </li>
-            <li class="{{ request()->is('') ? 'active' : '' }}">
-                <a href="{{ url('adminproduk') }}" class="menu flex-fill d-flex align-items-center justify-content-start">
+            <li class="{{ request()->is('adminproduk') ? 'active' : '' }}">
+                <a href="{{ url('adminproduk') }}"
+                    class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bx-package d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Produk</span></a>
-                </li>
-                <li class="{{ request()->is('admin/adminsipupuk') ? 'active' : '' }}">
-                    <a href="{{ url('admin/adminsipupuk') }}"
+            </li>
+            <li class="{{ request()->is('admin/adminberanda') ? 'active' : '' }}">
+                <a href="{{ route('admin_beranda.index') }}"
+                    class="menu flex-fill d-flex align-items-center justify-content-start">
+                    <i class="bx bx-windows d-flex align-items-center justify-content-center"></i>
+                    <span class="nama_nav">Beranda</span></a>
+            </li>
+            <li class="{{ request()->is('admin/adminsipupuk') ? 'active' : '' }}">
+                <a href="{{ url('admin/adminsipupuk') }}"
                     class="menu flex-fill d-flex align-items-center justify-content-start">
                     <i class="bx bxs-florist d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Pupuk</span></a>
@@ -38,7 +45,8 @@
                     <span class="nama_nav">Profile</span></a>
             </li>
             <li class="">
-                <a href="{{ route('admin.logout') }}" class="menu flex-fill d-flex align-items-center justify-content-start"
+                <a href="{{ route('admin.logout') }}"
+                    class="menu flex-fill d-flex align-items-center justify-content-start"
                     onclick="confirmLogout(event)">
                     <i class="bx bx-log-out d-flex align-items-center justify-content-center"></i>
                     <span class="nama_nav">Logout</span>
