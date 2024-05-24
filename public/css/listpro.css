@@ -59,8 +59,8 @@
 
 .bton .circle{
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 3vw;
     line-height: 40px;
     color: #e3e3e3;
     background: #224038;
@@ -148,3 +148,4 @@ h1{
     cursor: pointer;
 }
 /* Card end */
+

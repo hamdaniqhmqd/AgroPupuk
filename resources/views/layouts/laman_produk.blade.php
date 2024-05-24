@@ -21,7 +21,8 @@
 
         @include('component/navbaru')
     <br><br><br>
-        <h1>PRODUK</h1>
+        <h1 style="display: flex">PRODUK</h1>
+        <h1 style="display: flex">refresh</h1>
         <div class="bton">
             <button type="button" class="btn btn-success filter-btn" data-box-id="npk">NPK</button>
             <button type="button" class="btn btn-success filter-btn" data-box-id="phonska">Phonska</button>
@@ -29,7 +30,7 @@
             <button type="button" class="btn btn-success filter-btn" data-box-id="za">ZA+</button>
             <div class="circle" id="refresh">
                 <a href="http://127.0.0.1:8000/listproduk">
-                    <i class="fa-solid fa-rotate fa-2x"></i>
+                <i class="fa-solid fa-arrow-rotate-right"></i>
             </a>
         </div>
         <div class="search-container">

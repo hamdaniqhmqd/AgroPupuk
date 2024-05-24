@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('store_name');
             $table->string('store_link');
             $table->enum('marketplace', ['Tokopedia', 'BliBli', 'Shopee', 'Lazada']);
+            $table->bigInteger('price');
             $table->timestamps();
         });
     }
