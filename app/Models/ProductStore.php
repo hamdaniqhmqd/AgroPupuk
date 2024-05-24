@@ -14,6 +14,7 @@ class ProductStore extends Model
         'store_name',
         'store_link',
         'marketplace',
+        'price',
     ];
 
     public function produkmutu()

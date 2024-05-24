@@ -19,9 +19,8 @@ class produkmutu extends Model
         'image', 
         'title', 
         'jenis', 
-        'description', 
-        'price', 
-        'user_id', // Add user_id to fillable
+        'description',  
+        'user_id', 
         'author'
     ];
 

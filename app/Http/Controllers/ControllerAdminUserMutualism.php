@@ -62,10 +62,10 @@ class ControllerAdminUserMutualism extends Controller
         'title' => 'required|string|max:255',
         'jenis' => 'required|in:npk,phonska,urea,za',
         'description' => 'required',
-        'price' => 'required|numeric',
         'store_names.*' => 'required|string|max:255',
         'store_links.*' => 'required|url|max:255',
         'marketplaces.*' => 'required|in:Tokopedia,BliBli,Shopee,Lazada',
+        'prices.*' => 'required|numeric',
     ]);
 
     //upload image
@@ -78,7 +78,6 @@ class ControllerAdminUserMutualism extends Controller
         'title' => $request->title,
         'jenis' => $request->jenis,
         'description' => $request->description,
-        'price' => $request->price,
         'user_id' => Auth::id(), // Set the user_id field
         'author' => Auth::user()->username,
     ]);
@@ -89,6 +88,7 @@ class ControllerAdminUserMutualism extends Controller
             'store_name' => $storeName,
             'store_link' => $request->store_links[$index],
             'marketplace' => $request->marketplaces[$index],
+            'price' => $request->prices[$index],
         ]);
     }
 

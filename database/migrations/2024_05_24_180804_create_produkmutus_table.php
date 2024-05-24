@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string ('title');
             $table->enum('jenis', ['npk', 'phonska', 'urea', 'za']);
             $table->text ('description');
-            $table->bigInteger ('price');
             $table->unsignedBigInteger('user_id');
             $table->string('author');
             $table->timestamps();

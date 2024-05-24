@@ -72,16 +72,6 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group mb-3">
-                                <label class="font-weight-bold">PRICE</label>
-                                <input type="number" class="form-control @error('price') is-invalid @enderror"
-                                    name="price" value="{{ old('price') }}" placeholder="Masukkan Harga Product">
-                                @error('price')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
                             <div class="form-group mb-3" id="store-inputs">
                                 <label class="font-weight-bold">Tambah Toko</label>
                                 <div class="input-group mb-3">
@@ -89,6 +79,8 @@
                                         placeholder="Masukkan Nama Toko">
                                     <input type="text" class="form-control store-link" name="store_links[]"
                                         placeholder="Masukkan Link Toko">
+                                    <input type="number" class="form-control store-price" name="prices[]" 
+                                        placeholder="Masukkan Harga Toko">
                                     <select class="form-control marketplace" name="marketplaces[]">
                                         <option value="Tokopedia">Tokopedia</option>
                                         <option value="BliBli">BliBli</option>
@@ -116,6 +108,7 @@
                 newInputGroup.innerHTML = `
                     <input type="text" class="form-control store-name" name="store_names[]" placeholder="Masukkan Nama Toko">
                     <input type="text" class="form-control store-link" name="store_links[]" placeholder="Masukkan Link Toko">
+                    <input type="number" class="form-control store-price" name="prices[]" placeholder="Masukkan Harga Toko">
                     <select class="form-control marketplace" name="marketplaces[]">
                         <option value="Tokopedia">Tokopedia</option>
                         <option value="BliBli">BliBli</option>
