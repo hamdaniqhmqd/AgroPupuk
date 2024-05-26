@@ -82,7 +82,7 @@
 }
 
 /* Ensure circle size consistency on smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 100%) {
     .circle {
         width: 30px;
         height: 30px;
@@ -180,3 +180,16 @@ h1 {
     cursor: pointer;
 }
 /* Card end */
+
+.refresh-container {
+    display: flex;
+    flex-direction: column; /* Change to column to stack text above icon */
+    align-items: center;
+    margin-left: 20px; /* Adjust the margin as needed */
+    margin-bottom: 30px;
+}
+
+.refresh-container h6 {
+    margin-bottom: 10px; /* Space between text and icon */
+    margin-left: 10px; /* Adjust this to move text to the right */
+}

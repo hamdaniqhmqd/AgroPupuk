@@ -24,8 +24,8 @@
         <button type="button" class="btn btn-success filter-btn" data-box-id="urea">Urea</button>
         <button type="button" class="btn btn-success filter-btn" data-box-id="za">ZA+</button>
         <div class="refresh-container">
-            <div>
-                <h6>refresh</h6>
+            <div class="refresh-text">
+                <h6>Refresh</h6>
             </div>
             <div class="circle" id="refresh">
                 <a href="http://127.0.0.1:8000/listproduk">
