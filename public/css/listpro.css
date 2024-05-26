@@ -1,8 +1,8 @@
-/* biar logo tidak besar navbar*/
+/* biar logo tidak besar navbar */
 .main-head .logo img {
     width: 180px !important;
     height: 25px !important;
- }
+}
 
 .search-container {
     display: flex;
@@ -12,44 +12,57 @@
     border-radius: 5px;
     padding: 5px;
     margin-left: 130px;
-  }
-  
-  #search-input {
+}
+
+#search-input {
     border: none;
     outline: none;
     padding: 5px 10px;
     font-size: 16px;
     width: 100%; /* Adjust width as needed */
-  }
-  
-  #search-icon {
+}
+
+#search-icon {
     font-size: 18px;
     color: #224038;
     cursor: pointer;
     margin-left: 5px;
     margin-right: 10px;
-  }
-  
-  /* Optional: style the search icon on hover */
-  #search-icon:hover {
-    color: #333;
-  }
-  
+}
 
-.circle i {
+/* Optional: style the search icon on hover */
+#search-icon:hover {
+    color: #333;
+}
+
+.refresh-container h6 {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.refresh-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
+    margin-left: 20px; /* Adjust the margin as needed */
+}
+
+.circle i {
     color: #e3e3e3;
-    text-decoration: none;
 }
 
 .circle {
-    margin-left: 20px; /* Menambahkan jarak antara div.circle dengan tombol lainnya */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    color: #e3e3e3;
+    background: #224038;
+    box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
+    margin-left: 5px; /* Adjust the margin as needed */
 }
 
-.bton .fa-solid:hover{
+.bton .fa-solid:hover {
     cursor: pointer;
 }
 
@@ -57,31 +70,50 @@
     text-decoration: none;
 }
 
-.bton .circle{
+.bton .circle {
     border-radius: 50%;
-    width: 3vw;
-    height: 3vw;
-    line-height: 40px;
+    width: 50px; /* Fixed size */
+    height: 50px; /* Fixed size */
+    line-height: 50px; /* Match the height */
     color: #e3e3e3;
     background: #224038;
     box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
     align-items: center;
 }
 
-h1{
+/* Ensure circle size consistency on smaller screens */
+@media (max-width: 600px) {
+    .circle {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+h1 {
     margin-left: 146px;
 }
 
-.bton{
-    width: 100pw;
+.bton {
+    width: 100vw;
     margin-left: 130px;
     display: flex;
     align-items: center;
 }
-.btn-success{
+
+.btn-success {
     width: 150px;
-    margin-left:20px;
+    margin-left: 20px;
     background-color: #224038 !important;
+    border-color: #224038 !important;
+}
+
+/* Ensure the buttons are fully green with no border */
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+    background-color: #224038 !important;
+    border-color: #224038 !important;
+    box-shadow: none !important;
 }
 
 /* Card Start */
@@ -133,9 +165,9 @@ h1{
     margin-left: 12px;
 }
 
-.kotak-kotak{
+.kotak-kotak {
     display: flex;
-    flex-direction:row ;
+    flex-direction: row;
     margin-left: 150px;
     justify-content: flex-start;
     width: 85%;
@@ -143,9 +175,8 @@ h1{
     flex-wrap: wrap;
 }
 
-.kotak-luar:hover{
+.kotak-luar:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 /* Card end */
-
