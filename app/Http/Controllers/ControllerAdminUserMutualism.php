@@ -145,57 +145,57 @@ class ControllerAdminUserMutualism extends Controller
      * @return RedirectResponse
      */
     public function update(Request $request, $id): RedirectResponse
-    {
-        //validate form
-        $request->validate([
-            'image'         => 'image|mimes:jpeg,jpg,png|max:2048',
-            'title'         => 'required|min:2 |max:10 ',
-            'description'   => 'required|min:10',
-            'namatok'       => 'required|min:4|max:15',
-            'link'          => 'required',
-            'price'         => 'required|numeric',
-        ]);
+{
+    $request->validate([
+        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        'title' => 'required|string|max:255',
+        'jenis' => 'required|string',
+        'description' => 'required|string',
+        'store_names.*' => 'nullable|string|max:255',
+        'store_links.*' => 'nullable|url|max:255',
+        'prices.*' => 'nullable|numeric',
+        'marketplaces.*' => 'nullable|in:Tokopedia,BliBli,Shopee,Lazada',
+    ]);
 
-        //get product by ID
-        $product = produkmutu::findOrFail($id);
+    $product = produkmutu::findOrFail($id);
 
-        //check if image is uploaded
-        if ($request->hasFile('image')) {
+    if ($request->hasFile('image')) {
+        if ($product->image) {
+            Storage::disk('public')->delete('gambarproduk/' . $product->image);
+        }
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->storeAs('gambarproduk', $imageName, 'public');
+        $product->image = $imageName;
+    }
 
-            //upload new image
-            $image = $request->file('image');
-            $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
-                $request->input('title') . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/gambarproduk/', $nameImage);
+    $product->title = $request->input('title');
+    $product->jenis = $request->input('jenis');
+    $product->description = $request->input('description');
+    $product->save();
 
-            //delete old image
-            Storage::delete('public/gambarproduk/'.$product->image);
+    // Hapus semua store yang terkait
+    $product->productStores()->delete();
 
-            //update product with new image
-            $product->update([
-                'image'         => $nameImage,
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'namatok'       => $request->namatok,
-                'link'          => $request->link,
-                'price'         => $request->price,
-            ]);
+    // Masukkan store baru jika ada
+    $storeNames = $request->input('store_names', []);
+    $storeLinks = $request->input('store_links', []);
+    $prices = $request->input('prices', []);
+    $marketplaces = $request->input('marketplaces', []);
 
-        } else {
-
-            //update product without image
-            $product->update([
-                'title'         => $request->title,
-                'description'   => $request->description,
-                'namatok'       => $request->namatok,
-                'link'          => $request->link,
-                'price'         => $request->price,
+    foreach ($storeNames as $key => $storeName) {
+        if (!empty($storeName) && !empty($storeLinks[$key]) && !empty($prices[$key]) && !empty($marketplaces[$key])) {
+            $product->productStores()->create([
+                'store_name' => $storeName,
+                'store_link' => $storeLinks[$key],
+                'price' => $prices[$key],
+                'marketplace' => $marketplaces[$key],
             ]);
         }
-
-        //redirect to index
-        return redirect()->route('adminproduk.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
+
+    return redirect()->route('adminproduk.index')->with('success', 'Product updated successfully');
+}
+
 
     /**
      * destroy
