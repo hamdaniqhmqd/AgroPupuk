@@ -43,7 +43,7 @@
     <div class="kotak-kotak">
         @foreach ($data as $item)
         @csrf
-        <div class="kotak-luar" id="{{ $item->jenis }}" data-url="{{ route('adminproduk.show', $item->id) }}">
+        <div class="kotak-luar" id="{{ $item->jenis }}" data-url="{{ route('detailproduk', $item->id) }}">
             <div class="kotak-dalam">
                 <img src="{{ asset('storage/gambarproduk/'.$item->image) }}" alt="Gambar">
             </div>
@@ -65,6 +65,12 @@
                     });
                 });
             });
+
+
+    function redirectToDetail(element) {
+        const url = element.getAttribute('data-url');
+        window.location.href = url;
+    }
         </script>
     </div>
     <!-- Kotak-kotak end -->
