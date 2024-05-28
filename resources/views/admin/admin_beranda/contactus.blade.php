@@ -2,18 +2,18 @@
 @section('beranda_admin')
     <header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
-            {{-- <span class="list_page">{{ $title }}</span> --}}
+            <span class="list_page">{{ $title }}</span>
         </div>
 
         <div class="profile d-flex align-items-center">
-            {{-- <span class="nama_admin">{{ $admin->nama }}</span>
+            <span class="nama_admin">{{ $admin->nama }}</span>
             @if (auth()->user()->gambar)
                 <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile"
                     loading="lazy" />
             @else
                 <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile"
                     loading="lazy" />
-            @endif --}}
+            @endif
         </div>
     </header>
 
@@ -117,17 +117,18 @@
                         <tbody>
                             @forelse ($contact as $data)
                                 <tr>
-                                    <td>
+                                    <td class="text-center">
                                         {{ $loop->index + 1 }}
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         {{ $data->nama }}
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         {{ $data->email }}
                                     </td>
-                                    <td>
-                                        {{ $data->pesan }}
+                                    <td class="text-center">
+                                        {!! html_entity_decode(Str::limit( $data->pesan, 100)) !!}
+                                        {{-- {{ $data->pesan }} --}}
                                     </td>
                                     <td class="text-center">
                                         <form action="{{ route('delete', $data->id) }}" method="POST"
@@ -138,7 +139,6 @@
                                             <button type="submit"
                                                 class="border-0 btn btn-sm btn-danger d-flex align-items-center gap-2">
                                                 <i class="bi bi-trash3-fill fs-6 text-decoration-none text-white"></i>
-                                                Hapus
                                             </button>
                                         </form>
                                         </form>

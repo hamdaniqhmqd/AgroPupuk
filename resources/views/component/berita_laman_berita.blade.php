@@ -66,7 +66,7 @@
                     <form action="{{ route('berita') }}" class="d-flex g-2" method="GET">
                         <input class="form-control me-2" type="text" placeholder="Ketik berita yang di cari"
                             name="pencarian" value="{{ $request->get('pencarian') }}">
-                        <button type="submit" class="btn btn-sm btn-success fw-semibold px-4">
+                        <button type="submit" class="btn btn-sm btn-success fw-semibold px-4 fs-6">
                             Search
                         </button>
                     </form>

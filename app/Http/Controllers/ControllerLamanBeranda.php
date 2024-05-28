@@ -8,6 +8,8 @@ use App\Models\produkmutu;
 use Illuminate\Http\RedirectResponse;
 use App\Models\ContactUs;
 use App\Models\Sipupuk;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
@@ -18,16 +20,16 @@ class ControllerLamanBeranda extends Controller
     public function index()
     {
         // untuk mengambil data berita maksimal 4
-        $berita = Berita::take(4)->latest()->get();
+        $berita = Berita::orderBy('pengunjung_berita', 'desc')->take(4)->get();
 
          // Mengambil semua produk
         $sipupuks = Sipupuk::take(4)->latest()->get();
 
         $Produk = produkmutu::take(4)->latest()->get();
-
+        $corosel = beranda_corosel::take(3)->get();
         // $title = 'Home';
 
-        return view("layouts.laman_beranda", compact('berita', 'sipupuks',));
+        return view("layouts.laman_beranda", compact('berita', 'sipupuks', 'Produk', 'corosel'));
 
     }
     public function store(Request $request): RedirectResponse
@@ -52,6 +54,8 @@ class ControllerLamanBeranda extends Controller
 
     public function adminBeranda(Request $request) : View
     {
+        $admin = User::find(Auth::id());
+        $title = 'Beranda | ADMIN';
 
         $contact = ContactUs::paginate(6);
 
@@ -66,7 +70,7 @@ class ControllerLamanBeranda extends Controller
 			], 'LIKE', "%$search%")->paginate(6);
 		}
 
-        return view('admin.admin_beranda.contactus', compact('contact','request','search', 'corosel'));
+        return view('admin.admin_beranda.contactus', compact('contact','request','search', 'corosel','admin','title'));
     }
 
     public function destroy($id): RedirectResponse
