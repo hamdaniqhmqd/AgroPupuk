@@ -26,10 +26,10 @@ class ControllerLamanBeranda extends Controller
         $sipupuks = Sipupuk::take(4)->latest()->get();
 
         $Produk = produkmutu::take(4)->latest()->get();
-
+        $corosel = beranda_corosel::take(3)->get();
         // $title = 'Home';
 
-        return view("layouts.laman_beranda", compact('berita', 'sipupuks',));
+        return view("layouts.laman_beranda", compact('berita', 'sipupuks', 'Produk', 'corosel'));
 
     }
     public function store(Request $request): RedirectResponse

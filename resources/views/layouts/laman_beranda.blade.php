@@ -46,6 +46,15 @@
     <!-- Ini Corousel -->
     <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
         <div class="carousel-inner">
+            @foreach ($corosel as $data)
+                <div class="carousel-item active position-relative">
+                    <img src="{{ asset('storage/gambar corosel/' . $data->image) }}"
+                        style="width: 100%; height: 700px; object-fit: cover;" class="gambar-coro d-block object-fit-cover"
+                        alt="{{ $data->image }}" />
+                </div>
+            @endforeach
+        </div>
+        {{-- <div class="carousel-inner">
             <div class="carousel-item active position-relative">
                 <img src="{{ asset('storage/image/coro1.png') }}"
                     style="width: 100%; height: 700px; object-fit: cover;" class="gambar-coro  d-block object-fit-cover"
@@ -61,7 +70,7 @@
                     style="width: 100%; height: 700px; object-fit: cover;" class="gambar-coro d-block object-fit-cover"
                     alt="gambar3" />
             </div>
-        </div>
+        </div> --}}
         <!--Ini konten diatas corousel-->
     </div>
     <div class="kotak-konten shadow ">
@@ -107,7 +116,7 @@
                 baik organik maupun kimia, untuk memenuhi kebutuhan budidaya tanaman Anda. Tak hanya itu, <br>
                 kami juga menawarkan informasi pertanian yang lengkap dan terkini
                 untuk membantu Anda <br> meningkatkan hasil panen dan mencapai kesuksesan dalam bertani.
-                
+
             </h3>
         </div>
 
@@ -142,7 +151,7 @@
         <!-- Artike Prodduk -->
 
         @include('component.artikel_beranda')
-    
+
         <!-- end Artike Prodduk -->
 
         <!--Benner AgroPupuk-->
