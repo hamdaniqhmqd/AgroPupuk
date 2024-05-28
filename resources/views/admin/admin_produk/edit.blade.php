@@ -1,18 +1,23 @@
 @extends('layouts.laman_admin_produk')
 @section('admin_produk_edit')
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
     <header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
-            <span class="list_page">admin</span>
-        </div>
-        <div class="profile d-flex align-items-center">
-            <span class="nama_admin">admin</span>
-            @if (auth()->user()->gambar)
-                <img class="object-fit-fill rounded" src="{{ asset('storage/profile/' . $admin->gambar) }}" alt="profile" loading="lazy" />
-            @else
-                <img class="object-fit-fill rounded" src="{{ asset('/gambar/user.png') }}" alt="profile" loading="lazy" />
-            @endif
+            <span class="list_page">Halaman Admin Edit Produk</span>
         </div>
     </header>
+    <style>
+        .form-group label, label {
+            font-family: "Inter", sans-serif; 
+            font-size: 14px; 
+            color: rgb(18,55,42); 
+            font-weight: bold;
+        }
+    </style>
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">

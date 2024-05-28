@@ -9,10 +9,7 @@
     <script src="https://kit.fontawesome.com/a8b5e7e027.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        .main-head .logo img {
-            width: 180px !important;
-            height: 25px !important;
-        }
+
         .kotak-spek {
             height: 40vw;
             width: 94vw;
@@ -164,7 +161,6 @@
 </head>
 
 <body style="background: #e3e3e3">
-    @include('component/navbaru')
 
     <div class="container bg-white d-flex rounded-2" style="width: 90%; margin:auto; margin-top: 7%; margin-bottom: 5%; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);">
         <div class="gambar" style="width: 40%">
@@ -248,7 +244,7 @@
     </div>
     <br>
     <div class="kontak-off"> <!-- blibli -->
-        <img src="{{ asset('storage/image/blili.png') }}" style="width: 13%; margin-top:10px; margin-left:28px;">
+        <img src="{{ asset('storage/image/blili.png') }}" style="width: 12%; margin-top:10px; margin-left:28px;">
         <hr>
         <div class="container">
             @forelse($product->productStores->where('marketplace', 'BliBli') as $store)
