@@ -82,7 +82,7 @@
         }
 
         thead th.aksi {
-            width: 25%;
+            width: 15%;
         }
 
         thead th.gambar {
@@ -124,8 +124,12 @@
             border: none;
         }
 
-        tbody td.data-aksi a i {
+        tbody td.data-aksi i {
             font-size: 20px;
+        }
+
+        tbody td.data-aksi .btn {
+            width: 90px;
         }
     </style>
     <header class="position-relative d-flex align-items-center justify-content-between">
@@ -229,7 +233,7 @@
                                 <form action="{{ route('admin_berita.hapus_data', $data->id_berita) }}" method="POST"
                                     id="formHapusData_{{ $data->id_berita }}"
                                     onsubmit="return hapusData({{ $data->id_berita }})"
-                                    class="tombol d-flex justify-content-evenly align-items-center flex-wrap gap-1 text-center">
+                                    class="tombol d-flex justify-content-center align-items-center flex-wrap gap-1 text-center">
                                     {{-- digunakan untuk mengarah ke tampilan detail data sesuai dengan id --}}
                                     <a href="{{ route('admin_berita.detail_data', $data->id_berita) }}"
                                         class="btn btn-sm btn-success">
