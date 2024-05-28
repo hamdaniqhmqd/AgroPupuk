@@ -20,7 +20,7 @@ class ControllerLamanBeranda extends Controller
     public function index()
     {
         // untuk mengambil data berita maksimal 4
-        $berita = Berita::take(4)->latest()->get();
+        $berita = Berita::orderBy('pengunjung_berita', 'desc')->take(4)->get();
 
          // Mengambil semua produk
         $sipupuks = Sipupuk::take(4)->latest()->get();
