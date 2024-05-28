@@ -222,4 +222,11 @@ class ControllerAdminUserMutualism extends Controller
         $data = produkmutu::all(); //buat manggil $data di class store
         return view("layouts.laman_produk",compact('data'));
     }
+
+    public function detailproduk(string $id): View
+{
+    $product = produkmutu::findOrFail($id);
+    return view('layouts.laman_detail_produk', compact('product'));
+}
+
 }
