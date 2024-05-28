@@ -34,7 +34,7 @@
                             <!-- Post title-->
                             <h1 class="fw-semibold warna-hijau mb-1">{{ $sipupuks->title }}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted mb-2">Posted on {{ $sipupuks->created_at->format('d F Y') }} by {{ $sipupuks->author }}</div>
+                            <div class="text-muted mb-2">Posted on {{ $sipupuks->created_at->format('d F Y') }} by  {{ $sipupuks->user->username ?? 'Unknown' }}</div>
                         </header>
                         <!-- Preview image figure-->
                         <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuks->image) }}" class="img-fluid w-100" alt="{{$sipupuks->title}}">

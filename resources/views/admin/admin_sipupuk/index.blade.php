@@ -51,9 +51,12 @@
                         <tbody>
                             @forelse ($sipupuks as $sipupuk)
                                 <tr>
-                                    <td class="text-center" style="max-width: 150px; height: 100px;">
-                                        <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}" class="rounded"
-                                            width="150" height="70">
+                                    <td class="text-center">
+                                        <div style=" width: 300px; height: 160px; object-fit: cover">
+                                            <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}"  class="img-fluid-custom rounded-3 hover-img " style=" width: 100%; height: 100%; overflow: hidden; object-fit: cover "  alt="" />
+                                        </div>
+                                        {{-- <img src="{{ asset('storage/gambar_sipupuk/' . $sipupuk->image) }}" class="rounded"
+                                            width="150" height="70"> --}}
                                     </td>
                                     <td
                                         style="max-width: 170px; height: 100px; overflow: hidden;   text-overflow: ellipsis">
@@ -63,7 +66,7 @@
                                         {!! html_entity_decode(Str::limit($sipupuk->content, 100)) !!}</td>
                                     <td
                                         style="max-width: 100px; height: 100px; overflow: hidden;  text-overflow: ellipsis;">
-                                        {{ $sipupuk->author }}</td>
+                                        {{ $sipupuk->user->username ?? 'Unknown' }}</td>
                                     <td class="text-center"
                                         style="max-width: 50px; height: 100px;  overflow: hidden;  text-overflow: ellipsis;">
                                         <form id="deleteForm{{ $sipupuk->id }}" action="{{ route('adminsipupuk.destroy', $sipupuk->id) }}" 

@@ -23,12 +23,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div>
-                        <h3 class="text-center my-4" style="color: rgb(18,55,42)">Dashboard Produk Admin</h3>
+                        <h3 class="text-center my-3 fw-bold" style="color: rgb(18,55,42)">DASHBOARD PRODUK</h3>
                         <hr>
                     </div>
                     <div class="card border-0 shadow-sm rounded">
                         <div class="card-body">
-                            <a href="{{ route('adminproduk.create') }}" class="btn btn-md btn-success mb-3">ADD PRODUCT</a>
+                            <a href="{{ route('adminproduk.create') }}" style="background-color: rgb(18,55,42;" class="btn btn-md btn-success mb-3">ADD PRODUCT</a>
                             <!--untuk admin_produk ga pake underscore-->
                             <table class="table table-bordered">
                                 <thead>

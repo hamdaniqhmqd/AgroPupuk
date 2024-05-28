@@ -47,7 +47,7 @@
                                     <p class="card-text lh-sm">{{ Str::limit(strip_tags($sipupuk->content, 50)) }}</p>
                                 </div>
                                 <button class="btn" style="background-color: #224038;">
-                                    <a class="text-decoration-none text-white" href="#">BACA SELENGKAPNYA <i class="bi bi-arrow-right"></i></a>
+                                    <a class="text-decoration-none text-white" href="{{ route('sipupuk.show', $sipupuk->id) }}">BACA SELENGKAPNYA <i class="bi bi-arrow-right"></i></a>
                                 </button>
                             </div>
                         </div>

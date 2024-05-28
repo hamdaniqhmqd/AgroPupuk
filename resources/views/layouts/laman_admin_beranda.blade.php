@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     {{-- link icon dari boxincons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     {{-- link css --}}
     <link rel="stylesheet" href="{{ asset('css/sidebar_new.css') }}">
     <link rel="stylesheet" href="{{ asset('css/beranda.css') }}">
