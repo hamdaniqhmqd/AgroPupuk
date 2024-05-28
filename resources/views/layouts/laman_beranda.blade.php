@@ -97,6 +97,42 @@
         @include('component.produk')
         <!-- Info Prodduk -->
 
+
+        <div class="w-100 bg-hijau shadow" style="height: 400px; margin-bottom: 7%;">
+            <img src="{{ asset('storage/image/bgImg.png') }}" class="img-fluid-custom"  alt=" Galeri 2" />
+            <h1 class="fw-bold text-center position-relative text-white fs-full">AGROPUPUK</h1>
+            <h3 class=" text-center position-relative text-white fs-end overflow-hidden">
+
+                hadir sebagai mitra terpercaya bagi para petani di Indonesia. Kami menyediakan berbagai jenis pupuk berkualitas tinggi, <br>
+                baik organik maupun kimia, untuk memenuhi kebutuhan budidaya tanaman Anda. Tak hanya itu, <br>
+                kami juga menawarkan informasi pertanian yang lengkap dan terkini
+                untuk membantu Anda <br> meningkatkan hasil panen dan mencapai kesuksesan dalam bertani.
+                
+            </h3>
+        </div>
+
+        <div class="container mb ">
+            <div class="w-100">
+                <div class="img-custom" data-aos="fade-down"  data-aos-offset="100" data-aos-easing="ease-in-sine">
+                    <img src="{{ asset('storage/image/galeriimg1.jpg') }}" class="img-fluid-custom rounded-3  hover-img "  alt="Galeri 1" />
+                    {{-- <h1 class="fw-bold position-relative text-white fs-full">GALERI</h1> --}}
+                </div>
+                <div class="d-flex m-top-2 w-100 ">
+                        <div class="w-30 " data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                            <img src="{{ asset('storage/image/galeriimg2.jpg') }}" class="img-fluid-custom rounded-3 hover-img "  alt=" Galeri 2" />
+                        </div>
+                        <div class="w-30 margin-2"  data-aos="fade-up"  data-aos-offset="200" data-aos-easing="ease-in-sine" >
+                            <img src="{{ asset('storage/image/galeriimg3.png') }}" class="img-fluid-custom rounded-3 hover-img "  alt=" Galeri 3" />
+                        </div>
+                        <div class="w-35 margin-2 " data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                            <img src="{{ asset('storage/image/galeriimg4.png') }}" class="img-fluid-custom rounded-3 hover-img"  alt=" Galeri 4" />
+                        </div>
+                </div>
+
+            </div>
+
+        </div>
+
         <!--Benner AgroPupuk-->
         @include('component.banner')
         <!-- end Benner AgroPupuk-->

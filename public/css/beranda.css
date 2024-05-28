@@ -209,10 +209,10 @@ h1 {
 .ttg-kami {
     position: relative;
     width: 100%;
-    font-weight: bold;
-    font-size: 40px;
+    font-weight: 900;
+    font-size: 50px;
     color: #ffffff;
-    -webkit-text-stroke: 0.3px #198754;
+    -webkit-text-stroke: 0.3px #224038;
     margin-top: 60px;
     /* -webkit-text-stroke: 0.3px #224038; */
 }
@@ -226,7 +226,7 @@ h1 {
     -webkit-text-stroke: 0px #ffffff;
     border-right: 1.2px solid #198754;
     overflow: hidden;
-    animation: animate 2.5s ease-in-out infinite;
+    animation: animate 3s ease-in-out infinite;
 }
 
 .bungkus-animasi {
@@ -396,6 +396,58 @@ h1 {
     box-shadow: #224038 0px 0px 10px;
 }
 
+.img-custom {
+    width: 100%;
+    height: 300px;
+}
 
+.img-fluid-custom {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.w-30 {
+    width: 30%;
+    height: 300px;
+}
+.w-35 {
+    width: 37%;
+    height: 300px;
+}
+
+.margin-2 {
+    margin-left: 2%;
+}
+.m-top-2 {
+    margin-top: 2%;
+}
+
+.hover-img {
+    transition: transform 0.5s ease-in-out;
+    filter: grayscale(80);
+}
+
+.hover-img:hover {
+    transform: scale(1.01);
+    filter: grayscale(0);
+}
+
+.fs-full {
+    font-size: 50px;
+    font-weight: 900;
+    margin-top: -300px;
+}
+
+.fs-end {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.mb {
+    margin-bottom: 7%;
+}
 
 

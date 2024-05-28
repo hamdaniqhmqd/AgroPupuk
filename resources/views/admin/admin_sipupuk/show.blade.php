@@ -43,7 +43,7 @@
                         <!-- Post title-->
                         <h1 class="fw-bolder mb-1">{{ $sipupuks->title }}</h1>
                         <!-- Post meta content-->
-                        <div class="text-muted fst-italic mb-2">Posted on {{ $sipupuks->created_at->format('d F Y') }} by {{ $sipupuks->author }}</div>
+                        <div class="text-muted fst-italic mb-2">Posted on {{ $sipupuks->created_at->format('d F Y') }} by  {{ $sipupuks->user->username ?? 'Unknown' }}</div>
                     </header>
 
                     

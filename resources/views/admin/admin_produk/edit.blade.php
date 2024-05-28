@@ -129,6 +129,7 @@
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                                 <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                                <button class="btn btn-secondary "><a class=" text-decoration-none text-white" href="{{ url('adminproduk') }}">BACK</a></button>
                             </div>
                         </form>
                     </div>
