@@ -9,7 +9,7 @@ let captchaText = null;
 
 // Function to generate captcha
 const generateCaptcha = () => {
-    const randomString = Math.random().toString(36).substring(2, 10);
+    const randomString = Math.random().toString(36).substring(2, 7);
     const randomStringArray = randomString.split("");
     const changeString = randomStringArray.map((char) =>
         Math.random() > 0.5 ? char.toUpperCase() : char
