@@ -195,7 +195,7 @@
                     </div>
                     <div class="d-flex py-2 justify-content-between">
                         <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($store->price, 2, ',', '.') }}</h1>
-                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Lihat Detail</button>
                     </div>
                 </div>
                 <hr>
@@ -216,7 +216,7 @@
                     </div>
                     <div class="d-flex py-2 justify-content-between">
                         <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($store->price, 2, ',', '.') }}</h1>
-                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Lihat Detail</button>
                     </div>
                 </div>
                 <hr>
@@ -237,7 +237,7 @@
                     </div>
                     <div class="d-flex py-2 justify-content-between">
                         <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($store->price, 2, ',', '.') }}</h1>
-                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Lihat Detail</button>
                     </div>
                 </div>
                 <hr>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="d-flex py-2 justify-content-between">
                         <h1 class="harga fw-semibold fs-2">{{ "Rp " . number_format($store->price, 2, ',', '.') }}</h1>
-                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Kontak</button>
+                        <button type="button" style="width: 20vw; background-color: #224038 !important;" class="btn btn-success" onclick="window.location.href='{{ $store->store_link }}'">Lihat Detail</button>
                     </div>
                 </div>
                 <hr>

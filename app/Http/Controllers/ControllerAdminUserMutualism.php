@@ -58,14 +58,26 @@ class ControllerAdminUserMutualism extends Controller
     public function store(Request $request)
 {
     $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'title' => 'required|string|max:255',
+        'image' => 'required|image|mimes:jpeg,png,jpg',
+        'title' => 'required|string|max:10|min:2',
         'jenis' => 'required|in:npk,phonska,urea,za',
         'description' => 'required',
-        'store_names.*' => 'required|string|max:255',
+        'store_names.*' => 'required|string|max:15',
         'store_links.*' => 'required|url|max:255',
         'marketplaces.*' => 'required|in:Tokopedia,BliBli,Shopee,Lazada',
         'prices.*' => 'required|numeric',
+    ],[
+        'image.required'=>'Kolom ini harus di isi yaa',
+        'image.mimes'=>'Harus berbentuk jpeg, png dan jpg',
+        'title.max' => 'Maksimal karakter 10',
+        'title.min' =>'Minimal karakter 2',
+        'title.required'=>'Judul harus di isi',
+        'store_names.*.required'=>'Pastikan semua nama toko terisi',
+        'store_names.*.max'=>'Karakter dari nama toko tidak boleh lebih dari 15',
+        'store_links.*.required'=>"Kolom link harus diisi",
+        'store_links.*'=>'Kolom link harus berbentuk link/url',
+        'prices.*.required'=>'Pastikan semua kolom harga telah terisi',
+        'marketplaces.*.required'=>'Pastikan semua marketplace sudah di isi'
     ]);
 
     //upload image
@@ -147,15 +159,26 @@ class ControllerAdminUserMutualism extends Controller
     public function update(Request $request, $id): RedirectResponse
 {
     $request->validate([
-        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        'title' => 'required|string|max:255',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg',
+        'title' => 'required|string|max:255|min:3',
         'jenis' => 'required|string',
         'description' => 'required|string',
-        'store_names.*' => 'nullable|string|max:255',
+        'store_names.*' => 'nullable|string|max:15',
         'store_links.*' => 'nullable|url|max:255',
         'prices.*' => 'nullable|numeric',
-        'marketplaces.*' => 'nullable|in:Tokopedia,BliBli,Shopee,Lazada',
-    ]);
+        'marketplaces.*' => 'required|in:Tokopedia,BliBli,Shopee,Lazada',
+    ],[
+        'image.mimes'=>'Harus berbentuk jpeg, png dan jpg',
+        'title.max' => 'Maksimal karakter 10',
+        'title.min' =>'Minimal karakter 2',
+        'title.required'=>'Judul harus di isi',
+        'store_names.*.required'=>'Pastikan semua nama toko terisi',
+        'store_names.*.max'=>'Karakter dari nama toko tidak boleh lebih dari 15',
+        'store_links.*.required'=>"Kolom link harus diisi",
+        'store_links.*'=>'Kolom link harus berbentuk link/url',
+        'prices.*.required'=>'Pastikan semua kolom harga telah terisi',
+        'marketplaces.*.required'=>'Pastikan semua kolom sudah di isi'
+        ]);
 
     $product = produkmutu::findOrFail($id);
 
