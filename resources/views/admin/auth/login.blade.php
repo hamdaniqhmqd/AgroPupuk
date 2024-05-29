@@ -24,12 +24,13 @@
             <form action="{{ url('process_login') }}" method="POST">
                 @csrf
                 <div class="input-box">
-                    <input type="text" name="username" id="name" name="name" required value="" />
+                    <input type="text" name="username" id="name" class="@error('username') is-invalid @enderror"
+                        name="name" required value="" />
                     <label for="name" id="labeluser">Username</label>
                     <i class="fa fa-user" id="user_icon"></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" name="password" id="pass" required />
+                    <input type="password" name="password" class="@error('password') is-invalid @enderror" name="password" id="pass" required />
                     <label for="pass" id="labelpass">Password</label>
                     <i class="fa fa-eye-slash" id="pass_icon"></i>
                 </div>
@@ -43,10 +44,24 @@
                     <input id="button" type="submit" value="Submit" class="" required />
                 </div>
                 <div class="register">
-                    <span class="text">Tidak punya akun? </span><a href="{{ url('/register') }}"
-                        class="link">Daftar Sekarang</a>
+                    <span class="text">Tidak punya akun? </span><a href="{{ url('/register') }}" class="link">Daftar
+                        Sekarang</a>
                 </div>
             </form>
+        </div>
+        <div class="position-absolute end-0 bottom-0 me-3 mb-3">
+            @error('username')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+            @enderror
+            @error('password')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <script src="{{ asset('js/auth/login.js') }}"></script>

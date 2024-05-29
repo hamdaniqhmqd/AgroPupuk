@@ -46,9 +46,11 @@ class ControllerProfilAdmin extends Controller
 
             // untuk menghapus image lama
             Storage::delete('public/profile/' . $user->gambar);
+            // Storage::disk('public')->delete('/profile/' . $user->gambar);
 
             $gambarName = time() . '-' . $gambar->getClientOriginalName();
             $gambar->storeAs('public/profile/', $gambarName);
+            // $gambar->storeAs('profile', $gambarName, 'public');
 
             // $gambar->storeAs('storage/profile', $gambarName);
             $user->gambar = $gambarName;

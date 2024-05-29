@@ -37,7 +37,7 @@
             <i class="fa fa-eye-slash" id="conf_icon"></i>
         </div>
         <div class="input-box button d-flex align-items-center justify-content-between">
-            <a href="../pass valid/valid.html" class="btn">
+            <a href="{{ url('forget/validasi') }}" class="btn">
                 Kembali
             </a>
             <button type="submit" id="button" class="btn" disabled>Selesai</button>

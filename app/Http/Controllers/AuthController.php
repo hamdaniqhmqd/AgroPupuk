@@ -31,7 +31,7 @@ class AuthController extends Controller
     public function process_register(Request $request): RedirectResponse
     {
         $request->validate([
-            'username' => 'required|max:255',
+            'username' => 'required|max:255|regex:/^\S*$/',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8',
             'konfirmasi_password' => 'required|same:password',
@@ -66,7 +66,7 @@ class AuthController extends Controller
     public function process_login(Request $request): RedirectResponse
     {
         $request->validate([
-            'username' => 'required|max:255',
+            'username' => 'required|max:255|regex:/^\S*$/',
             'password' => 'required|min:8',
         ]);
 
@@ -121,7 +121,7 @@ class AuthController extends Controller
     public function forget_proses_buat(Request $request): RedirectResponse
     {
         $request->validate([
-            'username' => 'required',
+            'username' => 'required|max:255|regex:/^\S*$/',
             'pass' => 'required',
             'conf_pass' => 'required|same:pass',
         ]);
