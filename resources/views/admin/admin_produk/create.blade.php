@@ -116,10 +116,6 @@
                         <button type="submit" class="btn btn-md btn-primary">SAVE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
                     </form>
-                            <button type="submit" class="btn btn-md btn-primary">SAVE</button>
-                            <button type="reset" class="btn btn-md btn-warning">RESET</button>
-                            <button class="btn btn-secondary"><a class=" text-decoration-none text-white" href="{{ url('adminproduk') }}">BACK</a></button>
-                        </form>
                     </div>
                 </div>
             </div>

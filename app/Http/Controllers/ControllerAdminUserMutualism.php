@@ -72,6 +72,7 @@ class ControllerAdminUserMutualism extends Controller
         'title.max' => 'Maksimal karakter 10',
         'title.min' =>'Minimal karakter 2',
         'title.required'=>'Judul harus di isi',
+        'description'=> 'Deskripsi harus ada',
         'store_names.*.required'=>'Pastikan semua nama toko terisi',
         'store_names.*.max'=>'Karakter dari nama toko tidak boleh lebih dari 15',
         'store_links.*.required'=>"Kolom link harus diisi",

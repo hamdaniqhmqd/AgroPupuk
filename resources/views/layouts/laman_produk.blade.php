@@ -16,10 +16,11 @@
     </style>
 
     @include('component/navbaru')
-    <div class="w-100 bg-hijau shadow" style="height: 400px; margin-bottom: 7%;">
-        <img src="{{ asset('storage/image/bgImg.png') }}" class="img-fluid-custom"  alt=" Galeri 2" />
-    </div>
+   <!--     <div class="w-100 bg-hijau shadow" style="height: 200px; margin-bottom: 7%;">
+            <img src="" class="img-fluid-custom"  alt=" Galeri 2" />
+        </div> -->
 
+<br><br><br><br>
     <h1 style="display: flex">PRODUK</h1>
     <div class="bton">
         <button type="button" class="btn btn-success filter-btn" data-box-id="npk">NPK</button>
