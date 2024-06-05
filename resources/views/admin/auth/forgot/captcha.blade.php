@@ -36,7 +36,7 @@
                 <label for="captcha" id="konfirmasi_kode">Masukkan Kode</label>
             </div>
             <div class="input-box button d-flex align-items-center justify-content-between">
-                <a href="../opsi/opsi.html" class="btn d-flex gap-3 align-items-center">
+                <a href="{{ url('/forget') }}" class="btn d-flex gap-3 align-items-center">
                     Kembali
                 </a>
                 <div class="button disabled">

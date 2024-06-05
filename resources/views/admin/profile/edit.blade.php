@@ -149,7 +149,7 @@
             <div class="col-md-6 mb-1">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1"> NOMOR HP </span>
-                    <input class="form-control" class="form-control" type="text" name="no_hp" id="no_hp" value="{{ old('no_hp', $admin->no_hp) }}" required pattern="[0-9]{9,13}" aria-describedby="basic-addon1">
+                    <input class="form-control" class="form-control" type="text" name="no_hp" id="no_hp" value="{{ old('no_hp', $admin->no_hp) }}"  pattern="[0-9]{9,13}" aria-describedby="basic-addon1">
                 </div>
                 <small class="text-danger opacity-75">*Format: Minimal 9 digit, maksimal 13 digit, hanya boleh angka.</small>
             </div>
@@ -172,7 +172,7 @@
                 </div>
             </div>
 
-            
+
             <div class="col-md-0">
                 <div class=" input-group ">
                     <span class="input-group-text" id="basic-addon1"> ALAMAT </span>
@@ -187,11 +187,11 @@
                 </div>
                 <div class="col-md-6">
                     <div class="input-group">
-                        <button class=" w-100 btn-custom">
-                            <a href="{{ url('/forget') }}" class="text-white text-decoration-none " >
-                                UBAH PASSWORD 
+                        {{-- <button class=" w-100 btn-custom"> --}}
+                            <a href="{{ url('/forget') }}" class="w-100 btn-custom text-center text-white text-decoration-none " >
+                                UBAH PASSWORD
                             </a>
-                        </button>
+                        {{-- </button> --}}
                     </div>
                 </div>
         </div>

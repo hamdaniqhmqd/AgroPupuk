@@ -70,7 +70,7 @@ class ControllerLamanAdminBerita extends Controller
         $nameImage = Carbon::now()->format('Y-m-d_H-i-s_') .
             $request->input('judul_berita') . '.' . $image->getClientOriginalExtension();
         // untuk memasukkan data gambar yang sudah di ubah namanya ke local storage
-        $image->storeAs('gambar berita', $nameImage, 'public');
+        $image->storeAs('public/gambar berita', $nameImage);
 
         // untuk mengatur id pada setiap data sesuai dengan
         // tanggal, waktu saat d tambahkan

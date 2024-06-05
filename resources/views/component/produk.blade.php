@@ -26,9 +26,10 @@
                     <p class="f-produk">Petrokimia NPK <?php echo $i; ?> </p>
                 </div>
                 <?php } ?>
+                
             </div>
         </div>
-        
+
         <!-- Selesai Perulangan -->
 </div>
 <!-- End Conrtainer Card-->
@@ -124,7 +125,7 @@
         /* Card end */
 
         @media only screen and (max-width: 800px) {
-        
+
             .kotak-kotak{
             display: grid;
             grid-template-columns: 1fr 1fr ;

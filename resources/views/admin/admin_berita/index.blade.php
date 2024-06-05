@@ -82,7 +82,7 @@
         }
 
         thead th.aksi {
-            width: 15%;
+            width: 60px;
         }
 
         thead th.gambar {
@@ -126,10 +126,6 @@
 
         tbody td.data-aksi i {
             font-size: 20px;
-        }
-
-        tbody td.data-aksi .btn {
-            width: 90px;
         }
     </style>
     <header class="position-relative d-flex align-items-center justify-content-between">
@@ -239,7 +235,6 @@
                                         class="btn btn-sm btn-success">
                                         <span class="teks d-flex align-items-center gap-2">
                                             <i class='bx bx-detail'></i>
-                                            Detail
                                         </span>
                                     </a>
                                     {{-- digunakan untuk mengarah ke tampilan edit data sesuai dengan id --}}
@@ -247,7 +242,6 @@
                                         class="btn btn-sm btn-primary">
                                         <span class="teks d-flex align-items-center gap-2">
                                             <i class='bx bxs-edit'></i>
-                                            Ubah
                                         </span>
                                     </a>
                                     @csrf
@@ -257,7 +251,6 @@
                                     <button type="submit" class="btn btn-sm btn-danger">
                                         <span class="teks d-flex align-items-center gap-2">
                                             <i class='bx bx-trash-alt'></i>
-                                            Hapus
                                         </span>
                                     </button>
                                 </form>
