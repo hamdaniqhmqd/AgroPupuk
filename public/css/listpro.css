@@ -94,7 +94,7 @@ h1 {
 }
 
 .bton {
-    width: 100vw;
+    width: max-content;
     margin-left: 130px;
     display: flex;
     align-items: center;

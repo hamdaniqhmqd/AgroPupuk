@@ -129,17 +129,12 @@
                                     <button type="button" class="btn btn-success add-store">Tambah Toko</button>
                                 </div>
                             </div>
-                            <label style="margin-left:10px;"><i>PERINGATAN! <br> Untuk menghindari error saat menambahkan
-                                    toko, apabila ada kolom nama toko, link dan lainnya kosong
-                                    silahkan hapus toko <br> Disarankan jika menambah lebih dari 3 toko, silahkan
-                                    menggunakan tombol edit/update kecuali semua kolom sudah di isi
-                                    semuanya</i></label><br><br>
-                            <button type="submit" class="btn btn-md btn-primary">SAVE</button>
-                            <button type="reset" class="btn btn-md btn-warning">RESET</button>
-                            <a class="btn btn-secondary text-decoration-none text-white" href="{{ url('adminproduk') }}">
-                                BACK
-                            </a>
-                        </form>
+                        </div>
+                        <label style="margin-left:10px;"><i>PERINGATAN! <br> Untuk menghindari error saat menambahkan toko, apabila ada kolom nama toko, link dan lainnya kosong 
+                            silahkan hapus toko <br> Disarankan jika menambah lebih dari 3 toko, silahkan menggunakan tombol edit/update kecuali semua kolom sudah di isi semuanya</i></label><br><br>
+                        <button type="submit" class="btn btn-md btn-primary">SAVE</button>
+                        <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                    </form>
                     </div>
                 </div>
             </div>
