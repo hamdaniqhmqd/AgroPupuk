@@ -28,12 +28,12 @@
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
             <div class="input-box">
-                <input type="text" name="email" id="email" required />
+                <input type="text" name="email" id="email" required class="@error('email') is-invalid @enderror"/>
                 <label for="email" id="labelemail">Email</label>
                 <i class="fa fa-user" id="user_icon"></i>
             </div>
             <div class="input-box">
-                <input type="password" name="password" id="pass" required />
+                <input type="password" name="password" id="pass" required class="@error('password') is-invalid @enderror"/>
                 <label for="pass" id="labelpass">Password</label>
                 <i class="fa fa-eye-slash" id="pass_icon"></i>
             </div>
@@ -54,6 +54,18 @@
         <!-- error message untuk username -->
         <div class="position-absolute end-0 bottom-0 me-3 mb-3">
             @error('username')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+            @enderror
+            @error('email')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ $message }}
+                </div>
+            @enderror
+            @error('password')
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     {{ $message }}

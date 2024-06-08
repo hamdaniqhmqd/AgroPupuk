@@ -56,8 +56,8 @@
     <script src="{{ asset('js/boostrap/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/sidebar_news.js') }}"></script>
 
-    <!-- <script>
-        // untuk tampilan alert atau pemberitahuan
+    <script>
+        untuk tampilan alert atau pemberitahuan
         @if(session('success')) // jika suscces menambahkan atau mengubah data
         Swal.fire({
             icon: "success",
@@ -75,7 +75,7 @@
             timer: 2000
         });
         @endif
-    </script> -->
+    </script>
 </body>
 
 </html>
