@@ -21,7 +21,6 @@ class ControllerProfilAdmin extends Controller
 
     public function update(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'nama' => 'required|string|max:50',
             'email' => 'required|string|email|max:70|unique:users,email,' . auth()->user()->id,
