@@ -18,7 +18,7 @@ class ControllerLamanAdminBerita extends Controller
     {
         // Variabel untuk mengambil data dari tabel beritas
         // sebanyak 10 data per tab
-        $berita = Berita::with('user')->latest()->paginate(10);
+        $berita = Berita::with('user')->latest()->paginate(2);
 
         $data['admin'] = User::find(Auth::user()->id);
         $title = 'Berita';
@@ -61,6 +61,13 @@ class ControllerLamanAdminBerita extends Controller
             'judul_berita'       => 'required',
             'deskripsi_berita'  => 'required',
             'link_berita'       => 'required',
+        ],[
+            'gambar_berita.required'=>'Kolom gambar harus di isi yaa',
+            'judul_berita.required'=>'Kolom judl harus di isi yaa',
+            'deskripsi_berita.required'=>'Kolom deskripsi harus di isi yaa',
+            'link_berita.required'=>'Kolom sumber link harus di isi yaa',
+            'gambar_berita.mimes'=>'Harus berbentuk jpeg, png dan jpg',
+            'gambar_berita.max'=>'Maksimal 2 MB',
         ]);
         // dd($request->all());
         // untuk mendapatkan file image dan merubah nama
@@ -147,6 +154,12 @@ class ControllerLamanAdminBerita extends Controller
             'judul_berita'        => 'required',
             'deskripsi_berita'   => 'required',
             'link_berita'        => 'required',
+        ],[
+            'judul_berita.required'=>'Kolom ini harus di isi yaa',
+            'deskripsi_berita.required'=>'Kolom ini harus di isi yaa',
+            'link_berita.required'=>'Kolom ini harus di isi yaa',
+            'gambar_berita.mimes'=>'Harus berbentuk jpeg, png dan jpg',
+            'gambar_berita.max'=>'Maksimal 2 MB',
         ]);
 
         // untuk mendapatkan data berita sesuai dengan id
