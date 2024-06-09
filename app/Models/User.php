@@ -29,6 +29,7 @@ class User extends Authenticatable
         'alamat',
         'deskripsi',
         'role',
+        'session_expiry',
     ];
 
     public function berita()

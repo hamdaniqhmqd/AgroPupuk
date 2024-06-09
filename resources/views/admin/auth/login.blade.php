@@ -83,6 +83,14 @@
                 showConfirmButton: false,
                 timer: 2000
             });
+        @elseif (session('warning'))
+            Swal.fire({
+                icon: "warning",
+                title: "PENGUMUMAN",
+                text: "{{ session('warning') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
         @endif
     </script>
 </body>
