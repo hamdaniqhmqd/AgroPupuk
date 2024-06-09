@@ -97,7 +97,7 @@
         }
     </style>
 
-    <header class="position-relative d-flex align-items-center justify-content-between">
+<header class="position-relative d-flex align-items-center justify-content-between">
         <div class="page">
             <span class="list_page">{{ $title }}</span>
         </div>
@@ -123,15 +123,10 @@
         <div class="d-flex justify-content-center pt-5">
             <div class="text-center flex-column">
                 <div class="pembungkus">
-                    <input type="file" name="gambar" id="gambar" style="display: none;">
+                    <input type="file" name="gambar" id="gambar" style="display: none;" accept="image/*" onchange="previewImage(event)">
                     <label for="gambar" style="cursor: pointer; width: 150px; height: 150px">
-                        @if (auth()->user()->gambar)
-                            <img class="object-fit-cover" src="{{ asset('storage/profile/' . $admin->gambar) }}"
-                                alt="Gambar Profil">
-                        @else
-                            <img class="object-fit-cover" src="{{ asset('/gambar/user.png') }}" alt="profile">
-                        @endif
-                        <span class="edit-icon">&#9998;</span> <!-- Ikon edit -->
+                        <img id="preview" class="object-fit-cover" src="{{ auth()->user()->gambar ? asset('storage/profile/' . $admin->gambar) : asset('/gambar/user.png') }}" alt="Gambar Profil">
+                        <span class="edit-icon">&#9998;</span>
                     </label>
                 </div>
                 <p class="text-black"><span>{{ $admin->nama }}</span></p>
@@ -215,14 +210,24 @@
     </form>
 
     @if (session('success'))
-        <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
-        <script>
-            Swal.fire({
-                title: 'Success',
-                text: '{{ session('success') }}',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            });
-        </script>
+    <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
+    <script>
+        Swal.fire({
+            title: 'Success',
+            text: '{{ session('success') }}',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const output = document.getElementById('preview');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+    </script>
     @endif
 @endsection
