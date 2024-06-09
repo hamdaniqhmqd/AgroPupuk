@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -89,6 +90,13 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password], true)) {
+
+            // $session = Carbon::tomorrow()->startOfDay();
+
+            // $request->session()->put('deskripsi', $session);
+
+            $request->user()->update(['session_expiry' => Carbon::tomorrow()->startOfDay()]);
+
             if (Auth::User()->role == 'admin') {
                 return redirect('/admin/dashboard')->with(['success' => 'Login berhasil']);
             } else {
@@ -169,27 +177,7 @@ class AuthController extends Controller
     public function logout(): RedirectResponse
     {
         Auth::logout();
+        
         return redirect('/login')->with(['success' => 'Logout Berhasil']);
-    }
-
-    public function logoutOnClose(Request $request)
-    {
-        // Cek apakah ada token CSRF
-        if ($request->isMethod('post') && $request->has('_token')) {
-            // Fungsi untuk logout
-            Auth::logout(); // Menghapus informasi autentikasi pengguna
-
-            // Mereferesh status sesi
-            $request->session()->invalidate(); // Menghapus sesi pengguna yang saat ini aktif
-
-            // Menghasilkan token baru untuk menghindari serangan CSRF
-            $request->session()->regenerateToken(); // Memperbaharui token sesi pengguna
-
-            // Mengembalikan respons JSON jika berhasil
-            return response()->json(['message' => 'User logged out on tab close'], 200);
-        }
-
-        // Mengembalikan respons JSON jika token CSRF tidak valid
-        return response()->json(['message' => 'Invalid CSRF token'], 403);
     }
 }
