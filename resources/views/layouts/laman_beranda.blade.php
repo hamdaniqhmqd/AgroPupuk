@@ -44,7 +44,7 @@
     <!-- End Navbar -->
 
     <!-- Ini Corousel -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="1500">
+    <div id="carouselExampleSlidesOnly" class="carousel slide"data-bs-ride="carousel" data-bs-interval="6000">
         <div class="carousel-inner">
             @foreach ($corosel as $data)
                 <div class="carousel-item active position-relative">

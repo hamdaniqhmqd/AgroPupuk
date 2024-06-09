@@ -83,7 +83,7 @@ color:#224038;
     transition: all 0.3s ease-in;
 }
 .img-filter:hover {
-    filter: blur(2px) brightness(80%);
+    filter: blur(2px) brightness(60%);
 }
 
 .animate-card {
