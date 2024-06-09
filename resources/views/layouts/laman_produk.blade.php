@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/listpro.css') }}">
-    <title>Produk | AGROPUPUK</title>    
+    <title>Produk | AGROPUPUK</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a8b5e7e027.js" crossorigin="anonymous"></script>
 </head>
@@ -32,7 +32,7 @@
                     <i class="fa-solid fa-arrow-rotate-right"></i>
                 </a>
             </div>
-        </div>                
+        </div>
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Ketik produk yang di cari">
             <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
@@ -45,7 +45,7 @@
         @csrf
         <div class="kotak-luar" id="{{ $item->jenis }}" data-url="{{ route('detailproduk', $item->id) }}">
             <div class="kotak-dalam">
-                <img src="{{ asset('storage/gambarproduk/'.$item->image) }}" alt="Gambar">
+                <img src="{{ asset('storage/gambarproduk/'.$item->image) }}" alt="{{ $item->image }}">
             </div>
             <div class="kotak-hijau">
                 <button type="button" class="btn btn-success custom-disabled">Beli Produk</button>
