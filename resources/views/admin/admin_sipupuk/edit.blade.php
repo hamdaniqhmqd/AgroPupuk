@@ -7,6 +7,8 @@
     <title>Edit Artikel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin-sipupuk.css') }}" />
+    <!-- Include stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
 
 </head>
 <body style="background: lightgray">
@@ -65,7 +67,7 @@
 
                         <div class="mb-3">
                             <label class="font-weight-bold">KONTEN</label>
-                            <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="10" placeholder="Masukkan Konten Artikel ">{{ old('content', $sipupuks->content) }}</textarea>
+                            <textarea id="editor" class="form-control @error('content') is-invalid @enderror" name="content" rows="10" placeholder="Masukkan Konten Artikel ">{{ old('content', $sipupuks->content) }}</textarea>
                         
                             <!-- pesan error untuk konten -->
                             @error('content')
@@ -93,10 +95,16 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Include the Quill library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+    <!-- Initialize Quill editor -->
     <script>
-        CKEDITOR.replace( 'content' );
+    const quill = new Quill('#editor', {
+        theme: 'snow'
+    });
     </script>
     <script>
          // untuk menggunakan sweetalert2 pada tombol simpan
