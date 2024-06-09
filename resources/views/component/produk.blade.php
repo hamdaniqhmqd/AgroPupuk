@@ -2,35 +2,34 @@
 <div class="content-produk ">
     <!-- Ini Text Info Produk-->
     <h1 class="fs-1 z-2 pt-5 fw-bold warna-hijau text-center" data-aos="fade-up" data-aos-delay="100"
-    data-aos-duration="1500">Informasi Produk</h1>
-    <p class="z-2 warna-abu-hitam fs-6 text-center" data-aos="fade-up" data-aos-delay="200"
-    data-aos-duration="2000" >
+        data-aos-duration="1500">Informasi Produk</h1>
+    <p class="z-2 warna-abu-hitam fs-6 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
         Produk yang kita tampilkan merupakan produk <br>
         terbaru yang tersedia.</p>
 </div>
 <!-- start Conrtainer Card-->
 <div class="container mt-5 mb-5 ">
     <!-- Kotak-kotak start Area -->
-        <!-- Mulai Perulangan untuk Membuat Card -->
-        <div class="container">
-            <div class="kotak-kotak" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="2000"  >
-                <?php for ($i = 1; $i <= 4; $i++) { ?>
-                <div class="kotak-luar" >
+    <!-- Mulai Perulangan untuk Membuat Card -->
+    <div class="container">
+        <div class="kotak-kotak" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
+            @foreach ($Produk as $item)
+                @csrf
+                <div class="kotak-luar">
                     <div class="kotak-dalam">
-                        <img  src="{{ asset('gambar/1petro-nitratfix.png') }}" alt="Gambar <?php echo $i; ?>">
+                        <img src="{{ asset('storage/gambarproduk/' . $item->image) }}" alt="{{ $item->image }}">
                     </div>
                     <div class="kotak-hijau">
                         <button type="button" class="btn btn-success custom-disabled">Beli Produk</button>
                     </div>
-                    <p class="f-produk">Petrokimia NPK <?php echo $i; ?> </p>
+                    <p class="f-produk">{{ $item->title }}</p>
                 </div>
-                <?php } ?>
-                
-            </div>
-        </div>
+            @endforeach
 
-        <!-- Selesai Perulangan -->
+        </div>
+    </div>
+
+    <!-- Selesai Perulangan -->
 </div>
 <!-- End Conrtainer Card-->
 <!-- Info Prodduk -->
@@ -52,151 +51,99 @@
     AOS.init();
 </script>
 <style>
-        /* Card Start */
-        .kotak-luar {
-            background-color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10px;
-            position: relative;
-            box-shadow: 0px 0px 10px rgba(61, 61, 61, 0.6);
-            transition: transform 0.5s ease;
-            width: 264px;
-            height: 330px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
+    /* Card Start */
+    .kotak-luar {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        position: relative;
+        box-shadow: 0px 0px 10px rgba(61, 61, 61, 0.6);
+        transition: transform 0.5s ease;
+        width: 264px;
+        height: 330px;
+        overflow: hidden;
+        margin: 20px 0;
+    }
 
-        .kotak-dalam {
-            width: 100%;
-            height: 100%;
-            background-color: #e3e3e3;
-            margin-bottom: 37px;
-        }
+    .kotak-dalam {
+        width: 100%;
+        height: 100%;
+        background-color: #e3e3e3;
+        margin-bottom: 37px;
+    }
 
-        .kotak-dalam img {
-            width: 100%;
-            height: 100%;
-        }
+    .kotak-dalam img {
+        width: 100%;
+        height: 100%;
+    }
 
-        .kotak-hijau .btn {
-            width: 110px;
-            height: 25px ;
-            background-color: hsl(164,30.61%,19.22%);
-            position: absolute;
-            bottom: 63px;
-            z-index: 1;
-            left: 3.5px;
-            font-size: 13.5px;
-            padding-top: 7px;
-            padding-bottom: 27px;
-            border: 0;
-            border-radius: 2;
-        }
+    .kotak-hijau .btn {
+        width: 110px;
+        height: 25px;
+        background-color: hsl(164, 30.61%, 19.22%);
+        position: absolute;
+        bottom: 63px;
+        z-index: 1;
+        left: 3.5px;
+        font-size: 13.5px;
+        padding-top: 7px;
+        padding-bottom: 27px;
+        border: 0;
+        border-radius: 2;
+    }
 
-        .f-produk {
-            font-weight: 600 !important;
-            font-size: 1.25rem;
-            margin-left: 15px;
-            margin-bottom: 15px;
-            margin-top: -5px;
-        }
+    .f-produk {
+        font-weight: 600 !important;
+        font-size: 1.25rem;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        margin-top: -5px;
+    }
 
-        .kotak-kotak{
+    .kotak-kotak {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        place-items: center;
+        width: 100%;
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+    .kotak-luar:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+    }
+
+    .btn-success {
+        width: 150px;
+        margin-left: 20px;
+        background-color: #224038 !important;
+    }
+
+    /* Card end */
+
+    @media only screen and (max-width: 800px) {
+
+        .kotak-kotak {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            place-items: center;
-            width: 100%;
-            height: auto;
-            margin-bottom: 100px;
-        }
-
-        .kotak-luar:hover{
-            transform: scale(1.04);
-            cursor: pointer;
-        }
-
-        .btn-success{
-            width: 150px;
-            margin-left:20px;
-            background-color: #224038 !important;
-        }
-        /* Card end */
-
-        @media only screen and (max-width: 800px) {
-
-            .kotak-kotak{
-            display: grid;
-            grid-template-columns: 1fr 1fr ;
+            grid-template-columns: 1fr 1fr;
             grid-gap: 10px;
             place-items: center;
             width: 100%;
             height: auto;
             margin-bottom: 100px;
-            }
-        }
-
-
-        @media only screen and (max-width: 1080px) {
-        .kotak-kotak {
-            display: grid;
-            grid-template-columns: repeat(0, 1fr 1fr 1fr);
-            grid-gap: 8px; /* Atur jarak antar elemen grid */
-            place-items: center;
-            width: 100%;
-            height: auto;
-            margin-bottom: 90px;
-        }
-
-        .kotak-luar {
-            background-color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 5px;
-            position: relative;
-            box-shadow: 0px 0px 10px rgba(61, 61, 61, 0.6);
-            transition: transform 0.5s ease;
-            width: 220px; /* Ubah lebar elemen grid */
-            height: 280px; /* Ubah tinggi elemen grid */
-            margin: 8px 0;
-            overflow: hidden;
-        }
-
-        .f-produk {
-            font-weight: 600 !important;
-            font-size: 1rem;
-            margin-left: 12px;
-            margin-bottom: 12px;
-        }
-
-        .btn-success {
-            width: 120px;
-            margin-left: 15px;
-            background-color: #224038 !important;
-        }
-
-        .kotak-hijau .btn {
-            width: 110px;
-            height: 25px;
-            background-color: hsl(164, 30.61%, 19.22%);
-            position: absolute;
-            bottom: 55px;
-            z-index: 1;
-            left: 3.5px;
-            font-size: 13.5px;
-            padding-top: 7px;
-            padding-bottom: 27px;
-            border: 0;
-            border-radius: 2;
         }
     }
-        @media only screen and (max-width: 1172px) {
+
+
+    @media only screen and (max-width: 1080px) {
         .kotak-kotak {
             display: grid;
             grid-template-columns: repeat(0, 1fr 1fr 1fr);
-            grid-gap: 8px; /* Atur jarak antar elemen grid */
+            grid-gap: 8px;
+            /* Atur jarak antar elemen grid */
             place-items: center;
             width: 100%;
             height: auto;
@@ -212,8 +159,10 @@
             position: relative;
             box-shadow: 0px 0px 10px rgba(61, 61, 61, 0.6);
             transition: transform 0.5s ease;
-            width: 215px; /* Ubah lebar elemen grid */
-            height: 290px; /* Ubah tinggi elemen grid */
+            width: 220px;
+            /* Ubah lebar elemen grid */
+            height: 280px;
+            /* Ubah tinggi elemen grid */
             margin: 8px 0;
             overflow: hidden;
         }
@@ -247,19 +196,77 @@
         }
     }
 
-
-        @media only screen and (max-width: 600px) {
-            .kotak-kotak{
+    @media only screen and (max-width: 1172px) {
+        .kotak-kotak {
             display: grid;
-            grid-template-columns: 1fr 1fr ;
+            grid-template-columns: repeat(0, 1fr 1fr 1fr);
+            grid-gap: 8px;
+            /* Atur jarak antar elemen grid */
+            place-items: center;
+            width: 100%;
+            height: auto;
+            margin-bottom: 90px;
+        }
+
+        .kotak-luar {
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px;
+            position: relative;
+            box-shadow: 0px 0px 10px rgba(61, 61, 61, 0.6);
+            transition: transform 0.5s ease;
+            width: 215px;
+            /* Ubah lebar elemen grid */
+            height: 290px;
+            /* Ubah tinggi elemen grid */
+            margin: 8px 0;
+            overflow: hidden;
+        }
+
+        .f-produk {
+            font-weight: 600 !important;
+            font-size: 1rem;
+            margin-left: 12px;
+            margin-bottom: 12px;
+        }
+
+        .btn-success {
+            width: 120px;
+            margin-left: 15px;
+            background-color: #224038 !important;
+        }
+
+        .kotak-hijau .btn {
+            width: 110px;
+            height: 25px;
+            background-color: hsl(164, 30.61%, 19.22%);
+            position: absolute;
+            bottom: 55px;
+            z-index: 1;
+            left: 3.5px;
+            font-size: 13.5px;
+            padding-top: 7px;
+            padding-bottom: 27px;
+            border: 0;
+            border-radius: 2;
+        }
+    }
+
+
+    @media only screen and (max-width: 600px) {
+        .kotak-kotak {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             grid-gap: 10px;
             place-items: center;
             width: 100%;
             height: auto;
             margin-bottom: 100px;
-            }
+        }
 
-            .kotak-luar {
+        .kotak-luar {
             background-color: #FFFFFF;
             display: flex;
             flex-direction: column;
@@ -282,15 +289,16 @@
             /* margin-top: -10px; */
         }
 
-        .btn-success{
+        .btn-success {
             width: 120px;
-            margin-left:15px;
+            margin-left: 15px;
             background-color: #224038 !important;
         }
+
         .kotak-hijau .btn {
             width: 110px;
-            height: 25px ;
-            background-color: hsl(164,30.61%,19.22%);
+            height: 25px;
+            background-color: hsl(164, 30.61%, 19.22%);
             position: absolute;
             bottom: 55px;
             z-index: 1;
@@ -301,7 +309,5 @@
             border: 0;
             border-radius: 2;
         }
-        }
+    }
 </style>
-
-

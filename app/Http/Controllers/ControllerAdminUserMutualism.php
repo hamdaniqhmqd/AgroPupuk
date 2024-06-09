@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\produkmutu; 
-use App\Models\ProductStore; 
+use App\Models\produkmutu;
+use App\Models\ProductStore;
 
 
 //import return type View
@@ -46,7 +46,8 @@ class ControllerAdminUserMutualism extends Controller
      */
     public function create(): View
     {
-        return view('admin.admin_produk.create');
+        $data['admin'] = User::find(Auth::User()->id);
+        return view('admin.admin_produk.create', $data);
     }
 
     /**
