@@ -1,17 +1,17 @@
-# AGROPUPUK - Sistem Informasi Pertanian (Pupuk)
+## AGROPUPUK - Sistem Informasi Pertanian (Pupuk) ##
 
-[![Screenshot Aplikasi AGROPUPUK](link-gambar-1.png)](link-website-agropupuk)
+[![Screenshot Aplikasi AGROPUPUK](https://github.com/hamdaniqhmqd/AgroPupuk/blob/main/public/gambar/page%201.png?raw=true)](link-website-agropupuk)
 
 AGROPUPUK adalah sistem informasi pertanian berbasis web yang menyediakan informasi lengkap seputar pupuk, pertanian, dan rekomendasi pembelian pupuk. Dikembangkan dengan menggunakan framework Laravel (full-stack), AGROPUPUK menawarkan tampilan yang menarik dan fitur-fitur yang berguna bagi petani dan pihak terkait lainnya.
 
 ## Fitur-fitur Utama
 
 *   **Rekomendasi Pembelian Pupuk**: Fitur ini memberikan rekomendasi jenis pupuk yang sesuai dengan jenis tanaman, kondisi tanah, dan kebutuhan nutrisi tanaman.
-    [![Screenshot Fitur Rekomendasi Pupuk](link-gambar-2.png)](link-website-agropupuk)
+    [![Screenshot Fitur Rekomendasi Pupuk](https://github.com/hamdaniqhmqd/AgroPupuk/blob/main/public/gambar/page%20produk.png?raw=true)](link-website-agropupuk)
 *   **Informasi Berita Pilihan**: Menyajikan berita-berita terkini seputar pertanian, teknologi pertanian, dan informasi terkait pupuk.
-    [![Screenshot Halaman Berita](link-gambar-3.png)](link-website-agropupuk)
+    [![Screenshot Halaman Berita](https://github.com/hamdaniqhmqd/AgroPupuk/blob/main/public/gambar/page%20berita.png?raw=true)](link-website-agropupuk)
 *   **Artikel Pertanian**: Berisi artikel-artikel informatif tentang pertanian, teknik budidaya, jenis-jenis pupuk, dan informasi terkait lainnya.
-    [![Screenshot Halaman Artikel](link-gambar-4.png)](link-website-agropupuk)
+    [![Screenshot Halaman Artikel](https://github.com/hamdaniqhmqd/AgroPupuk/blob/main/public/gambar/page%20articles.png?raw=true)](link-website-agropupuk)
 *   **Tampilan Menarik**: Desain antarmuka yang menarik dan mudah digunakan, sehingga memudahkan pengguna dalam mencari informasi yang dibutuhkan.
 
 ## Teknologi yang Digunakan
